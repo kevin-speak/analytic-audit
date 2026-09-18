@@ -136,6 +136,8 @@ obs = ads.meta_paid_obs.values
 LTVCAC = np.zeros((N_SIM, n)); PAID = np.zeros((N_SIM, n)); SP = np.zeros((N_SIM, n))
 IPM = np.zeros((N_SIM, n)); TPI = np.zeros((N_SIM, n))
 mask_I = I > 0; mask_C = C > 0
+KAPPA_CTR, KAPPA_CTI = 2000.0, 30.0
+bench_ctr_p = np.where(bench_ctr > 0, bench_ctr, ctr.mean()); bench_cti_p = np.where(bench_cti > 0, bench_cti, cti[cti > 0].mean())
 for s in range(N_SIM):
     p_k = rng.beta(conv_a, conv_b)
     theta = rng.gamma(PRIOR_STRENGTH + obs, 1.0 / (PRIOR_STRENGTH + E_meta))
@@ -145,8 +147,11 @@ for s in range(N_SIM):
     ltv_mult = rng.normal(1.0, LTV_FORECAST_SD)
     ltv = (paid_k * mu + np.sqrt(paid_k) * sd * rng.standard_normal(paid_k.shape)).sum(1) * ltv_mult
     PAID[s] = paid_k.sum(1); LTVCAC[s] = ltv / spend
-    ctr_s = np.where(mask_I, rng.beta(C + 0.5, np.maximum(I - C, 0) + 0.5), 0)
-    cti_s = np.where(mask_C, rng.beta(T + 0.5, np.maximum(C - T, 0) + 0.5), 0)
+    # posterior draws of the ad's own CTR / CTI per placement, shrunk toward the placement benchmark
+    # (prior weight = KAPPA_CTR impressions / KAPPA_CTI clicks) so placements with a handful of clicks
+    # contribute ~1x the benchmark instead of a wild ratio
+    ctr_s = np.where(mask_I, rng.beta(C + KAPPA_CTR * bench_ctr_p + 1e-3, np.maximum(I - C, 0) + KAPPA_CTR * (1 - bench_ctr_p) + 1e-3), 0)
+    cti_s = np.where(mask_C, rng.beta(T + KAPPA_CTI * bench_cti_p + 1e-3, np.maximum(C - T, 0) + KAPPA_CTI * (1 - bench_cti_p) + 1e-3), 0)
     SP[s] = sp_from(ctr_s, cti_s)
     IPM[s] = rng.beta(inst + 0.5, np.maximum(imps - inst, 0) + 0.5) * 1000
     TPI[s] = rng.beta(tri + 0.5, np.maximum(imps - tri, 0) + 0.5) * 1000
@@ -170,7 +175,7 @@ results = {'meta': {
     'ssot_trials_matched': float(ads.ssot_trials.sum()), 'ssot_ltv_matched': float(ads.ssot_ltv.sum()),
     'p_conv_mean': P_CONV_MEAN, 'p_conv_sd': P_CONV_SD, 'ltv_mu': {k: float(LTV_MU[k]) for k in PLANS}, 'plan_mix': {k: float(v) for k, v in zip(PLANS, global_mix)},
     'meta_report_ratio': float(meta_report_ratio), 'sp_threshold': SP_THRESHOLD, 'cpft_target': CPFT_TARGET,
-    'prior_strength': PRIOR_STRENGTH, 'ltv_forecast_sd': LTV_FORECAST_SD,
+    'prior_strength': PRIOR_STRENGTH, 'ltv_forecast_sd': LTV_FORECAST_SD, 'kappa_ctr': KAPPA_CTR, 'kappa_cti': KAPPA_CTI,
 }, 'buckets': {}, 'ads': [], 'campaigns': []}
 
 for b, bm in buckets.items():
@@ -190,6 +195,9 @@ for b, bm in buckets.items():
                 'p_lift_gt1': float(np.nanmean(lift > 1)), 'n_winner_mean': float(Wb.sum(1).mean()), 'n_non_mean': float((~Wb).sum(1).mean()),
                 'n_winner_point': int(Wb.mean(0).round().sum())}
     sw_all = (X * spend[idx]).sum(1) / spend[idx].sum()
+    med_x = np.median(X, axis=0)
+    def rho_pt(v):
+        rx, ry = rankdata(med_x), rankdata(v); rx = rx - rx.mean(); ry = ry - ry.mean(); return float((rx * ry).sum() / np.sqrt((rx ** 2).sum() * (ry ** 2).sum()))
     full = LTVCAC[:, bm]; sw_full = (full * spend[bm]).sum(1) / spend[bm].sum()
     results['buckets'][b] = {
         'n_ads': int(bm.sum()), 'n_analyzed': int(am.sum()), 'spend': float(spend[bm].sum()),
@@ -199,6 +207,7 @@ for b, bm in buckets.items():
         'ipm': float(inst[bm].sum() / imps[bm].sum() * 1000), 'tpi': float(tri[bm].sum() / imps[bm].sum() * 1000),
         'cpft': float(spend[bm].sum() / max(tri[bm].sum(), 1)),
         'share_spend_ltvcac_ge1': float(((LTVCAC[:, bm] >= 1).mean(0) * spend[bm]).sum() / spend[bm].sum()),
+        'rho_sp_point': rho_pt(ads.sp.values[idx]), 'rho_ipm_point': rho_pt(ads.ipm.values[idx]), 'rho_tpi_point': rho_pt(ads.tpi.values[idx]),
         'rho_sp': q(rho_sp).tolist(), 'p_rho_sp_gt0': float((rho_sp > 0).mean()),
         'rho_ipm': q(rho_ipm).tolist(), 'p_rho_ipm_gt0': float((rho_ipm > 0).mean()),
         'rho_tpi': q(rho_tpi).tolist(), 'p_rho_tpi_gt0': float((rho_tpi > 0).mean()),

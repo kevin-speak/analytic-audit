@@ -1,0 +1,5219 @@
+{
+ "params": {
+  "target": 0.8,
+  "sp2_bar": 2.0,
+  "si_clip": [
+   0.25,
+   4.0
+  ],
+  "K_per_install": 12.255086110766943,
+  "K_per_signup": 21.671954425942154,
+  "cpi_target": 15.318857638458677,
+  "cps_target": 27.08994303242769,
+  "pool_cpi": 19.370437368355844,
+  "pool_cps": 34.25477651183173
+ },
+ "gates": {
+  "Overall": {
+   "rows": [
+    {
+     "gate": "P1 gate (SP \u2265 2 & \u2265 10 installs)",
+     "n": 75,
+     "spend": 373273.13,
+     "sw_ltv_cac": 0.6500750112122992,
+     "hit_rate": 0.3466666666666667,
+     "spend_recall": 0.968920373759931
+    },
+    {
+     "gate": "EI \u2265 1 (CPI \u2264 $15)",
+     "n": 24,
+     "spend": 82539.11,
+     "sw_ltv_cac": 0.8100835385794687,
+     "hit_rate": 0.5416666666666666,
+     "spend_recall": 0.24549069656776804
+    },
+    {
+     "gate": "SP2 winner (EI \u2265 1 & SP2 \u2265 2)",
+     "n": 17,
+     "spend": 66917.99,
+     "sw_ltv_cac": 0.8874491164483572,
+     "hit_rate": 0.7058823529411765,
+     "spend_recall": 0.24121529517977663
+    },
+    {
+     "gate": "Not P1",
+     "n": 112,
+     "spend": 94008.81,
+     "sw_ltv_cac": 0.43621118510063045,
+     "hit_rate": 0.08035714285714286,
+     "spend_recall": 0.031079626240069238
+    },
+    {
+     "gate": "Not SP2 winner",
+     "n": 170,
+     "spend": 400363.95000000007,
+     "sw_ltv_cac": 0.5601825975840232,
+     "hit_rate": 0.13529411764705881,
+     "spend_recall": 0.7587847048202235
+    }
+   ],
+   "rho_ei": 0.47752996490535476,
+   "rho_sp": 0.48342242499777244,
+   "rho_sp2": 0.36197856320707034,
+   "auc_ei": 0.7535714285714286,
+   "auc_sp": 0.7584586466165414,
+   "n_on_target": 35,
+   "n": 187
+  },
+  "Testing": {
+   "rows": [
+    {
+     "gate": "P1 gate (SP \u2265 2 & \u2265 10 installs)",
+     "n": 29,
+     "spend": 34506.149999999994,
+     "sw_ltv_cac": 0.7261235475415254,
+     "hit_rate": 0.4827586206896552,
+     "spend_recall": 0.8732889509352291
+    },
+    {
+     "gate": "EI \u2265 1 (CPI \u2264 $15)",
+     "n": 11,
+     "spend": 8848.59,
+     "sw_ltv_cac": 1.0464668506507817,
+     "hit_rate": 0.8181818181818182,
+     "spend_recall": 0.611950962133464
+    },
+    {
+     "gate": "SP2 winner (EI \u2265 1 & SP2 \u2265 2)",
+     "n": 9,
+     "spend": 8188.32,
+     "sw_ltv_cac": 1.0676110484201888,
+     "hit_rate": 1.0,
+     "spend_recall": 0.611950962133464
+    },
+    {
+     "gate": "Not P1",
+     "n": 77,
+     "spend": 21547.95,
+     "sw_ltv_cac": 0.38271407535287577,
+     "hit_rate": 0.1038961038961039,
+     "spend_recall": 0.126711049064771
+    },
+    {
+     "gate": "Not SP2 winner",
+     "n": 97,
+     "spend": 47865.780000000006,
+     "sw_ltv_cac": 0.5131116825005254,
+     "hit_rate": 0.13402061855670103,
+     "spend_recall": 0.38804903786653594
+    }
+   ],
+   "rho_ei": 0.5158755535552939,
+   "rho_sp": 0.4364253326137445,
+   "rho_sp2": 0.38563191716915746,
+   "auc_ei": 0.7834928229665072,
+   "auc_sp": 0.7456709956709958,
+   "n_on_target": 22,
+   "n": 106
+  },
+  "Winning": {
+   "rows": [
+    {
+     "gate": "P1 gate (SP \u2265 2 & \u2265 10 installs)",
+     "n": 26,
+     "spend": 95387.15,
+     "sw_ltv_cac": 1.074505163116835,
+     "hit_rate": 0.4230769230769231,
+     "spend_recall": 1.0
+    },
+    {
+     "gate": "EI \u2265 1 (CPI \u2264 $15)",
+     "n": 9,
+     "spend": 22788.36,
+     "sw_ltv_cac": 1.1254923610123764,
+     "hit_rate": 0.4444444444444444,
+     "spend_recall": 0.16046192488948594
+    },
+    {
+     "gate": "SP2 winner (EI \u2265 1 & SP2 \u2265 2)",
+     "n": 6,
+     "spend": 20884.18,
+     "sw_ltv_cac": 1.183967768904501,
+     "hit_rate": 0.5,
+     "spend_recall": 0.1550896837642309
+    },
+    {
+     "gate": "Not P1",
+     "n": 12,
+     "spend": 14877.920000000002,
+     "sw_ltv_cac": 0.507201127576973,
+     "hit_rate": 0.0,
+     "spend_recall": 0.0
+    },
+    {
+     "gate": "Not SP2 winner",
+     "n": 32,
+     "spend": 89380.89,
+     "sw_ltv_cac": 0.9544980696656747,
+     "hit_rate": 0.25,
+     "spend_recall": 0.8449103162357691
+    }
+   ],
+   "rho_ei": 0.4816336341579201,
+   "rho_sp": 0.359993496047111,
+   "rho_sp2": 0.6200252944388046,
+   "auc_ei": 0.7239057239057238,
+   "auc_sp": 0.7070707070707071,
+   "n_on_target": 11,
+   "n": 38
+  },
+  "Scaling": {
+   "rows": [
+    {
+     "gate": "P1 gate (SP \u2265 2 & \u2265 10 installs)",
+     "n": 20,
+     "spend": 243379.83000000002,
+     "sw_ltv_cac": 0.4729472485456169,
+     "hit_rate": 0.05,
+     "spend_recall": 0.42749162891471343
+    },
+    {
+     "gate": "EI \u2265 1 (CPI \u2264 $15)",
+     "n": 4,
+     "spend": 50902.16,
+     "sw_ltv_cac": 0.6277865829269328,
+     "hit_rate": 0.0,
+     "spend_recall": 0.0
+    },
+    {
+     "gate": "SP2 winner (EI \u2265 1 & SP2 \u2265 2)",
+     "n": 2,
+     "spend": 37845.49,
+     "sw_ltv_cac": 0.684841818668486,
+     "hit_rate": 0.0,
+     "spend_recall": 0.0
+    },
+    {
+     "gate": "Not P1",
+     "n": 23,
+     "spend": 57582.94,
+     "sw_ltv_cac": 0.4378882505825509,
+     "hit_rate": 0.043478260869565216,
+     "spend_recall": 0.5725083710852866
+    },
+    {
+     "gate": "Not SP2 winner",
+     "n": 41,
+     "spend": 263117.28,
+     "sw_ltv_cac": 0.4347967553100274,
+     "hit_rate": 0.04878048780487805,
+     "spend_recall": 1.0
+    }
+   ],
+   "rho_ei": 0.0840412278320105,
+   "rho_sp": 0.6287612795661738,
+   "rho_sp2": -0.2216181524590753,
+   "auc_ei": 0.4146341463414634,
+   "auc_sp": 0.975609756097561,
+   "n_on_target": 2,
+   "n": 43
+  }
+ },
+ "milestones": [
+  {
+   "spend": 50,
+   "n": 187,
+   "rho_ei": 0.44713524638216084,
+   "rho_ipm": 0.41104940941593626,
+   "rho_tpi": 0.45522286393451733,
+   "rho_cpft": 0.35319295832617403,
+   "rho_sp": 0.23263809289949663,
+   "auc_ei": 0.7671875,
+   "auc_tpi": 0.7167619047619047,
+   "auc_sp": 0.648952380952381,
+   "share_installs": 0.8128342245989305,
+   "share_trials": 0.5187165775401069
+  },
+  {
+   "spend": 100,
+   "n": 147,
+   "rho_ei": 0.5377746599588307,
+   "rho_ipm": 0.48390654727853405,
+   "rho_tpi": 0.4749051083208525,
+   "rho_cpft": 0.3718273798881628,
+   "rho_sp": 0.29383463412667365,
+   "auc_ei": 0.8300137362637363,
+   "auc_tpi": 0.7246376811594203,
+   "auc_sp": 0.6747826086956521,
+   "share_installs": 0.8979591836734694,
+   "share_trials": 0.673469387755102
+  },
+  {
+   "spend": 150,
+   "n": 114,
+   "rho_ei": 0.5342464210140251,
+   "rho_ipm": 0.48494011928877945,
+   "rho_tpi": 0.4485758104701147,
+   "rho_cpft": 0.31206453085213165,
+   "rho_sp": 0.3617268000361458,
+   "auc_ei": 0.7990588235294118,
+   "auc_tpi": 0.6809195402298851,
+   "auc_sp": 0.6547126436781608,
+   "share_installs": 0.9649122807017544,
+   "share_trials": 0.8333333333333334
+  },
+  {
+   "spend": 200,
+   "n": 98,
+   "rho_ei": 0.5107401806574235,
+   "rho_ipm": 0.4716916624299344,
+   "rho_tpi": 0.3782205444959635,
+   "rho_cpft": 0.3028328388443228,
+   "rho_sp": 0.272307075329284,
+   "auc_ei": 0.792997542997543,
+   "auc_tpi": 0.6854545454545454,
+   "auc_sp": 0.6472727272727272,
+   "share_installs": 0.9795918367346939,
+   "share_trials": 0.8979591836734694
+  },
+  {
+   "spend": 300,
+   "n": 86,
+   "rho_ei": 0.5431733237238203,
+   "rho_ipm": 0.5447856359265733,
+   "rho_tpi": 0.4785183788714526,
+   "rho_cpft": 0.4438061043347341,
+   "rho_sp": 0.36705997323765605,
+   "auc_ei": 0.8253588516746412,
+   "auc_tpi": 0.7687400318979266,
+   "auc_sp": 0.7280701754385965,
+   "share_installs": 0.9883720930232558,
+   "share_trials": 0.9186046511627907
+  },
+  {
+   "spend": 500,
+   "n": 69,
+   "rho_ei": 0.4526688494698639,
+   "rho_ipm": 0.43999503786385996,
+   "rho_tpi": 0.45617919623375736,
+   "rho_cpft": 0.46438288874424827,
+   "rho_sp": 0.38895622425775367,
+   "auc_ei": 0.8363095238095238,
+   "auc_tpi": 0.7827380952380952,
+   "auc_sp": 0.7678571428571428,
+   "share_installs": 0.9855072463768116,
+   "share_trials": 0.9420289855072463
+  },
+  {
+   "spend": 750,
+   "n": 56,
+   "rho_ei": 0.35098092911313605,
+   "rho_ipm": 0.3265089897573073,
+   "rho_tpi": 0.42877894613303497,
+   "rho_cpft": 0.41889986017370723,
+   "rho_sp": 0.36677148216117084,
+   "auc_ei": 0.8098958333333334,
+   "auc_tpi": 0.8385416666666666,
+   "auc_sp": 0.7942708333333333,
+   "share_installs": 1.0,
+   "share_trials": 0.9642857142857143
+  },
+  {
+   "spend": 1000,
+   "n": 46,
+   "rho_ei": 0.36235236223778994,
+   "rho_ipm": 0.29833163849262806,
+   "rho_tpi": 0.38363092648834946,
+   "rho_cpft": 0.42563296200901923,
+   "rho_sp": 0.35704814042460686,
+   "auc_ei": 0.7875457875457875,
+   "auc_tpi": 0.8168498168498168,
+   "auc_sp": 0.7802197802197802,
+   "share_installs": 1.0,
+   "share_trials": 1.0
+  },
+  {
+   "spend": 2000,
+   "n": 26,
+   "rho_ei": 0.20068376068376068,
+   "rho_ipm": 0.17538461538461536,
+   "rho_tpi": 0.23555555555555555,
+   "rho_cpft": 0.28136752136752136,
+   "rho_sp": 0.228034188034188,
+   "auc_ei": 0.8068181818181819,
+   "auc_tpi": 0.8295454545454546,
+   "auc_sp": 0.7386363636363636,
+   "share_installs": 1.0,
+   "share_trials": 1.0
+  }
+ ],
+ "ads": [
+  {
+   "ad_id": "120236574936400167",
+   "name": "influencer \u2013 harryspeaks",
+   "bucket": "Winning",
+   "spend": 6669.08,
+   "installs": 435,
+   "cpi": 15.33,
+   "EI": 0.999,
+   "SI": 4.0,
+   "SP2": 3.997,
+   "sp2_phase": "Watch",
+   "sp": 2.901,
+   "phase": "Phase 1 Winner",
+   "ltv_cac": 1.365,
+   "ltv_cac_ci": [
+    0.961,
+    1.884
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120239549733890167",
+   "name": "rw_s22a2_singletestimonial_pm_zh-en_1x1_tw_testimonial_effective",
+   "bucket": "Winning",
+   "spend": 0.56,
+   "installs": 0,
+   "cpi": null,
+   "EI": null,
+   "SI": 0.25,
+   "SP2": null,
+   "sp2_phase": "No installs yet",
+   "sp": 0.261,
+   "phase": "Pause",
+   "ltv_cac": 0.0,
+   "ltv_cac_ci": [
+    0.0,
+    0.0
+   ],
+   "analyzed": false
+  },
+  {
+   "ad_id": "120240275100650167",
+   "name": "motion \u2013 na \u2013 motiontestimonial",
+   "bucket": "Winning",
+   "spend": 34.78,
+   "installs": 2,
+   "cpi": 17.39,
+   "EI": 0.881,
+   "SI": 0.25,
+   "SP2": 0.22,
+   "sp2_phase": "Watch",
+   "sp": 0.54,
+   "phase": "Pause",
+   "ltv_cac": 0.0,
+   "ltv_cac_ci": [
+    0.0,
+    0.0
+   ],
+   "analyzed": false
+  },
+  {
+   "ad_id": "120242147246810167",
+   "name": "influencer \u2013 morning.jason \u2013 influencer",
+   "bucket": "Winning",
+   "spend": 7077.57,
+   "installs": 588,
+   "cpi": 12.04,
+   "EI": 1.273,
+   "SI": 4.0,
+   "SP2": 5.091,
+   "sp2_phase": "Scalable winner",
+   "sp": 3.215,
+   "phase": "Phase 2 Winner",
+   "ltv_cac": 2.222,
+   "ltv_cac_ci": [
+    1.651,
+    2.908
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120242508326330167",
+   "name": "generic \u2013 na \u2013 aspiration",
+   "bucket": "Winning",
+   "spend": 50.14,
+   "installs": 0,
+   "cpi": null,
+   "EI": null,
+   "SI": 0.25,
+   "SP2": null,
+   "sp2_phase": "No installs yet",
+   "sp": 1.587,
+   "phase": "Mid-Tier",
+   "ltv_cac": 0.0,
+   "ltv_cac_ci": [
+    0.0,
+    0.0
+   ],
+   "analyzed": false
+  },
+  {
+   "ad_id": "120242508965130167",
+   "name": "generic \u2013 na \u2013 aspiration",
+   "bucket": "Winning",
+   "spend": 71.46,
+   "installs": 0,
+   "cpi": null,
+   "EI": null,
+   "SI": 0.25,
+   "SP2": null,
+   "sp2_phase": "No installs yet",
+   "sp": 1.794,
+   "phase": "Mid-Tier",
+   "ltv_cac": 0.0,
+   "ltv_cac_ci": [
+    0.0,
+    0.0
+   ],
+   "analyzed": false
+  },
+  {
+   "ad_id": "120242510079090167",
+   "name": "generic \u2013 na \u2013 aspiration",
+   "bucket": "Winning",
+   "spend": 1.06,
+   "installs": 0,
+   "cpi": null,
+   "EI": null,
+   "SI": 0.25,
+   "SP2": null,
+   "sp2_phase": "No installs yet",
+   "sp": 0.0,
+   "phase": "Pause",
+   "ltv_cac": 0.0,
+   "ltv_cac_ci": [
+    0.0,
+    0.0
+   ],
+   "analyzed": false
+  },
+  {
+   "ad_id": "120243701212520167",
+   "name": "ugc \u2013 qing \u2013 englishintrovert",
+   "bucket": "Winning",
+   "spend": 1104.0,
+   "installs": 48,
+   "cpi": 23.0,
+   "EI": 0.666,
+   "SI": 0.933,
+   "SP2": 0.622,
+   "sp2_phase": "Pause",
+   "sp": 2.857,
+   "phase": "Phase 1 Winner",
+   "ltv_cac": 0.586,
+   "ltv_cac_ci": [
+    0.218,
+    1.122
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120245092958860167",
+   "name": "influencer \u2013 techervincent \u2013 valueprop",
+   "bucket": "Winning",
+   "spend": 13556.09,
+   "installs": 698,
+   "cpi": 19.42,
+   "EI": 0.789,
+   "SI": 4.0,
+   "SP2": 3.155,
+   "sp2_phase": "Pause",
+   "sp": 3.149,
+   "phase": "Phase 2 Winner",
+   "ltv_cac": 1.848,
+   "ltv_cac_ci": [
+    1.425,
+    2.352
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120245149598320167",
+   "name": "influencer \u2013 tantooyu \u2013 valueprop",
+   "bucket": "Winning",
+   "spend": 0.31,
+   "installs": 0,
+   "cpi": null,
+   "EI": null,
+   "SI": 0.25,
+   "SP2": null,
+   "sp2_phase": "No installs yet",
+   "sp": 4.812,
+   "phase": "Pause",
+   "ltv_cac": 0.0,
+   "ltv_cac_ci": [
+    0.0,
+    0.0
+   ],
+   "analyzed": false
+  },
+  {
+   "ad_id": "120245149824260167",
+   "name": "c1_ugc_c2_video_c3_ugc_c4_problemsolution_c5_ongoing_c6_ai-gen_c7_painpoint_c8_t",
+   "bucket": "Winning",
+   "spend": 6.94,
+   "installs": 0,
+   "cpi": null,
+   "EI": null,
+   "SI": 0.25,
+   "SP2": null,
+   "sp2_phase": "No installs yet",
+   "sp": 1.043,
+   "phase": "Pause",
+   "ltv_cac": 14.048,
+   "ltv_cac_ci": [
+    0.0,
+    55.273
+   ],
+   "analyzed": false
+  },
+  {
+   "ad_id": "120245417330630167",
+   "name": "influencer \u2013 atiendai \u2013 valueprop",
+   "bucket": "Winning",
+   "spend": 721.98,
+   "installs": 78,
+   "cpi": 9.26,
+   "EI": 1.655,
+   "SI": 2.093,
+   "SP2": 3.464,
+   "sp2_phase": "Scalable winner",
+   "sp": 5.027,
+   "phase": "Phase 2 Winner",
+   "ltv_cac": 2.364,
+   "ltv_cac_ci": [
+    1.262,
+    3.848
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120245417330640167",
+   "name": "influencer \u2013 shasha77 \u2013 valueprop",
+   "bucket": "Winning",
+   "spend": 297.21,
+   "installs": 28,
+   "cpi": 10.61,
+   "EI": 1.443,
+   "SI": 0.862,
+   "SP2": 1.243,
+   "sp2_phase": "Efficient, unproven scale",
+   "sp": 2.941,
+   "phase": "Phase 1 Winner",
+   "ltv_cac": 0.862,
+   "ltv_cac_ci": [
+    0.0,
+    2.115
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120245417330650167",
+   "name": "influencer \u2013 illyandlean \u2013 valueprop",
+   "bucket": "Winning",
+   "spend": 780.52,
+   "installs": 57,
+   "cpi": 13.69,
+   "EI": 1.119,
+   "SI": 2.263,
+   "SP2": 2.531,
+   "sp2_phase": "Scalable winner",
+   "sp": 3.213,
+   "phase": "Phase 2 Winner",
+   "ltv_cac": 1.328,
+   "ltv_cac_ci": [
+    0.572,
+    2.404
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120245841850380167",
+   "name": "influencer \u2013  \u2013 valueprop",
+   "bucket": "Winning",
+   "spend": 29.48,
+   "installs": 1,
+   "cpi": 29.48,
+   "EI": 0.52,
+   "SI": 0.25,
+   "SP2": 0.13,
+   "sp2_phase": "Pause",
+   "sp": 1.565,
+   "phase": "Mid-Tier",
+   "ltv_cac": 2.866,
+   "ltv_cac_ci": [
+    0.0,
+    9.397
+   ],
+   "analyzed": false
+  },
+  {
+   "ad_id": "120245842589820167",
+   "name": "influencer \u2013 howhowhasfriends \u2013 valueprop",
+   "bucket": "Winning",
+   "spend": 0.76,
+   "installs": 0,
+   "cpi": null,
+   "EI": null,
+   "SI": 0.25,
+   "SP2": null,
+   "sp2_phase": "No installs yet",
+   "sp": 0.202,
+   "phase": "Pause",
+   "ltv_cac": 0.0,
+   "ltv_cac_ci": [
+    0.0,
+    0.0
+   ],
+   "analyzed": false
+  },
+  {
+   "ad_id": "120245842877290167",
+   "name": "influencer \u2013 howhowhasfriends \u2013 valueprop",
+   "bucket": "Winning",
+   "spend": 2.9,
+   "installs": 3,
+   "cpi": 0.97,
+   "EI": 15.847,
+   "SI": 0.25,
+   "SP2": 3.962,
+   "sp2_phase": "Scalable winner",
+   "sp": 1.562,
+   "phase": "Mid-Tier",
+   "ltv_cac": 0.0,
+   "ltv_cac_ci": [
+    0.0,
+    0.0
+   ],
+   "analyzed": false
+  },
+  {
+   "ad_id": "120245867679760167",
+   "name": "generic \u2013 na \u2013 product",
+   "bucket": "Testing",
+   "spend": 2.04,
+   "installs": 0,
+   "cpi": null,
+   "EI": null,
+   "SI": 0.25,
+   "SP2": null,
+   "sp2_phase": "No installs yet",
+   "sp": 0.322,
+   "phase": "Pause",
+   "ltv_cac": 0.0,
+   "ltv_cac_ci": [
+    0.0,
+    0.0
+   ],
+   "analyzed": false
+  },
+  {
+   "ad_id": "120245867679860167",
+   "name": "generic \u2013 na \u2013 product",
+   "bucket": "Testing",
+   "spend": 1.51,
+   "installs": 0,
+   "cpi": null,
+   "EI": null,
+   "SI": 0.25,
+   "SP2": null,
+   "sp2_phase": "No installs yet",
+   "sp": 1.429,
+   "phase": "Mid-Tier",
+   "ltv_cac": 55.777,
+   "ltv_cac_ci": [
+    0.0,
+    180.237
+   ],
+   "analyzed": false
+  },
+  {
+   "ad_id": "120245867679870167",
+   "name": "generic \u2013 na \u2013 product",
+   "bucket": "Testing",
+   "spend": 0.54,
+   "installs": 0,
+   "cpi": null,
+   "EI": null,
+   "SI": 0.25,
+   "SP2": null,
+   "sp2_phase": "No installs yet",
+   "sp": 0.0,
+   "phase": "Pause",
+   "ltv_cac": 0.0,
+   "ltv_cac_ci": [
+    0.0,
+    0.0
+   ],
+   "analyzed": false
+  },
+  {
+   "ad_id": "120245867680560167",
+   "name": "generic \u2013 na \u2013 outcome",
+   "bucket": "Testing",
+   "spend": 27.05,
+   "installs": 0,
+   "cpi": null,
+   "EI": null,
+   "SI": 0.334,
+   "SP2": null,
+   "sp2_phase": "No installs yet",
+   "sp": 0.552,
+   "phase": "Pause",
+   "ltv_cac": 0.0,
+   "ltv_cac_ci": [
+    0.0,
+    0.0
+   ],
+   "analyzed": false
+  },
+  {
+   "ad_id": "120245867680580167",
+   "name": "generic \u2013 na \u2013 product",
+   "bucket": "Testing",
+   "spend": 15.5,
+   "installs": 0,
+   "cpi": null,
+   "EI": null,
+   "SI": 0.25,
+   "SP2": null,
+   "sp2_phase": "No installs yet",
+   "sp": 0.676,
+   "phase": "Pause",
+   "ltv_cac": 0.0,
+   "ltv_cac_ci": [
+    0.0,
+    0.0
+   ],
+   "analyzed": false
+  },
+  {
+   "ad_id": "120245867682020167",
+   "name": "generic \u2013 na \u2013 product",
+   "bucket": "Testing",
+   "spend": 1.47,
+   "installs": 0,
+   "cpi": null,
+   "EI": null,
+   "SI": 0.25,
+   "SP2": null,
+   "sp2_phase": "No installs yet",
+   "sp": 0.667,
+   "phase": "Pause",
+   "ltv_cac": 0.0,
+   "ltv_cac_ci": [
+    0.0,
+    0.0
+   ],
+   "analyzed": false
+  },
+  {
+   "ad_id": "120245867682590167",
+   "name": "generic \u2013 na \u2013 product",
+   "bucket": "Testing",
+   "spend": 30.48,
+   "installs": 0,
+   "cpi": null,
+   "EI": null,
+   "SI": 0.376,
+   "SP2": null,
+   "sp2_phase": "No installs yet",
+   "sp": 0.485,
+   "phase": "Pause",
+   "ltv_cac": 0.0,
+   "ltv_cac_ci": [
+    0.0,
+    6.003
+   ],
+   "analyzed": false
+  },
+  {
+   "ad_id": "120245867684240167",
+   "name": "generic \u2013 na \u2013 outcome",
+   "bucket": "Testing",
+   "spend": 0.87,
+   "installs": 0,
+   "cpi": null,
+   "EI": null,
+   "SI": 0.25,
+   "SP2": null,
+   "sp2_phase": "No installs yet",
+   "sp": 1.752,
+   "phase": "Mid-Tier",
+   "ltv_cac": 96.213,
+   "ltv_cac_ci": [
+    0.0,
+    318.342
+   ],
+   "analyzed": false
+  },
+  {
+   "ad_id": "120245867700400167",
+   "name": "generic \u2013 na \u2013 product",
+   "bucket": "Testing",
+   "spend": 1.85,
+   "installs": 0,
+   "cpi": null,
+   "EI": null,
+   "SI": 0.25,
+   "SP2": null,
+   "sp2_phase": "No installs yet",
+   "sp": 0.143,
+   "phase": "Pause",
+   "ltv_cac": 0.0,
+   "ltv_cac_ci": [
+    0.0,
+    98.259
+   ],
+   "analyzed": false
+  },
+  {
+   "ad_id": "120245867702310167",
+   "name": "generic \u2013 na \u2013 product",
+   "bucket": "Testing",
+   "spend": 26.14,
+   "installs": 0,
+   "cpi": null,
+   "EI": null,
+   "SI": 0.25,
+   "SP2": null,
+   "sp2_phase": "No installs yet",
+   "sp": 0.526,
+   "phase": "Pause",
+   "ltv_cac": 3.185,
+   "ltv_cac_ci": [
+    0.0,
+    10.264
+   ],
+   "analyzed": false
+  },
+  {
+   "ad_id": "120245867742990167",
+   "name": "generic \u2013 na \u2013 painpoint",
+   "bucket": "Testing",
+   "spend": 387.25,
+   "installs": 3,
+   "cpi": 129.08,
+   "EI": 0.119,
+   "SI": 4.0,
+   "SP2": 0.475,
+   "sp2_phase": "Pause",
+   "sp": 1.902,
+   "phase": "Mid-Tier",
+   "ltv_cac": 0.55,
+   "ltv_cac_ci": [
+    0.0,
+    1.496
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120245904196600167",
+   "name": "generic \u2013 na \u2013 valueprop",
+   "bucket": "Testing",
+   "spend": 3.16,
+   "installs": 0,
+   "cpi": null,
+   "EI": null,
+   "SI": 0.25,
+   "SP2": null,
+   "sp2_phase": "No installs yet",
+   "sp": 0.742,
+   "phase": "Pause",
+   "ltv_cac": 0.0,
+   "ltv_cac_ci": [
+    0.0,
+    0.0
+   ],
+   "analyzed": false
+  },
+  {
+   "ad_id": "120245904237110167",
+   "name": "c1_ugc_c2_video_c3_ugc_c4_productdemo_c5_ongoing_c6_rhea_c7_speakmethod_c8_newyo",
+   "bucket": "Testing",
+   "spend": 67.53,
+   "installs": 0,
+   "cpi": null,
+   "EI": null,
+   "SI": 0.833,
+   "SP2": null,
+   "sp2_phase": "No installs yet",
+   "sp": 0.541,
+   "phase": "Pause",
+   "ltv_cac": 1.41,
+   "ltv_cac_ci": [
+    0.0,
+    5.159
+   ],
+   "analyzed": false
+  },
+  {
+   "ad_id": "120246000716790167",
+   "name": "influencer \u2013 shasha77 \u2013 valueprop",
+   "bucket": "Scaling",
+   "spend": 65.82,
+   "installs": 3,
+   "cpi": 21.94,
+   "EI": 0.698,
+   "SI": 1.368,
+   "SP2": 0.955,
+   "sp2_phase": "Pause",
+   "sp": 1.207,
+   "phase": "Pause",
+   "ltv_cac": 0.0,
+   "ltv_cac_ci": [
+    0.0,
+    2.825
+   ],
+   "analyzed": false
+  },
+  {
+   "ad_id": "120246000716800167",
+   "name": "influencer \u2013 atiendai \u2013 valueprop",
+   "bucket": "Scaling",
+   "spend": 95.2,
+   "installs": 9,
+   "cpi": 10.58,
+   "EI": 1.448,
+   "SI": 1.979,
+   "SP2": 2.866,
+   "sp2_phase": "Scalable winner",
+   "sp": 1.379,
+   "phase": "Pause",
+   "ltv_cac": 0.886,
+   "ltv_cac_ci": [
+    0.0,
+    2.854
+   ],
+   "analyzed": false
+  },
+  {
+   "ad_id": "120246000716810167",
+   "name": "influencer \u2013 howhowhasfriends \u2013 valueprop",
+   "bucket": "Scaling",
+   "spend": 15.19,
+   "installs": 0,
+   "cpi": null,
+   "EI": null,
+   "SI": 0.632,
+   "SP2": null,
+   "sp2_phase": "No installs yet",
+   "sp": 0.724,
+   "phase": "Pause",
+   "ltv_cac": 0.0,
+   "ltv_cac_ci": [
+    0.0,
+    0.0
+   ],
+   "analyzed": false
+  },
+  {
+   "ad_id": "120246000716820167",
+   "name": "ugc \u2013 qing \u2013 englishintrovert",
+   "bucket": "Scaling",
+   "spend": 1577.43,
+   "installs": 98,
+   "cpi": 16.1,
+   "EI": 0.952,
+   "SI": 4.0,
+   "SP2": 3.807,
+   "sp2_phase": "Watch",
+   "sp": 0.733,
+   "phase": "Pause",
+   "ltv_cac": 0.118,
+   "ltv_cac_ci": [
+    0.0,
+    0.323
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120246000716910167",
+   "name": "influencer \u2013 illyandlean \u2013 valueprop",
+   "bucket": "Scaling",
+   "spend": 118.89,
+   "installs": 8,
+   "cpi": 14.86,
+   "EI": 1.031,
+   "SI": 2.472,
+   "SP2": 2.548,
+   "sp2_phase": "Scalable winner",
+   "sp": 0.906,
+   "phase": "Pause",
+   "ltv_cac": 0.0,
+   "ltv_cac_ci": [
+    0.0,
+    0.0
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120246001466140167",
+   "name": "influencer \u2013 shasha77 \u2013 valueprop",
+   "bucket": "Scaling",
+   "spend": 22.95,
+   "installs": 0,
+   "cpi": null,
+   "EI": null,
+   "SI": 0.477,
+   "SP2": null,
+   "sp2_phase": "No installs yet",
+   "sp": 0.743,
+   "phase": "Pause",
+   "ltv_cac": 0.0,
+   "ltv_cac_ci": [
+    0.0,
+    0.0
+   ],
+   "analyzed": false
+  },
+  {
+   "ad_id": "120246001466150167",
+   "name": "influencer \u2013 howhowhasfriends \u2013 valueprop",
+   "bucket": "Scaling",
+   "spend": 10.47,
+   "installs": 0,
+   "cpi": null,
+   "EI": null,
+   "SI": 0.435,
+   "SP2": null,
+   "sp2_phase": "No installs yet",
+   "sp": 0.557,
+   "phase": "Pause",
+   "ltv_cac": 0.0,
+   "ltv_cac_ci": [
+    0.0,
+    0.0
+   ],
+   "analyzed": false
+  },
+  {
+   "ad_id": "120246001466160167",
+   "name": "influencer \u2013 illyandlean \u2013 valueprop",
+   "bucket": "Scaling",
+   "spend": 14.22,
+   "installs": 0,
+   "cpi": null,
+   "EI": null,
+   "SI": 0.296,
+   "SP2": null,
+   "sp2_phase": "No installs yet",
+   "sp": 0.716,
+   "phase": "Pause",
+   "ltv_cac": 6.001,
+   "ltv_cac_ci": [
+    0.0,
+    20.818
+   ],
+   "analyzed": false
+  },
+  {
+   "ad_id": "120246001466170167",
+   "name": "ugc \u2013 qing \u2013 englishintrovert",
+   "bucket": "Scaling",
+   "spend": 197.22,
+   "installs": 7,
+   "cpi": 28.17,
+   "EI": 0.544,
+   "SI": 4.0,
+   "SP2": 2.175,
+   "sp2_phase": "Pause",
+   "sp": 0.658,
+   "phase": "Pause",
+   "ltv_cac": 0.424,
+   "ltv_cac_ci": [
+    0.0,
+    1.382
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120246001466180167",
+   "name": "influencer \u2013 atiendai \u2013 valueprop",
+   "bucket": "Scaling",
+   "spend": 13.02,
+   "installs": 1,
+   "cpi": 13.02,
+   "EI": 1.177,
+   "SI": 0.271,
+   "SP2": 0.318,
+   "sp2_phase": "Efficient, unproven scale",
+   "sp": 0.8,
+   "phase": "Pause",
+   "ltv_cac": 0.0,
+   "ltv_cac_ci": [
+    0.0,
+    0.0
+   ],
+   "analyzed": false
+  },
+  {
+   "ad_id": "120246005436870167",
+   "name": "generic \u2013 na \u2013 outcome",
+   "bucket": "Testing",
+   "spend": 0.01,
+   "installs": 0,
+   "cpi": null,
+   "EI": null,
+   "SI": 0.25,
+   "SP2": null,
+   "sp2_phase": "No installs yet",
+   "sp": 0.0,
+   "phase": "Pause",
+   "ltv_cac": 0.0,
+   "ltv_cac_ci": [
+    0.0,
+    0.0
+   ],
+   "analyzed": false
+  },
+  {
+   "ad_id": "120246005441450167",
+   "name": "generic \u2013 na \u2013 outcome",
+   "bucket": "Testing",
+   "spend": 214.55,
+   "installs": 5,
+   "cpi": 42.91,
+   "EI": 0.357,
+   "SI": 2.646,
+   "SP2": 0.945,
+   "sp2_phase": "Pause",
+   "sp": 0.297,
+   "phase": "Pause",
+   "ltv_cac": 0.396,
+   "ltv_cac_ci": [
+    0.0,
+    1.271
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120246005442010167",
+   "name": "generic \u2013 na \u2013 outcome",
+   "bucket": "Testing",
+   "spend": 302.26,
+   "installs": 5,
+   "cpi": 60.45,
+   "EI": 0.253,
+   "SI": 3.728,
+   "SP2": 0.945,
+   "sp2_phase": "Pause",
+   "sp": 1.217,
+   "phase": "Pause",
+   "ltv_cac": 0.245,
+   "ltv_cac_ci": [
+    0.0,
+    0.873
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120246005443330167",
+   "name": "generic \u2013 na \u2013 valueprop",
+   "bucket": "Testing",
+   "spend": 0.21,
+   "installs": 0,
+   "cpi": null,
+   "EI": null,
+   "SI": 0.25,
+   "SP2": null,
+   "sp2_phase": "No installs yet",
+   "sp": 0.0,
+   "phase": "Pause",
+   "ltv_cac": 0.0,
+   "ltv_cac_ci": [
+    0.0,
+    0.0
+   ],
+   "analyzed": false
+  },
+  {
+   "ad_id": "120246191401160167",
+   "name": "influencer \u2013 harryspeaks",
+   "bucket": "Winning",
+   "spend": 1708.72,
+   "installs": 110,
+   "cpi": 15.53,
+   "EI": 0.986,
+   "SI": 1.02,
+   "SP2": 1.006,
+   "sp2_phase": "Watch",
+   "sp": 2.332,
+   "phase": "Phase 1 Winner",
+   "ltv_cac": 0.651,
+   "ltv_cac_ci": [
+    0.288,
+    1.15
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120246191491930167",
+   "name": "influencer \u2013  \u2013 valueprop",
+   "bucket": "Winning",
+   "spend": 323.26,
+   "installs": 21,
+   "cpi": 15.39,
+   "EI": 0.995,
+   "SI": 0.656,
+   "SP2": 0.653,
+   "sp2_phase": "Watch",
+   "sp": 2.046,
+   "phase": "Phase 1 Winner",
+   "ltv_cac": 0.273,
+   "ltv_cac_ci": [
+    0.0,
+    1.042
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120246191491940167",
+   "name": "influencer \u2013 tantooyu \u2013 valueprop",
+   "bucket": "Winning",
+   "spend": 18.13,
+   "installs": 0,
+   "cpi": null,
+   "EI": null,
+   "SI": 0.25,
+   "SP2": null,
+   "sp2_phase": "No installs yet",
+   "sp": 2.103,
+   "phase": "Pause",
+   "ltv_cac": 0.0,
+   "ltv_cac_ci": [
+    0.0,
+    0.0
+   ],
+   "analyzed": false
+  },
+  {
+   "ad_id": "120246191491950167",
+   "name": "c1_ugc_c2_video_c3_ugc_c4_problemsolution_c5_ongoing_c6_ai-gen_c7_painpoint_c8_t",
+   "bucket": "Winning",
+   "spend": 3545.91,
+   "installs": 180,
+   "cpi": 19.7,
+   "EI": 0.778,
+   "SI": 0.877,
+   "SP2": 0.682,
+   "sp2_phase": "Pause",
+   "sp": 2.628,
+   "phase": "Phase 1 Winner",
+   "ltv_cac": 1.122,
+   "ltv_cac_ci": [
+    0.717,
+    1.641
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120246280866310167",
+   "name": "generic \u2013 na \u2013 painpoint",
+   "bucket": "Testing",
+   "spend": 187.93,
+   "installs": 2,
+   "cpi": 93.97,
+   "EI": 0.163,
+   "SI": 0.25,
+   "SP2": 0.041,
+   "sp2_phase": "Pause",
+   "sp": 0.514,
+   "phase": "Pause",
+   "ltv_cac": 0.0,
+   "ltv_cac_ci": [
+    0.0,
+    0.977
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120246280866870167",
+   "name": "generic \u2013 na \u2013 valueprop",
+   "bucket": "Testing",
+   "spend": 167.95,
+   "installs": 1,
+   "cpi": 167.95,
+   "EI": 0.091,
+   "SI": 0.25,
+   "SP2": 0.023,
+   "sp2_phase": "Pause",
+   "sp": 1.023,
+   "phase": "Pause",
+   "ltv_cac": 0.509,
+   "ltv_cac_ci": [
+    0.0,
+    1.791
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120246280870660167",
+   "name": "generic \u2013 na \u2013 testimonial",
+   "bucket": "Testing",
+   "spend": 155.13,
+   "installs": 3,
+   "cpi": 51.71,
+   "EI": 0.296,
+   "SI": 1.913,
+   "SP2": 0.567,
+   "sp2_phase": "Pause",
+   "sp": 2.01,
+   "phase": "Pause",
+   "ltv_cac": 0.454,
+   "ltv_cac_ci": [
+    0.0,
+    1.645
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120246280872770167",
+   "name": "generic \u2013 na \u2013 testimonial",
+   "bucket": "Testing",
+   "spend": 165.3,
+   "installs": 4,
+   "cpi": 41.33,
+   "EI": 0.371,
+   "SI": 0.453,
+   "SP2": 0.168,
+   "sp2_phase": "Pause",
+   "sp": 2.451,
+   "phase": "Pause",
+   "ltv_cac": 0.513,
+   "ltv_cac_ci": [
+    0.0,
+    1.656
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120246280873500167",
+   "name": "generic \u2013 na \u2013 product",
+   "bucket": "Testing",
+   "spend": 163.33,
+   "installs": 2,
+   "cpi": 81.66,
+   "EI": 0.188,
+   "SI": 0.25,
+   "SP2": 0.047,
+   "sp2_phase": "Pause",
+   "sp": 2.984,
+   "phase": "Pause",
+   "ltv_cac": 1.381,
+   "ltv_cac_ci": [
+    0.0,
+    3.681
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120246280884370167",
+   "name": "generic \u2013 na \u2013 testimonial",
+   "bucket": "Testing",
+   "spend": 508.74,
+   "installs": 30,
+   "cpi": 16.96,
+   "EI": 0.903,
+   "SI": 0.837,
+   "SP2": 0.756,
+   "sp2_phase": "Watch",
+   "sp": 3.76,
+   "phase": "Phase 1 Winner",
+   "ltv_cac": 0.682,
+   "ltv_cac_ci": [
+    0.072,
+    1.626
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120246280887120167",
+   "name": "generic \u2013 na \u2013 speakmethod",
+   "bucket": "Testing",
+   "spend": 163.43,
+   "installs": 8,
+   "cpi": 20.43,
+   "EI": 0.75,
+   "SI": 0.448,
+   "SP2": 0.336,
+   "sp2_phase": "Pause",
+   "sp": 6.078,
+   "phase": "Pause",
+   "ltv_cac": 0.509,
+   "ltv_cac_ci": [
+    0.0,
+    1.657
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120246280893240167",
+   "name": "generic \u2013 na",
+   "bucket": "Testing",
+   "spend": 1901.59,
+   "installs": 66,
+   "cpi": 28.81,
+   "EI": 0.532,
+   "SI": 4.0,
+   "SP2": 2.127,
+   "sp2_phase": "Pause",
+   "sp": 2.094,
+   "phase": "Phase 1 Winner",
+   "ltv_cac": 0.713,
+   "ltv_cac_ci": [
+    0.332,
+    1.237
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120246280900700167",
+   "name": "generic \u2013 na",
+   "bucket": "Testing",
+   "spend": 159.09,
+   "installs": 2,
+   "cpi": 79.55,
+   "EI": 0.193,
+   "SI": 0.25,
+   "SP2": 0.048,
+   "sp2_phase": "Pause",
+   "sp": 0.626,
+   "phase": "Pause",
+   "ltv_cac": 0.0,
+   "ltv_cac_ci": [
+    0.0,
+    0.0
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120246280902840167",
+   "name": "generic \u2013 na \u2013 speakmethod",
+   "bucket": "Testing",
+   "spend": 181.98,
+   "installs": 7,
+   "cpi": 26.0,
+   "EI": 0.589,
+   "SI": 0.25,
+   "SP2": 0.147,
+   "sp2_phase": "Pause",
+   "sp": 0.932,
+   "phase": "Pause",
+   "ltv_cac": 0.543,
+   "ltv_cac_ci": [
+    0.0,
+    2.204
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120246280903630167",
+   "name": "generic \u2013 na \u2013 speakmethod",
+   "bucket": "Testing",
+   "spend": 76.37,
+   "installs": 1,
+   "cpi": 76.37,
+   "EI": 0.201,
+   "SI": 0.25,
+   "SP2": 0.05,
+   "sp2_phase": "Pause",
+   "sp": 0.636,
+   "phase": "Pause",
+   "ltv_cac": 1.121,
+   "ltv_cac_ci": [
+    0.0,
+    3.913
+   ],
+   "analyzed": false
+  },
+  {
+   "ad_id": "120246282571790167",
+   "name": "ugc \u2013 hua \u2013 usertestimonials",
+   "bucket": "Testing",
+   "spend": 162.42,
+   "installs": 2,
+   "cpi": 81.21,
+   "EI": 0.189,
+   "SI": 0.25,
+   "SP2": 0.047,
+   "sp2_phase": "Pause",
+   "sp": 1.653,
+   "phase": "Mid-Tier",
+   "ltv_cac": 1.213,
+   "ltv_cac_ci": [
+    0.0,
+    3.364
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120246282589460167",
+   "name": "ugc \u2013 hua \u2013 usertestimonials",
+   "bucket": "Testing",
+   "spend": 128.42,
+   "installs": 13,
+   "cpi": 9.88,
+   "EI": 1.551,
+   "SI": 0.25,
+   "SP2": 0.388,
+   "sp2_phase": "Efficient, unproven scale",
+   "sp": 3.968,
+   "phase": "Phase 1 Winner",
+   "ltv_cac": 0.748,
+   "ltv_cac_ci": [
+    0.0,
+    2.922
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120246282591040167",
+   "name": "ugc \u2013 hua \u2013 usertestimonials",
+   "bucket": "Testing",
+   "spend": 531.85,
+   "installs": 41,
+   "cpi": 12.97,
+   "EI": 1.181,
+   "SI": 1.312,
+   "SP2": 1.549,
+   "sp2_phase": "Efficient, unproven scale",
+   "sp": 4.697,
+   "phase": "Phase 2 Winner",
+   "ltv_cac": 0.793,
+   "ltv_cac_ci": [
+    0.178,
+    1.665
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120246331786010167",
+   "name": "ugc \u2013 swm-sophia \u2013 usertestimonials",
+   "bucket": "Testing",
+   "spend": 265.7,
+   "installs": 3,
+   "cpi": 88.57,
+   "EI": 0.173,
+   "SI": 3.277,
+   "SP2": 0.567,
+   "sp2_phase": "Pause",
+   "sp": 2.213,
+   "phase": "Pause",
+   "ltv_cac": 0.319,
+   "ltv_cac_ci": [
+    0.0,
+    1.037
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120246363710740167",
+   "name": "s14cb \u2013 1x1 \u2013 tw",
+   "bucket": "Scaling",
+   "spend": 1277.35,
+   "installs": 43,
+   "cpi": 29.71,
+   "EI": 0.516,
+   "SI": 0.89,
+   "SP2": 0.459,
+   "sp2_phase": "Pause",
+   "sp": 1.82,
+   "phase": "Mid-Tier",
+   "ltv_cac": 0.415,
+   "ltv_cac_ci": [
+    0.119,
+    0.862
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120246363710870167",
+   "name": "c1_ugc_c2_video_c3_ugc_c4_problemsolution_c5_ongoing_c6_ai-gen_c7_painpoint_c8_t",
+   "bucket": "Scaling",
+   "spend": 3212.89,
+   "installs": 115,
+   "cpi": 27.94,
+   "EI": 0.548,
+   "SI": 0.8,
+   "SP2": 0.439,
+   "sp2_phase": "Pause",
+   "sp": 3.022,
+   "phase": "Phase 1 Winner",
+   "ltv_cac": 0.638,
+   "ltv_cac_ci": [
+    0.364,
+    0.998
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120246363710880167",
+   "name": "influencer \u2013 harryspeaks",
+   "bucket": "Scaling",
+   "spend": 4565.38,
+   "installs": 165,
+   "cpi": 27.67,
+   "EI": 0.554,
+   "SI": 0.692,
+   "SP2": 0.383,
+   "sp2_phase": "Pause",
+   "sp": 1.905,
+   "phase": "Mid-Tier",
+   "ltv_cac": 0.625,
+   "ltv_cac_ci": [
+    0.375,
+    0.952
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120246363710890167",
+   "name": "influencer \u2013  \u2013 valueprop",
+   "bucket": "Scaling",
+   "spend": 850.4,
+   "installs": 21,
+   "cpi": 40.5,
+   "EI": 0.378,
+   "SI": 0.593,
+   "SP2": 0.224,
+   "sp2_phase": "Pause",
+   "sp": 1.755,
+   "phase": "Mid-Tier",
+   "ltv_cac": 0.431,
+   "ltv_cac_ci": [
+    0.102,
+    0.954
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120246363710910167",
+   "name": "ugc \u2013 qing \u2013 englishintrovert",
+   "bucket": "Scaling",
+   "spend": 432.24,
+   "installs": 12,
+   "cpi": 36.02,
+   "EI": 0.425,
+   "SI": 0.301,
+   "SP2": 0.128,
+   "sp2_phase": "Pause",
+   "sp": 1.82,
+   "phase": "Mid-Tier",
+   "ltv_cac": 0.0,
+   "ltv_cac_ci": [
+    0.0,
+    0.434
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120246363710920167",
+   "name": "motion \u2013 na \u2013 motiontestimonial",
+   "bucket": "Scaling",
+   "spend": 368.13,
+   "installs": 4,
+   "cpi": 92.03,
+   "EI": 0.166,
+   "SI": 0.257,
+   "SP2": 0.043,
+   "sp2_phase": "Pause",
+   "sp": 1.077,
+   "phase": "Pause",
+   "ltv_cac": 0.228,
+   "ltv_cac_ci": [
+    0.0,
+    0.743
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120246363710970167",
+   "name": "ugc \u2013 jenna \u2013 howtoimprove",
+   "bucket": "Scaling",
+   "spend": 391.17,
+   "installs": 13,
+   "cpi": 30.09,
+   "EI": 0.509,
+   "SI": 0.273,
+   "SP2": 0.139,
+   "sp2_phase": "Pause",
+   "sp": 0.806,
+   "phase": "Pause",
+   "ltv_cac": 0.217,
+   "ltv_cac_ci": [
+    0.0,
+    0.697
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120246363710980167",
+   "name": "ugc \u2013 hua \u2013 dailyenlearning",
+   "bucket": "Scaling",
+   "spend": 2689.71,
+   "installs": 57,
+   "cpi": 47.19,
+   "EI": 0.325,
+   "SI": 1.172,
+   "SP2": 0.38,
+   "sp2_phase": "Pause",
+   "sp": 1.905,
+   "phase": "Mid-Tier",
+   "ltv_cac": 0.438,
+   "ltv_cac_ci": [
+    0.202,
+    0.76
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120246363710990167",
+   "name": "ugc \u2013  \u2013 outcome",
+   "bucket": "Scaling",
+   "spend": 16169.74,
+   "installs": 965,
+   "cpi": 16.76,
+   "EI": 0.914,
+   "SI": 1.15,
+   "SP2": 1.051,
+   "sp2_phase": "Watch",
+   "sp": 3.286,
+   "phase": "Phase 1 Winner",
+   "ltv_cac": 0.781,
+   "ltv_cac_ci": [
+    0.556,
+    1.063
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120246363711040167",
+   "name": "generic \u2013 na \u2013 threadspost",
+   "bucket": "Scaling",
+   "spend": 7272.39,
+   "installs": 183,
+   "cpi": 39.74,
+   "EI": 0.385,
+   "SI": 0.634,
+   "SP2": 0.244,
+   "sp2_phase": "Pause",
+   "sp": 1.861,
+   "phase": "Mid-Tier",
+   "ltv_cac": 0.777,
+   "ltv_cac_ci": [
+    0.502,
+    1.126
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120246363711050167",
+   "name": "generic \u2013 na \u2013 26campaigniteration",
+   "bucket": "Scaling",
+   "spend": 1466.57,
+   "installs": 19,
+   "cpi": 77.19,
+   "EI": 0.198,
+   "SI": 0.639,
+   "SP2": 0.127,
+   "sp2_phase": "Pause",
+   "sp": 0.855,
+   "phase": "Pause",
+   "ltv_cac": 0.414,
+   "ltv_cac_ci": [
+    0.129,
+    0.806
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120246438347130167",
+   "name": "ugc \u2013 swm-sophia \u2013 usertestimonials",
+   "bucket": "Testing",
+   "spend": 400.28,
+   "installs": 6,
+   "cpi": 66.71,
+   "EI": 0.23,
+   "SI": 3.291,
+   "SP2": 0.756,
+   "sp2_phase": "Pause",
+   "sp": 1.535,
+   "phase": "Mid-Tier",
+   "ltv_cac": 0.532,
+   "ltv_cac_ci": [
+    0.0,
+    1.431
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120246694232680167",
+   "name": "influencer \u2013 tantooyu \u2013 valueprop",
+   "bucket": "Winning",
+   "spend": 2.36,
+   "installs": 0,
+   "cpi": null,
+   "EI": null,
+   "SI": 0.25,
+   "SP2": null,
+   "sp2_phase": "No installs yet",
+   "sp": 2.279,
+   "phase": "Pause",
+   "ltv_cac": 0.0,
+   "ltv_cac_ci": [
+    0.0,
+    0.0
+   ],
+   "analyzed": false
+  },
+  {
+   "ad_id": "120246694232840167",
+   "name": "ugc \u2013  \u2013 outcome",
+   "bucket": "Winning",
+   "spend": 890.13,
+   "installs": 47,
+   "cpi": 18.94,
+   "EI": 0.809,
+   "SI": 4.0,
+   "SP2": 3.235,
+   "sp2_phase": "Watch",
+   "sp": 3.219,
+   "phase": "Phase 1 Winner",
+   "ltv_cac": 1.008,
+   "ltv_cac_ci": [
+    0.414,
+    1.832
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120246694233280167",
+   "name": "ugc \u2013 qing \u2013 englishintrovert",
+   "bucket": "Winning",
+   "spend": 73.8,
+   "installs": 0,
+   "cpi": null,
+   "EI": null,
+   "SI": 0.767,
+   "SP2": null,
+   "sp2_phase": "No installs yet",
+   "sp": 0.924,
+   "phase": "Pause",
+   "ltv_cac": 0.0,
+   "ltv_cac_ci": [
+    0.0,
+    0.0
+   ],
+   "analyzed": false
+  },
+  {
+   "ad_id": "120246694233300167",
+   "name": "influencer \u2013 harryspeaks",
+   "bucket": "Winning",
+   "spend": 58.0,
+   "installs": 1,
+   "cpi": 58.0,
+   "EI": 0.264,
+   "SI": 0.754,
+   "SP2": 0.199,
+   "sp2_phase": "Pause",
+   "sp": 2.105,
+   "phase": "Pause",
+   "ltv_cac": 0.0,
+   "ltv_cac_ci": [
+    0.0,
+    0.0
+   ],
+   "analyzed": false
+  },
+  {
+   "ad_id": "120246694233510167",
+   "name": "influencer \u2013  \u2013 valueprop",
+   "bucket": "Winning",
+   "spend": 84.17,
+   "installs": 0,
+   "cpi": null,
+   "EI": null,
+   "SI": 1.094,
+   "SP2": null,
+   "sp2_phase": "No installs yet",
+   "sp": 1.61,
+   "phase": "Mid-Tier",
+   "ltv_cac": 0.0,
+   "ltv_cac_ci": [
+    0.0,
+    0.0
+   ],
+   "analyzed": false
+  },
+  {
+   "ad_id": "120246694233530167",
+   "name": "c1_ugc_c2_video_c3_ugc_c4_problemsolution_c5_ongoing_c6_ai-gen_c7_painpoint_c8_t",
+   "bucket": "Winning",
+   "spend": 132.63,
+   "installs": 7,
+   "cpi": 18.95,
+   "EI": 0.809,
+   "SI": 0.862,
+   "SP2": 0.697,
+   "sp2_phase": "Watch",
+   "sp": 4.449,
+   "phase": "Pause",
+   "ltv_cac": 0.0,
+   "ltv_cac_ci": [
+    0.0,
+    1.398
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120246694233580167",
+   "name": "motion \u2013 na \u2013 motiontestimonial",
+   "bucket": "Winning",
+   "spend": 57.71,
+   "installs": 0,
+   "cpi": null,
+   "EI": null,
+   "SI": 1.0,
+   "SP2": null,
+   "sp2_phase": "No installs yet",
+   "sp": 1.427,
+   "phase": "Mid-Tier",
+   "ltv_cac": 1.455,
+   "ltv_cac_ci": [
+    0.0,
+    4.711
+   ],
+   "analyzed": false
+  },
+  {
+   "ad_id": "120246694266000167",
+   "name": "influencer \u2013 morning.jason \u2013 influencer",
+   "bucket": "Winning",
+   "spend": 754.48,
+   "installs": 50,
+   "cpi": 15.09,
+   "EI": 1.015,
+   "SI": 4.0,
+   "SP2": 4.061,
+   "sp2_phase": "Scalable winner",
+   "sp": 2.155,
+   "phase": "Phase 1 Winner",
+   "ltv_cac": 0.621,
+   "ltv_cac_ci": [
+    0.133,
+    1.275
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120246694266050167",
+   "name": "influencer \u2013 techervincent \u2013 valueprop",
+   "bucket": "Winning",
+   "spend": 350.04,
+   "installs": 7,
+   "cpi": 50.01,
+   "EI": 0.306,
+   "SI": 2.275,
+   "SP2": 0.697,
+   "sp2_phase": "Pause",
+   "sp": 1.815,
+   "phase": "Mid-Tier",
+   "ltv_cac": 0.454,
+   "ltv_cac_ci": [
+    0.0,
+    1.299
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120246912412500167",
+   "name": "ugc \u2013 hua \u2013 usertestimonials",
+   "bucket": "Winning",
+   "spend": 3322.46,
+   "installs": 146,
+   "cpi": 22.76,
+   "EI": 0.673,
+   "SI": 4.0,
+   "SP2": 2.693,
+   "sp2_phase": "Pause",
+   "sp": 1.77,
+   "phase": "Mid-Tier",
+   "ltv_cac": 0.501,
+   "ltv_cac_ci": [
+    0.258,
+    0.819
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120246913718270167",
+   "name": "generic \u2013 na",
+   "bucket": "Winning",
+   "spend": 3268.76,
+   "installs": 111,
+   "cpi": 29.45,
+   "EI": 0.52,
+   "SI": 4.0,
+   "SP2": 2.081,
+   "sp2_phase": "Pause",
+   "sp": 1.769,
+   "phase": "Mid-Tier",
+   "ltv_cac": 0.651,
+   "ltv_cac_ci": [
+    0.351,
+    1.052
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120246913787420167",
+   "name": "generic \u2013 na \u2013 testimonial",
+   "bucket": "Winning",
+   "spend": 14650.28,
+   "installs": 856,
+   "cpi": 17.11,
+   "EI": 0.895,
+   "SI": 3.097,
+   "SP2": 2.772,
+   "sp2_phase": "Watch",
+   "sp": 2.486,
+   "phase": "Phase 1 Winner",
+   "ltv_cac": 0.933,
+   "ltv_cac_ci": [
+    0.664,
+    1.272
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120246981244000167",
+   "name": "ugc \u2013 hua \u2013 usertestimonials",
+   "bucket": "Winning",
+   "spend": 8664.49,
+   "installs": 557,
+   "cpi": 15.56,
+   "EI": 0.985,
+   "SI": 2.408,
+   "SP2": 2.372,
+   "sp2_phase": "Watch",
+   "sp": 3.889,
+   "phase": "Phase 1 Winner",
+   "ltv_cac": 0.789,
+   "ltv_cac_ci": [
+    0.518,
+    1.13
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120246997845950167",
+   "name": "generic \u2013 na \u2013 outcome",
+   "bucket": "Testing",
+   "spend": 51.15,
+   "installs": 0,
+   "cpi": null,
+   "EI": null,
+   "SI": 0.25,
+   "SP2": null,
+   "sp2_phase": "No installs yet",
+   "sp": 0.57,
+   "phase": "Pause",
+   "ltv_cac": 0.0,
+   "ltv_cac_ci": [
+    0.0,
+    0.0
+   ],
+   "analyzed": false
+  },
+  {
+   "ad_id": "120246997845970167",
+   "name": "generic \u2013 na \u2013 painpoint",
+   "bucket": "Testing",
+   "spend": 55.85,
+   "installs": 0,
+   "cpi": null,
+   "EI": null,
+   "SI": 0.25,
+   "SP2": null,
+   "sp2_phase": "No installs yet",
+   "sp": 0.572,
+   "phase": "Pause",
+   "ltv_cac": 0.0,
+   "ltv_cac_ci": [
+    0.0,
+    3.287
+   ],
+   "analyzed": false
+  },
+  {
+   "ad_id": "120246997847200167",
+   "name": "generic \u2013 na \u2013 painpoint",
+   "bucket": "Testing",
+   "spend": 55.11,
+   "installs": 1,
+   "cpi": 55.11,
+   "EI": 0.278,
+   "SI": 0.25,
+   "SP2": 0.069,
+   "sp2_phase": "Pause",
+   "sp": 5.528,
+   "phase": "Pause",
+   "ltv_cac": 0.0,
+   "ltv_cac_ci": [
+    0.0,
+    3.414
+   ],
+   "analyzed": false
+  },
+  {
+   "ad_id": "120246997861740167",
+   "name": "influencer \u2013 havefunytchannel \u2013 speakmethod",
+   "bucket": "Testing",
+   "spend": 1392.9,
+   "installs": 73,
+   "cpi": 19.08,
+   "EI": 0.803,
+   "SI": 4.0,
+   "SP2": 3.211,
+   "sp2_phase": "Watch",
+   "sp": 2.527,
+   "phase": "Phase 1 Winner",
+   "ltv_cac": 0.588,
+   "ltv_cac_ci": [
+    0.239,
+    1.076
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120246997862210167",
+   "name": "influencer \u2013 havefunytchannel \u2013 speakmethod",
+   "bucket": "Testing",
+   "spend": 158.22,
+   "installs": 0,
+   "cpi": null,
+   "EI": null,
+   "SI": 0.3,
+   "SP2": null,
+   "sp2_phase": "No installs yet",
+   "sp": 0.703,
+   "phase": "Pause",
+   "ltv_cac": 0.0,
+   "ltv_cac_ci": [
+    0.0,
+    0.0
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120246997871260167",
+   "name": "influencer \u2013 havefunytchannel \u2013 speakmethod",
+   "bucket": "Testing",
+   "spend": 203.92,
+   "installs": 4,
+   "cpi": 50.98,
+   "EI": 0.3,
+   "SI": 2.515,
+   "SP2": 0.756,
+   "sp2_phase": "Pause",
+   "sp": 0.583,
+   "phase": "Pause",
+   "ltv_cac": 0.418,
+   "ltv_cac_ci": [
+    0.0,
+    1.32
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120247011565580167",
+   "name": "generic \u2013 na \u2013 valueprop",
+   "bucket": "Testing",
+   "spend": 31.9,
+   "installs": 0,
+   "cpi": null,
+   "EI": null,
+   "SI": 0.25,
+   "SP2": null,
+   "sp2_phase": "No installs yet",
+   "sp": 0.534,
+   "phase": "Pause",
+   "ltv_cac": 0.0,
+   "ltv_cac_ci": [
+    0.0,
+    0.0
+   ],
+   "analyzed": false
+  },
+  {
+   "ad_id": "120247011565610167",
+   "name": "generic \u2013 na \u2013 valueprop",
+   "bucket": "Testing",
+   "spend": 26.14,
+   "installs": 0,
+   "cpi": null,
+   "EI": null,
+   "SI": 0.25,
+   "SP2": null,
+   "sp2_phase": "No installs yet",
+   "sp": 0.43,
+   "phase": "Pause",
+   "ltv_cac": 0.0,
+   "ltv_cac_ci": [
+    0.0,
+    0.0
+   ],
+   "analyzed": false
+  },
+  {
+   "ad_id": "120247011566490167",
+   "name": "generic \u2013 na \u2013 valueprop",
+   "bucket": "Testing",
+   "spend": 47.8,
+   "installs": 2,
+   "cpi": 23.9,
+   "EI": 0.641,
+   "SI": 0.25,
+   "SP2": 0.16,
+   "sp2_phase": "Pause",
+   "sp": 0.562,
+   "phase": "Pause",
+   "ltv_cac": 0.0,
+   "ltv_cac_ci": [
+    0.0,
+    0.0
+   ],
+   "analyzed": false
+  },
+  {
+   "ad_id": "120247011569420167",
+   "name": "generic \u2013 na \u2013 valueprop",
+   "bucket": "Testing",
+   "spend": 157.86,
+   "installs": 1,
+   "cpi": 157.86,
+   "EI": 0.097,
+   "SI": 0.26,
+   "SP2": 0.025,
+   "sp2_phase": "Pause",
+   "sp": 1.516,
+   "phase": "Mid-Tier",
+   "ltv_cac": 0.534,
+   "ltv_cac_ci": [
+    0.0,
+    1.725
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120247011578560167",
+   "name": "ugc \u2013 ai-gen \u2013 outcome",
+   "bucket": "Testing",
+   "spend": 165.35,
+   "installs": 4,
+   "cpi": 41.34,
+   "EI": 0.371,
+   "SI": 0.314,
+   "SP2": 0.116,
+   "sp2_phase": "Pause",
+   "sp": 1.165,
+   "phase": "Pause",
+   "ltv_cac": 0.0,
+   "ltv_cac_ci": [
+    0.0,
+    1.132
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120247011579390167",
+   "name": "ugc \u2013 ai-gen \u2013 outcome",
+   "bucket": "Testing",
+   "spend": 151.8,
+   "installs": 2,
+   "cpi": 75.9,
+   "EI": 0.202,
+   "SI": 0.288,
+   "SP2": 0.058,
+   "sp2_phase": "Pause",
+   "sp": 0.841,
+   "phase": "Pause",
+   "ltv_cac": 0.0,
+   "ltv_cac_ci": [
+    0.0,
+    1.297
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120247011580490167",
+   "name": "ugc \u2013 ai-gen \u2013 outcome",
+   "bucket": "Testing",
+   "spend": 717.0,
+   "installs": 37,
+   "cpi": 19.38,
+   "EI": 0.791,
+   "SI": 1.361,
+   "SP2": 1.076,
+   "sp2_phase": "Pause",
+   "sp": 3.308,
+   "phase": "Phase 1 Winner",
+   "ltv_cac": 0.847,
+   "ltv_cac_ci": [
+    0.263,
+    1.663
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120247187088560167",
+   "name": "influencer \u2013  \u2013 valueprop",
+   "bucket": "Testing",
+   "spend": 216.33,
+   "installs": 1,
+   "cpi": 216.33,
+   "EI": 0.071,
+   "SI": 2.668,
+   "SP2": 0.189,
+   "sp2_phase": "Pause",
+   "sp": 1.917,
+   "phase": "Mid-Tier",
+   "ltv_cac": 0.39,
+   "ltv_cac_ci": [
+    0.0,
+    1.254
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120247189268040167",
+   "name": "influencer \u2013 garytalk369 \u2013 valueprop",
+   "bucket": "Testing",
+   "spend": 2576.62,
+   "installs": 59,
+   "cpi": 43.67,
+   "EI": 0.351,
+   "SI": 4.0,
+   "SP2": 1.403,
+   "sp2_phase": "Pause",
+   "sp": 1.371,
+   "phase": "Pause",
+   "ltv_cac": 0.296,
+   "ltv_cac_ci": [
+    0.107,
+    0.561
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120247235137270167",
+   "name": "influencer \u2013  \u2013 product",
+   "bucket": "Testing",
+   "spend": 243.91,
+   "installs": 4,
+   "cpi": 60.98,
+   "EI": 0.251,
+   "SI": 3.009,
+   "SP2": 0.756,
+   "sp2_phase": "Pause",
+   "sp": 2.022,
+   "phase": "Pause",
+   "ltv_cac": 0.456,
+   "ltv_cac_ci": [
+    0.0,
+    1.73
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120247235677870167",
+   "name": "influencer \u2013 techtips \u2013 valueprop",
+   "bucket": "Testing",
+   "spend": 382.5,
+   "installs": 3,
+   "cpi": 127.5,
+   "EI": 0.12,
+   "SI": 0.726,
+   "SP2": 0.087,
+   "sp2_phase": "Pause",
+   "sp": 1.233,
+   "phase": "Pause",
+   "ltv_cac": 0.223,
+   "ltv_cac_ci": [
+    0.0,
+    0.726
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120247254596060167",
+   "name": "c1_na_c2_video_c3_influencer_c4_valueprop_c5_promo_c6_petersunreview_c7_justspea",
+   "bucket": "Testing",
+   "spend": 31.54,
+   "installs": 3,
+   "cpi": 10.51,
+   "EI": 1.457,
+   "SI": 0.25,
+   "SP2": 0.364,
+   "sp2_phase": "Efficient, unproven scale",
+   "sp": 4.478,
+   "phase": "Pause",
+   "ltv_cac": 0.0,
+   "ltv_cac_ci": [
+    0.0,
+    5.916
+   ],
+   "analyzed": false
+  },
+  {
+   "ad_id": "120247256194240167",
+   "name": "whitelist \u2013 swm-tsai \u2013 testimonial",
+   "bucket": "Testing",
+   "spend": 199.21,
+   "installs": 13,
+   "cpi": 15.32,
+   "EI": 1.0,
+   "SI": 0.491,
+   "SP2": 0.491,
+   "sp2_phase": "Watch",
+   "sp": 2.805,
+   "phase": "Phase 1 Winner",
+   "ltv_cac": 0.934,
+   "ltv_cac_ci": [
+    0.0,
+    2.58
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120247333574270167",
+   "name": "influencer \u2013 havefunytchannel \u2013 speakmethod",
+   "bucket": "Winning",
+   "spend": 1315.68,
+   "installs": 86,
+   "cpi": 15.3,
+   "EI": 1.001,
+   "SI": 0.742,
+   "SP2": 0.743,
+   "sp2_phase": "Efficient, unproven scale",
+   "sp": 3.865,
+   "phase": "Phase 1 Winner",
+   "ltv_cac": 0.506,
+   "ltv_cac_ci": [
+    0.174,
+    0.969
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120247758597150167",
+   "name": "influencer \u2013 techervincent \u2013 valueprop",
+   "bucket": "Scaling",
+   "spend": 4610.49,
+   "installs": 119,
+   "cpi": 38.74,
+   "EI": 0.395,
+   "SI": 2.009,
+   "SP2": 0.794,
+   "sp2_phase": "Pause",
+   "sp": 1.728,
+   "phase": "Mid-Tier",
+   "ltv_cac": 0.401,
+   "ltv_cac_ci": [
+    0.206,
+    0.665
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120247887628100167",
+   "name": "ugc \u2013 ai-gen \u2013 outcome",
+   "bucket": "Scaling",
+   "spend": 5285.38,
+   "installs": 217,
+   "cpi": 24.36,
+   "EI": 0.629,
+   "SI": 3.684,
+   "SP2": 2.317,
+   "sp2_phase": "Pause",
+   "sp": 2.755,
+   "phase": "Phase 1 Winner",
+   "ltv_cac": 0.375,
+   "ltv_cac_ci": [
+    0.193,
+    0.62
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120247887774070167",
+   "name": "whitelist \u2013 swm-tsai \u2013 testimonial",
+   "bucket": "Scaling",
+   "spend": 1745.1,
+   "installs": 56,
+   "cpi": 31.16,
+   "EI": 0.492,
+   "SI": 0.553,
+   "SP2": 0.272,
+   "sp2_phase": "Pause",
+   "sp": 1.674,
+   "phase": "Mid-Tier",
+   "ltv_cac": 0.617,
+   "ltv_cac_ci": [
+    0.259,
+    1.104
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120247888457690167",
+   "name": "influencer \u2013  \u2013 valueprop",
+   "bucket": "Winning",
+   "spend": 299.54,
+   "installs": 4,
+   "cpi": 74.89,
+   "EI": 0.205,
+   "SI": 0.264,
+   "SP2": 0.054,
+   "sp2_phase": "Pause",
+   "sp": 1.156,
+   "phase": "Pause",
+   "ltv_cac": 0.0,
+   "ltv_cac_ci": [
+    0.0,
+    0.619
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120247888972120167",
+   "name": "generic \u2013 na \u2013 painpoint",
+   "bucket": "Scaling",
+   "spend": 465.06,
+   "installs": 8,
+   "cpi": 58.13,
+   "EI": 0.264,
+   "SI": 0.25,
+   "SP2": 0.066,
+   "sp2_phase": "Pause",
+   "sp": 3.463,
+   "phase": "Pause",
+   "ltv_cac": 0.887,
+   "ltv_cac_ci": [
+    0.2,
+    1.896
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120247889143360167",
+   "name": "ugc \u2013 ai-gen \u2013 outcome",
+   "bucket": "Winning",
+   "spend": 2324.15,
+   "installs": 115,
+   "cpi": 20.21,
+   "EI": 0.758,
+   "SI": 1.123,
+   "SP2": 0.851,
+   "sp2_phase": "Pause",
+   "sp": 3.245,
+   "phase": "Phase 1 Winner",
+   "ltv_cac": 0.466,
+   "ltv_cac_ci": [
+    0.205,
+    0.835
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120247889446440167",
+   "name": "generic \u2013 na \u2013 testimonial",
+   "bucket": "Scaling",
+   "spend": 9024.99,
+   "installs": 412,
+   "cpi": 21.91,
+   "EI": 0.699,
+   "SI": 0.562,
+   "SP2": 0.393,
+   "sp2_phase": "Pause",
+   "sp": 3.674,
+   "phase": "Phase 1 Winner",
+   "ltv_cac": 0.767,
+   "ltv_cac_ci": [
+    0.502,
+    1.109
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120248324906930167",
+   "name": "ugc \u2013 ai-gen \u2013 outcome",
+   "bucket": "Scaling",
+   "spend": 2788.57,
+   "installs": 57,
+   "cpi": 48.92,
+   "EI": 0.313,
+   "SI": 3.24,
+   "SP2": 1.014,
+   "sp2_phase": "Pause",
+   "sp": 1.458,
+   "phase": "Mid-Tier",
+   "ltv_cac": 0.307,
+   "ltv_cac_ci": [
+    0.12,
+    0.568
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120248334930940167",
+   "name": "generic \u2013 na \u2013 painpoint",
+   "bucket": "Testing",
+   "spend": 41.24,
+   "installs": 0,
+   "cpi": null,
+   "EI": null,
+   "SI": 0.25,
+   "SP2": null,
+   "sp2_phase": "No installs yet",
+   "sp": 0.635,
+   "phase": "Pause",
+   "ltv_cac": 0.0,
+   "ltv_cac_ci": [
+    0.0,
+    0.0
+   ],
+   "analyzed": false
+  },
+  {
+   "ad_id": "120248334931480167",
+   "name": "generic \u2013 na \u2013 painpoint",
+   "bucket": "Testing",
+   "spend": 23.56,
+   "installs": 0,
+   "cpi": null,
+   "EI": null,
+   "SI": 0.25,
+   "SP2": null,
+   "sp2_phase": "No installs yet",
+   "sp": 0.571,
+   "phase": "Pause",
+   "ltv_cac": 0.0,
+   "ltv_cac_ci": [
+    0.0,
+    7.82
+   ],
+   "analyzed": false
+  },
+  {
+   "ad_id": "120248334932420167",
+   "name": "generic \u2013 na \u2013 painpoint",
+   "bucket": "Testing",
+   "spend": 34.68,
+   "installs": 0,
+   "cpi": null,
+   "EI": null,
+   "SI": 0.25,
+   "SP2": null,
+   "sp2_phase": "No installs yet",
+   "sp": 0.618,
+   "phase": "Pause",
+   "ltv_cac": 0.0,
+   "ltv_cac_ci": [
+    0.0,
+    0.0
+   ],
+   "analyzed": false
+  },
+  {
+   "ad_id": "120248334933310167",
+   "name": "generic \u2013 na \u2013 painpoint",
+   "bucket": "Testing",
+   "spend": 30.35,
+   "installs": 0,
+   "cpi": null,
+   "EI": null,
+   "SI": 0.25,
+   "SP2": null,
+   "sp2_phase": "No installs yet",
+   "sp": 0.707,
+   "phase": "Pause",
+   "ltv_cac": 0.0,
+   "ltv_cac_ci": [
+    0.0,
+    6.055
+   ],
+   "analyzed": false
+  },
+  {
+   "ad_id": "120248334960360167",
+   "name": "ugc \u2013 swm-claire \u2013 usertestimonials",
+   "bucket": "Testing",
+   "spend": 187.43,
+   "installs": 3,
+   "cpi": 62.48,
+   "EI": 0.245,
+   "SI": 2.312,
+   "SP2": 0.567,
+   "sp2_phase": "Pause",
+   "sp": 1.619,
+   "phase": "Mid-Tier",
+   "ltv_cac": 0.45,
+   "ltv_cac_ci": [
+    0.0,
+    1.45
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120248334979440167",
+   "name": "influencer \u2013  \u2013 testimonial",
+   "bucket": "Testing",
+   "spend": 1437.92,
+   "installs": 82,
+   "cpi": 17.54,
+   "EI": 0.874,
+   "SI": 4.0,
+   "SP2": 3.494,
+   "sp2_phase": "Watch",
+   "sp": 3.313,
+   "phase": "Phase 1 Winner",
+   "ltv_cac": 1.021,
+   "ltv_cac_ci": [
+    0.507,
+    1.718
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120248334982400167",
+   "name": "ugc \u2013 swm-jenny \u2013 scenario",
+   "bucket": "Testing",
+   "spend": 1313.82,
+   "installs": 92,
+   "cpi": 14.28,
+   "EI": 1.073,
+   "SI": 4.0,
+   "SP2": 4.291,
+   "sp2_phase": "Scalable winner",
+   "sp": 2.493,
+   "phase": "Phase 1 Winner",
+   "ltv_cac": 0.986,
+   "ltv_cac_ci": [
+    0.458,
+    1.717
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120248335034210167",
+   "name": "influencer \u2013  \u2013 testimonial",
+   "bucket": "Testing",
+   "spend": 132.29,
+   "installs": 1,
+   "cpi": 132.29,
+   "EI": 0.116,
+   "SI": 0.297,
+   "SP2": 0.034,
+   "sp2_phase": "Pause",
+   "sp": 0.675,
+   "phase": "Pause",
+   "ltv_cac": 0.0,
+   "ltv_cac_ci": [
+    0.0,
+    1.481
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120248341533720167",
+   "name": "generic \u2013 na \u2013 outcome",
+   "bucket": "Testing",
+   "spend": 149.98,
+   "installs": 0,
+   "cpi": null,
+   "EI": null,
+   "SI": 0.25,
+   "SP2": null,
+   "sp2_phase": "No installs yet",
+   "sp": 0.428,
+   "phase": "Pause",
+   "ltv_cac": 0.563,
+   "ltv_cac_ci": [
+    0.0,
+    1.813
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120248341545680167",
+   "name": "generic \u2013 na \u2013 valueprop",
+   "bucket": "Testing",
+   "spend": 56.99,
+   "installs": 0,
+   "cpi": null,
+   "EI": null,
+   "SI": 0.25,
+   "SP2": null,
+   "sp2_phase": "No installs yet",
+   "sp": 0.456,
+   "phase": "Pause",
+   "ltv_cac": 0.0,
+   "ltv_cac_ci": [
+    0.0,
+    0.0
+   ],
+   "analyzed": false
+  },
+  {
+   "ad_id": "120248341547190167",
+   "name": "generic \u2013 na \u2013 outcome",
+   "bucket": "Testing",
+   "spend": 110.88,
+   "installs": 3,
+   "cpi": 36.96,
+   "EI": 0.414,
+   "SI": 0.25,
+   "SP2": 0.104,
+   "sp2_phase": "Pause",
+   "sp": 0.446,
+   "phase": "Pause",
+   "ltv_cac": 0.769,
+   "ltv_cac_ci": [
+    0.0,
+    2.429
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120248341548470167",
+   "name": "generic \u2013 na \u2013 valueprop",
+   "bucket": "Testing",
+   "spend": 36.26,
+   "installs": 0,
+   "cpi": null,
+   "EI": null,
+   "SI": 0.25,
+   "SP2": null,
+   "sp2_phase": "No installs yet",
+   "sp": 0.559,
+   "phase": "Pause",
+   "ltv_cac": 0.0,
+   "ltv_cac_ci": [
+    0.0,
+    0.0
+   ],
+   "analyzed": false
+  },
+  {
+   "ad_id": "120248341561120167",
+   "name": "generic \u2013 na \u2013 outcome",
+   "bucket": "Testing",
+   "spend": 487.97,
+   "installs": 23,
+   "cpi": 21.22,
+   "EI": 0.722,
+   "SI": 0.602,
+   "SP2": 0.435,
+   "sp2_phase": "Pause",
+   "sp": 2.572,
+   "phase": "Phase 1 Winner",
+   "ltv_cac": 0.826,
+   "ltv_cac_ci": [
+    0.189,
+    1.771
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120248341577480167",
+   "name": "generic \u2013 na",
+   "bucket": "Testing",
+   "spend": 942.27,
+   "installs": 36,
+   "cpi": 26.17,
+   "EI": 0.585,
+   "SI": 3.321,
+   "SP2": 1.943,
+   "sp2_phase": "Pause",
+   "sp": 2.795,
+   "phase": "Phase 2 Winner",
+   "ltv_cac": 0.778,
+   "ltv_cac_ci": [
+    0.259,
+    1.536
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120248489704700167",
+   "name": "ugc \u2013 swm-jenny \u2013 scenario",
+   "bucket": "Winning",
+   "spend": 3975.57,
+   "installs": 208,
+   "cpi": 19.11,
+   "EI": 0.801,
+   "SI": 4.0,
+   "SP2": 3.206,
+   "sp2_phase": "Watch",
+   "sp": 2.794,
+   "phase": "Phase 1 Winner",
+   "ltv_cac": 0.982,
+   "ltv_cac_ci": [
+    0.596,
+    1.491
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120248526868210167",
+   "name": "ugc \u2013 swm-jenny \u2013 scenario",
+   "bucket": "Winning",
+   "spend": 3158.94,
+   "installs": 169,
+   "cpi": 18.69,
+   "EI": 0.82,
+   "SI": 4.0,
+   "SP2": 3.278,
+   "sp2_phase": "Watch",
+   "sp": 2.735,
+   "phase": "Phase 1 Winner",
+   "ltv_cac": 1.168,
+   "ltv_cac_ci": [
+    0.684,
+    1.791
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120248530261670167",
+   "name": "influencer \u2013 brianptseng \u2013 product",
+   "bucket": "Testing",
+   "spend": 668.82,
+   "installs": 67,
+   "cpi": 9.98,
+   "EI": 1.535,
+   "SI": 4.0,
+   "SP2": 6.138,
+   "sp2_phase": "Scalable winner",
+   "sp": 3.22,
+   "phase": "Phase 2 Winner",
+   "ltv_cac": 0.992,
+   "ltv_cac_ci": [
+    0.344,
+    1.956
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120248612012470167",
+   "name": "influencer \u2013 brianptseng \u2013 product",
+   "bucket": "Scaling",
+   "spend": 7804.69,
+   "installs": 522,
+   "cpi": 14.95,
+   "EI": 1.025,
+   "SI": 0.877,
+   "SP2": 0.899,
+   "sp2_phase": "Efficient, unproven scale",
+   "sp": 3.047,
+   "phase": "Phase 1 Winner",
+   "ltv_cac": 0.425,
+   "ltv_cac_ci": [
+    0.243,
+    0.67
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120248612089090167",
+   "name": "ugc \u2013 swm-jenny \u2013 scenario",
+   "bucket": "Scaling",
+   "spend": 9847.74,
+   "installs": 411,
+   "cpi": 23.96,
+   "EI": 0.639,
+   "SI": 1.56,
+   "SP2": 0.997,
+   "sp2_phase": "Pause",
+   "sp": 2.665,
+   "phase": "Phase 1 Winner",
+   "ltv_cac": 0.576,
+   "ltv_cac_ci": [
+    0.362,
+    0.865
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120248612147470167",
+   "name": "influencer \u2013 bigeartv \u2013 product",
+   "bucket": "Testing",
+   "spend": 162.16,
+   "installs": 4,
+   "cpi": 40.54,
+   "EI": 0.378,
+   "SI": 1.333,
+   "SP2": 0.504,
+   "sp2_phase": "Pause",
+   "sp": 2.49,
+   "phase": "Pause",
+   "ltv_cac": 0.0,
+   "ltv_cac_ci": [
+    0.0,
+    0.0
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120248612260260167",
+   "name": "influencer \u2013 bigeartv \u2013 product",
+   "bucket": "Testing",
+   "spend": 157.56,
+   "installs": 9,
+   "cpi": 17.51,
+   "EI": 0.875,
+   "SI": 0.777,
+   "SP2": 0.68,
+   "sp2_phase": "Watch",
+   "sp": 3.559,
+   "phase": "Pause",
+   "ltv_cac": 0.602,
+   "ltv_cac_ci": [
+    0.0,
+    2.158
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120248686842540167",
+   "name": "generic \u2013 na",
+   "bucket": "Winning",
+   "spend": 1851.85,
+   "installs": 62,
+   "cpi": 29.87,
+   "EI": 0.513,
+   "SI": 2.684,
+   "SP2": 1.377,
+   "sp2_phase": "Pause",
+   "sp": 1.323,
+   "phase": "Pause",
+   "ltv_cac": 0.611,
+   "ltv_cac_ci": [
+    0.273,
+    1.074
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120248715194060167",
+   "name": "generic \u2013 na",
+   "bucket": "Scaling",
+   "spend": 817.61,
+   "installs": 19,
+   "cpi": 43.03,
+   "EI": 0.356,
+   "SI": 0.95,
+   "SP2": 0.338,
+   "sp2_phase": "Pause",
+   "sp": 1.326,
+   "phase": "Pause",
+   "ltv_cac": 0.329,
+   "ltv_cac_ci": [
+    0.0,
+    0.802
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120248715237150167",
+   "name": "influencer \u2013  \u2013 testimonial",
+   "bucket": "Scaling",
+   "spend": 7091.79,
+   "installs": 284,
+   "cpi": 24.97,
+   "EI": 0.613,
+   "SI": 0.772,
+   "SP2": 0.474,
+   "sp2_phase": "Pause",
+   "sp": 2.969,
+   "phase": "Phase 1 Winner",
+   "ltv_cac": 0.589,
+   "ltv_cac_ci": [
+    0.363,
+    0.893
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120248718076390167",
+   "name": "influencer \u2013 bigeartv \u2013 product",
+   "bucket": "Winning",
+   "spend": 348.7,
+   "installs": 14,
+   "cpi": 24.91,
+   "EI": 0.615,
+   "SI": 0.253,
+   "SP2": 0.155,
+   "sp2_phase": "Pause",
+   "sp": 0.871,
+   "phase": "Pause",
+   "ltv_cac": 0.0,
+   "ltv_cac_ci": [
+    0.0,
+    0.0
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120248718399620167",
+   "name": "influencer \u2013 eaglish.fam \u2013 product",
+   "bucket": "Testing",
+   "spend": 1093.54,
+   "installs": 132,
+   "cpi": 8.28,
+   "EI": 1.849,
+   "SI": 4.0,
+   "SP2": 7.396,
+   "sp2_phase": "Scalable winner",
+   "sp": 3.482,
+   "phase": "Phase 2 Winner",
+   "ltv_cac": 0.902,
+   "ltv_cac_ci": [
+    0.403,
+    1.578
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120248719356730167",
+   "name": "influencer \u2013 harryspeaks \u2013 product",
+   "bucket": "Testing",
+   "spend": 697.65,
+   "installs": 84,
+   "cpi": 8.31,
+   "EI": 1.844,
+   "SI": 4.0,
+   "SP2": 7.378,
+   "sp2_phase": "Scalable winner",
+   "sp": 2.757,
+   "phase": "Phase 2 Winner",
+   "ltv_cac": 1.801,
+   "ltv_cac_ci": [
+    0.82,
+    3.137
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120248719873780167",
+   "name": "generic \u2013 na \u2013 testimonial",
+   "bucket": "Testing",
+   "spend": 163.88,
+   "installs": 0,
+   "cpi": null,
+   "EI": null,
+   "SI": 0.449,
+   "SP2": null,
+   "sp2_phase": "No installs yet",
+   "sp": 0.569,
+   "phase": "Pause",
+   "ltv_cac": 0.0,
+   "ltv_cac_ci": [
+    0.0,
+    1.13
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120248719893710167",
+   "name": "generic \u2013 na \u2013 us-winning",
+   "bucket": "Testing",
+   "spend": 397.06,
+   "installs": 5,
+   "cpi": 79.41,
+   "EI": 0.193,
+   "SI": 1.399,
+   "SP2": 0.27,
+   "sp2_phase": "Pause",
+   "sp": 1.031,
+   "phase": "Pause",
+   "ltv_cac": 0.446,
+   "ltv_cac_ci": [
+    0.0,
+    1.176
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120248719912650167",
+   "name": "ugc \u2013 mip-asianleadership \u2013 usertestimonials",
+   "bucket": "Testing",
+   "spend": 1040.91,
+   "installs": 29,
+   "cpi": 35.89,
+   "EI": 0.427,
+   "SI": 4.0,
+   "SP2": 1.707,
+   "sp2_phase": "Pause",
+   "sp": 1.644,
+   "phase": "Mid-Tier",
+   "ltv_cac": 0.452,
+   "ltv_cac_ci": [
+    0.106,
+    0.932
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120248720012760167",
+   "name": "generic \u2013 na \u2013 testimonial",
+   "bucket": "Testing",
+   "spend": 317.38,
+   "installs": 12,
+   "cpi": 26.45,
+   "EI": 0.579,
+   "SI": 1.118,
+   "SP2": 0.648,
+   "sp2_phase": "Pause",
+   "sp": 0.892,
+   "phase": "Pause",
+   "ltv_cac": 0.92,
+   "ltv_cac_ci": [
+    0.0,
+    2.209
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120248720435220167",
+   "name": "ugc \u2013 miso.speaks \u2013 interview",
+   "bucket": "Testing",
+   "spend": 268.15,
+   "installs": 1,
+   "cpi": 268.15,
+   "EI": 0.057,
+   "SI": 1.102,
+   "SP2": 0.063,
+   "sp2_phase": "Pause",
+   "sp": 0.818,
+   "phase": "Pause",
+   "ltv_cac": 0.431,
+   "ltv_cac_ci": [
+    0.0,
+    1.475
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120248789397960167",
+   "name": "influencer \u2013 harryspeaks \u2013 product",
+   "bucket": "Scaling",
+   "spend": 43484.13,
+   "installs": 2799,
+   "cpi": 15.54,
+   "EI": 0.986,
+   "SI": 3.225,
+   "SP2": 3.18,
+   "sp2_phase": "Watch",
+   "sp": 2.545,
+   "phase": "Phase 1 Winner",
+   "ltv_cac": 0.213,
+   "ltv_cac_ci": [
+    0.133,
+    0.316
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120248790253970167",
+   "name": "influencer \u2013 eaglish.fam \u2013 product",
+   "bucket": "Winning",
+   "spend": 10853.99,
+   "installs": 956,
+   "cpi": 11.35,
+   "EI": 1.349,
+   "SI": 4.0,
+   "SP2": 5.397,
+   "sp2_phase": "Scalable winner",
+   "sp": 2.963,
+   "phase": "Phase 1 Winner",
+   "ltv_cac": 0.49,
+   "ltv_cac_ci": [
+    0.297,
+    0.748
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120248822296120167",
+   "name": "influencer \u2013 eaglish.fam \u2013 product",
+   "bucket": "Scaling",
+   "spend": 5251.98,
+   "installs": 409,
+   "cpi": 12.84,
+   "EI": 1.193,
+   "SI": 0.654,
+   "SP2": 0.78,
+   "sp2_phase": "Efficient, unproven scale",
+   "sp": 2.98,
+   "phase": "Phase 1 Winner",
+   "ltv_cac": 0.518,
+   "ltv_cac_ci": [
+    0.29,
+    0.821
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120248898262300167",
+   "name": "generic \u2013 na \u2013 valueprop",
+   "bucket": "Testing",
+   "spend": 3.57,
+   "installs": 0,
+   "cpi": null,
+   "EI": null,
+   "SI": 0.25,
+   "SP2": null,
+   "sp2_phase": "No installs yet",
+   "sp": 0.593,
+   "phase": "Pause",
+   "ltv_cac": 0.0,
+   "ltv_cac_ci": [
+    0.0,
+    0.0
+   ],
+   "analyzed": false
+  },
+  {
+   "ad_id": "120248898263350167",
+   "name": "generic \u2013 na \u2013 valueprop",
+   "bucket": "Testing",
+   "spend": 288.0,
+   "installs": 2,
+   "cpi": 144.0,
+   "EI": 0.106,
+   "SI": 1.184,
+   "SP2": 0.126,
+   "sp2_phase": "Pause",
+   "sp": 0.522,
+   "phase": "Pause",
+   "ltv_cac": 0.543,
+   "ltv_cac_ci": [
+    0.0,
+    1.659
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120248898272860167",
+   "name": "influencer \u2013 atiendai \u2013 product",
+   "bucket": "Testing",
+   "spend": 307.96,
+   "installs": 2,
+   "cpi": 153.98,
+   "EI": 0.099,
+   "SI": 1.519,
+   "SP2": 0.151,
+   "sp2_phase": "Pause",
+   "sp": 1.401,
+   "phase": "Mid-Tier",
+   "ltv_cac": 0.254,
+   "ltv_cac_ci": [
+    0.0,
+    0.834
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120248898277620167",
+   "name": "ugc \u2013 jessica \u2013 ba.lifestyle.walking",
+   "bucket": "Testing",
+   "spend": 284.55,
+   "installs": 6,
+   "cpi": 47.43,
+   "EI": 0.323,
+   "SI": 3.51,
+   "SP2": 1.134,
+   "sp2_phase": "Pause",
+   "sp": 1.043,
+   "phase": "Pause",
+   "ltv_cac": 0.302,
+   "ltv_cac_ci": [
+    0.0,
+    1.031
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120248898277700167",
+   "name": "ugc \u2013 jessica \u2013 ba.lifestyle.walking",
+   "bucket": "Testing",
+   "spend": 258.67,
+   "installs": 5,
+   "cpi": 51.73,
+   "EI": 0.296,
+   "SI": 2.127,
+   "SP2": 0.63,
+   "sp2_phase": "Pause",
+   "sp": 0.918,
+   "phase": "Pause",
+   "ltv_cac": 0.0,
+   "ltv_cac_ci": [
+    0.0,
+    0.725
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120248898278030167",
+   "name": "ugc \u2013 qing \u2013 product",
+   "bucket": "Testing",
+   "spend": 159.5,
+   "installs": 0,
+   "cpi": null,
+   "EI": null,
+   "SI": 1.312,
+   "SP2": null,
+   "sp2_phase": "No installs yet",
+   "sp": 0.867,
+   "phase": "Pause",
+   "ltv_cac": 0.0,
+   "ltv_cac_ci": [
+    0.0,
+    0.0
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120248898278710167",
+   "name": "influencer \u2013 atiendai \u2013 product",
+   "bucket": "Testing",
+   "spend": 187.26,
+   "installs": 0,
+   "cpi": null,
+   "EI": null,
+   "SI": 1.54,
+   "SP2": null,
+   "sp2_phase": "No installs yet",
+   "sp": 0.961,
+   "phase": "Pause",
+   "ltv_cac": 0.0,
+   "ltv_cac_ci": [
+    0.0,
+    0.975
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120248898291360167",
+   "name": "influencer \u2013 atiendai \u2013 product",
+   "bucket": "Testing",
+   "spend": 253.0,
+   "installs": 8,
+   "cpi": 31.62,
+   "EI": 0.484,
+   "SI": 1.04,
+   "SP2": 0.504,
+   "sp2_phase": "Pause",
+   "sp": 1.999,
+   "phase": "Mid-Tier",
+   "ltv_cac": 0.0,
+   "ltv_cac_ci": [
+    0.0,
+    0.793
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120248964820460167",
+   "name": "generic \u2013 na \u2013 outcome",
+   "bucket": "Scaling",
+   "spend": 347.26,
+   "installs": 16,
+   "cpi": 21.7,
+   "EI": 0.706,
+   "SI": 0.25,
+   "SP2": 0.176,
+   "sp2_phase": "Pause",
+   "sp": 5.213,
+   "phase": "Phase 1 Winner",
+   "ltv_cac": 0.817,
+   "ltv_cac_ci": [
+    0.0,
+    1.881
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120249017523680167",
+   "name": "generic \u2013 na \u2013 outcome",
+   "bucket": "Winning",
+   "spend": 76.19,
+   "installs": 3,
+   "cpi": 25.4,
+   "EI": 0.603,
+   "SI": 0.25,
+   "SP2": 0.151,
+   "sp2_phase": "Pause",
+   "sp": 2.774,
+   "phase": "Pause",
+   "ltv_cac": 1.157,
+   "ltv_cac_ci": [
+    0.0,
+    4.015
+   ],
+   "analyzed": false
+  },
+  {
+   "ad_id": "120249017782920167",
+   "name": "whitelist \u2013 mip-alicechenlife \u2013 ba.lifestyle.testscore",
+   "bucket": "Testing",
+   "spend": 188.91,
+   "installs": 10,
+   "cpi": 18.89,
+   "EI": 0.811,
+   "SI": 1.165,
+   "SP2": 0.945,
+   "sp2_phase": "Watch",
+   "sp": 2.522,
+   "phase": "Phase 1 Winner",
+   "ltv_cac": 0.0,
+   "ltv_cac_ci": [
+    0.0,
+    0.992
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120249017877220167",
+   "name": "whitelist \u2013  \u2013 allenhook",
+   "bucket": "Testing",
+   "spend": 393.93,
+   "installs": 29,
+   "cpi": 13.58,
+   "EI": 1.128,
+   "SI": 1.944,
+   "SP2": 2.192,
+   "sp2_phase": "Scalable winner",
+   "sp": 3.361,
+   "phase": "Phase 1 Winner",
+   "ltv_cac": 1.387,
+   "ltv_cac_ci": [
+    0.451,
+    2.746
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120249017985740167",
+   "name": "whitelist \u2013 mip-asianleadership \u2013 usertestimonials",
+   "bucket": "Testing",
+   "spend": 293.3,
+   "installs": 4,
+   "cpi": 73.33,
+   "EI": 0.209,
+   "SI": 1.809,
+   "SP2": 0.378,
+   "sp2_phase": "Pause",
+   "sp": 2.549,
+   "phase": "Pause",
+   "ltv_cac": 0.602,
+   "ltv_cac_ci": [
+    0.0,
+    1.604
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120249018197870167",
+   "name": "whitelist \u2013 mip-xlittleprince \u2013 indoorselfie.vs",
+   "bucket": "Testing",
+   "spend": 280.07,
+   "installs": 2,
+   "cpi": 140.03,
+   "EI": 0.109,
+   "SI": 0.531,
+   "SP2": 0.058,
+   "sp2_phase": "Pause",
+   "sp": 1.129,
+   "phase": "Pause",
+   "ltv_cac": 0.344,
+   "ltv_cac_ci": [
+    0.0,
+    1.346
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120249018598560167",
+   "name": "whitelist \u2013 mip-kellyyangdes \u2013 patterninterrupt",
+   "bucket": "Testing",
+   "spend": 529.97,
+   "installs": 13,
+   "cpi": 40.77,
+   "EI": 0.376,
+   "SI": 3.268,
+   "SP2": 1.228,
+   "sp2_phase": "Pause",
+   "sp": 4.327,
+   "phase": "Phase 1 Winner",
+   "ltv_cac": 0.531,
+   "ltv_cac_ci": [
+    0.0,
+    1.326
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120249019731940167",
+   "name": "influencer \u2013 atiendai \u2013 valueprop",
+   "bucket": "Scaling",
+   "spend": 33054.54,
+   "installs": 1899,
+   "cpi": 17.41,
+   "EI": 0.88,
+   "SI": 3.84,
+   "SP2": 3.38,
+   "sp2_phase": "Watch",
+   "sp": 2.51,
+   "phase": "Phase 1 Winner",
+   "ltv_cac": 0.224,
+   "ltv_cac_ci": [
+    0.14,
+    0.336
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120249020624430167",
+   "name": "ugc \u2013 jpkol \u2013 ba.lifestyle",
+   "bucket": "Testing",
+   "spend": 489.18,
+   "installs": 42,
+   "cpi": 11.65,
+   "EI": 1.315,
+   "SI": 3.017,
+   "SP2": 3.968,
+   "sp2_phase": "Scalable winner",
+   "sp": 2.036,
+   "phase": "Phase 1 Winner",
+   "ltv_cac": 1.144,
+   "ltv_cac_ci": [
+    0.369,
+    2.288
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120249020669720167",
+   "name": "generic \u2013 na",
+   "bucket": "Testing",
+   "spend": 311.17,
+   "installs": 5,
+   "cpi": 62.23,
+   "EI": 0.246,
+   "SI": 0.452,
+   "SP2": 0.111,
+   "sp2_phase": "Pause",
+   "sp": 0.591,
+   "phase": "Pause",
+   "ltv_cac": 0.303,
+   "ltv_cac_ci": [
+    0.0,
+    1.059
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120249020714940167",
+   "name": "ugc \u2013 qing \u2013 product",
+   "bucket": "Testing",
+   "spend": 3120.47,
+   "installs": 141,
+   "cpi": 22.13,
+   "EI": 0.692,
+   "SI": 3.499,
+   "SP2": 2.422,
+   "sp2_phase": "Pause",
+   "sp": 2.946,
+   "phase": "Phase 1 Winner",
+   "ltv_cac": 0.505,
+   "ltv_cac_ci": [
+    0.262,
+    0.822
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120249020715110167",
+   "name": "ugc \u2013 qing \u2013 product",
+   "bucket": "Testing",
+   "spend": 207.4,
+   "installs": 4,
+   "cpi": 51.85,
+   "EI": 0.295,
+   "SI": 0.426,
+   "SP2": 0.126,
+   "sp2_phase": "Pause",
+   "sp": 1.115,
+   "phase": "Pause",
+   "ltv_cac": 1.169,
+   "ltv_cac_ci": [
+    0.0,
+    3.012
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120249069884080167",
+   "name": "whitelist \u2013  \u2013 allenhook",
+   "bucket": "Scaling",
+   "spend": 1877.2,
+   "installs": 65,
+   "cpi": 28.88,
+   "EI": 0.53,
+   "SI": 2.181,
+   "SP2": 1.157,
+   "sp2_phase": "Pause",
+   "sp": 2.059,
+   "phase": "Phase 1 Winner",
+   "ltv_cac": 0.407,
+   "ltv_cac_ci": [
+    0.153,
+    0.77
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120249069900960167",
+   "name": "generic \u2013 na \u2013 outcome",
+   "bucket": "Winning",
+   "spend": 25.99,
+   "installs": 1,
+   "cpi": 25.99,
+   "EI": 0.589,
+   "SI": 0.25,
+   "SP2": 0.147,
+   "sp2_phase": "Pause",
+   "sp": 0.459,
+   "phase": "Pause",
+   "ltv_cac": 0.0,
+   "ltv_cac_ci": [
+    0.0,
+    0.0
+   ],
+   "analyzed": false
+  },
+  {
+   "ad_id": "120249069928080167",
+   "name": "whitelist \u2013  \u2013 openquestion",
+   "bucket": "Testing",
+   "spend": 190.99,
+   "installs": 1,
+   "cpi": 190.99,
+   "EI": 0.08,
+   "SI": 1.178,
+   "SP2": 0.094,
+   "sp2_phase": "Pause",
+   "sp": 3.894,
+   "phase": "Pause",
+   "ltv_cac": 0.0,
+   "ltv_cac_ci": [
+    0.0,
+    0.0
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120249069950380167",
+   "name": "whitelist \u2013 mip-sunthings \u2013 lifestyle.sharing",
+   "bucket": "Testing",
+   "spend": 224.28,
+   "installs": 3,
+   "cpi": 74.76,
+   "EI": 0.205,
+   "SI": 1.383,
+   "SP2": 0.283,
+   "sp2_phase": "Pause",
+   "sp": 1.473,
+   "phase": "Mid-Tier",
+   "ltv_cac": 0.0,
+   "ltv_cac_ci": [
+    0.0,
+    0.833
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120249069969790167",
+   "name": "whitelist \u2013  \u2013 lifestyle.sharing",
+   "bucket": "Testing",
+   "spend": 295.78,
+   "installs": 9,
+   "cpi": 32.86,
+   "EI": 0.466,
+   "SI": 2.432,
+   "SP2": 1.134,
+   "sp2_phase": "Pause",
+   "sp": 2.548,
+   "phase": "Pause",
+   "ltv_cac": 0.0,
+   "ltv_cac_ci": [
+    0.0,
+    0.0
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120249069983680167",
+   "name": "whitelist \u2013 mip-happygang5215 \u2013 openquestion",
+   "bucket": "Testing",
+   "spend": 972.48,
+   "installs": 31,
+   "cpi": 31.37,
+   "EI": 0.488,
+   "SI": 2.999,
+   "SP2": 1.464,
+   "sp2_phase": "Pause",
+   "sp": 2.198,
+   "phase": "Phase 1 Winner",
+   "ltv_cac": 0.54,
+   "ltv_cac_ci": [
+    0.166,
+    1.105
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120249089547390167",
+   "name": "whitelist \u2013 mip-kellyyangdes \u2013 patterninterrupt",
+   "bucket": "Winning",
+   "spend": 1742.09,
+   "installs": 41,
+   "cpi": 42.49,
+   "EI": 0.361,
+   "SI": 4.0,
+   "SP2": 1.442,
+   "sp2_phase": "Pause",
+   "sp": 3.129,
+   "phase": "Phase 1 Winner",
+   "ltv_cac": 0.311,
+   "ltv_cac_ci": [
+    0.088,
+    0.643
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120249089572460167",
+   "name": "whitelist \u2013  \u2013 AllEnHook",
+   "bucket": "Scaling",
+   "spend": 1221.8,
+   "installs": 41,
+   "cpi": 29.8,
+   "EI": 0.514,
+   "SI": 4.0,
+   "SP2": 2.056,
+   "sp2_phase": "Pause",
+   "sp": 1.781,
+   "phase": "Mid-Tier",
+   "ltv_cac": 0.345,
+   "ltv_cac_ci": [
+    0.077,
+    0.726
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120249089633250167",
+   "name": "influencer \u2013 atiendai \u2013 valueprop",
+   "bucket": "Winning",
+   "spend": 695.64,
+   "installs": 61,
+   "cpi": 11.4,
+   "EI": 1.343,
+   "SI": 3.529,
+   "SP2": 4.74,
+   "sp2_phase": "Scalable winner",
+   "sp": 2.787,
+   "phase": "Phase 1 Winner",
+   "ltv_cac": 0.675,
+   "ltv_cac_ci": [
+    0.14,
+    1.42
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120249105317450167",
+   "name": "whitelist \u2013 mip-alicechenlife \u2013 ba.lifestyle.testscore",
+   "bucket": "Winning",
+   "spend": 974.49,
+   "installs": 31,
+   "cpi": 31.44,
+   "EI": 0.487,
+   "SI": 4.0,
+   "SP2": 1.949,
+   "sp2_phase": "Pause",
+   "sp": 2.069,
+   "phase": "Phase 1 Winner",
+   "ltv_cac": 0.33,
+   "ltv_cac_ci": [
+    0.084,
+    0.756
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120249105347140167",
+   "name": "ugc \u2013 jpkol \u2013 ba.lifestyle",
+   "bucket": "Scaling",
+   "spend": 19963.77,
+   "installs": 879,
+   "cpi": 22.71,
+   "EI": 0.674,
+   "SI": 3.866,
+   "SP2": 2.607,
+   "sp2_phase": "Pause",
+   "sp": 2.202,
+   "phase": "Phase 1 Winner",
+   "ltv_cac": 0.332,
+   "ltv_cac_ci": [
+    0.204,
+    0.503
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120249114098820167",
+   "name": "influencer \u2013 atiendai \u2013 product",
+   "bucket": "Winning",
+   "spend": 813.82,
+   "installs": 18,
+   "cpi": 45.21,
+   "EI": 0.339,
+   "SI": 4.0,
+   "SP2": 1.355,
+   "sp2_phase": "Pause",
+   "sp": 3.533,
+   "phase": "Phase 1 Winner",
+   "ltv_cac": 0.222,
+   "ltv_cac_ci": [
+    0.0,
+    0.628
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120249135201100167",
+   "name": "whitelist \u2013 mip-alicechenlife \u2013 ba.lifestyle.testscore",
+   "bucket": "Winning",
+   "spend": 1800.67,
+   "installs": 33,
+   "cpi": 54.57,
+   "EI": 0.281,
+   "SI": 4.0,
+   "SP2": 1.123,
+   "sp2_phase": "Pause",
+   "sp": 1.929,
+   "phase": "Mid-Tier",
+   "ltv_cac": 0.409,
+   "ltv_cac_ci": [
+    0.147,
+    0.787
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120249176070740167",
+   "name": "influencer \u2013 thedodomen \u2013 noframe",
+   "bucket": "Testing",
+   "spend": 155.78,
+   "installs": 5,
+   "cpi": 31.16,
+   "EI": 0.492,
+   "SI": 0.549,
+   "SP2": 0.27,
+   "sp2_phase": "Pause",
+   "sp": 2.634,
+   "phase": "Pause",
+   "ltv_cac": 1.674,
+   "ltv_cac_ci": [
+    0.0,
+    4.226
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120249176071730167",
+   "name": "influencer \u2013 thedodomen \u2013 noframe",
+   "bucket": "Testing",
+   "spend": 291.96,
+   "installs": 64,
+   "cpi": 4.56,
+   "EI": 3.358,
+   "SI": 1.801,
+   "SP2": 6.046,
+   "sp2_phase": "Scalable winner",
+   "sp": 4.146,
+   "phase": "Phase 2 Winner",
+   "ltv_cac": 1.641,
+   "ltv_cac_ci": [
+    0.389,
+    3.355
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120249176072350167",
+   "name": "influencer \u2013 thedodomen \u2013 frame-learning",
+   "bucket": "Testing",
+   "spend": 228.45,
+   "installs": 8,
+   "cpi": 28.56,
+   "EI": 0.536,
+   "SI": 0.434,
+   "SP2": 0.233,
+   "sp2_phase": "Pause",
+   "sp": 2.707,
+   "phase": "Pause",
+   "ltv_cac": 0.802,
+   "ltv_cac_ci": [
+    0.0,
+    2.074
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120249176072690167",
+   "name": "influencer \u2013 thedodomen \u2013 frame-spanish",
+   "bucket": "Testing",
+   "spend": 426.36,
+   "installs": 4,
+   "cpi": 106.59,
+   "EI": 0.144,
+   "SI": 0.876,
+   "SP2": 0.126,
+   "sp2_phase": "Pause",
+   "sp": 1.195,
+   "phase": "Pause",
+   "ltv_cac": 0.69,
+   "ltv_cac_ci": [
+    0.0,
+    1.663
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120249176075550167",
+   "name": "influencer \u2013 thedodomen \u2013 noframe",
+   "bucket": "Testing",
+   "spend": 1434.11,
+   "installs": 94,
+   "cpi": 15.26,
+   "EI": 1.004,
+   "SI": 4.0,
+   "SP2": 4.016,
+   "sp2_phase": "Scalable winner",
+   "sp": 3.529,
+   "phase": "Phase 1 Winner",
+   "ltv_cac": 0.803,
+   "ltv_cac_ci": [
+    0.361,
+    1.395
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120249176077580167",
+   "name": "influencer \u2013 thedodomen \u2013 noframe",
+   "bucket": "Testing",
+   "spend": 3614.26,
+   "installs": 170,
+   "cpi": 21.26,
+   "EI": 0.721,
+   "SI": 4.0,
+   "SP2": 2.882,
+   "sp2_phase": "Pause",
+   "sp": 2.002,
+   "phase": "Phase 1 Winner",
+   "ltv_cac": 0.589,
+   "ltv_cac_ci": [
+    0.312,
+    0.958
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120249190061250167",
+   "name": "whitelist \u2013 mip-happygang5215 \u2013 openquestion",
+   "bucket": "Winning",
+   "spend": 382.75,
+   "installs": 6,
+   "cpi": 63.79,
+   "EI": 0.24,
+   "SI": 1.553,
+   "SP2": 0.373,
+   "sp2_phase": "Pause",
+   "sp": 2.132,
+   "phase": "Pause",
+   "ltv_cac": 0.221,
+   "ltv_cac_ci": [
+    0.0,
+    0.716
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120249242631140167",
+   "name": "influencer \u2013 thedodomen \u2013 noframe",
+   "bucket": "Scaling",
+   "spend": 3543.6,
+   "installs": 157,
+   "cpi": 22.57,
+   "EI": 0.679,
+   "SI": 3.088,
+   "SP2": 2.096,
+   "sp2_phase": "Pause",
+   "sp": 2.188,
+   "phase": "Phase 1 Winner",
+   "ltv_cac": 0.496,
+   "ltv_cac_ci": [
+    0.253,
+    0.823
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120249242654880167",
+   "name": "influencer \u2013 thedodomen \u2013 noframe",
+   "bucket": "Scaling",
+   "spend": 37726.6,
+   "installs": 2500,
+   "cpi": 15.09,
+   "EI": 1.015,
+   "SI": 4.0,
+   "SP2": 4.06,
+   "sp2_phase": "Scalable winner",
+   "sp": 2.543,
+   "phase": "Phase 1 Winner",
+   "ltv_cac": 0.687,
+   "ltv_cac_ci": [
+    0.517,
+    0.897
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120249248763350167",
+   "name": "whitelist \u2013 mip-happygang5215 \u2013 openquestion",
+   "bucket": "Winning",
+   "spend": 25.4,
+   "installs": 0,
+   "cpi": null,
+   "EI": null,
+   "SI": 0.258,
+   "SP2": null,
+   "sp2_phase": "No installs yet",
+   "sp": 1.71,
+   "phase": "Mid-Tier",
+   "ltv_cac": 0.0,
+   "ltv_cac_ci": [
+    0.0,
+    0.0
+   ],
+   "analyzed": false
+  },
+  {
+   "ad_id": "120249315126190167",
+   "name": "influencer \u2013 thedodomen \u2013 noframe",
+   "bucket": "Scaling",
+   "spend": 3083.25,
+   "installs": 135,
+   "cpi": 22.84,
+   "EI": 0.671,
+   "SI": 0.977,
+   "SP2": 0.655,
+   "sp2_phase": "Pause",
+   "sp": 1.964,
+   "phase": "Mid-Tier",
+   "ltv_cac": 0.592,
+   "ltv_cac_ci": [
+    0.319,
+    0.944
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120249469567010167",
+   "name": "ugc \u2013 qing \u2013 testimonial.ba.hook",
+   "bucket": "Testing",
+   "spend": 1805.31,
+   "installs": 124,
+   "cpi": 14.56,
+   "EI": 1.052,
+   "SI": 3.711,
+   "SP2": 3.905,
+   "sp2_phase": "Scalable winner",
+   "sp": 4.502,
+   "phase": "Phase 2 Winner",
+   "ltv_cac": 0.999,
+   "ltv_cac_ci": [
+    0.506,
+    1.663
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120249469567030167",
+   "name": "ugc \u2013  \u2013 testimonial.ba.hook",
+   "bucket": "Testing",
+   "spend": 164.65,
+   "installs": 3,
+   "cpi": 54.88,
+   "EI": 0.279,
+   "SI": 0.451,
+   "SP2": 0.126,
+   "sp2_phase": "Pause",
+   "sp": 0.872,
+   "phase": "Pause",
+   "ltv_cac": 0.0,
+   "ltv_cac_ci": [
+    0.0,
+    0.0
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120249469567140167",
+   "name": "ugc \u2013 jenny \u2013 hook.realscene.fulleng",
+   "bucket": "Testing",
+   "spend": 234.26,
+   "installs": 4,
+   "cpi": 58.56,
+   "EI": 0.262,
+   "SI": 1.445,
+   "SP2": 0.378,
+   "sp2_phase": "Pause",
+   "sp": 0.855,
+   "phase": "Pause",
+   "ltv_cac": 0.669,
+   "ltv_cac_ci": [
+    0.0,
+    1.946
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120249469567200167",
+   "name": "ugc \u2013 sophia \u2013 hook.testimonial",
+   "bucket": "Testing",
+   "spend": 1124.75,
+   "installs": 50,
+   "cpi": 22.5,
+   "EI": 0.681,
+   "SI": 3.083,
+   "SP2": 2.099,
+   "sp2_phase": "Pause",
+   "sp": 2.524,
+   "phase": "Phase 1 Winner",
+   "ltv_cac": 0.781,
+   "ltv_cac_ci": [
+    0.311,
+    1.455
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120249469568100167",
+   "name": "generic \u2013 na \u2013 progress",
+   "bucket": "Testing",
+   "spend": 173.31,
+   "installs": 2,
+   "cpi": 86.66,
+   "EI": 0.177,
+   "SI": 0.611,
+   "SP2": 0.108,
+   "sp2_phase": "Pause",
+   "sp": 0.667,
+   "phase": "Pause",
+   "ltv_cac": 1.161,
+   "ltv_cac_ci": [
+    0.0,
+    3.44
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120249641611010167",
+   "name": "ugc \u2013 mip-youth.may \u2013 testimonial.ba.aboardlife",
+   "bucket": "Testing",
+   "spend": 385.35,
+   "installs": 2,
+   "cpi": 192.68,
+   "EI": 0.08,
+   "SI": 1.584,
+   "SP2": 0.126,
+   "sp2_phase": "Pause",
+   "sp": 0.997,
+   "phase": "Pause",
+   "ltv_cac": 0.247,
+   "ltv_cac_ci": [
+    0.0,
+    0.923
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120249641651420167",
+   "name": "ugc \u2013 mip-lavendora \u2013 testimonial.aboardlife",
+   "bucket": "Testing",
+   "spend": 252.15,
+   "installs": 3,
+   "cpi": 84.05,
+   "EI": 0.182,
+   "SI": 1.555,
+   "SP2": 0.283,
+   "sp2_phase": "Pause",
+   "sp": 2.038,
+   "phase": "Pause",
+   "ltv_cac": 0.334,
+   "ltv_cac_ci": [
+    0.0,
+    1.062
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120249641692540167",
+   "name": "ugc \u2013 mip-yclife \u2013 aboardlife",
+   "bucket": "Testing",
+   "spend": 207.29,
+   "installs": 8,
+   "cpi": 25.91,
+   "EI": 0.591,
+   "SI": 1.705,
+   "SP2": 1.008,
+   "sp2_phase": "Pause",
+   "sp": 4.842,
+   "phase": "Pause",
+   "ltv_cac": 0.405,
+   "ltv_cac_ci": [
+    0.0,
+    1.31
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120249641760720167",
+   "name": "ugc \u2013 mip-bpw.study \u2013 share.learnskill",
+   "bucket": "Testing",
+   "spend": 287.41,
+   "installs": 1,
+   "cpi": 287.41,
+   "EI": 0.053,
+   "SI": 2.363,
+   "SP2": 0.126,
+   "sp2_phase": "Pause",
+   "sp": 5.387,
+   "phase": "Pause",
+   "ltv_cac": 0.855,
+   "ltv_cac_ci": [
+    0.0,
+    2.192
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120249641997610167",
+   "name": "ugc \u2013 qing \u2013 product",
+   "bucket": "Winning",
+   "spend": 430.95,
+   "installs": 18,
+   "cpi": 23.94,
+   "EI": 0.64,
+   "SI": 0.795,
+   "SP2": 0.509,
+   "sp2_phase": "Pause",
+   "sp": 3.903,
+   "phase": "Phase 1 Winner",
+   "ltv_cac": 0.649,
+   "ltv_cac_ci": [
+    0.0,
+    1.554
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120249642037430167",
+   "name": "influencer \u2013 thedodomen \u2013 frame-learning",
+   "bucket": "Winning",
+   "spend": 599.51,
+   "installs": 39,
+   "cpi": 15.37,
+   "EI": 0.997,
+   "SI": 4.0,
+   "SP2": 3.986,
+   "sp2_phase": "Watch",
+   "sp": 1.661,
+   "phase": "Mid-Tier",
+   "ltv_cac": 0.727,
+   "ltv_cac_ci": [
+    0.162,
+    1.496
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120249652815090167",
+   "name": "ugc \u2013 qing \u2013 product",
+   "bucket": "Scaling",
+   "spend": 726.49,
+   "installs": 9,
+   "cpi": 80.72,
+   "EI": 0.19,
+   "SI": 2.532,
+   "SP2": 0.481,
+   "sp2_phase": "Pause",
+   "sp": 1.469,
+   "phase": "Mid-Tier",
+   "ltv_cac": 0.382,
+   "ltv_cac_ci": [
+    0.0,
+    0.909
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120249701534270167",
+   "name": "influencer \u2013 illyandlean \u2013 relaunch",
+   "bucket": "Scaling",
+   "spend": 16060.83,
+   "installs": 782,
+   "cpi": 20.54,
+   "EI": 0.746,
+   "SI": 3.293,
+   "SP2": 2.456,
+   "sp2_phase": "Pause",
+   "sp": 1.978,
+   "phase": "Mid-Tier",
+   "ltv_cac": 0.296,
+   "ltv_cac_ci": [
+    0.176,
+    0.459
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120249779562090167",
+   "name": "influencer \u2013 morning.jason \u2013 26q3campaign",
+   "bucket": "Testing",
+   "spend": 488.63,
+   "installs": 25,
+   "cpi": 19.55,
+   "EI": 0.784,
+   "SI": 2.411,
+   "SP2": 1.89,
+   "sp2_phase": "Pause",
+   "sp": 1.789,
+   "phase": "Mid-Tier",
+   "ltv_cac": 0.558,
+   "ltv_cac_ci": [
+    0.0,
+    1.345
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120249779562110167",
+   "name": "influencer \u2013 dachien \u2013 26q3campaign",
+   "bucket": "Testing",
+   "spend": 654.78,
+   "installs": 41,
+   "cpi": 15.97,
+   "EI": 0.959,
+   "SI": 3.231,
+   "SP2": 3.099,
+   "sp2_phase": "Watch",
+   "sp": 2.073,
+   "phase": "Phase 1 Winner",
+   "ltv_cac": 0.86,
+   "ltv_cac_ci": [
+    0.282,
+    1.694
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120249779562130167",
+   "name": "influencer \u2013  \u2013 26q3campaign",
+   "bucket": "Testing",
+   "spend": 177.67,
+   "installs": 6,
+   "cpi": 29.61,
+   "EI": 0.517,
+   "SI": 0.877,
+   "SP2": 0.453,
+   "sp2_phase": "Pause",
+   "sp": 1.611,
+   "phase": "Mid-Tier",
+   "ltv_cac": 0.478,
+   "ltv_cac_ci": [
+    0.0,
+    1.541
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120249779562150167",
+   "name": "influencer \u2013 illyandlean \u2013 26q3campaign",
+   "bucket": "Testing",
+   "spend": 1579.27,
+   "installs": 78,
+   "cpi": 20.25,
+   "EI": 0.757,
+   "SI": 2.997,
+   "SP2": 2.267,
+   "sp2_phase": "Pause",
+   "sp": 2.442,
+   "phase": "Phase 1 Winner",
+   "ltv_cac": 0.718,
+   "ltv_cac_ci": [
+    0.32,
+    1.294
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120249779562330167",
+   "name": "influencer \u2013 harryspeaks \u2013 26q3campaign",
+   "bucket": "Testing",
+   "spend": 160.59,
+   "installs": 1,
+   "cpi": 160.59,
+   "EI": 0.095,
+   "SI": 0.99,
+   "SP2": 0.094,
+   "sp2_phase": "Pause",
+   "sp": 0.937,
+   "phase": "Pause",
+   "ltv_cac": 0.0,
+   "ltv_cac_ci": [
+    0.0,
+    1.174
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120249784171630167",
+   "name": "influencer \u2013 morning.jason \u2013 26q3campaign",
+   "bucket": "Scaling",
+   "spend": 8053.83,
+   "installs": 391,
+   "cpi": 20.6,
+   "EI": 0.744,
+   "SI": 4.0,
+   "SP2": 2.975,
+   "sp2_phase": "Pause",
+   "sp": 2.035,
+   "phase": "Phase 1 Winner",
+   "ltv_cac": 0.363,
+   "ltv_cac_ci": [
+    0.206,
+    0.569
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120249784181830167",
+   "name": "influencer \u2013 harryspeaks \u2013 26q3campaign",
+   "bucket": "Scaling",
+   "spend": 2054.77,
+   "installs": 31,
+   "cpi": 66.28,
+   "EI": 0.231,
+   "SI": 1.023,
+   "SP2": 0.236,
+   "sp2_phase": "Pause",
+   "sp": 1.549,
+   "phase": "Mid-Tier",
+   "ltv_cac": 0.308,
+   "ltv_cac_ci": [
+    0.094,
+    0.602
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120249784194200167",
+   "name": "influencer \u2013 dachien \u2013 26q3campaign",
+   "bucket": "Scaling",
+   "spend": 14687.99,
+   "installs": 774,
+   "cpi": 18.98,
+   "EI": 0.807,
+   "SI": 2.694,
+   "SP2": 2.175,
+   "sp2_phase": "Watch",
+   "sp": 2.987,
+   "phase": "Phase 1 Winner",
+   "ltv_cac": 0.736,
+   "ltv_cac_ci": [
+    0.519,
+    1.004
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120249859615790167",
+   "name": "ugc \u2013 qing \u2013 testimonial.ba.hook",
+   "bucket": "Scaling",
+   "spend": 9010.98,
+   "installs": 384,
+   "cpi": 23.47,
+   "EI": 0.653,
+   "SI": 1.745,
+   "SP2": 1.139,
+   "sp2_phase": "Pause",
+   "sp": 3.684,
+   "phase": "Phase 1 Winner",
+   "ltv_cac": 0.63,
+   "ltv_cac_ci": [
+    0.399,
+    0.937
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120249917976060167",
+   "name": "ugc \u2013 qing \u2013 testimonial.ba.hook",
+   "bucket": "Winning",
+   "spend": 7633.47,
+   "installs": 428,
+   "cpi": 17.84,
+   "EI": 0.859,
+   "SI": 4.0,
+   "SP2": 3.436,
+   "sp2_phase": "Watch",
+   "sp": 2.866,
+   "phase": "Phase 1 Winner",
+   "ltv_cac": 0.666,
+   "ltv_cac_ci": [
+    0.423,
+    0.978
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120249918145530167",
+   "name": "ugc \u2013 sophia \u2013 hook.testimonial",
+   "bucket": "Scaling",
+   "spend": 2940.65,
+   "installs": 113,
+   "cpi": 26.02,
+   "EI": 0.589,
+   "SI": 0.539,
+   "SP2": 0.318,
+   "sp2_phase": "Pause",
+   "sp": 2.373,
+   "phase": "Phase 1 Winner",
+   "ltv_cac": 0.528,
+   "ltv_cac_ci": [
+    0.276,
+    0.874
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120249918254160167",
+   "name": "ugc \u2013 qing \u2013 testimonial.ba.hook",
+   "bucket": "Scaling",
+   "spend": 5000.08,
+   "installs": 182,
+   "cpi": 27.47,
+   "EI": 0.558,
+   "SI": 3.485,
+   "SP2": 1.943,
+   "sp2_phase": "Pause",
+   "sp": 2.797,
+   "phase": "Phase 1 Winner",
+   "ltv_cac": 0.531,
+   "ltv_cac_ci": [
+    0.3,
+    0.826
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120249918291540167",
+   "name": "influencer \u2013 illyandlean \u2013 26q3campaign",
+   "bucket": "Scaling",
+   "spend": 2802.09,
+   "installs": 51,
+   "cpi": 54.94,
+   "EI": 0.279,
+   "SI": 0.814,
+   "SP2": 0.227,
+   "sp2_phase": "Pause",
+   "sp": 1.803,
+   "phase": "Mid-Tier",
+   "ltv_cac": 0.434,
+   "ltv_cac_ci": [
+    0.193,
+    0.755
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120249918296230167",
+   "name": "influencer \u2013 morning.jason \u2013 26q3campaign",
+   "bucket": "Winning",
+   "spend": 2229.72,
+   "installs": 115,
+   "cpi": 19.39,
+   "EI": 0.79,
+   "SI": 2.381,
+   "SP2": 1.881,
+   "sp2_phase": "Pause",
+   "sp": 1.905,
+   "phase": "Mid-Tier",
+   "ltv_cac": 0.541,
+   "ltv_cac_ci": [
+    0.25,
+    0.932
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120249918716020167",
+   "name": "ugc \u2013  \u2013 abroadlife.vlog",
+   "bucket": "Testing",
+   "spend": 184.87,
+   "installs": 0,
+   "cpi": null,
+   "EI": null,
+   "SI": 1.52,
+   "SP2": null,
+   "sp2_phase": "No installs yet",
+   "sp": 1.822,
+   "phase": "Mid-Tier",
+   "ltv_cac": 0.0,
+   "ltv_cac_ci": [
+    0.0,
+    0.984
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120249918769370167",
+   "name": "ugc \u2013  \u2013 pun",
+   "bucket": "Testing",
+   "spend": 177.55,
+   "installs": 1,
+   "cpi": 177.55,
+   "EI": 0.086,
+   "SI": 0.626,
+   "SP2": 0.054,
+   "sp2_phase": "Pause",
+   "sp": 1.118,
+   "phase": "Pause",
+   "ltv_cac": 0.0,
+   "ltv_cac_ci": [
+    0.0,
+    1.049
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120249918847860167",
+   "name": "ugc \u2013  \u2013 abroadlife.oneshot.demo",
+   "bucket": "Testing",
+   "spend": 197.18,
+   "installs": 5,
+   "cpi": 39.44,
+   "EI": 0.388,
+   "SI": 0.973,
+   "SP2": 0.378,
+   "sp2_phase": "Pause",
+   "sp": 1.678,
+   "phase": "Mid-Tier",
+   "ltv_cac": 0.429,
+   "ltv_cac_ci": [
+    0.0,
+    1.365
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120249918894470167",
+   "name": "ugc \u2013 mip-sanawu33 \u2013 oneshot",
+   "bucket": "Testing",
+   "spend": 172.99,
+   "installs": 3,
+   "cpi": 57.66,
+   "EI": 0.266,
+   "SI": 0.711,
+   "SP2": 0.189,
+   "sp2_phase": "Pause",
+   "sp": 1.708,
+   "phase": "Mid-Tier",
+   "ltv_cac": 0.0,
+   "ltv_cac_ci": [
+    0.0,
+    1.074
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120249918980570167",
+   "name": "ugc \u2013 mip-chenchensiss \u2013 vlog.walking.allenglish",
+   "bucket": "Testing",
+   "spend": 3907.98,
+   "installs": 157,
+   "cpi": 24.89,
+   "EI": 0.615,
+   "SI": 4.0,
+   "SP2": 2.462,
+   "sp2_phase": "Pause",
+   "sp": 2.394,
+   "phase": "Phase 1 Winner",
+   "ltv_cac": 0.501,
+   "ltv_cac_ci": [
+    0.255,
+    0.832
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120249919047430167",
+   "name": "ugc \u2013  \u2013 oneshot",
+   "bucket": "Testing",
+   "spend": 248.47,
+   "installs": 6,
+   "cpi": 41.41,
+   "EI": 0.37,
+   "SI": 0.876,
+   "SP2": 0.324,
+   "sp2_phase": "Pause",
+   "sp": 1.445,
+   "phase": "Mid-Tier",
+   "ltv_cac": 0.0,
+   "ltv_cac_ci": [
+    0.0,
+    0.75
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120249990578130167",
+   "name": "whitelist \u2013 mip-kellyyen0122 \u2013 oneshot",
+   "bucket": "Testing",
+   "spend": 201.89,
+   "installs": 5,
+   "cpi": 40.38,
+   "EI": 0.379,
+   "SI": 1.245,
+   "SP2": 0.472,
+   "sp2_phase": "Pause",
+   "sp": 1.823,
+   "phase": "Mid-Tier",
+   "ltv_cac": 0.0,
+   "ltv_cac_ci": [
+    0.0,
+    0.916
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120249990614210167",
+   "name": "whitelist \u2013 mip-saraworld \u2013 aboardlife.remoworker",
+   "bucket": "Testing",
+   "spend": 2377.09,
+   "installs": 28,
+   "cpi": 84.9,
+   "EI": 0.18,
+   "SI": 4.0,
+   "SP2": 0.722,
+   "sp2_phase": "Pause",
+   "sp": 2.037,
+   "phase": "Phase 1 Winner",
+   "ltv_cac": 0.35,
+   "ltv_cac_ci": [
+    0.136,
+    0.658
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120249990690510167",
+   "name": "whitelist \u2013 mip-mrjun \u2013 oneshot.home",
+   "bucket": "Testing",
+   "spend": 273.53,
+   "installs": 1,
+   "cpi": 273.53,
+   "EI": 0.056,
+   "SI": 2.249,
+   "SP2": 0.126,
+   "sp2_phase": "Pause",
+   "sp": 3.288,
+   "phase": "Pause",
+   "ltv_cac": 0.308,
+   "ltv_cac_ci": [
+    0.0,
+    0.996
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120249990716300167",
+   "name": "whitelist \u2013 mip-chiayen \u2013 interview.punhook",
+   "bucket": "Testing",
+   "spend": 165.02,
+   "installs": 1,
+   "cpi": 165.02,
+   "EI": 0.093,
+   "SI": 1.357,
+   "SP2": 0.126,
+   "sp2_phase": "Pause",
+   "sp": 2.307,
+   "phase": "Pause",
+   "ltv_cac": 0.573,
+   "ltv_cac_ci": [
+    0.0,
+    2.074
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120249991414980167",
+   "name": "whitelist \u2013 mip-saraworld \u2013 aboardlife.sharing",
+   "bucket": "Testing",
+   "spend": 1116.18,
+   "installs": 17,
+   "cpi": 65.66,
+   "EI": 0.233,
+   "SI": 1.377,
+   "SP2": 0.321,
+   "sp2_phase": "Pause",
+   "sp": 1.753,
+   "phase": "Mid-Tier",
+   "ltv_cac": 0.354,
+   "ltv_cac_ci": [
+    0.079,
+    0.782
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120249991458770167",
+   "name": "whitelist \u2013 mip-cocoinfinland \u2013 vlog",
+   "bucket": "Testing",
+   "spend": 210.29,
+   "installs": 6,
+   "cpi": 35.05,
+   "EI": 0.437,
+   "SI": 1.297,
+   "SP2": 0.567,
+   "sp2_phase": "Pause",
+   "sp": 3.203,
+   "phase": "Pause",
+   "ltv_cac": 0.451,
+   "ltv_cac_ci": [
+    0.0,
+    1.654
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120249992156470167",
+   "name": "whitelist \u2013 mip-jenny \u2013 ba",
+   "bucket": "Testing",
+   "spend": 202.35,
+   "installs": 3,
+   "cpi": 67.45,
+   "EI": 0.227,
+   "SI": 1.248,
+   "SP2": 0.283,
+   "sp2_phase": "Pause",
+   "sp": 3.475,
+   "phase": "Pause",
+   "ltv_cac": 0.0,
+   "ltv_cac_ci": [
+    0.0,
+    0.0
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120249992189790167",
+   "name": "whitelist \u2013 mip-shiiiwen \u2013 oneshot.personalevent",
+   "bucket": "Testing",
+   "spend": 266.66,
+   "installs": 0,
+   "cpi": null,
+   "EI": null,
+   "SI": 1.096,
+   "SP2": null,
+   "sp2_phase": "No installs yet",
+   "sp": 2.58,
+   "phase": "Pause",
+   "ltv_cac": 0.427,
+   "ltv_cac_ci": [
+    0.0,
+    1.515
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120249992226780167",
+   "name": "whitelist \u2013 mip-shiiiwen \u2013 whileing.vlog",
+   "bucket": "Testing",
+   "spend": 195.46,
+   "installs": 2,
+   "cpi": 97.73,
+   "EI": 0.157,
+   "SI": 0.964,
+   "SP2": 0.151,
+   "sp2_phase": "Pause",
+   "sp": 1.667,
+   "phase": "Mid-Tier",
+   "ltv_cac": 0.0,
+   "ltv_cac_ci": [
+    0.0,
+    0.0
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120249992335170167",
+   "name": "whitelist \u2013 mip-kaooopei \u2013 qa",
+   "bucket": "Testing",
+   "spend": 209.1,
+   "installs": 5,
+   "cpi": 41.82,
+   "EI": 0.366,
+   "SI": 1.719,
+   "SP2": 0.63,
+   "sp2_phase": "Pause",
+   "sp": 3.224,
+   "phase": "Pause",
+   "ltv_cac": 0.511,
+   "ltv_cac_ci": [
+    0.0,
+    1.927
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120249992963230167",
+   "name": "whitelist \u2013 mip-yclife \u2013 vlog.parent",
+   "bucket": "Testing",
+   "spend": 217.16,
+   "installs": 5,
+   "cpi": 43.43,
+   "EI": 0.353,
+   "SI": 0.893,
+   "SP2": 0.315,
+   "sp2_phase": "Pause",
+   "sp": 1.875,
+   "phase": "Mid-Tier",
+   "ltv_cac": 0.744,
+   "ltv_cac_ci": [
+    0.0,
+    2.094
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120249993034910167",
+   "name": "whitelist \u2013 mip-amychou \u2013 oneshot.appscreen",
+   "bucket": "Testing",
+   "spend": 204.63,
+   "installs": 0,
+   "cpi": null,
+   "EI": null,
+   "SI": 1.01,
+   "SP2": null,
+   "sp2_phase": "No installs yet",
+   "sp": 1.785,
+   "phase": "Mid-Tier",
+   "ltv_cac": 0.42,
+   "ltv_cac_ci": [
+    0.0,
+    1.59
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120250094596930167",
+   "name": "ugc \u2013 mip-chenchensiss \u2013 vlog.walking.allenglish",
+   "bucket": "Winning",
+   "spend": 724.64,
+   "installs": 44,
+   "cpi": 16.47,
+   "EI": 0.93,
+   "SI": 0.98,
+   "SP2": 0.912,
+   "sp2_phase": "Watch",
+   "sp": 2.866,
+   "phase": "Phase 1 Winner",
+   "ltv_cac": 0.522,
+   "ltv_cac_ci": [
+    0.115,
+    1.194
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120250112779340167",
+   "name": "influencer \u2013 harryspeaks \u2013 26q3campaign",
+   "bucket": "Winning",
+   "spend": 291.29,
+   "installs": 30,
+   "cpi": 9.71,
+   "EI": 1.578,
+   "SI": 0.844,
+   "SP2": 1.332,
+   "sp2_phase": "Efficient, unproven scale",
+   "sp": 1.571,
+   "phase": "Mid-Tier",
+   "ltv_cac": 0.0,
+   "ltv_cac_ci": [
+    0.0,
+    0.637
+   ],
+   "analyzed": true
+  },
+  {
+   "ad_id": "120250114976680167",
+   "name": "ugc \u2013 sophia \u2013 hook.testimonial",
+   "bucket": "Testing",
+   "spend": 96.58,
+   "installs": 6,
+   "cpi": 16.1,
+   "EI": 0.952,
+   "SI": 0.794,
+   "SP2": 0.756,
+   "sp2_phase": "Watch",
+   "sp": 2.197,
+   "phase": "Pause",
+   "ltv_cac": 2.927,
+   "ltv_cac_ci": [
+    0.0,
+    6.874
+   ],
+   "analyzed": false
+  }
+ ],
+ "scale": {
+  "rho_velocity7_later_spend": 0.761628959276018,
+  "n": 51,
+  "within_ad_rho_spend_cpi_median": 0.4272727272727273,
+  "share_positive": 0.9487179487179487,
+  "n_ads": 39
+ }
+}

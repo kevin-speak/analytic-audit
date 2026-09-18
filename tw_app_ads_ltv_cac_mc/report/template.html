@@ -96,7 +96,7 @@ code{overflow-wrap:anywhere}
 </header>
 
 <section>
-  <div class="sec-head"><div><div class="eyebrow">Summary matrix</div><h2>Which signal tracks LTV/CAC, by campaign stage</h2><p>Spearman rank correlation between simulated LTV/CAC and each signal (median, 90% interval), and the spend-weighted LTV/CAC lift of winners over the rest. Ads with under $100 spend are excluded from correlations.</p></div></div>
+  <div class="sec-head"><div><div class="eyebrow">Summary matrix</div><h2>Which signal tracks LTV/CAC, by campaign stage</h2><p>Spearman rank correlation between simulated LTV/CAC and each signal (median and 90% interval across draws, where both sides carry their sampling noise, plus the correlation of the point estimates), and the spend-weighted LTV/CAC lift of winners over the rest. Ads with under $100 spend are excluded from correlations.</p></div></div>
   <div class="card tscroll"><table class="matrix" id="matrix"></table></div>
   <div id="findings"></div>
 </section>
@@ -144,6 +144,13 @@ code{overflow-wrap:anywhere}
   <div class="sec-head"><div><div class="eyebrow">Simulation stability</div><h2>4,000 vs 10,000 draws</h2><p>More draws only shrink the simulation's own sampling noise. The intervals below are set by the data (how many paid users each ad is credited with, the trial-to-paid rate, the plan mix), so they do not narrow with more draws. Once the summaries stop moving, extra draws add nothing.</p></div></div>
   <div class="card tscroll"><table id="stabTable"></table></div>
 </section>
+<section id="secSP2">
+  <div class="sec-head"><div><div class="eyebrow">7 · Proposed formula</div><h2>SP2 = Efficiency Index × Scale Index</h2><p>A score that reads from installs, which arrive within hours, instead of trials, which take days and SKAN postbacks. It encodes the two things the current SP does not: whether the ad is projected to hit the 0.8× LTV/CAC target, and whether it can actually win delivery.</p></div></div>
+  <div class="card" id="sp2Formula"></div>
+  <div class="grid2" style="margin-top:18px"><div class="card" id="sp2Speed"></div><div class="card" id="sp2Defined"></div></div>
+  <div class="grid2" style="margin-top:18px"><div class="card" id="sp2Quad"></div><div class="card tscroll" id="sp2Gates"></div></div>
+  <div id="sp2Findings"></div>
+</section>
 <section>
   <div class="sec-head"><div><div class="eyebrow">Campaigns</div><h2>Spend-weighted LTV/CAC by campaign</h2></div></div>
   <div class="card tscroll"><table id="campTable"></table></div>
@@ -165,6 +172,7 @@ code{overflow-wrap:anywhere}
 
 <script>
 const R = __RESULTS_JSON__;
+const R2 = __SP2_JSON__;
 const BUCKETS = ['Overall','Testing','Winning','Scaling'];
 const COL = {Testing:'var(--s1)',Winning:'var(--s2)',Scaling:'var(--s3)',Overall:'var(--neutral)'};
 const fmt = (x,d=2)=> x==null||isNaN(x)?'–':Number(x).toLocaleString('en-US',{minimumFractionDigits:d,maximumFractionDigits:d});
@@ -206,13 +214,13 @@ document.getElementById('nsimLede').textContent=R.meta.n_sim.toLocaleString();
     ['Ads (≥ $100 spend)',b=>`${b.n_ads} (${b.n_analyzed})`],
     ['Spend',b=>usd(b.spend)],
     ['LTV/CAC, spend-weighted',b=>`<b>${xr(b.ltv_cac_sw[1])}</b> <span class="small">${ci(b.ltv_cac_sw)}</span>`],
-    ['ρ LTV/CAC vs SP score',b=>rho(b.rho_sp,b.p_rho_sp_gt0)],
-    ['ρ LTV/CAC vs IPM',b=>rho(b.rho_ipm,b.p_rho_ipm_gt0)],
-    ['ρ LTV/CAC vs trial per impression',b=>rho(b.rho_tpi,b.p_rho_tpi_gt0)],
+    ['ρ LTV/CAC vs SP score',b=>rho(b.rho_sp,b.p_rho_sp_gt0,b.rho_sp_point)],
+    ['ρ LTV/CAC vs IPM',b=>rho(b.rho_ipm,b.p_rho_ipm_gt0,b.rho_ipm_point)],
+    ['ρ LTV/CAC vs trial per impression',b=>rho(b.rho_tpi,b.p_rho_tpi_gt0,b.rho_tpi_point)],
     ['P1 winners: lift vs rest',b=>lift(b.p1)],
     ['P2 winners: lift vs rest',b=>lift(b.p2)],
   ];
-  function rho(a,p){const cls=a[0]>0?'pos':a[2]<0?'neg':'';return `<span class="${cls}"><b>${fmt(a[1])}</b></span> <span class="small">${fmt(a[0])} to ${fmt(a[2])} · P(&gt;0) ${pct(p)}</span>`}
+  function rho(a,p,pt){const cls=a[0]>0?'pos':a[2]<0?'neg':'';return `<span class="${cls}"><b>${fmt(a[1])}</b></span> <span class="small">${fmt(a[0])} to ${fmt(a[2])} · P(&gt;0) ${pct(p)} · point ${fmt(pt)}</span>`}
   function lift(w){if(!w||w.n_winner_point===0||isNaN(w.lift[1]))return '<span class="small">no winners</span>';const cls=w.lift[0]>1?'pos':w.lift[2]<1?'neg':'';return `<span class="${cls}"><b>${fmt(w.lift[1])}×</b></span> <span class="small">${fmt(w.lift[0])}–${fmt(w.lift[2])} · P(&gt;1) ${pct(w.p_lift_gt1)} · n≈${w.n_winner_point}</span>`}
   let h='<thead><tr><th>Metric</th>'+cols.map(c=>`<th style="text-align:left"><span class="sw" style="background:${COL[c]};margin-right:6px"></span>${c}</th>`).join('')+'</tr></thead><tbody>';
   for(const [l,f] of rows)h+=`<tr><td>${l}</td>`+cols.map(c=>{const v=f(R.buckets[c]);const cls=/class="(pos|neg)"/.exec(v);return `<td class="num ${cls?cls[1]:''}" style="text-align:left">${v}</td>`}).join('')+'</tr>';
@@ -220,9 +228,9 @@ document.getElementById('nsimLede').textContent=R.meta.n_sim.toLocaleString();
   const o=R.buckets.Overall,w=R.buckets.Winning,s=R.buckets.Scaling,t=R.buckets.Testing;
   const best=[['SP score',o.rho_sp[1]],['IPM',o.rho_ipm[1]],['trial per impression',o.rho_tpi[1]]].sort((a,b)=>b[1]-a[1]);
   document.getElementById('findings').innerHTML=`
-   <div class="finding"><b>${best[0][0].charAt(0).toUpperCase()+best[0][0].slice(1)} is the strongest single predictor</b> of LTV/CAC overall (ρ ${fmt(o.rho_tpi[1])}, 90% ${fmt(o.rho_tpi[0])}–${fmt(o.rho_tpi[2])}), followed by IPM (ρ ${fmt(o.rho_ipm[1])}). The SP score barely correlates on its own (ρ ${fmt(o.rho_sp[1])}, interval spans zero) because it is a relative CTR/CTI efficiency index, not a cost-per-trial measure.</div>
-   <div class="finding"><b>The phase gates still separate value.</b> P2 winners run ${fmt(o.p2.lift[1])}× the spend-weighted LTV/CAC of everything else (P(lift&gt;1) ${pct(o.p2.p_lift_gt1)}); P1 winners ${fmt(o.p1.lift[1])}× (${pct(o.p1.p_lift_gt1)}). The CPFT ≤ $55 gate inside P2 is what makes it predictive: cost per trial is the bridge from creative efficiency to unit economics.</div>
-   <div class="finding"><b>Stage matters more than signal.</b> Winning-campaign ads sit at ${xr(w.ltv_cac_sw[1])} LTV/CAC, testing at ${xr(t.ltv_cac_sw[1])}, and the scaling campaign at ${xr(s.ltv_cac_sw[1])} with CAC ${usd(s.cac[1])}. Inside scaling, no creative signal predicts LTV/CAC (all intervals span zero) and the P1 gate carries no lift (${fmt(s.p1.lift[1])}×): once an ad is scaled, its cost is set by auction depth, not by its CTR/CTI ratios.</div>`;
+   <div class="finding"><b>${best[0][0].charAt(0).toUpperCase()+best[0][0].slice(1)} is the strongest single predictor</b> of LTV/CAC overall (ρ ${fmt(o.rho_tpi[1])} across draws, ${fmt(o.rho_tpi_point)} on point estimates), followed by SP (${fmt(o.rho_sp[1])} / ${fmt(o.rho_sp_point)}) and IPM (${fmt(o.rho_ipm[1])} / ${fmt(o.rho_ipm_point)}). All three intervals sit above zero. SP trails trial per impression because it scores relative CTR and click-to-trial efficiency but never sees cost.</div>
+   <div class="finding"><b>The phase gates separate value.</b> P2 winners run ${fmt(o.p2.lift[1])}× the spend-weighted LTV/CAC of everything else (P(lift&gt;1) ${pct(o.p2.p_lift_gt1)}); P1 winners ${fmt(o.p1.lift[1])}× (${pct(o.p1.p_lift_gt1)}). The CPFT ≤ $55 gate inside P2 is what makes it predictive: cost per trial is the bridge from creative efficiency to unit economics.</div>
+   <div class="finding"><b>Stage matters more than signal.</b> Winning-campaign ads sit at ${xr(w.ltv_cac_sw[1])} LTV/CAC, testing at ${xr(t.ltv_cac_sw[1])}, and the scaling campaign at ${xr(s.ltv_cac_sw[1])} with CAC ${usd(s.cac[1])}. Inside scaling, only SP still ranks ads (ρ ${fmt(s.rho_sp[1])}) while IPM and trial per impression do not, and the P1 gate carries no lift (${fmt(s.p1.lift[1])}×): once an ad is scaled, its cost is set by auction depth.</div>`;
 })();
 
 /* ---------- bucket selector ---------- */
@@ -373,7 +381,8 @@ function renderTable(){
    <li><b>Creative signals</b> come from the Meta ad × placement funnel: IPM = installs / impressions × 1000; TPI = in-app trial starts / impressions × 1000; CPFT = spend / trial starts. <b>SP score</b> follows the Option B formula: per placement, the ad's CTR and click-to-trial rate are divided by the benchmark of all other Taiwan iOS app ads on that placement, summed and spend-weighted. P1 winner = SP ≥ ${m.sp_threshold} and ≥ 10 installs; P2 winner = SP ≥ ${m.sp_threshold}, ≥ 10 trials and CPFT ≤ $${m.cpft_target}.</li>
    <li><b>Paid users per ad.</b> Start from the attribution SSOT's trial starts per ad (${f0(m.ssot_trials_matched)} of ${f0(m.ssot_trials_total)} Meta-iOS trial starts in the window land on ads with spend in the window). Apply a trial-to-paid rate drawn each simulation from Beta(mean ${pct(m.p_conv_mean)}, sd ${Math.round(m.p_conv_sd*100)} pts), the SSOT's modeled level. A per-ad multiplier (Gamma prior, strength ${m.prior_strength}) is updated with the ad's Meta-observed purchases and trial converts, which capture only ${pct(m.meta_report_ratio)} of modeled paid under SKAN, so they shift allocation between ads without changing the total. Paid counts are then Poisson draws.</li>
    <li><b>LTV per paid user</b> is a 36-month LTV from <code>analytics.user_ltv</code> for Meta-iOS-attributed Taiwan users who paid in the window: $${fmt(m.ltv_mu.annual_reg,0)} annual regular, $${fmt(m.ltv_mu.annual_plus,0)} annual plus, $${fmt(m.ltv_mu.monthly,0)} monthly. Each ad's mix of plans comes from its AppsFlyer trial starts by product, shrunk toward the global mix (${pct(m.plan_mix.annual_reg)} / ${pct(m.plan_mix.annual_plus)} / ${pct(m.plan_mix.monthly)}). A ±${Math.round(m.ltv_forecast_sd*100)}% global forecast error is drawn per simulation.</li>
-   <li><b>LTV/CAC per ad</b> = simulated LTV / spend. CAC = spend / paid. Signals are also re-drawn each simulation from their Beta posteriors (clicks, trials and installs against impressions), so SP, IPM and TPI carry their own sampling noise and an ad can cross the SP gate in some simulations and not others.</li>
+   <li><b>LTV/CAC per ad</b> = simulated LTV / spend. CAC = spend / paid. Signals are also re-drawn each simulation from their Beta posteriors (clicks, trials and installs against impressions), so SP, IPM and TPI carry their own sampling noise and an ad can cross the SP gate in some simulations and not others. For SP, each placement's CTR and click-to-trial draw is shrunk toward that placement's benchmark with a prior worth ${m.kappa_ctr.toLocaleString()} impressions / ${m.kappa_cti} clicks, so a placement with three clicks and no trial contributes about the benchmark ratio rather than a random one. (An earlier version of this page used a flat prior there, which made the simulated SP far noisier than the real score and reported ρ ≈ 0.06 for SP; the corrected value is above.)</li>
+   <li><b>SP2 validation</b> (section 7) uses the point LTV/CAC (median of simulations) per ad, daily Meta data for the spend-milestone test, and the same $100 spend floor. EI uses the ad's full-window CPI here; in production it would use the trailing 7 days.</li>
    <li><b>Outputs.</b> ${m.n_sim.toLocaleString()} simulations (the 4,000-draw run is re-summarised from the first 4,000 draws for the stability table). Correlations are Spearman rank correlations computed within each simulation over ads with ≥ $${m.min_spend_analyzed} spend (${m.ads_analyzed} ads). Winner lifts compare spend-weighted LTV/CAC of ads that are winners in that simulation against the rest. Intervals are the 5th–95th percentiles across simulations.</li>
   </ol>
   <p><b>Caveats.</b> Attribution is by attribution date, so the last two weeks of the window are still maturing and ads that launched late look slightly worse; ads that stopped before June still receive some lagged attributions that are not in this set. The SSOT's ~${pct(m.p_conv_mean)} trial-to-paid rate is modeled rather than observed; a user-level match implies closer to 31%, which would lower every LTV/CAC by roughly 20% but leave the rankings and correlations unchanged. LTV is a 36-month forecast, not realized revenue. Per-user LTV variance is small relative to conversion-count uncertainty, so intervals are driven mainly by how many paid users an ad is credited with.</p>`;
@@ -432,7 +441,7 @@ function renderGate(){
   let txt='';
   if(bucket==='Scaling'){txt=`<div class="finding"><b>In the scaling campaign the bar does nothing.</b> The P1 gate's lift is ${fmt(p1.lift[1])}× with P(lift&gt;1) of ${pct(p1.p_lift_gt1)}, no gated ad clears 1× in most simulations, and no threshold between 1 and 4 produces a lift whose interval excludes 1. Scaled ads are priced by the auction, and SP does not see cost.</div>`}
   else{txt=`<div class="finding"><b>The 2.0 bar carries a real but modest lift here:</b> ${fmt(at2.lift[1])}× (90% ${fmt(at2.lift[0])}–${fmt(at2.lift[2])}), with ${pct(at2.hit_rate_in[1])} of gated ads clearing 1× versus ${pct(at2.hit_rate_out[1])} outside. SP alone as a ranking score has an AUC of ${fmt(g.auc['SP score'][1])} (${fmt(g.auc['SP score'][0])}–${fmt(g.auc['SP score'][2])}), below CPFT (${fmt(g.auc['CPFT (lower is better)'][1])}) and trial per impression (${fmt(g.auc['Trial per impression'][1])}).</div>
-  <div class="finding"><b>Most of the P1 lift comes from the ≥ 10 installs condition, not from SP ≥ 2.</b> Installs alone lifts ${fmt(ino.lift[1])}×, SP alone ${fmt(spo.lift[1])}× with a wide interval (${fmt(spo.lift[0])}–${fmt(spo.lift[2])}). Only ${qc.n_in_point} ad${qc.n_in_point===1?'':'s'} with ≥ 10 installs fall below SP 2 (${qc.n_in_point?xr(qc.sw_in[1]):'–'}), so the bar rarely changes a decision that install volume has already made; where it does bite is the ${qb.n_in_point} ads with SP ≥ 2 but under 10 installs, which sit at ${xr(qb.sw_in[1])} versus ${xr(qa.sw_in[1])} for the full gate.</div>
+  <div class="finding"><b>The two halves of the P1 gate are nearly interchangeable.</b> Installs alone lifts ${fmt(ino.lift[1])}×, SP ≥ 2 alone ${fmt(spo.lift[1])}× (${fmt(spo.lift[0])}–${fmt(spo.lift[2])}), the full gate ${fmt(p1.lift[1])}×. Only ${qc.n_in_point} ad${qc.n_in_point===1?'':'s'} with ≥ 10 installs fall below SP 2 (${qc.n_in_point?xr(qc.sw_in[1]):'–'}), so the bar rarely changes a decision that install volume has already made; where it does bite is the ${qb.n_in_point} ads with SP ≥ 2 but under 10 installs, which sit at ${xr(qb.sw_in[1])} versus ${xr(qa.sw_in[1])} for the full gate.</div>
   <div class="finding"><b>${best.t===2?'2.0 is close to the best threshold in this stage.':`A bar of ${fmt(best.t,2)} would lift more (${fmt(best.lift[1])}×, ${best.n_in_point} ads pass) than 2.0 (${fmt(at2.lift[1])}×, ${at2.n_in_point} ads).`}</b> Within the winner set, a higher SP ${r[1]!=null&&r[0]>0?'still tracks LTV/CAC (ρ '+fmt(r[1])+', interval above zero)':'adds little (ρ '+(r[1]==null?'–':fmt(r[1]))+', interval spans zero)'}. The cost gates do the heavy lifting: CPFT ≤ $55 lifts ${cp.n_in_point?fmt(cp.lift[1])+'×':'– (no ads)'} and the TPI gate ${fmt(tp.lift[1])}×, because they see cost per trial and SP does not.</div>`}
   document.getElementById('gateFindings').innerHTML=txt;
 }
@@ -444,6 +453,74 @@ function renderGate(){
   document.getElementById('stabTable').innerHTML=h+'</tbody>';
 })();
 
+
+/* ---------- SP2 ---------- */
+function renderSP2(){
+  const P=R2.params,G=R2.gates[bucket],c=COL[bucket];
+  document.getElementById('sp2Formula').innerHTML=`
+   <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px">
+    <div><div class="eyebrow">Efficiency Index</div><div style="font-family:Sora,sans-serif;font-size:22px;font-weight:600;margin:6px 0">EI = (K ÷ CPI) ÷ 0.8</div><p class="small" style="margin:0">K = LTV per Meta install for the market from the attribution SSOT, refreshed monthly: <b>$${fmt(P.K_per_install)}</b> for Taiwan iOS today. CPI = spend ÷ installs, cumulative until the ad has 7 active days, then trailing 7 days so the index follows current, not historical, efficiency. <b>EI = 1 means projected LTV/CAC = 0.8×</b>, equivalent to CPI ≤ $${fmt(P.cpi_target)}. Read it after 20 installs or $100 of spend, whichever comes first.</p></div>
+    <div><div class="eyebrow">Scale Index</div><div style="font-family:Sora,sans-serif;font-size:22px;font-weight:600;margin:6px 0">SI = spend/day ÷ campaign median spend/day</div><p class="small" style="margin:0">Relative delivery: how much budget the ad wins against its peers, clipped to ${P.si_clip[0]}–${P.si_clip[1]}. Spend velocity in the first 7 days predicts an ad's later spend at ρ ${fmt(R2.scale.rho_velocity7_later_spend)}, so it is a valid early read of scalability.</p></div>
+    <div><div class="eyebrow">Score and rules</div><div style="font-family:Sora,sans-serif;font-size:22px;font-weight:600;margin:6px 0">SP2 = EI × SI</div><p class="small" style="margin:0"><b>Scalable winner:</b> EI ≥ 1 and SP2 ≥ 2 (on target and winning at least twice the median delivery, or well above target at median delivery). <b>Efficient, unproven scale:</b> EI ≥ 1, SP2 &lt; 2: raise budget. <b>Watch:</b> 0.8 ≤ EI &lt; 1. <b>Pause:</b> EI &lt; 0.8. The EI gate is hard: volume never compensates for being below target.</p></div>
+   </div>`;
+  // speed chart
+  const ms=R2.milestones;const host=document.getElementById('sp2Speed');host.innerHTML='<h3>How early does each signal read LTV/CAC?</h3><div class="small">Spearman ρ with the ad\'s final LTV/CAC, using only data up to a cumulative-spend milestone, among ads that went on to spend at least twice that</div>';
+  const W=640,H=330,m={t:20,r:16,b:46,l:44};
+  const svg=el('svg',{viewBox:`0 0 ${W} ${H}`,role:'img','aria-label':'Signal accuracy by spend milestone'},host);
+  const xs=ms.map(d=>d.spend);const lx=v=>Math.log10(v);const x0=lx(50),x1=lx(2000);
+  const sx=v=>m.l+(lx(v)-x0)/(x1-x0)*(W-m.l-m.r), sy=v=>H-m.b-((v+0.1)/0.8)*(H-m.t-m.b);
+  const gg=el('g',{class:'grid'},svg);[0,0.2,0.4,0.6].forEach(t=>el('line',{x1:m.l,x2:W-m.r,y1:sy(t),y2:sy(t)},gg));
+  const ax=el('g',{class:'axis'},svg);el('line',{x1:m.l,x2:W-m.r,y1:H-m.b,y2:H-m.b},ax);
+  xs.forEach(v=>{el('text',{x:sx(v),y:H-m.b+16,'text-anchor':'middle'},ax).textContent='$'+v});
+  [0,0.2,0.4,0.6].forEach(t=>{el('text',{x:m.l-8,y:sy(t)+4,'text-anchor':'end'},ax).textContent=fmt(t,1)});
+  el('text',{x:(m.l+W-m.r)/2,y:H-6,'text-anchor':'middle',style:'fill:var(--ink-2);font-size:12px'},ax).textContent='cumulative spend when the score is read';
+  el('line',{class:'ref',x1:m.l,x2:W-m.r,y1:sy(0),y2:sy(0),stroke:'var(--ink-3)'},svg);
+  const series=[['rho_ei','EI (installs)','var(--s1)'],['rho_sp','current SP (trials)','var(--s2)'],['rho_tpi','trial per impression','var(--s3)']];
+  series.forEach(([k,lab,col])=>{const pts=ms.filter(d=>d[k]!=null);el('polyline',{points:pts.map(d=>`${sx(d.spend)},${sy(d[k])}`).join(' '),fill:'none',stroke:col,'stroke-width':2.2,'stroke-linejoin':'round'},svg);
+    pts.forEach(d=>{el('circle',{cx:sx(d.spend),cy:sy(d[k]),r:4,fill:col,stroke:'var(--surface)','stroke-width':1.5},svg);const hit=el('circle',{cx:sx(d.spend),cy:sy(d[k]),r:9,fill:'transparent'},svg);
+      hit.onmouseenter=e=>showTip(`<b>${lab}</b> at $${d.spend} spend<br>ρ ${fmt(d[k])} · AUC(≥0.8×) ${fmt(d[k==='rho_ei'?'auc_ei':k==='rho_sp'?'auc_sp':'auc_tpi'])}<br>${d.n} ads · installs on ${pct(d.share_installs)}, trials on ${pct(d.share_trials)}`,e);hit.onmousemove=moveTip;hit.onmouseleave=hideTip;});
+  });
+  const lg=document.createElement('div');lg.className='legend';lg.style.marginTop='8px';lg.innerHTML=series.map(([k,l,col])=>`<span><i class="sw" style="background:${col}"></i>${l}</span>`).join('');host.appendChild(lg);
+  // defined chart
+  const h2=document.getElementById('sp2Defined');h2.innerHTML='<h3>Share of ads with a readable score</h3><div class="small">An install-based index exists as soon as an ad has installs; a trial-based one waits for trials</div>';
+  const W2=420,H2=260,m2={t:16,r:12,b:46,l:40};const s2=el('svg',{viewBox:`0 0 ${W2} ${H2}`,role:'img','aria-label':'Share of ads with a score by milestone'},h2);
+  const sx2=v=>m2.l+(lx(v)-x0)/(x1-x0)*(W2-m2.l-m2.r), sy2=v=>H2-m2.b-v*(H2-m2.t-m2.b);
+  const g2=el('g',{class:'grid'},s2);[0.25,0.5,0.75,1].forEach(t=>el('line',{x1:m2.l,x2:W2-m2.r,y1:sy2(t),y2:sy2(t)},g2));
+  const a2=el('g',{class:'axis'},s2);el('line',{x1:m2.l,x2:W2-m2.r,y1:H2-m2.b,y2:H2-m2.b},a2);
+  [50,100,200,500,1000,2000].forEach(v=>{el('text',{x:sx2(v),y:H2-m2.b+16,'text-anchor':'middle'},a2).textContent='$'+v});
+  [0,0.5,1].forEach(t=>{el('text',{x:m2.l-6,y:sy2(t)+4,'text-anchor':'end'},a2).textContent=pct(t)});
+  [['share_installs','installs','var(--s1)'],['share_trials','trials','var(--s2)']].forEach(([k,lab,col])=>{el('polyline',{points:ms.map(d=>`${sx2(d.spend)},${sy2(d[k])}`).join(' '),fill:'none',stroke:col,'stroke-width':2.2},s2);ms.forEach(d=>el('circle',{cx:sx2(d.spend),cy:sy2(d[k]),r:3.5,fill:col,stroke:'var(--surface)','stroke-width':1.5},s2));const f=ms[1];el('text',{x:sx2(f.spend)+(k==='share_installs'?-6:8),y:sy2(f[k])+(k==='share_installs'?-12:18),'text-anchor':k==='share_installs'?'end':'start',style:'fill:var(--ink);font-size:11px;font-weight:600'},s2).textContent=`has ${lab}: ${pct(f[k])} at $${f.spend}`});
+  // quadrant
+  const q=document.getElementById('sp2Quad');q.innerHTML='<h3>Every ad on the two axes</h3><div class="small">x = Efficiency Index, y = Scale Index (log). Dark ring = simulated LTV/CAC ≥ 0.8×. Curve = SP2 = 2.</div>';
+  const data=R2.ads.filter(a=>a.analyzed&&a.EI!=null&&(bucket==='Overall'||a.bucket===bucket));
+  const W3=640,H3=380,m3={t:16,r:16,b:46,l:62};const s3=el('svg',{viewBox:`0 0 ${W3} ${H3}`,role:'img','aria-label':'EI vs SI'},q);
+  const xmax=Math.min(Math.max(...data.map(a=>a.EI))*1.08,4);const sx3=v=>m3.l+Math.min(v,xmax)/xmax*(W3-m3.l-m3.r);const ly=v=>Math.log10(v);const sy3=v=>H3-m3.b-(ly(v)-ly(0.25))/(ly(4)-ly(0.25))*(H3-m3.t-m3.b);
+  const g3=el('g',{class:'grid'},s3);[0.25,0.5,1,2,4].forEach(t=>el('line',{x1:m3.l,x2:W3-m3.r,y1:sy3(t),y2:sy3(t)},g3));
+  const a3=el('g',{class:'axis'},s3);el('line',{x1:m3.l,x2:W3-m3.r,y1:H3-m3.b,y2:H3-m3.b},a3);
+  niceTicks(0,xmax).forEach(t=>{el('text',{x:sx3(t),y:H3-m3.b+16,'text-anchor':'middle'},a3).textContent=fmt(t,1)});
+  [0.25,0.5,1,2,4].forEach(t=>{el('text',{x:m3.l-8,y:sy3(t)+4,'text-anchor':'end'},a3).textContent=fmt(t,t<1?2:0)+'×'});
+  el('text',{x:(m3.l+W3-m3.r)/2,y:H3-6,'text-anchor':'middle',style:'fill:var(--ink-2);font-size:12px'},a3).textContent='Efficiency Index (1 = projected 0.8× LTV/CAC)';
+  el('text',{x:14,y:(m3.t+H3-m3.b)/2,'text-anchor':'middle',transform:`rotate(-90 14 ${(m3.t+H3-m3.b)/2})`,style:'fill:var(--ink-2);font-size:12px'},a3).textContent='Scale Index (vs campaign median)';
+  el('line',{class:'ref',x1:sx3(1),x2:sx3(1),y1:m3.t,y2:H3-m3.b,stroke:'var(--good)'},s3);el('text',{x:sx3(1)+5,y:H3-m3.b-6,style:'fill:var(--good);font-size:11px;font-weight:600'},s3).textContent='EI = 1';
+  const curve=[];for(let e=Math.max(0.5,0.02);e<=xmax;e+=0.02){const si=2/e;if(si>=0.25&&si<=4)curve.push(`${sx3(e)},${sy3(si)}`)}
+  el('polyline',{class:'ref',points:curve.join(' '),fill:'none',stroke:'var(--ink-3)'},s3);el('text',{x:sx3(Math.min(xmax,2.2))-4,y:sy3(Math.max(0.25,2/Math.min(xmax,2.2)))-6,'text-anchor':'end',style:'fill:var(--ink-3);font-size:11px'},s3).textContent='SP2 = 2';
+  const smax=Math.max(...data.map(a=>a.spend));const sorted=[...data].sort((a,b)=>b.spend-a.spend);
+  sorted.forEach(a=>{const r=3+10*Math.sqrt(a.spend/smax);const on=a.ltv_cac>=0.8;el('circle',{cx:sx3(a.EI),cy:sy3(a.SI),r,fill:COL[a.bucket],'fill-opacity':.72,stroke:on?'var(--ink)':'var(--surface)','stroke-width':on?2:1.5},s3);
+    const hit=el('circle',{cx:sx3(a.EI),cy:sy3(a.SI),r:Math.max(r,9),fill:'transparent'},s3);
+    hit.onmouseenter=e=>showTip(`<b>${esc(a.name)}</b><br>${a.bucket} · SP2 phase: ${a.sp2_phase} · SP phase: ${phaseShort(a.phase)}<br>Spend ${usd(a.spend)} · CPI ${usd(a.cpi)} · EI ${fmt(a.EI)} · SI ${fmt(a.SI)} · <b>SP2 ${fmt(a.SP2)}</b><br>Current SP ${fmt(a.sp)} · LTV/CAC ${xr(a.ltv_cac)} (90% ${ci(a.ltv_cac_ci)})`,e);hit.onmousemove=moveTip;hit.onmouseleave=hideTip;});
+  // gate table
+  const gt=document.getElementById('sp2Gates');
+  let h=`<h3>Gate comparison, ${bucket.toLowerCase()}</h3><div class="small">Full-window data; ${G.n_on_target} of ${G.n} ads end at or above 0.8×</div><table style="margin-top:10px"><thead><tr><th>Gate</th><th>Ads</th><th>Spend</th><th>LTV/CAC</th><th>Hit rate ≥ 0.8×</th><th>Recall of ≥ 0.8× spend</th></tr></thead><tbody>`;
+  G.rows.forEach(r=>{const hi=r.gate.startsWith('SP2')?' style="background:var(--accent-soft)"':'';h+=`<tr${hi}><td>${r.gate}</td><td class="num">${r.n}</td><td class="num">${usd(r.spend)}</td><td class="num"><b>${r.sw_ltv_cac==null?'–':xr(r.sw_ltv_cac)}</b></td><td class="num">${r.hit_rate==null?'–':pct(r.hit_rate)}</td><td class="num">${r.spend_recall==null?'–':pct(r.spend_recall)}</td></tr>`});
+  h+=`</tbody></table><div class="stat-row"><div class="stat"><div class="v num">${G.rho_ei==null?'–':fmt(G.rho_ei)}</div><div class="l">ρ EI vs LTV/CAC</div></div><div class="stat"><div class="v num">${G.rho_sp==null?'–':fmt(G.rho_sp)}</div><div class="l">ρ current SP vs LTV/CAC</div></div><div class="stat"><div class="v num">${G.auc_ei==null?'–':fmt(G.auc_ei)}</div><div class="l">AUC EI for ≥ 0.8×</div></div><div class="stat"><div class="v num">${G.auc_sp==null?'–':fmt(G.auc_sp)}</div><div class="l">AUC current SP</div></div></div>`;
+  gt.innerHTML=h;
+  const m100=ms.find(d=>d.spend===100),m300=ms.find(d=>d.spend===300);const p1=G.rows[0],ei=G.rows[1],w=G.rows[2];
+  document.getElementById('sp2Findings').innerHTML=`
+   <div class="finding"><b>Faster:</b> at $100 of cumulative spend, EI already reads final LTV/CAC at ρ ${fmt(m100.rho_ei)} (AUC ${fmt(m100.auc_ei)} for ≥ 0.8×) against ${fmt(m100.rho_sp)} (AUC ${fmt(m100.auc_sp)}) for the current SP, and it exists for ${pct(m100.share_installs)} of ads versus ${pct(m100.share_trials)} with any trial. At $300 the gap is ${fmt(m300.rho_ei)} vs ${fmt(m300.rho_sp)}. Past $750 the trial-based signals catch up, and every signal weakens because scaled economics drift.</div>
+   <div class="finding"><b>${bucket==='Scaling'?'In the scaling campaign, no gate finds on-target ads':'Stricter, and more often right'}:</b> ${bucket==='Scaling'?`only ${G.n_on_target} of ${G.n} scaled ads end at or above 0.8×, so the SP2 winner set (${w.n} ads) and the P1 set (${p1.n}) both miss; the score's value there is the EI reading itself, which says the campaign is running below target.`:`the SP2 winner set is ${w.n} ads at ${xr(w.sw_ltv_cac)} with a ${pct(w.hit_rate)} hit rate for ≥ 0.8×, against ${p1.n} P1 winners at ${xr(p1.sw_ltv_cac)} and ${pct(p1.hit_rate)}. It captures ${pct(w.spend_recall)} of the spend that ends on target, because it deliberately refuses ads that are efficient at small budgets but cannot win delivery.`}</div>
+   <div class="finding"><b>Why cost per install and not signup or trial:</b> installs are the most numerous early event (${pct(m100.share_installs)} of ads have one by $100), signups run at about ${pct(P.pool_cpi/P.pool_cps)} of installs, and trials lag by days. Cost per signup predicts slightly better once volume is in (ρ 0.54 vs 0.51 full-window) and can replace CPI in the same formula with K = $${fmt(P.K_per_signup)} per signup and a $${fmt(P.cps_target)} target. Efficiency does drift with scale: within an ad, daily CPI rises with daily spend (median ρ ${fmt(R2.scale.within_ad_rho_spend_cpi_median)}, positive for ${pct(R2.scale.share_positive)} of ads), which is why EI uses a trailing window once the ad is past its first week.</div>`;
+}
+
 function renderAll(){
   renderStage();
   scatter('scSP','sp','SP score',2.0);rhoHist('rhSP','rho_sp_hist','LTV/CAC vs SP score');
@@ -451,6 +528,7 @@ function renderAll(){
   scatter('scTPI','tpi','Trials per 1,000 impressions',null);rhoHist('rhTPI','rho_tpi_hist','LTV/CAC vs trial per impression');
   winnerStrip('wP1','p1','P1 winner');winnerStrip('wP2','p2','P2 winner');
   renderGate();
+  renderSP2();
   renderTable();
 }
 renderAll();

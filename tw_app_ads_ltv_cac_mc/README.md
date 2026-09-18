@@ -20,3 +20,6 @@ Phase rules and the SP Option B formula follow the SP dashboard skill (Taiwan: S
 Section 6 of the report tests the SP >= 2 (P1) gate directly: threshold sweep, decomposition of the gate
 into its SP and >=10-install conditions, benchmark against CPFT / TPI / IPM gates, AUC, and within-winner
 correlation. A stability table compares the first 4,000 draws with all 10,000.
+
+`sp2.py` proposes and validates SP2 = Efficiency Index x Scale Index (install-stage score aimed at the 0.8x
+LTV/CAC target): gate comparison vs P1, speed by cumulative-spend milestone, scale evidence. Section 7 of the report.
