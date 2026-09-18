@@ -14,7 +14,8 @@ import json, re, numpy as np, pandas as pd
 from scipy.stats import rankdata
 
 rng = np.random.default_rng(20260918)
-N_SIM = 4000
+N_SIM = 10000
+N_SIM_REF = 4000            # first N_SIM_REF draws are re-summarised to show Monte Carlo stability
 SP_THRESHOLD, CPFT_TARGET, MIN_TRIALS, MIN_INSTALLS = 2.0, 55.0, 10, 10
 MIN_SPEND_ANALYZED = 100.0
 PRIOR_STRENGTH = 20.0          # Gamma prior on per-ad conversion multiplier (mean 1, CV ~22%)
@@ -207,6 +208,82 @@ for b, bm in buckets.items():
         'rho_ipm_hist': np.histogram(rho_ipm, bins=np.linspace(-1, 1, 41))[0].tolist(),
         'rho_tpi_hist': np.histogram(rho_tpi, bins=np.linspace(-1, 1, 41))[0].tolist(),
     }
+
+
+# ---- gate analysis: does the SP >= 2 bar (P1 gate) predict LTV/CAC? ----------------------
+THRESHOLDS = [round(1.0 + 0.25 * i, 2) for i in range(13)]            # 1.0 .. 4.0
+pool_tpi = tri.sum() / imps.sum() * 1000; pool_ipm = inst.sum() / imps.sum() * 1000
+cpft_arr = np.nan_to_num(ads.cpft.values, nan=1e9)
+def gate_stats(G, X, sp_b, nsim):
+    """G, X: (nsim, n_idx) bool / float. Returns dict of median + 5/95 summaries."""
+    pos = X >= 1.0
+    sw_in = np.array([(X[s, G[s]] * sp_b[G[s]]).sum() / sp_b[G[s]].sum() if G[s].any() else np.nan for s in range(nsim)])
+    sw_out = np.array([(X[s, ~G[s]] * sp_b[~G[s]]).sum() / sp_b[~G[s]].sum() if (~G[s]).any() else np.nan for s in range(nsim)])
+    with np.errstate(divide='ignore', invalid='ignore'):
+        lift = sw_in / sw_out
+        prec = np.array([pos[s, G[s]].mean() if G[s].any() else np.nan for s in range(nsim)])
+        prec_out = np.array([pos[s, ~G[s]].mean() if (~G[s]).any() else np.nan for s in range(nsim)])
+        spend_pos = (pos * sp_b).sum(1)
+        recall = np.where(spend_pos > 0, ((pos & G) * sp_b).sum(1) / np.where(spend_pos > 0, spend_pos, 1), np.nan)
+        spend_share = (G * sp_b).sum(1) / sp_b.sum()
+    return {'lift': q(lift).tolist(), 'p_lift_gt1': float(np.nanmean(lift > 1)), 'sw_in': q(sw_in).tolist(), 'sw_out': q(sw_out).tolist(),
+            'hit_rate_in': q(prec).tolist(), 'hit_rate_out': q(prec_out).tolist(), 'spend_recall': q(recall).tolist(),
+            'spend_share': q(spend_share).tolist(), 'n_in_mean': float(G.sum(1).mean()), 'n_in_point': int(round(G.mean(0).sum()))}
+def auc_rows(score, X, nsim):
+    pos = X >= 1.0; out = np.full(nsim, np.nan)
+    for s in range(nsim):
+        p = pos[s]; npos, nneg = p.sum(), (~p).sum()
+        if npos == 0 or nneg == 0: continue
+        r = rankdata(score[s]); out[s] = (r[p].sum() - npos * (npos + 1) / 2) / (npos * nneg)
+    return out
+results['gates'] = {}
+for b, bm in buckets.items():
+    idx = np.where(bm & analyzed)[0]; X = LTVCAC[:, idx]; sp_b = spend[idx]
+    SPb, IPMb, TPIb = SP[:, idx], IPM[:, idx], TPI[:, idx]
+    inst_ok = (inst[idx] >= MIN_INSTALLS)[None, :]; tri_ok = (tri[idx] >= MIN_TRIALS)[None, :]; cp_ok = (cpft_arr[idx] <= CPFT_TARGET)[None, :]
+    g = {}
+    g['sweep'] = [{'t': t, **gate_stats((SPb >= t) & inst_ok, X, sp_b, N_SIM)} for t in THRESHOLDS]
+    g['gates'] = {
+        'P1 gate (SP ≥ 2 & ≥10 installs)': gate_stats((SPb >= 2) & inst_ok, X, sp_b, N_SIM),
+        'SP ≥ 2 alone': gate_stats(SPb >= 2, X, sp_b, N_SIM),
+        '≥ 10 installs alone': gate_stats(np.broadcast_to(inst_ok, X.shape), X, sp_b, N_SIM),
+        'CPFT ≤ $55 & ≥10 trials': gate_stats(np.broadcast_to(tri_ok & cp_ok, X.shape), X, sp_b, N_SIM),
+        'P2 gate (P1 & CPFT ≤ $55)': gate_stats((SPb >= 2) & tri_ok & cp_ok, X, sp_b, N_SIM),
+        'TPI ≥ pool average': gate_stats((TPIb >= pool_tpi) & inst_ok, X, sp_b, N_SIM),
+        'IPM ≥ pool average': gate_stats((IPMb >= pool_ipm) & inst_ok, X, sp_b, N_SIM),
+    }
+    g['quad'] = {
+        'SP ≥ 2, ≥10 installs': gate_stats((SPb >= 2) & inst_ok, X, sp_b, N_SIM),
+        'SP ≥ 2, <10 installs': gate_stats((SPb >= 2) & ~inst_ok, X, sp_b, N_SIM),
+        'SP < 2, ≥10 installs': gate_stats((SPb < 2) & inst_ok, X, sp_b, N_SIM),
+        'SP < 2, <10 installs': gate_stats((SPb < 2) & ~inst_ok, X, sp_b, N_SIM),
+    }
+    g['auc'] = {'SP score': q(auc_rows(SPb, X, N_SIM)).tolist(), 'IPM': q(auc_rows(IPMb, X, N_SIM)).tolist(),
+                'Trial per impression': q(auc_rows(TPIb, X, N_SIM)).tolist(), 'CPFT (lower is better)': q(auc_rows(-np.broadcast_to(cpft_arr[idx], X.shape), X, N_SIM)).tolist()}
+    # among P1 winners only: does a higher SP still track LTV/CAC?
+    rin = np.full(N_SIM, np.nan)
+    for s_ in range(N_SIM):
+        Gs = (SPb[s_] >= 2) & inst_ok[0]
+        if Gs.sum() >= 8:
+            rx, ry = rankdata(SPb[s_, Gs]), rankdata(X[s_, Gs]); rx -= rx.mean(); ry -= ry.mean()
+            d = np.sqrt((rx ** 2).sum() * (ry ** 2).sum()); rin[s_] = (rx * ry).sum() / d if d > 0 else np.nan
+    g['rho_sp_within_p1'] = q(rin).tolist() if np.isfinite(rin).any() else [None, None, None]
+    g['p_rho_within_gt0'] = float(np.nanmean(rin > 0)) if np.isfinite(rin).any() else None
+    g['pool_tpi'] = float(pool_tpi); g['pool_ipm'] = float(pool_ipm)
+    results['gates'][b] = g
+
+# ---- Monte Carlo stability: first N_SIM_REF draws vs all ------------------------------------
+stab = {}
+for b, bm in buckets.items():
+    idx = np.where(bm & analyzed)[0]; row = {}
+    for label, ns in (('ref', N_SIM_REF), ('full', N_SIM)):
+        X = LTVCAC[:ns, idx]; sw = (LTVCAC[:ns, bm] * spend[bm]).sum(1) / spend[bm].sum()
+        G = (SP[:ns, idx] >= 2) & (inst[idx] >= MIN_INSTALLS)[None, :]
+        gs = gate_stats(G, X, spend[idx], ns)
+        row[label] = {'n_sim': ns, 'ltv_cac_sw': q(sw).tolist(), 'rho_sp': q(spearman_rows(X, SP[:ns, idx])).tolist(),
+                      'rho_ipm': q(spearman_rows(X, IPM[:ns, idx])).tolist(), 'rho_tpi': q(spearman_rows(X, TPI[:ns, idx])).tolist(), 'p1_lift': gs['lift']}
+    stab[b] = row
+results['stability'] = stab
 
 for c, g in ads.groupby('campaign_name'):
     bm = (ads.campaign_name == c).values
