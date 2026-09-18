@@ -408,9 +408,9 @@ function renderGate(){
     hit.onmouseenter=e=>showTip(`<b>SP ≥ ${fmt(d.t,2)} & ≥ 10 installs</b><br>Lift ${fmt(d.lift[1])}× (90% ${fmt(d.lift[0])}–${fmt(d.lift[2])})<br>Passing: ${xr(d.sw_in[1])} · rest: ${xr(d.sw_out[1])}<br>Hit rate ${pct(d.hit_rate_in[1])} vs ${pct(d.hit_rate_out[1])} · spend recall ${pct(d.spend_recall[1])}<br>${d.n_in_point} ads pass`,e);hit.onmousemove=moveTip;hit.onmouseleave=hideTip;});
   // quad table
   const qh=document.getElementById('quad');
-  let h='<h3>Which half of the P1 gate carries the lift?</h3><div class="small">Spend-weighted LTV/CAC (median, 90% interval) for the four combinations</div><table style="margin-top:10px"><thead><tr><th>Group</th><th>Ads</th><th>LTV/CAC</th><th>90%</th><th>Hit rate</th></tr></thead><tbody>';
+  let h='<h3>Which half of the P1 gate carries the lift?</h3><div class="small">Spend-weighted LTV/CAC (median, 90% interval) for the four combinations</div><div class="tscroll" style="margin-top:10px;border:0"><table><thead><tr><th>Group</th><th>Ads</th><th>LTV/CAC</th><th>90%</th><th>Hit rate</th></tr></thead><tbody>';
   for(const [k,v] of Object.entries(g.quad)){h+=`<tr><td>${k}</td><td class="num">${v.n_in_point}</td><td class="num"><b>${v.n_in_point?xr(v.sw_in[1]):'–'}</b></td><td class="num">${v.n_in_point?ci(v.sw_in):'–'}</td><td class="num">${v.n_in_point?pct(v.hit_rate_in[1]):'–'}</td></tr>`}
-  qh.innerHTML=h+'</tbody></table>';
+  qh.innerHTML=h+'</tbody></table></div>';
   // gate table
   const gt=document.getElementById('gateTable');
   h='<thead><tr><th>Gate</th><th>Ads passing</th><th>Spend share</th><th>LTV/CAC in</th><th>LTV/CAC out</th><th>Lift</th><th>90% interval</th><th>P(lift &gt; 1)</th><th>Hit rate in</th><th>Hit rate out</th><th>Spend recall of ≥1× ads</th></tr></thead><tbody>';
