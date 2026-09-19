@@ -49,3 +49,19 @@ JOIN `speak-v2-2a1f1.analytics.user_ltv` l ON l.user_id=ua.user_id AND l.first_t
 WHERE ua.country='Taiwan' AND ua.attribution_channel='Meta Ads' AND ua.attribution_platform='ios'
   AND DATE(ua.attribution_timestamp) BETWEEN '2026-06-01' AND '2026-09-15'
 GROUP BY 1,2;
+
+-- 6) Ad x placement funnel cumulative to each ad's 10-install date ('i10') and SP2 read date ('read' = first day with
+--    >= 20 installs or >= $100 spend) -> data/ad_placement_milestones.csv (used by sp2_backtest.py)
+WITH f AS (
+  SELECT ad_id, date, COALESCE(placement,'unknown') placement, spend, impressions, clicks, installs, signups, trial_starts trials
+  FROM `speak-v2-2a1f1.analytics.meta_ads_creative_report_funnel`
+  WHERE date BETWEEN '2026-06-01' AND '2026-09-15' AND country='Taiwan' AND os='ios'),
+d AS (SELECT ad_id, date, SUM(installs) installs, SUM(spend) spend FROM f GROUP BY 1,2),
+c AS (SELECT ad_id, date, SUM(installs) OVER (PARTITION BY ad_id ORDER BY date) cum_i, SUM(spend) OVER (PARTITION BY ad_id ORDER BY date) cum_s FROM d),
+t AS (SELECT ad_id, MIN(IF(cum_i>=10,date,NULL)) d10,
+        LEAST(COALESCE(MIN(IF(cum_i>=20,date,NULL)),DATE '2099-01-01'), COALESCE(MIN(IF(cum_s>=100,date,NULL)),DATE '2099-01-01')) dread FROM c GROUP BY 1),
+m AS (SELECT ad_id, 'i10' milestone, d10 milestone_date FROM t WHERE d10 IS NOT NULL
+      UNION ALL SELECT ad_id, 'read', dread FROM t WHERE dread < DATE '2099-01-01')
+SELECT f.ad_id, m.milestone, m.milestone_date, f.placement, ROUND(SUM(f.spend),2) spend, SUM(f.impressions) impressions, SUM(f.clicks) clicks,
+       SUM(f.installs) installs, SUM(f.signups) signups, SUM(f.trials) trials
+FROM f JOIN m USING(ad_id) WHERE f.date <= m.milestone_date GROUP BY 1,2,3,4;

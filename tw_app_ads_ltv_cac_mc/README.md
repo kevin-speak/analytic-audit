@@ -23,3 +23,10 @@ correlation. A stability table compares the first 4,000 draws with all 10,000.
 
 `sp2.py` proposes and validates SP2 = Efficiency Index x Scale Index (install-stage score aimed at the 0.8x
 LTV/CAC target): gate comparison vs P1, speed by cumulative-spend milestone, scale evidence. Section 7 of the report.
+
+`sp2_backtest.py` replays each ad day by day to compare SP2 with the 10-install P1 rule (section 8): time and spend
+to a verdict, precision / recall for ads ending >= 0.85x when both are read on the same 10-install date, and ranking
+quality in the scaling campaign. Needs `data/ad_placement_milestones.csv` (ad x placement funnel cumulative to each
+ad's 10-install date and SP2 read date, query in queries.sql) and scikit-learn.
+
+Full rebuild: `python3 simulate.py && python3 sp2.py && python3 sp2_backtest.py && python3 report/build.py`.

@@ -313,6 +313,7 @@ for i, r in ads.iterrows():
         'phase': r.phase, 'p_sp_ge2': round(float((SP[:, i] >= 2).mean()), 3), 'p_p1': round(float(P1[:, i].mean()), 3), 'p_p2': round(float(P2[:, i].mean()), 3),
         'ltv_cac': round(float(lmed[i]), 3), 'ltv_cac_ci': [round(float(lq[i]), 3), round(float(lhq[i]), 3)],
         'p_ltv_cac_ge1': round(float((LTVCAC[:, i] >= 1).mean()), 3),
+        'p_ltv_cac_ge085': round(float((LTVCAC[:, i] >= 0.85).mean()), 3), 'p_ltv_cac_ge08': round(float((LTVCAC[:, i] >= 0.8).mean()), 3),
         'paid': round(float(pq[1][i]), 1), 'paid_ci': [round(float(pq[0][i]), 1), round(float(pq[2][i]), 1)],
         'cac': None if np.isnan(np.nanmedian(cac_arr[:, i])) else round(float(np.nanmedian(cac_arr[:, i])), 1),
         'analyzed': bool(analyzed[i]), 'first_date': r.first_date, 'last_date': r.last_date, 'active_days': int(r.active_days) if not np.isnan(r.active_days) else 0,

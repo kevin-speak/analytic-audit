@@ -1049,6 +1049,8 @@
     1.884
    ],
    "p_ltv_cac_ge1": 0.927,
+   "p_ltv_cac_ge085": 0.984,
+   "p_ltv_cac_ge08": 0.992,
    "paid": 89.0,
    "paid_ci": [
     63.0,
@@ -1097,6 +1099,8 @@
     0.0
    ],
    "p_ltv_cac_ge1": 0.0,
+   "p_ltv_cac_ge085": 0.0,
+   "p_ltv_cac_ge08": 0.0,
    "paid": 0.0,
    "paid_ci": [
     0.0,
@@ -1145,6 +1149,8 @@
     0.0
    ],
    "p_ltv_cac_ge1": 0.0,
+   "p_ltv_cac_ge085": 0.0,
+   "p_ltv_cac_ge08": 0.0,
    "paid": 0.0,
    "paid_ci": [
     0.0,
@@ -1193,6 +1199,8 @@
     2.908
    ],
    "p_ltv_cac_ge1": 1.0,
+   "p_ltv_cac_ge085": 1.0,
+   "p_ltv_cac_ge08": 1.0,
    "paid": 155.0,
    "paid_ci": [
     116.0,
@@ -1241,6 +1249,8 @@
     0.0
    ],
    "p_ltv_cac_ge1": 0.0,
+   "p_ltv_cac_ge085": 0.0,
+   "p_ltv_cac_ge08": 0.0,
    "paid": 0.0,
    "paid_ci": [
     0.0,
@@ -1289,6 +1299,8 @@
     0.0
    ],
    "p_ltv_cac_ge1": 0.0,
+   "p_ltv_cac_ge085": 0.0,
+   "p_ltv_cac_ge08": 0.0,
    "paid": 0.0,
    "paid_ci": [
     0.0,
@@ -1337,6 +1349,8 @@
     0.0
    ],
    "p_ltv_cac_ge1": 0.0,
+   "p_ltv_cac_ge085": 0.0,
+   "p_ltv_cac_ge08": 0.0,
    "paid": 0.0,
    "paid_ci": [
     0.0,
@@ -1385,6 +1399,8 @@
     1.122
    ],
    "p_ltv_cac_ge1": 0.096,
+   "p_ltv_cac_ge085": 0.194,
+   "p_ltv_cac_ge08": 0.243,
    "paid": 6.0,
    "paid_ci": [
     2.0,
@@ -1433,6 +1449,8 @@
     2.352
    ],
    "p_ltv_cac_ge1": 1.0,
+   "p_ltv_cac_ge085": 1.0,
+   "p_ltv_cac_ge08": 1.0,
    "paid": 240.0,
    "paid_ci": [
     188.0,
@@ -1481,6 +1499,8 @@
     0.0
    ],
    "p_ltv_cac_ge1": 0.0,
+   "p_ltv_cac_ge085": 0.0,
+   "p_ltv_cac_ge08": 0.0,
    "paid": 0.0,
    "paid_ci": [
     0.0,
@@ -1529,6 +1549,8 @@
     55.273
    ],
    "p_ltv_cac_ge1": 0.683,
+   "p_ltv_cac_ge085": 0.683,
+   "p_ltv_cac_ge08": 0.683,
    "paid": 1.0,
    "paid_ci": [
     0.0,
@@ -1577,6 +1599,8 @@
     3.848
    ],
    "p_ltv_cac_ge1": 0.984,
+   "p_ltv_cac_ge085": 0.993,
+   "p_ltv_cac_ge08": 0.995,
    "paid": 17.0,
    "paid_ci": [
     9.0,
@@ -1625,6 +1649,8 @@
     2.115
    ],
    "p_ltv_cac_ge1": 0.387,
+   "p_ltv_cac_ge085": 0.507,
+   "p_ltv_cac_ge08": 0.53,
    "paid": 2.0,
    "paid_ci": [
     0.0,
@@ -1673,6 +1699,8 @@
     2.404
    ],
    "p_ltv_cac_ge1": 0.744,
+   "p_ltv_cac_ge085": 0.831,
+   "p_ltv_cac_ge08": 0.86,
    "paid": 10.0,
    "paid_ci": [
     4.0,
@@ -1721,6 +1749,8 @@
     9.397
    ],
    "p_ltv_cac_ge1": 0.548,
+   "p_ltv_cac_ge085": 0.549,
+   "p_ltv_cac_ge08": 0.55,
    "paid": 1.0,
    "paid_ci": [
     0.0,
@@ -1769,6 +1799,8 @@
     0.0
    ],
    "p_ltv_cac_ge1": 0.0,
+   "p_ltv_cac_ge085": 0.0,
+   "p_ltv_cac_ge08": 0.0,
    "paid": 0.0,
    "paid_ci": [
     0.0,
@@ -1817,6 +1849,8 @@
     0.0
    ],
    "p_ltv_cac_ge1": 0.0,
+   "p_ltv_cac_ge085": 0.0,
+   "p_ltv_cac_ge08": 0.0,
    "paid": 0.0,
    "paid_ci": [
     0.0,
@@ -1865,6 +1899,8 @@
     0.0
    ],
    "p_ltv_cac_ge1": 0.0,
+   "p_ltv_cac_ge085": 0.0,
+   "p_ltv_cac_ge08": 0.0,
    "paid": 0.0,
    "paid_ci": [
     0.0,
@@ -1913,6 +1949,8 @@
     180.237
    ],
    "p_ltv_cac_ge1": 0.544,
+   "p_ltv_cac_ge085": 0.544,
+   "p_ltv_cac_ge08": 0.544,
    "paid": 1.0,
    "paid_ci": [
     0.0,
@@ -1961,6 +1999,8 @@
     0.0
    ],
    "p_ltv_cac_ge1": 0.0,
+   "p_ltv_cac_ge085": 0.0,
+   "p_ltv_cac_ge08": 0.0,
    "paid": 0.0,
    "paid_ci": [
     0.0,
@@ -2009,6 +2049,8 @@
     0.0
    ],
    "p_ltv_cac_ge1": 0.0,
+   "p_ltv_cac_ge085": 0.0,
+   "p_ltv_cac_ge08": 0.0,
    "paid": 0.0,
    "paid_ci": [
     0.0,
@@ -2057,6 +2099,8 @@
     0.0
    ],
    "p_ltv_cac_ge1": 0.0,
+   "p_ltv_cac_ge085": 0.0,
+   "p_ltv_cac_ge08": 0.0,
    "paid": 0.0,
    "paid_ci": [
     0.0,
@@ -2105,6 +2149,8 @@
     0.0
    ],
    "p_ltv_cac_ge1": 0.0,
+   "p_ltv_cac_ge085": 0.0,
+   "p_ltv_cac_ge08": 0.0,
    "paid": 0.0,
    "paid_ci": [
     0.0,
@@ -2153,6 +2199,8 @@
     6.003
    ],
    "p_ltv_cac_ge1": 0.325,
+   "p_ltv_cac_ge085": 0.326,
+   "p_ltv_cac_ge08": 0.326,
    "paid": 0.0,
    "paid_ci": [
     0.0,
@@ -2201,6 +2249,8 @@
     318.342
    ],
    "p_ltv_cac_ge1": 0.542,
+   "p_ltv_cac_ge085": 0.542,
+   "p_ltv_cac_ge08": 0.542,
    "paid": 1.0,
    "paid_ci": [
     0.0,
@@ -2249,6 +2299,8 @@
     98.259
    ],
    "p_ltv_cac_ge1": 0.33,
+   "p_ltv_cac_ge085": 0.33,
+   "p_ltv_cac_ge08": 0.33,
    "paid": 0.0,
    "paid_ci": [
     0.0,
@@ -2297,6 +2349,8 @@
     10.264
    ],
    "p_ltv_cac_ge1": 0.541,
+   "p_ltv_cac_ge085": 0.541,
+   "p_ltv_cac_ge08": 0.541,
    "paid": 1.0,
    "paid_ci": [
     0.0,
@@ -2345,6 +2399,8 @@
     1.496
    ],
    "p_ltv_cac_ge1": 0.199,
+   "p_ltv_cac_ge085": 0.294,
+   "p_ltv_cac_ge08": 0.314,
    "paid": 2.0,
    "paid_ci": [
     0.0,
@@ -2393,6 +2449,8 @@
     0.0
    ],
    "p_ltv_cac_ge1": 0.0,
+   "p_ltv_cac_ge085": 0.0,
+   "p_ltv_cac_ge08": 0.0,
    "paid": 0.0,
    "paid_ci": [
     0.0,
@@ -2441,6 +2499,8 @@
     5.159
    ],
    "p_ltv_cac_ge1": 0.681,
+   "p_ltv_cac_ge085": 0.685,
+   "p_ltv_cac_ge08": 0.686,
    "paid": 1.0,
    "paid_ci": [
     0.0,
@@ -2489,6 +2549,8 @@
     2.825
    ],
    "p_ltv_cac_ge1": 0.329,
+   "p_ltv_cac_ge085": 0.331,
+   "p_ltv_cac_ge08": 0.332,
    "paid": 0.0,
    "paid_ci": [
     0.0,
@@ -2537,6 +2599,8 @@
     2.854
    ],
    "p_ltv_cac_ge1": 0.349,
+   "p_ltv_cac_ge085": 0.52,
+   "p_ltv_cac_ge08": 0.533,
    "paid": 1.0,
    "paid_ci": [
     0.0,
@@ -2585,6 +2649,8 @@
     0.0
    ],
    "p_ltv_cac_ge1": 0.0,
+   "p_ltv_cac_ge085": 0.0,
+   "p_ltv_cac_ge08": 0.0,
    "paid": 0.0,
    "paid_ci": [
     0.0,
@@ -2633,6 +2699,8 @@
     0.323
    ],
    "p_ltv_cac_ge1": 0.0,
+   "p_ltv_cac_ge085": 0.0,
+   "p_ltv_cac_ge08": 0.0,
    "paid": 2.0,
    "paid_ci": [
     0.0,
@@ -2681,6 +2749,8 @@
     0.0
    ],
    "p_ltv_cac_ge1": 0.0,
+   "p_ltv_cac_ge085": 0.0,
+   "p_ltv_cac_ge08": 0.0,
    "paid": 0.0,
    "paid_ci": [
     0.0,
@@ -2729,6 +2799,8 @@
     0.0
    ],
    "p_ltv_cac_ge1": 0.0,
+   "p_ltv_cac_ge085": 0.0,
+   "p_ltv_cac_ge08": 0.0,
    "paid": 0.0,
    "paid_ci": [
     0.0,
@@ -2777,6 +2849,8 @@
     0.0
    ],
    "p_ltv_cac_ge1": 0.0,
+   "p_ltv_cac_ge085": 0.0,
+   "p_ltv_cac_ge08": 0.0,
    "paid": 0.0,
    "paid_ci": [
     0.0,
@@ -2825,6 +2899,8 @@
     20.818
    ],
    "p_ltv_cac_ge1": 0.549,
+   "p_ltv_cac_ge085": 0.549,
+   "p_ltv_cac_ge08": 0.549,
    "paid": 1.0,
    "paid_ci": [
     0.0,
@@ -2873,6 +2949,8 @@
     1.382
    ],
    "p_ltv_cac_ge1": 0.105,
+   "p_ltv_cac_ge085": 0.196,
+   "p_ltv_cac_ge08": 0.207,
    "paid": 1.0,
    "paid_ci": [
     0.0,
@@ -2921,6 +2999,8 @@
     0.0
    ],
    "p_ltv_cac_ge1": 0.0,
+   "p_ltv_cac_ge085": 0.0,
+   "p_ltv_cac_ge08": 0.0,
    "paid": 0.0,
    "paid_ci": [
     0.0,
@@ -2969,6 +3049,8 @@
     0.0
    ],
    "p_ltv_cac_ge1": 0.0,
+   "p_ltv_cac_ge085": 0.0,
+   "p_ltv_cac_ge08": 0.0,
    "paid": 0.0,
    "paid_ci": [
     0.0,
@@ -3017,6 +3099,8 @@
     1.271
    ],
    "p_ltv_cac_ge1": 0.083,
+   "p_ltv_cac_ge085": 0.161,
+   "p_ltv_cac_ge08": 0.194,
    "paid": 1.0,
    "paid_ci": [
     0.0,
@@ -3065,6 +3149,8 @@
     0.873
    ],
    "p_ltv_cac_ge1": 0.028,
+   "p_ltv_cac_ge085": 0.056,
+   "p_ltv_cac_ge08": 0.067,
    "paid": 1.0,
    "paid_ci": [
     0.0,
@@ -3113,6 +3199,8 @@
     0.0
    ],
    "p_ltv_cac_ge1": 0.0,
+   "p_ltv_cac_ge085": 0.0,
+   "p_ltv_cac_ge08": 0.0,
    "paid": 0.0,
    "paid_ci": [
     0.0,
@@ -3161,6 +3249,8 @@
     1.15
    ],
    "p_ltv_cac_ge1": 0.114,
+   "p_ltv_cac_ge085": 0.235,
+   "p_ltv_cac_ge08": 0.288,
    "paid": 11.0,
    "paid_ci": [
     5.0,
@@ -3209,6 +3299,8 @@
     1.042
    ],
    "p_ltv_cac_ge1": 0.057,
+   "p_ltv_cac_ge085": 0.09,
+   "p_ltv_cac_ge08": 0.108,
    "paid": 1.0,
    "paid_ci": [
     0.0,
@@ -3257,6 +3349,8 @@
     0.0
    ],
    "p_ltv_cac_ge1": 0.0,
+   "p_ltv_cac_ge085": 0.0,
+   "p_ltv_cac_ge08": 0.0,
    "paid": 0.0,
    "paid_ci": [
     0.0,
@@ -3305,6 +3399,8 @@
     1.641
    ],
    "p_ltv_cac_ge1": 0.673,
+   "p_ltv_cac_ge085": 0.855,
+   "p_ltv_cac_ge08": 0.898,
    "paid": 41.0,
    "paid_ci": [
     26.0,
@@ -3353,6 +3449,8 @@
     0.977
    ],
    "p_ltv_cac_ge1": 0.043,
+   "p_ltv_cac_ge085": 0.076,
+   "p_ltv_cac_ge08": 0.083,
    "paid": 0.0,
    "paid_ci": [
     0.0,
@@ -3401,6 +3499,8 @@
     1.791
    ],
    "p_ltv_cac_ge1": 0.226,
+   "p_ltv_cac_ge085": 0.267,
+   "p_ltv_cac_ge08": 0.275,
    "paid": 1.0,
    "paid_ci": [
     0.0,
@@ -3449,6 +3549,8 @@
     1.645
    ],
    "p_ltv_cac_ge1": 0.188,
+   "p_ltv_cac_ge085": 0.215,
+   "p_ltv_cac_ge08": 0.222,
    "paid": 1.0,
    "paid_ci": [
     0.0,
@@ -3497,6 +3599,8 @@
     1.656
    ],
    "p_ltv_cac_ge1": 0.204,
+   "p_ltv_cac_ge085": 0.226,
+   "p_ltv_cac_ge08": 0.229,
    "paid": 1.0,
    "paid_ci": [
     0.0,
@@ -3545,6 +3649,8 @@
     3.681
    ],
    "p_ltv_cac_ge1": 0.682,
+   "p_ltv_cac_ge085": 0.708,
+   "p_ltv_cac_ge08": 0.713,
    "paid": 2.0,
    "paid_ci": [
     0.0,
@@ -3593,6 +3699,8 @@
     1.626
    ],
    "p_ltv_cac_ge1": 0.265,
+   "p_ltv_cac_ge085": 0.366,
+   "p_ltv_cac_ge08": 0.401,
    "paid": 3.0,
    "paid_ci": [
     1.0,
@@ -3641,6 +3749,8 @@
     1.657
    ],
    "p_ltv_cac_ge1": 0.197,
+   "p_ltv_cac_ge085": 0.214,
+   "p_ltv_cac_ge08": 0.217,
    "paid": 1.0,
    "paid_ci": [
     0.0,
@@ -3689,6 +3799,8 @@
     1.237
    ],
    "p_ltv_cac_ge1": 0.168,
+   "p_ltv_cac_ge085": 0.318,
+   "p_ltv_cac_ge08": 0.383,
    "paid": 13.0,
    "paid_ci": [
     6.0,
@@ -3737,6 +3849,8 @@
     0.0
    ],
    "p_ltv_cac_ge1": 0.0,
+   "p_ltv_cac_ge085": 0.0,
+   "p_ltv_cac_ge08": 0.0,
    "paid": 0.0,
    "paid_ci": [
     0.0,
@@ -3785,6 +3899,8 @@
     2.204
    ],
    "p_ltv_cac_ge1": 0.315,
+   "p_ltv_cac_ge085": 0.395,
+   "p_ltv_cac_ge08": 0.413,
    "paid": 1.0,
    "paid_ci": [
     0.0,
@@ -3833,6 +3949,8 @@
     3.913
    ],
    "p_ltv_cac_ge1": 0.536,
+   "p_ltv_cac_ge085": 0.541,
+   "p_ltv_cac_ge08": 0.542,
    "paid": 1.0,
    "paid_ci": [
     0.0,
@@ -3881,6 +3999,8 @@
     3.364
    ],
    "p_ltv_cac_ge1": 0.667,
+   "p_ltv_cac_ge085": 0.682,
+   "p_ltv_cac_ge08": 0.684,
    "paid": 2.0,
    "paid_ci": [
     0.0,
@@ -3929,6 +4049,8 @@
     2.922
    ],
    "p_ltv_cac_ge1": 0.402,
+   "p_ltv_cac_ge085": 0.413,
+   "p_ltv_cac_ge08": 0.438,
    "paid": 1.0,
    "paid_ci": [
     0.0,
@@ -3977,6 +4099,8 @@
     1.665
    ],
    "p_ltv_cac_ge1": 0.331,
+   "p_ltv_cac_ge085": 0.457,
+   "p_ltv_cac_ge08": 0.496,
    "paid": 4.0,
    "paid_ci": [
     1.0,
@@ -4025,6 +4149,8 @@
     1.037
    ],
    "p_ltv_cac_ge1": 0.057,
+   "p_ltv_cac_ge085": 0.079,
+   "p_ltv_cac_ge08": 0.085,
    "paid": 1.0,
    "paid_ci": [
     0.0,
@@ -4073,6 +4199,8 @@
     0.862
    ],
    "p_ltv_cac_ge1": 0.018,
+   "p_ltv_cac_ge085": 0.054,
+   "p_ltv_cac_ge08": 0.075,
    "paid": 5.0,
    "paid_ci": [
     2.0,
@@ -4121,6 +4249,8 @@
     0.998
    ],
    "p_ltv_cac_ge1": 0.05,
+   "p_ltv_cac_ge085": 0.15,
+   "p_ltv_cac_ge08": 0.209,
    "paid": 21.0,
    "paid_ci": [
     12.0,
@@ -4169,6 +4299,8 @@
     0.952
    ],
    "p_ltv_cac_ge1": 0.032,
+   "p_ltv_cac_ge085": 0.126,
+   "p_ltv_cac_ge08": 0.182,
    "paid": 28.0,
    "paid_ci": [
     17.0,
@@ -4217,6 +4349,8 @@
     0.954
    ],
    "p_ltv_cac_ge1": 0.039,
+   "p_ltv_cac_ge085": 0.089,
+   "p_ltv_cac_ge08": 0.113,
    "paid": 4.0,
    "paid_ci": [
     1.0,
@@ -4265,6 +4399,8 @@
     0.434
    ],
    "p_ltv_cac_ge1": 0.001,
+   "p_ltv_cac_ge085": 0.002,
+   "p_ltv_cac_ge08": 0.002,
    "paid": 0.0,
    "paid_ci": [
     0.0,
@@ -4313,6 +4449,8 @@
     0.743
    ],
    "p_ltv_cac_ge1": 0.014,
+   "p_ltv_cac_ge085": 0.026,
+   "p_ltv_cac_ge08": 0.034,
    "paid": 1.0,
    "paid_ci": [
     0.0,
@@ -4361,6 +4499,8 @@
     0.697
    ],
    "p_ltv_cac_ge1": 0.009,
+   "p_ltv_cac_ge085": 0.023,
+   "p_ltv_cac_ge08": 0.026,
    "paid": 1.0,
    "paid_ci": [
     0.0,
@@ -4409,6 +4549,8 @@
     0.76
    ],
    "p_ltv_cac_ge1": 0.004,
+   "p_ltv_cac_ge085": 0.022,
+   "p_ltv_cac_ge08": 0.035,
    "paid": 12.0,
    "paid_ci": [
     6.0,
@@ -4457,6 +4599,8 @@
     1.063
    ],
    "p_ltv_cac_ge1": 0.096,
+   "p_ltv_cac_ge085": 0.336,
+   "p_ltv_cac_ge08": 0.453,
    "paid": 130.0,
    "paid_ci": [
     93.0,
@@ -4505,6 +4649,8 @@
     1.126
    ],
    "p_ltv_cac_ge1": 0.137,
+   "p_ltv_cac_ge085": 0.355,
+   "p_ltv_cac_ge08": 0.45,
    "paid": 53.0,
    "paid_ci": [
     35.0,
@@ -4553,6 +4699,8 @@
     0.806
    ],
    "p_ltv_cac_ge1": 0.011,
+   "p_ltv_cac_ge085": 0.035,
+   "p_ltv_cac_ge08": 0.052,
    "paid": 6.0,
    "paid_ci": [
     2.0,
@@ -4601,6 +4749,8 @@
     1.431
    ],
    "p_ltv_cac_ge1": 0.179,
+   "p_ltv_cac_ge085": 0.272,
+   "p_ltv_cac_ge08": 0.301,
    "paid": 2.0,
    "paid_ci": [
     0.0,
@@ -4649,6 +4799,8 @@
     0.0
    ],
    "p_ltv_cac_ge1": 0.0,
+   "p_ltv_cac_ge085": 0.0,
+   "p_ltv_cac_ge08": 0.0,
    "paid": 0.0,
    "paid_ci": [
     0.0,
@@ -4697,6 +4849,8 @@
     1.832
    ],
    "p_ltv_cac_ge1": 0.508,
+   "p_ltv_cac_ge085": 0.651,
+   "p_ltv_cac_ge08": 0.694,
    "paid": 9.0,
    "paid_ci": [
     4.0,
@@ -4745,6 +4899,8 @@
     0.0
    ],
    "p_ltv_cac_ge1": 0.0,
+   "p_ltv_cac_ge085": 0.0,
+   "p_ltv_cac_ge08": 0.0,
    "paid": 0.0,
    "paid_ci": [
     0.0,
@@ -4793,6 +4949,8 @@
     0.0
    ],
    "p_ltv_cac_ge1": 0.0,
+   "p_ltv_cac_ge085": 0.0,
+   "p_ltv_cac_ge08": 0.0,
    "paid": 0.0,
    "paid_ci": [
     0.0,
@@ -4841,6 +4999,8 @@
     0.0
    ],
    "p_ltv_cac_ge1": 0.0,
+   "p_ltv_cac_ge085": 0.0,
+   "p_ltv_cac_ge08": 0.0,
    "paid": 0.0,
    "paid_ci": [
     0.0,
@@ -4889,6 +5049,8 @@
     1.398
    ],
    "p_ltv_cac_ge1": 0.096,
+   "p_ltv_cac_ge085": 0.101,
+   "p_ltv_cac_ge08": 0.112,
    "paid": 0.0,
    "paid_ci": [
     0.0,
@@ -4937,6 +5099,8 @@
     4.711
    ],
    "p_ltv_cac_ge1": 0.536,
+   "p_ltv_cac_ge085": 0.538,
+   "p_ltv_cac_ge08": 0.539,
    "paid": 1.0,
    "paid_ci": [
     0.0,
@@ -4985,6 +5149,8 @@
     1.275
    ],
    "p_ltv_cac_ge1": 0.155,
+   "p_ltv_cac_ge085": 0.261,
+   "p_ltv_cac_ge08": 0.307,
    "paid": 5.0,
    "paid_ci": [
     1.0,
@@ -5033,6 +5199,8 @@
     1.299
    ],
    "p_ltv_cac_ge1": 0.126,
+   "p_ltv_cac_ge085": 0.178,
+   "p_ltv_cac_ge08": 0.21,
    "paid": 1.0,
    "paid_ci": [
     0.0,
@@ -5081,6 +5249,8 @@
     0.819
    ],
    "p_ltv_cac_ge1": 0.006,
+   "p_ltv_cac_ge085": 0.038,
+   "p_ltv_cac_ge08": 0.061,
    "paid": 16.0,
    "paid_ci": [
     8.0,
@@ -5129,6 +5299,8 @@
     1.052
    ],
    "p_ltv_cac_ge1": 0.071,
+   "p_ltv_cac_ge085": 0.191,
+   "p_ltv_cac_ge08": 0.256,
    "paid": 21.0,
    "paid_ci": [
     11.0,
@@ -5177,6 +5349,8 @@
     1.272
    ],
    "p_ltv_cac_ge1": 0.361,
+   "p_ltv_cac_ge085": 0.684,
+   "p_ltv_cac_ge08": 0.776,
    "paid": 126.0,
    "paid_ci": [
     91.0,
@@ -5225,6 +5399,8 @@
     1.13
    ],
    "p_ltv_cac_ge1": 0.151,
+   "p_ltv_cac_ge085": 0.379,
+   "p_ltv_cac_ge08": 0.479,
    "paid": 67.0,
    "paid_ci": [
     44.0,
@@ -5273,6 +5449,8 @@
     0.0
    ],
    "p_ltv_cac_ge1": 0.0,
+   "p_ltv_cac_ge085": 0.0,
+   "p_ltv_cac_ge08": 0.0,
    "paid": 0.0,
    "paid_ci": [
     0.0,
@@ -5321,6 +5499,8 @@
     3.287
    ],
    "p_ltv_cac_ge1": 0.32,
+   "p_ltv_cac_ge085": 0.323,
+   "p_ltv_cac_ge08": 0.324,
    "paid": 0.0,
    "paid_ci": [
     0.0,
@@ -5369,6 +5549,8 @@
     3.414
    ],
    "p_ltv_cac_ge1": 0.321,
+   "p_ltv_cac_ge085": 0.322,
+   "p_ltv_cac_ge08": 0.323,
    "paid": 0.0,
    "paid_ci": [
     0.0,
@@ -5417,6 +5599,8 @@
     1.076
    ],
    "p_ltv_cac_ge1": 0.079,
+   "p_ltv_cac_ge085": 0.175,
+   "p_ltv_cac_ge08": 0.219,
    "paid": 8.0,
    "paid_ci": [
     4.0,
@@ -5465,6 +5649,8 @@
     0.0
    ],
    "p_ltv_cac_ge1": 0.0,
+   "p_ltv_cac_ge085": 0.0,
+   "p_ltv_cac_ge08": 0.0,
    "paid": 0.0,
    "paid_ci": [
     0.0,
@@ -5513,6 +5699,8 @@
     1.32
    ],
    "p_ltv_cac_ge1": 0.089,
+   "p_ltv_cac_ge085": 0.186,
+   "p_ltv_cac_ge08": 0.206,
    "paid": 1.0,
    "paid_ci": [
     0.0,
@@ -5561,6 +5749,8 @@
     0.0
    ],
    "p_ltv_cac_ge1": 0.0,
+   "p_ltv_cac_ge085": 0.0,
+   "p_ltv_cac_ge08": 0.0,
    "paid": 0.0,
    "paid_ci": [
     0.0,
@@ -5609,6 +5799,8 @@
     0.0
    ],
    "p_ltv_cac_ge1": 0.0,
+   "p_ltv_cac_ge085": 0.0,
+   "p_ltv_cac_ge08": 0.0,
    "paid": 0.0,
    "paid_ci": [
     0.0,
@@ -5657,6 +5849,8 @@
     0.0
    ],
    "p_ltv_cac_ge1": 0.0,
+   "p_ltv_cac_ge085": 0.0,
+   "p_ltv_cac_ge08": 0.0,
    "paid": 0.0,
    "paid_ci": [
     0.0,
@@ -5705,6 +5899,8 @@
     1.725
    ],
    "p_ltv_cac_ge1": 0.215,
+   "p_ltv_cac_ge085": 0.23,
+   "p_ltv_cac_ge08": 0.232,
    "paid": 1.0,
    "paid_ci": [
     0.0,
@@ -5753,6 +5949,8 @@
     1.132
    ],
    "p_ltv_cac_ge1": 0.078,
+   "p_ltv_cac_ge085": 0.089,
+   "p_ltv_cac_ge08": 0.093,
    "paid": 0.0,
    "paid_ci": [
     0.0,
@@ -5801,6 +5999,8 @@
     1.297
    ],
    "p_ltv_cac_ge1": 0.117,
+   "p_ltv_cac_ge085": 0.135,
+   "p_ltv_cac_ge08": 0.138,
    "paid": 0.0,
    "paid_ci": [
     0.0,
@@ -5849,6 +6049,8 @@
     1.663
    ],
    "p_ltv_cac_ge1": 0.367,
+   "p_ltv_cac_ge085": 0.498,
+   "p_ltv_cac_ge08": 0.545,
    "paid": 6.0,
    "paid_ci": [
     2.0,
@@ -5897,6 +6099,8 @@
     1.254
    ],
    "p_ltv_cac_ge1": 0.082,
+   "p_ltv_cac_ge085": 0.153,
+   "p_ltv_cac_ge08": 0.191,
    "paid": 1.0,
    "paid_ci": [
     0.0,
@@ -5945,6 +6149,8 @@
     0.561
    ],
    "p_ltv_cac_ge1": 0.0,
+   "p_ltv_cac_ge085": 0.001,
+   "p_ltv_cac_ge08": 0.002,
    "paid": 7.0,
    "paid_ci": [
     3.0,
@@ -5993,6 +6199,8 @@
     1.73
    ],
    "p_ltv_cac_ge1": 0.254,
+   "p_ltv_cac_ge085": 0.288,
+   "p_ltv_cac_ge08": 0.329,
    "paid": 1.0,
    "paid_ci": [
     0.0,
@@ -6041,6 +6249,8 @@
     0.726
    ],
    "p_ltv_cac_ge1": 0.012,
+   "p_ltv_cac_ge085": 0.025,
+   "p_ltv_cac_ge08": 0.031,
    "paid": 1.0,
    "paid_ci": [
     0.0,
@@ -6089,6 +6299,8 @@
     5.916
    ],
    "p_ltv_cac_ge1": 0.331,
+   "p_ltv_cac_ge085": 0.331,
+   "p_ltv_cac_ge08": 0.331,
    "paid": 0.0,
    "paid_ci": [
     0.0,
@@ -6137,6 +6349,8 @@
     2.58
    ],
    "p_ltv_cac_ge1": 0.441,
+   "p_ltv_cac_ge085": 0.58,
+   "p_ltv_cac_ge08": 0.602,
    "paid": 2.0,
    "paid_ci": [
     0.0,
@@ -6185,6 +6399,8 @@
     0.969
    ],
    "p_ltv_cac_ge1": 0.04,
+   "p_ltv_cac_ge085": 0.101,
+   "p_ltv_cac_ge08": 0.132,
    "paid": 7.0,
    "paid_ci": [
     2.0,
@@ -6233,6 +6449,8 @@
     0.665
    ],
    "p_ltv_cac_ge1": 0.001,
+   "p_ltv_cac_ge085": 0.005,
+   "p_ltv_cac_ge08": 0.011,
    "paid": 17.0,
    "paid_ci": [
     9.0,
@@ -6281,6 +6499,8 @@
     0.62
    ],
    "p_ltv_cac_ge1": 0.0,
+   "p_ltv_cac_ge085": 0.002,
+   "p_ltv_cac_ge08": 0.004,
    "paid": 20.0,
    "paid_ci": [
     10.0,
@@ -6329,6 +6549,8 @@
     1.104
    ],
    "p_ltv_cac_ge1": 0.093,
+   "p_ltv_cac_ge085": 0.198,
+   "p_ltv_cac_ge08": 0.251,
    "paid": 10.0,
    "paid_ci": [
     4.0,
@@ -6377,6 +6599,8 @@
     0.619
    ],
    "p_ltv_cac_ge1": 0.006,
+   "p_ltv_cac_ge085": 0.016,
+   "p_ltv_cac_ge08": 0.019,
    "paid": 0.0,
    "paid_ci": [
     0.0,
@@ -6425,6 +6649,8 @@
     1.896
    ],
    "p_ltv_cac_ge1": 0.422,
+   "p_ltv_cac_ge085": 0.524,
+   "p_ltv_cac_ge08": 0.577,
    "paid": 4.0,
    "paid_ci": [
     1.0,
@@ -6473,6 +6699,8 @@
     0.835
    ],
    "p_ltv_cac_ge1": 0.011,
+   "p_ltv_cac_ge085": 0.044,
+   "p_ltv_cac_ge08": 0.065,
    "paid": 11.0,
    "paid_ci": [
     5.0,
@@ -6521,6 +6749,8 @@
     1.109
    ],
    "p_ltv_cac_ge1": 0.12,
+   "p_ltv_cac_ge085": 0.325,
+   "p_ltv_cac_ge08": 0.428,
    "paid": 67.0,
    "paid_ci": [
     44.0,
@@ -6569,6 +6799,8 @@
     0.568
    ],
    "p_ltv_cac_ge1": 0.0,
+   "p_ltv_cac_ge085": 0.001,
+   "p_ltv_cac_ge08": 0.003,
    "paid": 8.0,
    "paid_ci": [
     3.0,
@@ -6617,6 +6849,8 @@
     0.0
    ],
    "p_ltv_cac_ge1": 0.0,
+   "p_ltv_cac_ge085": 0.0,
+   "p_ltv_cac_ge08": 0.0,
    "paid": 0.0,
    "paid_ci": [
     0.0,
@@ -6665,6 +6899,8 @@
     7.82
    ],
    "p_ltv_cac_ge1": 0.341,
+   "p_ltv_cac_ge085": 0.341,
+   "p_ltv_cac_ge08": 0.341,
    "paid": 0.0,
    "paid_ci": [
     0.0,
@@ -6713,6 +6949,8 @@
     0.0
    ],
    "p_ltv_cac_ge1": 0.0,
+   "p_ltv_cac_ge085": 0.0,
+   "p_ltv_cac_ge08": 0.0,
    "paid": 0.0,
    "paid_ci": [
     0.0,
@@ -6761,6 +6999,8 @@
     6.055
    ],
    "p_ltv_cac_ge1": 0.331,
+   "p_ltv_cac_ge085": 0.331,
+   "p_ltv_cac_ge08": 0.331,
    "paid": 0.0,
    "paid_ci": [
     0.0,
@@ -6809,6 +7049,8 @@
     1.45
    ],
    "p_ltv_cac_ge1": 0.143,
+   "p_ltv_cac_ge085": 0.219,
+   "p_ltv_cac_ge08": 0.227,
    "paid": 1.0,
    "paid_ci": [
     0.0,
@@ -6857,6 +7099,8 @@
     1.718
    ],
    "p_ltv_cac_ge1": 0.522,
+   "p_ltv_cac_ge085": 0.692,
+   "p_ltv_cac_ge08": 0.743,
    "paid": 15.0,
    "paid_ci": [
     8.0,
@@ -6905,6 +7149,8 @@
     1.717
    ],
    "p_ltv_cac_ge1": 0.485,
+   "p_ltv_cac_ge085": 0.65,
+   "p_ltv_cac_ge08": 0.701,
    "paid": 13.0,
    "paid_ci": [
     6.0,
@@ -6953,6 +7199,8 @@
     1.481
    ],
    "p_ltv_cac_ge1": 0.133,
+   "p_ltv_cac_ge085": 0.141,
+   "p_ltv_cac_ge08": 0.151,
    "paid": 0.0,
    "paid_ci": [
     0.0,
@@ -7001,6 +7249,8 @@
     1.813
    ],
    "p_ltv_cac_ge1": 0.214,
+   "p_ltv_cac_ge085": 0.225,
+   "p_ltv_cac_ge08": 0.227,
    "paid": 1.0,
    "paid_ci": [
     0.0,
@@ -7049,6 +7299,8 @@
     0.0
    ],
    "p_ltv_cac_ge1": 0.0,
+   "p_ltv_cac_ge085": 0.0,
+   "p_ltv_cac_ge08": 0.0,
    "paid": 0.0,
    "paid_ci": [
     0.0,
@@ -7097,6 +7349,8 @@
     2.429
    ],
    "p_ltv_cac_ge1": 0.238,
+   "p_ltv_cac_ge085": 0.371,
+   "p_ltv_cac_ge08": 0.459,
    "paid": 1.0,
    "paid_ci": [
     0.0,
@@ -7145,6 +7399,8 @@
     0.0
    ],
    "p_ltv_cac_ge1": 0.0,
+   "p_ltv_cac_ge085": 0.0,
+   "p_ltv_cac_ge08": 0.0,
    "paid": 0.0,
    "paid_ci": [
     0.0,
@@ -7193,6 +7449,8 @@
     1.771
    ],
    "p_ltv_cac_ge1": 0.365,
+   "p_ltv_cac_ge085": 0.483,
+   "p_ltv_cac_ge08": 0.52,
    "paid": 4.0,
    "paid_ci": [
     1.0,
@@ -7241,6 +7499,8 @@
     1.536
    ],
    "p_ltv_cac_ge1": 0.299,
+   "p_ltv_cac_ge085": 0.429,
+   "p_ltv_cac_ge08": 0.478,
    "paid": 6.0,
    "paid_ci": [
     2.0,
@@ -7289,6 +7549,8 @@
     1.491
    ],
    "p_ltv_cac_ge1": 0.471,
+   "p_ltv_cac_ge085": 0.694,
+   "p_ltv_cac_ge08": 0.759,
    "paid": 39.0,
    "paid_ci": [
     24.0,
@@ -7337,6 +7599,8 @@
     1.791
    ],
    "p_ltv_cac_ge1": 0.701,
+   "p_ltv_cac_ge085": 0.85,
+   "p_ltv_cac_ge08": 0.888,
    "paid": 36.0,
    "paid_ci": [
     21.0,
@@ -7385,6 +7649,8 @@
     1.956
    ],
    "p_ltv_cac_ge1": 0.493,
+   "p_ltv_cac_ge085": 0.62,
+   "p_ltv_cac_ge08": 0.661,
    "paid": 7.0,
    "paid_ci": [
     2.0,
@@ -7433,6 +7699,8 @@
     0.67
    ],
    "p_ltv_cac_ge1": 0.0,
+   "p_ltv_cac_ge085": 0.004,
+   "p_ltv_cac_ge08": 0.008,
    "paid": 34.0,
    "paid_ci": [
     20.0,
@@ -7481,6 +7749,8 @@
     0.865
    ],
    "p_ltv_cac_ge1": 0.011,
+   "p_ltv_cac_ge085": 0.058,
+   "p_ltv_cac_ge08": 0.095,
    "paid": 55.0,
    "paid_ci": [
     35.0,
@@ -7529,6 +7799,8 @@
     0.0
    ],
    "p_ltv_cac_ge1": 0.0,
+   "p_ltv_cac_ge085": 0.0,
+   "p_ltv_cac_ge08": 0.0,
    "paid": 0.0,
    "paid_ci": [
     0.0,
@@ -7577,6 +7849,8 @@
     2.158
    ],
    "p_ltv_cac_ge1": 0.349,
+   "p_ltv_cac_ge085": 0.363,
+   "p_ltv_cac_ge08": 0.365,
    "paid": 1.0,
    "paid_ci": [
     0.0,
@@ -7625,6 +7899,8 @@
     1.074
    ],
    "p_ltv_cac_ge1": 0.081,
+   "p_ltv_cac_ge085": 0.18,
+   "p_ltv_cac_ge08": 0.23,
    "paid": 11.0,
    "paid_ci": [
     5.0,
@@ -7673,6 +7949,8 @@
     0.802
    ],
    "p_ltv_cac_ge1": 0.015,
+   "p_ltv_cac_ge085": 0.037,
+   "p_ltv_cac_ge08": 0.051,
    "paid": 3.0,
    "paid_ci": [
     0.0,
@@ -7721,6 +7999,8 @@
     0.893
    ],
    "p_ltv_cac_ge1": 0.014,
+   "p_ltv_cac_ge085": 0.075,
+   "p_ltv_cac_ge08": 0.115,
    "paid": 45.0,
    "paid_ci": [
     28.0,
@@ -7769,6 +8049,8 @@
     0.0
    ],
    "p_ltv_cac_ge1": 0.0,
+   "p_ltv_cac_ge085": 0.0,
+   "p_ltv_cac_ge08": 0.0,
    "paid": 0.0,
    "paid_ci": [
     0.0,
@@ -7817,6 +8099,8 @@
     1.578
    ],
    "p_ltv_cac_ge1": 0.398,
+   "p_ltv_cac_ge085": 0.556,
+   "p_ltv_cac_ge08": 0.609,
    "paid": 11.0,
    "paid_ci": [
     5.0,
@@ -7865,6 +8149,8 @@
     3.137
    ],
    "p_ltv_cac_ge1": 0.902,
+   "p_ltv_cac_ge085": 0.943,
+   "p_ltv_cac_ge08": 0.954,
    "paid": 12.0,
    "paid_ci": [
     6.0,
@@ -7913,6 +8199,8 @@
     1.13
    ],
    "p_ltv_cac_ge1": 0.074,
+   "p_ltv_cac_ge085": 0.088,
+   "p_ltv_cac_ge08": 0.09,
    "paid": 0.0,
    "paid_ci": [
     0.0,
@@ -7961,6 +8249,8 @@
     1.176
    ],
    "p_ltv_cac_ge1": 0.09,
+   "p_ltv_cac_ge085": 0.159,
+   "p_ltv_cac_ge08": 0.177,
    "paid": 2.0,
    "paid_ci": [
     0.0,
@@ -8009,6 +8299,8 @@
     0.932
    ],
    "p_ltv_cac_ge1": 0.032,
+   "p_ltv_cac_ge085": 0.081,
+   "p_ltv_cac_ge08": 0.109,
    "paid": 5.0,
    "paid_ci": [
     1.0,
@@ -8057,6 +8349,8 @@
     2.209
    ],
    "p_ltv_cac_ge1": 0.454,
+   "p_ltv_cac_ge085": 0.571,
+   "p_ltv_cac_ge08": 0.611,
    "paid": 3.0,
    "paid_ci": [
     0.0,
@@ -8105,6 +8399,8 @@
     1.475
    ],
    "p_ltv_cac_ge1": 0.184,
+   "p_ltv_cac_ge085": 0.242,
+   "p_ltv_cac_ge08": 0.256,
    "paid": 1.0,
    "paid_ci": [
     0.0,
@@ -8153,6 +8449,8 @@
     0.316
    ],
    "p_ltv_cac_ge1": 0.0,
+   "p_ltv_cac_ge085": 0.0,
+   "p_ltv_cac_ge08": 0.0,
    "paid": 90.0,
    "paid_ci": [
     57.0,
@@ -8201,6 +8499,8 @@
     0.748
    ],
    "p_ltv_cac_ge1": 0.002,
+   "p_ltv_cac_ge085": 0.015,
+   "p_ltv_cac_ge08": 0.026,
    "paid": 53.0,
    "paid_ci": [
     32.0,
@@ -8249,6 +8549,8 @@
     0.821
    ],
    "p_ltv_cac_ge1": 0.008,
+   "p_ltv_cac_ge085": 0.037,
+   "p_ltv_cac_ge08": 0.062,
    "paid": 28.0,
    "paid_ci": [
     16.0,
@@ -8297,6 +8599,8 @@
     0.0
    ],
    "p_ltv_cac_ge1": 0.0,
+   "p_ltv_cac_ge085": 0.0,
+   "p_ltv_cac_ge08": 0.0,
    "paid": 0.0,
    "paid_ci": [
     0.0,
@@ -8345,6 +8649,8 @@
     1.659
    ],
    "p_ltv_cac_ge1": 0.21,
+   "p_ltv_cac_ge085": 0.29,
+   "p_ltv_cac_ge08": 0.313,
    "paid": 1.0,
    "paid_ci": [
     0.0,
@@ -8393,6 +8699,8 @@
     0.834
    ],
    "p_ltv_cac_ge1": 0.02,
+   "p_ltv_cac_ge085": 0.048,
+   "p_ltv_cac_ge08": 0.056,
    "paid": 1.0,
    "paid_ci": [
     0.0,
@@ -8441,6 +8749,8 @@
     1.031
    ],
    "p_ltv_cac_ge1": 0.057,
+   "p_ltv_cac_ge085": 0.095,
+   "p_ltv_cac_ge08": 0.105,
    "paid": 1.0,
    "paid_ci": [
     0.0,
@@ -8489,6 +8799,8 @@
     0.725
    ],
    "p_ltv_cac_ge1": 0.015,
+   "p_ltv_cac_ge085": 0.024,
+   "p_ltv_cac_ge08": 0.029,
    "paid": 0.0,
    "paid_ci": [
     0.0,
@@ -8537,6 +8849,8 @@
     0.0
    ],
    "p_ltv_cac_ge1": 0.0,
+   "p_ltv_cac_ge085": 0.0,
+   "p_ltv_cac_ge08": 0.0,
    "paid": 0.0,
    "paid_ci": [
     0.0,
@@ -8585,6 +8899,8 @@
     0.975
    ],
    "p_ltv_cac_ge1": 0.043,
+   "p_ltv_cac_ge085": 0.078,
+   "p_ltv_cac_ge08": 0.082,
    "paid": 0.0,
    "paid_ci": [
     0.0,
@@ -8633,6 +8949,8 @@
     0.793
    ],
    "p_ltv_cac_ge1": 0.028,
+   "p_ltv_cac_ge085": 0.041,
+   "p_ltv_cac_ge08": 0.049,
    "paid": 0.0,
    "paid_ci": [
     0.0,
@@ -8681,6 +8999,8 @@
     1.881
    ],
    "p_ltv_cac_ge1": 0.397,
+   "p_ltv_cac_ge085": 0.461,
+   "p_ltv_cac_ge08": 0.523,
    "paid": 3.0,
    "paid_ci": [
     0.0,
@@ -8729,6 +9049,8 @@
     4.015
    ],
    "p_ltv_cac_ge1": 0.561,
+   "p_ltv_cac_ge085": 0.565,
+   "p_ltv_cac_ge08": 0.566,
    "paid": 1.0,
    "paid_ci": [
     0.0,
@@ -8777,6 +9099,8 @@
     0.992
    ],
    "p_ltv_cac_ge1": 0.047,
+   "p_ltv_cac_ge085": 0.081,
+   "p_ltv_cac_ge08": 0.086,
    "paid": 0.0,
    "paid_ci": [
     0.0,
@@ -8825,6 +9149,8 @@
     2.746
    ],
    "p_ltv_cac_ge1": 0.71,
+   "p_ltv_cac_ge085": 0.8,
+   "p_ltv_cac_ge08": 0.815,
    "paid": 6.0,
    "paid_ci": [
     2.0,
@@ -8873,6 +9199,8 @@
     1.604
    ],
    "p_ltv_cac_ge1": 0.22,
+   "p_ltv_cac_ge085": 0.32,
+   "p_ltv_cac_ge08": 0.342,
    "paid": 2.0,
    "paid_ci": [
     0.0,
@@ -8921,6 +9249,8 @@
     1.346
    ],
    "p_ltv_cac_ge1": 0.13,
+   "p_ltv_cac_ge085": 0.189,
+   "p_ltv_cac_ge08": 0.202,
    "paid": 1.0,
    "paid_ci": [
     0.0,
@@ -8969,6 +9299,8 @@
     1.326
    ],
    "p_ltv_cac_ge1": 0.149,
+   "p_ltv_cac_ge085": 0.234,
+   "p_ltv_cac_ge08": 0.269,
    "paid": 3.0,
    "paid_ci": [
     0.0,
@@ -9017,6 +9349,8 @@
     0.336
    ],
    "p_ltv_cac_ge1": 0.0,
+   "p_ltv_cac_ge085": 0.0,
+   "p_ltv_cac_ge08": 0.0,
    "paid": 77.0,
    "paid_ci": [
     48.0,
@@ -9065,6 +9399,8 @@
     2.288
    ],
    "p_ltv_cac_ge1": 0.599,
+   "p_ltv_cac_ge085": 0.708,
+   "p_ltv_cac_ge08": 0.737,
    "paid": 6.0,
    "paid_ci": [
     2.0,
@@ -9113,6 +9449,8 @@
     1.059
    ],
    "p_ltv_cac_ge1": 0.059,
+   "p_ltv_cac_ge085": 0.113,
+   "p_ltv_cac_ge08": 0.136,
    "paid": 1.0,
    "paid_ci": [
     0.0,
@@ -9161,6 +9499,8 @@
     0.822
    ],
    "p_ltv_cac_ge1": 0.009,
+   "p_ltv_cac_ge085": 0.039,
+   "p_ltv_cac_ge08": 0.061,
    "paid": 17.0,
    "paid_ci": [
     9.0,
@@ -9209,6 +9549,8 @@
     3.012
    ],
    "p_ltv_cac_ge1": 0.54,
+   "p_ltv_cac_ge085": 0.653,
+   "p_ltv_cac_ge08": 0.683,
    "paid": 2.0,
    "paid_ci": [
     0.0,
@@ -9257,6 +9599,8 @@
     0.77
    ],
    "p_ltv_cac_ge1": 0.006,
+   "p_ltv_cac_ge085": 0.026,
+   "p_ltv_cac_ge08": 0.039,
    "paid": 8.0,
    "paid_ci": [
     3.0,
@@ -9305,6 +9649,8 @@
     0.0
    ],
    "p_ltv_cac_ge1": 0.0,
+   "p_ltv_cac_ge085": 0.0,
+   "p_ltv_cac_ge08": 0.0,
    "paid": 0.0,
    "paid_ci": [
     0.0,
@@ -9353,6 +9699,8 @@
     0.0
    ],
    "p_ltv_cac_ge1": 0.0,
+   "p_ltv_cac_ge085": 0.0,
+   "p_ltv_cac_ge08": 0.0,
    "paid": 0.0,
    "paid_ci": [
     0.0,
@@ -9401,6 +9749,8 @@
     0.833
    ],
    "p_ltv_cac_ge1": 0.025,
+   "p_ltv_cac_ge085": 0.045,
+   "p_ltv_cac_ge08": 0.06,
    "paid": 0.0,
    "paid_ci": [
     0.0,
@@ -9449,6 +9799,8 @@
     0.0
    ],
    "p_ltv_cac_ge1": 0.0,
+   "p_ltv_cac_ge085": 0.0,
+   "p_ltv_cac_ge08": 0.0,
    "paid": 0.0,
    "paid_ci": [
     0.0,
@@ -9497,6 +9849,8 @@
     1.105
    ],
    "p_ltv_cac_ge1": 0.083,
+   "p_ltv_cac_ge085": 0.167,
+   "p_ltv_cac_ge08": 0.205,
    "paid": 5.0,
    "paid_ci": [
     2.0,
@@ -9545,6 +9899,8 @@
     0.643
    ],
    "p_ltv_cac_ge1": 0.001,
+   "p_ltv_cac_ge085": 0.006,
+   "p_ltv_cac_ge08": 0.01,
    "paid": 5.0,
    "paid_ci": [
     2.0,
@@ -9593,6 +9949,8 @@
     0.726
    ],
    "p_ltv_cac_ge1": 0.005,
+   "p_ltv_cac_ge085": 0.018,
+   "p_ltv_cac_ge08": 0.027,
    "paid": 5.0,
    "paid_ci": [
     1.0,
@@ -9641,6 +9999,8 @@
     1.42
    ],
    "p_ltv_cac_ge1": 0.214,
+   "p_ltv_cac_ge085": 0.328,
+   "p_ltv_cac_ge08": 0.374,
    "paid": 4.0,
    "paid_ci": [
     1.0,
@@ -9689,6 +10049,8 @@
     0.756
    ],
    "p_ltv_cac_ge1": 0.009,
+   "p_ltv_cac_ge085": 0.024,
+   "p_ltv_cac_ge08": 0.035,
    "paid": 3.0,
    "paid_ci": [
     1.0,
@@ -9737,6 +10099,8 @@
     0.503
    ],
    "p_ltv_cac_ge1": 0.0,
+   "p_ltv_cac_ge085": 0.0,
+   "p_ltv_cac_ge08": 0.0,
    "paid": 66.0,
    "paid_ci": [
     41.0,
@@ -9785,6 +10149,8 @@
     0.628
    ],
    "p_ltv_cac_ge1": 0.003,
+   "p_ltv_cac_ge085": 0.008,
+   "p_ltv_cac_ge08": 0.013,
    "paid": 2.0,
    "paid_ci": [
     0.0,
@@ -9833,6 +10199,8 @@
     0.787
    ],
    "p_ltv_cac_ge1": 0.008,
+   "p_ltv_cac_ge085": 0.029,
+   "p_ltv_cac_ge08": 0.046,
    "paid": 7.0,
    "paid_ci": [
     2.0,
@@ -9881,6 +10249,8 @@
     4.226
    ],
    "p_ltv_cac_ge1": 0.73,
+   "p_ltv_cac_ge085": 0.763,
+   "p_ltv_cac_ge08": 0.769,
    "paid": 3.0,
    "paid_ci": [
     0.0,
@@ -9929,6 +10299,8 @@
     3.355
    ],
    "p_ltv_cac_ge1": 0.781,
+   "p_ltv_cac_ge085": 0.86,
+   "p_ltv_cac_ge08": 0.866,
    "paid": 5.0,
    "paid_ci": [
     1.0,
@@ -9977,6 +10349,8 @@
     2.074
    ],
    "p_ltv_cac_ge1": 0.362,
+   "p_ltv_cac_ge085": 0.431,
+   "p_ltv_cac_ge08": 0.503,
    "paid": 2.0,
    "paid_ci": [
     0.0,
@@ -10025,6 +10399,8 @@
     1.663
    ],
    "p_ltv_cac_ge1": 0.284,
+   "p_ltv_cac_ge085": 0.391,
+   "p_ltv_cac_ge08": 0.433,
    "paid": 3.0,
    "paid_ci": [
     0.0,
@@ -10073,6 +10449,8 @@
     1.395
    ],
    "p_ltv_cac_ge1": 0.269,
+   "p_ltv_cac_ge085": 0.441,
+   "p_ltv_cac_ge08": 0.504,
    "paid": 11.0,
    "paid_ci": [
     5.0,
@@ -10121,6 +10499,8 @@
     0.958
    ],
    "p_ltv_cac_ge1": 0.035,
+   "p_ltv_cac_ge085": 0.117,
+   "p_ltv_cac_ge08": 0.164,
    "paid": 21.0,
    "paid_ci": [
     12.0,
@@ -10169,6 +10549,8 @@
     0.716
    ],
    "p_ltv_cac_ge1": 0.01,
+   "p_ltv_cac_ge085": 0.023,
+   "p_ltv_cac_ge08": 0.028,
    "paid": 1.0,
    "paid_ci": [
     0.0,
@@ -10217,6 +10599,8 @@
     0.823
    ],
    "p_ltv_cac_ge1": 0.009,
+   "p_ltv_cac_ge085": 0.037,
+   "p_ltv_cac_ge08": 0.063,
    "paid": 18.0,
    "paid_ci": [
     9.0,
@@ -10265,6 +10649,8 @@
     0.897
    ],
    "p_ltv_cac_ge1": 0.009,
+   "p_ltv_cac_ge085": 0.095,
+   "p_ltv_cac_ge08": 0.178,
    "paid": 256.0,
    "paid_ci": [
     195.0,
@@ -10313,6 +10699,8 @@
     0.0
    ],
    "p_ltv_cac_ge1": 0.0,
+   "p_ltv_cac_ge085": 0.0,
+   "p_ltv_cac_ge08": 0.0,
    "paid": 0.0,
    "paid_ci": [
     0.0,
@@ -10361,6 +10749,8 @@
     0.944
    ],
    "p_ltv_cac_ge1": 0.033,
+   "p_ltv_cac_ge085": 0.11,
+   "p_ltv_cac_ge08": 0.158,
    "paid": 20.0,
    "paid_ci": [
     11.0,
@@ -10409,6 +10799,8 @@
     1.663
    ],
    "p_ltv_cac_ge1": 0.499,
+   "p_ltv_cac_ge085": 0.672,
+   "p_ltv_cac_ge08": 0.724,
    "paid": 17.0,
    "paid_ci": [
     9.0,
@@ -10457,6 +10849,8 @@
     0.0
    ],
    "p_ltv_cac_ge1": 0.0,
+   "p_ltv_cac_ge085": 0.0,
+   "p_ltv_cac_ge08": 0.0,
    "paid": 0.0,
    "paid_ci": [
     0.0,
@@ -10505,6 +10899,8 @@
     1.946
    ],
    "p_ltv_cac_ge1": 0.297,
+   "p_ltv_cac_ge085": 0.343,
+   "p_ltv_cac_ge08": 0.393,
    "paid": 1.0,
    "paid_ci": [
     0.0,
@@ -10553,6 +10949,8 @@
     1.455
    ],
    "p_ltv_cac_ge1": 0.276,
+   "p_ltv_cac_ge085": 0.421,
+   "p_ltv_cac_ge08": 0.479,
    "paid": 8.0,
    "paid_ci": [
     3.0,
@@ -10601,6 +10999,8 @@
     3.44
    ],
    "p_ltv_cac_ge1": 0.599,
+   "p_ltv_cac_ge085": 0.654,
+   "p_ltv_cac_ge08": 0.666,
    "paid": 2.0,
    "paid_ci": [
     0.0,
@@ -10649,6 +11049,8 @@
     0.923
    ],
    "p_ltv_cac_ge1": 0.034,
+   "p_ltv_cac_ge085": 0.065,
+   "p_ltv_cac_ge08": 0.075,
    "paid": 1.0,
    "paid_ci": [
     0.0,
@@ -10697,6 +11099,8 @@
     1.062
    ],
    "p_ltv_cac_ge1": 0.061,
+   "p_ltv_cac_ge085": 0.078,
+   "p_ltv_cac_ge08": 0.092,
    "paid": 1.0,
    "paid_ci": [
     0.0,
@@ -10745,6 +11149,8 @@
     1.31
    ],
    "p_ltv_cac_ge1": 0.087,
+   "p_ltv_cac_ge085": 0.175,
+   "p_ltv_cac_ge08": 0.199,
    "paid": 1.0,
    "paid_ci": [
     0.0,
@@ -10793,6 +11199,8 @@
     2.192
    ],
    "p_ltv_cac_ge1": 0.398,
+   "p_ltv_cac_ge085": 0.503,
+   "p_ltv_cac_ge08": 0.523,
    "paid": 2.0,
    "paid_ci": [
     0.0,
@@ -10841,6 +11249,8 @@
     1.554
    ],
    "p_ltv_cac_ge1": 0.244,
+   "p_ltv_cac_ge085": 0.342,
+   "p_ltv_cac_ge08": 0.384,
    "paid": 3.0,
    "paid_ci": [
     0.0,
@@ -10889,6 +11299,8 @@
     1.496
    ],
    "p_ltv_cac_ge1": 0.259,
+   "p_ltv_cac_ge085": 0.373,
+   "p_ltv_cac_ge08": 0.416,
    "paid": 4.0,
    "paid_ci": [
     1.0,
@@ -10937,6 +11349,8 @@
     0.909
    ],
    "p_ltv_cac_ge1": 0.03,
+   "p_ltv_cac_ge085": 0.069,
+   "p_ltv_cac_ge08": 0.089,
    "paid": 3.0,
    "paid_ci": [
     0.0,
@@ -10985,6 +11399,8 @@
     0.459
    ],
    "p_ltv_cac_ge1": 0.0,
+   "p_ltv_cac_ge085": 0.0,
+   "p_ltv_cac_ge08": 0.0,
    "paid": 47.0,
    "paid_ci": [
     29.0,
@@ -11033,6 +11449,8 @@
     1.345
    ],
    "p_ltv_cac_ge1": 0.156,
+   "p_ltv_cac_ge085": 0.243,
+   "p_ltv_cac_ge08": 0.271,
    "paid": 3.0,
    "paid_ci": [
     0.0,
@@ -11081,6 +11499,8 @@
     1.694
    ],
    "p_ltv_cac_ge1": 0.377,
+   "p_ltv_cac_ge085": 0.511,
+   "p_ltv_cac_ge08": 0.558,
    "paid": 6.0,
    "paid_ci": [
     2.0,
@@ -11129,6 +11549,8 @@
     1.541
    ],
    "p_ltv_cac_ge1": 0.172,
+   "p_ltv_cac_ge085": 0.218,
+   "p_ltv_cac_ge08": 0.226,
    "paid": 1.0,
    "paid_ci": [
     0.0,
@@ -11177,6 +11599,8 @@
     1.294
    ],
    "p_ltv_cac_ge1": 0.187,
+   "p_ltv_cac_ge085": 0.335,
+   "p_ltv_cac_ge08": 0.393,
    "paid": 11.0,
    "paid_ci": [
     5.0,
@@ -11225,6 +11649,8 @@
     1.174
    ],
    "p_ltv_cac_ge1": 0.085,
+   "p_ltv_cac_ge085": 0.101,
+   "p_ltv_cac_ge08": 0.104,
    "paid": 0.0,
    "paid_ci": [
     0.0,
@@ -11273,6 +11699,8 @@
     0.569
    ],
    "p_ltv_cac_ge1": 0.0,
+   "p_ltv_cac_ge085": 0.001,
+   "p_ltv_cac_ge08": 0.001,
    "paid": 28.0,
    "paid_ci": [
     16.0,
@@ -11321,6 +11749,8 @@
     0.602
    ],
    "p_ltv_cac_ge1": 0.0,
+   "p_ltv_cac_ge085": 0.003,
+   "p_ltv_cac_ge08": 0.005,
    "paid": 6.0,
    "paid_ci": [
     2.0,
@@ -11369,6 +11799,8 @@
     1.004
    ],
    "p_ltv_cac_ge1": 0.052,
+   "p_ltv_cac_ge085": 0.232,
+   "p_ltv_cac_ge08": 0.335,
    "paid": 109.5,
    "paid_ci": [
     78.0,
@@ -11417,6 +11849,8 @@
     0.937
    ],
    "p_ltv_cac_ge1": 0.025,
+   "p_ltv_cac_ge085": 0.108,
+   "p_ltv_cac_ge08": 0.162,
    "paid": 57.0,
    "paid_ci": [
     36.0,
@@ -11465,6 +11899,8 @@
     0.978
    ],
    "p_ltv_cac_ge1": 0.041,
+   "p_ltv_cac_ge085": 0.158,
+   "p_ltv_cac_ge08": 0.227,
    "paid": 50.0,
    "paid_ci": [
     32.0,
@@ -11513,6 +11949,8 @@
     0.874
    ],
    "p_ltv_cac_ge1": 0.016,
+   "p_ltv_cac_ge085": 0.06,
+   "p_ltv_cac_ge08": 0.088,
    "paid": 16.0,
    "paid_ci": [
     8.0,
@@ -11561,6 +11999,8 @@
     0.826
    ],
    "p_ltv_cac_ge1": 0.008,
+   "p_ltv_cac_ge085": 0.038,
+   "p_ltv_cac_ge08": 0.064,
    "paid": 26.0,
    "paid_ci": [
     15.0,
@@ -11609,6 +12049,8 @@
     0.755
    ],
    "p_ltv_cac_ge1": 0.004,
+   "p_ltv_cac_ge085": 0.019,
+   "p_ltv_cac_ge08": 0.034,
    "paid": 12.0,
    "paid_ci": [
     5.0,
@@ -11657,6 +12099,8 @@
     0.932
    ],
    "p_ltv_cac_ge1": 0.03,
+   "p_ltv_cac_ge085": 0.094,
+   "p_ltv_cac_ge08": 0.128,
    "paid": 12.0,
    "paid_ci": [
     6.0,
@@ -11705,6 +12149,8 @@
     0.984
    ],
    "p_ltv_cac_ge1": 0.046,
+   "p_ltv_cac_ge085": 0.078,
+   "p_ltv_cac_ge08": 0.083,
    "paid": 0.0,
    "paid_ci": [
     0.0,
@@ -11753,6 +12199,8 @@
     1.049
    ],
    "p_ltv_cac_ge1": 0.067,
+   "p_ltv_cac_ge085": 0.092,
+   "p_ltv_cac_ge08": 0.095,
    "paid": 0.0,
    "paid_ci": [
     0.0,
@@ -11801,6 +12249,8 @@
     1.365
    ],
    "p_ltv_cac_ge1": 0.107,
+   "p_ltv_cac_ge085": 0.201,
+   "p_ltv_cac_ge08": 0.214,
    "paid": 1.0,
    "paid_ci": [
     0.0,
@@ -11849,6 +12299,8 @@
     1.074
    ],
    "p_ltv_cac_ge1": 0.071,
+   "p_ltv_cac_ge085": 0.091,
+   "p_ltv_cac_ge08": 0.094,
    "paid": 0.0,
    "paid_ci": [
     0.0,
@@ -11897,6 +12349,8 @@
     0.832
    ],
    "p_ltv_cac_ge1": 0.011,
+   "p_ltv_cac_ge085": 0.042,
+   "p_ltv_cac_ge08": 0.069,
    "paid": 18.0,
    "paid_ci": [
     9.0,
@@ -11945,6 +12399,8 @@
     0.75
    ],
    "p_ltv_cac_ge1": 0.016,
+   "p_ltv_cac_ge085": 0.023,
+   "p_ltv_cac_ge08": 0.032,
    "paid": 0.0,
    "paid_ci": [
     0.0,
@@ -11993,6 +12449,8 @@
     0.916
    ],
    "p_ltv_cac_ge1": 0.029,
+   "p_ltv_cac_ge085": 0.067,
+   "p_ltv_cac_ge08": 0.076,
    "paid": 0.0,
    "paid_ci": [
     0.0,
@@ -12041,6 +12499,8 @@
     0.658
    ],
    "p_ltv_cac_ge1": 0.001,
+   "p_ltv_cac_ge085": 0.006,
+   "p_ltv_cac_ge08": 0.011,
    "paid": 8.0,
    "paid_ci": [
     3.0,
@@ -12089,6 +12549,8 @@
     0.996
    ],
    "p_ltv_cac_ge1": 0.049,
+   "p_ltv_cac_ge085": 0.072,
+   "p_ltv_cac_ge08": 0.077,
    "paid": 1.0,
    "paid_ci": [
     0.0,
@@ -12137,6 +12599,8 @@
     2.074
    ],
    "p_ltv_cac_ge1": 0.342,
+   "p_ltv_cac_ge085": 0.367,
+   "p_ltv_cac_ge08": 0.371,
    "paid": 1.0,
    "paid_ci": [
     0.0,
@@ -12185,6 +12649,8 @@
     0.782
    ],
    "p_ltv_cac_ge1": 0.011,
+   "p_ltv_cac_ge085": 0.032,
+   "p_ltv_cac_ge08": 0.045,
    "paid": 4.0,
    "paid_ci": [
     1.0,
@@ -12233,6 +12699,8 @@
     1.654
    ],
    "p_ltv_cac_ge1": 0.173,
+   "p_ltv_cac_ge085": 0.292,
+   "p_ltv_cac_ge08": 0.332,
    "paid": 1.0,
    "paid_ci": [
     0.0,
@@ -12281,6 +12749,8 @@
     0.0
    ],
    "p_ltv_cac_ge1": 0.0,
+   "p_ltv_cac_ge085": 0.0,
+   "p_ltv_cac_ge08": 0.0,
    "paid": 0.0,
    "paid_ci": [
     0.0,
@@ -12329,6 +12799,8 @@
     1.515
    ],
    "p_ltv_cac_ge1": 0.21,
+   "p_ltv_cac_ge085": 0.261,
+   "p_ltv_cac_ge08": 0.27,
    "paid": 1.0,
    "paid_ci": [
     0.0,
@@ -12377,6 +12849,8 @@
     0.0
    ],
    "p_ltv_cac_ge1": 0.0,
+   "p_ltv_cac_ge085": 0.0,
+   "p_ltv_cac_ge08": 0.0,
    "paid": 0.0,
    "paid_ci": [
     0.0,
@@ -12425,6 +12899,8 @@
     1.927
    ],
    "p_ltv_cac_ge1": 0.266,
+   "p_ltv_cac_ge085": 0.414,
+   "p_ltv_cac_ge08": 0.457,
    "paid": 1.0,
    "paid_ci": [
     0.0,
@@ -12473,6 +12949,8 @@
     2.094
    ],
    "p_ltv_cac_ge1": 0.314,
+   "p_ltv_cac_ge085": 0.412,
+   "p_ltv_cac_ge08": 0.467,
    "paid": 1.0,
    "paid_ci": [
     0.0,
@@ -12521,6 +12999,8 @@
     1.59
    ],
    "p_ltv_cac_ge1": 0.152,
+   "p_ltv_cac_ge085": 0.229,
+   "p_ltv_cac_ge08": 0.256,
    "paid": 1.0,
    "paid_ci": [
     0.0,
@@ -12569,6 +13049,8 @@
     1.194
    ],
    "p_ltv_cac_ge1": 0.112,
+   "p_ltv_cac_ge085": 0.191,
+   "p_ltv_cac_ge08": 0.226,
    "paid": 3.0,
    "paid_ci": [
     1.0,
@@ -12617,6 +13099,8 @@
     0.637
    ],
    "p_ltv_cac_ge1": 0.006,
+   "p_ltv_cac_ge085": 0.018,
+   "p_ltv_cac_ge08": 0.021,
    "paid": 0.0,
    "paid_ci": [
     0.0,
@@ -12665,6 +13149,8 @@
     6.874
    ],
    "p_ltv_cac_ge1": 0.856,
+   "p_ltv_cac_ge085": 0.935,
+   "p_ltv_cac_ge08": 0.942,
    "paid": 3.0,
    "paid_ci": [
     0.0,
