@@ -157,7 +157,7 @@ code{overflow-wrap:anywhere}
 </section>
 
 <section>
-  <div class="sec-head"><div><div class="eyebrow">All ads</div><h2>Ad-level scores</h2><p>Click a column to sort. LTV/CAC shows the median with the 90% interval; P(≥1×) is the share of simulations in which the ad clears breakeven.</p></div></div>
+  <div class="sec-head"><div><div class="eyebrow">All ads</div><h2>Ad-level scores</h2><p>Click a column to sort. SP (old) is the current Option B score with its phase; EI, SP2 (new) and SP2 phase are the proposed score from section 7. LTV/CAC shows the median with the 90% interval; P(≥1×) is the share of simulations in which the ad clears breakeven.</p></div></div>
   <div class="controls"><input type="search" id="q" placeholder="Search ad name…" aria-label="Search ads"><div class="chips" id="phaseChips"></div><span class="small" id="rowCount"></span></div>
   <div class="card tscroll" style="max-height:640px;overflow:auto;padding:0"><table id="adTable"></table></div>
 </section>
@@ -173,6 +173,7 @@ code{overflow-wrap:anywhere}
 <script>
 const R = __RESULTS_JSON__;
 const R2 = __SP2_JSON__;
+(function(){const by=Object.fromEntries(R2.ads.map(a=>[a.ad_id,a]));R.ads.forEach(a=>{const x=by[a.ad_id]||{};a.EI=x.EI==null?null:x.EI;a.SI=x.SI==null?null:x.SI;a.SP2=x.SP2==null?null:x.SP2;a.sp2_phase=x.sp2_phase||'–'})})();
 const BUCKETS = ['Overall','Testing','Winning','Scaling'];
 const COL = {Testing:'var(--s1)',Winning:'var(--s2)',Scaling:'var(--s3)',Overall:'var(--neutral)'};
 const fmt = (x,d=2)=> x==null||isNaN(x)?'–':Number(x).toLocaleString('en-US',{minimumFractionDigits:d,maximumFractionDigits:d});
@@ -356,7 +357,8 @@ function winnerStrip(id,key,label){
 const cols=[['name','Ad',a=>`<td class="name" title="${esc(a.raw_name)}">${esc(a.name)}</td>`,'s'],['bucket','Stage',a=>`<td style="text-align:left"><span class="sw" style="background:${COL[a.bucket]};margin-right:6px"></span>${a.bucket}</td>`,'s'],
  ['phase','Phase',a=>`<td style="text-align:left"><span class="pill ${phaseClass(a.phase)}">${phaseShort(a.phase)}</span></td>`,'s'],['spend','Spend',a=>`<td class="num">${usd(a.spend)}</td>`],
  ['ipm','IPM',a=>`<td class="num">${fmt(a.ipm,2)}</td>`],['tpi','TPI',a=>`<td class="num">${fmt(a.tpi,3)}</td>`],['cpft','CPFT',a=>`<td class="num">${a.cpft==null?'–':usd(a.cpft)}</td>`],
- ['sp','SP',a=>`<td class="num"><span class="bar" style="width:${Math.min(a.sp,4)*14}px"></span>${fmt(a.sp,2)}</td>`],['p_p2','P(P2)',a=>`<td class="num">${pct(a.p_p2)}</td>`],
+ ['sp','SP (old)',a=>`<td class="num"><span class="bar" style="width:${Math.min(a.sp,4)*14}px"></span>${fmt(a.sp,2)}</td>`],['p_p2','P(P2)',a=>`<td class="num">${pct(a.p_p2)}</td>`],
+ ['EI','EI',a=>`<td class="num">${a.EI==null?'–':fmt(a.EI,2)}</td>`],['SP2','SP2 (new)',a=>`<td class="num">${a.SP2==null?'–':'<b>'+fmt(a.SP2,2)+'</b>'}</td>`],['sp2_phase','SP2 phase',a=>`<td style="text-align:left"><span class="pill ${a.sp2_phase==='Scalable winner'?'p2':a.sp2_phase==='Efficient, unproven scale'?'p1':a.sp2_phase==='Watch'?'mid':'pause'}">${a.sp2_phase}</span></td>`,'s'],
  ['ltv_cac','LTV/CAC',a=>`<td class="num"><b>${xr(a.ltv_cac)}</b> <span class="small">${ci(a.ltv_cac_ci)}</span></td>`],['p_ltv_cac_ge1','P(≥1×)',a=>`<td class="num">${pct(a.p_ltv_cac_ge1)}</td>`],['paid','Est. paid',a=>`<td class="num">${fmt(a.paid,0)}</td>`]];
 let sortKey='spend',sortDir=-1,phaseFilter='All',q='';
 const chipsEl=document.getElementById('phaseChips');
