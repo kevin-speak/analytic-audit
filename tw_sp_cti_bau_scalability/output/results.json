@@ -1,0 +1,846 @@
+{
+ "n": 44,
+ "n_scaled": 7,
+ "n_borderline": 8,
+ "excluded": [
+  {
+   "creative": "harryspeaks · 0601",
+   "bau_first_date": "2026-06-01",
+   "excluded": "no testing-campaign ad"
+  },
+  {
+   "creative": "illyandlean · speak-with-me",
+   "bau_first_date": "2026-08-10",
+   "excluded": "no testing-campaign ad"
+  }
+ ],
+ "benchmarks": {
+  "CTI >= 5%": {
+   "n": 2,
+   "scaled": 1,
+   "borderline": 1,
+   "rate": 0.5,
+   "med_wk1_spend": 2102.0,
+   "med_wk1_cpr": 51.797283176593524,
+   "creatives": [
+    "✅ thedodomen · speak-without-fear",
+    "B hua · 2026resolutionenglish5m_1full"
+   ]
+  },
+  "CTI < 5%": {
+   "n": 42,
+   "scaled": 6,
+   "borderline": 7,
+   "rate": 0.14285714285714285,
+   "med_wk1_spend": 1883.5,
+   "med_wk1_cpr": 126.5078125,
+   "creatives": [
+    "✅ harryspeaks · og-video",
+    "✅ qing · 2026nyr-v2-putoffforyears",
+    "✅ eaglish.fam · og-video",
+    "✅ brianptseng · og-video",
+    "✅ drama_engbook · input_output_short",
+    "✅ thedodomen · product-demo",
+    "❌ jenny · interviewsalarynegotiation-v1",
+    "❌ sophia · outputinputandspeakmethod-v2-cut",
+    "❌ thedodomen · og-video",
+    "❌ hua · 2026resolutionenglish5m_3invest",
+    "❌ andrew-founded",
+    "❌ mip-emily_life · learning-technique-sharing",
+    "❌ illyandlean · outro-promo-long",
+    "❌ mip-alicechenlife · 9-year-in-us",
+    "❌ connor-keyskillsintheaiera-2cut",
+    "❌ harryspeaks · 26Q3 og-video",
+    "❌ swm-tsai · 2-weeks-testmonial",
+    "❌ mip-kellyyangdes · pineapple-cutting",
+    "❌ havefunytchannel · vschatgpt-short",
+    "❌ qing · doesaienglishlearningwork_2humantutor",
+    "❌ mip-amychou · en-esp-restaurant",
+    "❌ atiendai · og-video",
+    "❌ mip-chenchensiss · taiwanese-good-at-english-yesandno",
+    "❌ thedodomen · keep-learning",
+    "❌ comic-engmeeting",
+    "❌ 3750sentences",
+    "❌ mip-happygang5215 · learn-with-child",
+    "❌ bigeartv · og-video",
+    "❌ qing · solo-travel-eng-rescue-v2-result",
+    "❌ chuchushoetw · og-video",
+    "❌ mip-cocoinfinland · international-relationship",
+    "❌ mip-saraworld · ai-conversion-self-discipline",
+    "❌ jenny · interviewsalarynegotiation-v2-cut",
+    "❌ mip-yclife · learn-with-kid",
+    "❌ mip-christines_talk · english-environment",
+    "B threadspost-career-aitutor",
+    "B jpkol · japanofficeguyvlog",
+    "B swm-jenny · salarynegotiation",
+    "B dachien · police-conversation",
+    "B morning.jason · og-video",
+    "B ai-gen · workplace-colleaguecompliment_1direct",
+    "B ai-gen · workplace-colleaguecompliment_2practice"
+   ]
+  },
+  "CTI >= 1% (TW)": {
+   "n": 25,
+   "scaled": 7,
+   "borderline": 6,
+   "rate": 0.28,
+   "med_wk1_spend": 2694.0,
+   "med_wk1_cpr": 97.87037037037037,
+   "creatives": [
+    "✅ thedodomen · speak-without-fear",
+    "✅ harryspeaks · og-video",
+    "✅ qing · 2026nyr-v2-putoffforyears",
+    "✅ eaglish.fam · og-video",
+    "✅ brianptseng · og-video",
+    "✅ drama_engbook · input_output_short",
+    "✅ thedodomen · product-demo",
+    "❌ sophia · outputinputandspeakmethod-v2-cut",
+    "❌ hua · 2026resolutionenglish5m_3invest",
+    "❌ andrew-founded",
+    "❌ mip-emily_life · learning-technique-sharing",
+    "❌ illyandlean · outro-promo-long",
+    "❌ connor-keyskillsintheaiera-2cut",
+    "❌ swm-tsai · 2-weeks-testmonial",
+    "❌ havefunytchannel · vschatgpt-short",
+    "❌ qing · doesaienglishlearningwork_2humantutor",
+    "❌ 3750sentences",
+    "❌ bigeartv · og-video",
+    "❌ mip-christines_talk · english-environment",
+    "B jpkol · japanofficeguyvlog",
+    "B swm-jenny · salarynegotiation",
+    "B dachien · police-conversation",
+    "B morning.jason · og-video",
+    "B hua · 2026resolutionenglish5m_1full",
+    "B ai-gen · workplace-colleaguecompliment_1direct"
+   ]
+  },
+  "CTI < 1% (TW)": {
+   "n": 19,
+   "scaled": 0,
+   "borderline": 2,
+   "rate": 0.0,
+   "med_wk1_spend": 619.0,
+   "med_wk1_cpr": 174.2,
+   "creatives": [
+    "❌ jenny · interviewsalarynegotiation-v1",
+    "❌ thedodomen · og-video",
+    "❌ mip-alicechenlife · 9-year-in-us",
+    "❌ harryspeaks · 26Q3 og-video",
+    "❌ mip-kellyyangdes · pineapple-cutting",
+    "❌ mip-amychou · en-esp-restaurant",
+    "❌ atiendai · og-video",
+    "❌ mip-chenchensiss · taiwanese-good-at-english-yesandno",
+    "❌ thedodomen · keep-learning",
+    "❌ comic-engmeeting",
+    "❌ mip-happygang5215 · learn-with-child",
+    "❌ qing · solo-travel-eng-rescue-v2-result",
+    "❌ chuchushoetw · og-video",
+    "❌ mip-cocoinfinland · international-relationship",
+    "❌ mip-saraworld · ai-conversion-self-discipline",
+    "❌ jenny · interviewsalarynegotiation-v2-cut",
+    "❌ mip-yclife · learn-with-kid",
+    "B threadspost-career-aitutor",
+    "B ai-gen · workplace-colleaguecompliment_2practice"
+   ]
+  },
+  "CTI >= 2.5%": {
+   "n": 12,
+   "scaled": 5,
+   "borderline": 3,
+   "rate": 0.4166666666666667,
+   "med_wk1_spend": 3235.0,
+   "med_wk1_cpr": 77.48745421245421,
+   "creatives": [
+    "✅ thedodomen · speak-without-fear",
+    "✅ harryspeaks · og-video",
+    "✅ qing · 2026nyr-v2-putoffforyears",
+    "✅ brianptseng · og-video",
+    "✅ drama_engbook · input_output_short",
+    "❌ hua · 2026resolutionenglish5m_3invest",
+    "❌ andrew-founded",
+    "❌ havefunytchannel · vschatgpt-short",
+    "❌ qing · doesaienglishlearningwork_2humantutor",
+    "B jpkol · japanofficeguyvlog",
+    "B hua · 2026resolutionenglish5m_1full",
+    "B ai-gen · workplace-colleaguecompliment_1direct"
+   ]
+  },
+  "CTI < 2.5%": {
+   "n": 32,
+   "scaled": 2,
+   "borderline": 5,
+   "rate": 0.0625,
+   "med_wk1_spend": 1128.5,
+   "med_wk1_cpr": 134.25,
+   "creatives": [
+    "✅ eaglish.fam · og-video",
+    "✅ thedodomen · product-demo",
+    "❌ jenny · interviewsalarynegotiation-v1",
+    "❌ sophia · outputinputandspeakmethod-v2-cut",
+    "❌ thedodomen · og-video",
+    "❌ mip-emily_life · learning-technique-sharing",
+    "❌ illyandlean · outro-promo-long",
+    "❌ mip-alicechenlife · 9-year-in-us",
+    "❌ connor-keyskillsintheaiera-2cut",
+    "❌ harryspeaks · 26Q3 og-video",
+    "❌ swm-tsai · 2-weeks-testmonial",
+    "❌ mip-kellyyangdes · pineapple-cutting",
+    "❌ mip-amychou · en-esp-restaurant",
+    "❌ atiendai · og-video",
+    "❌ mip-chenchensiss · taiwanese-good-at-english-yesandno",
+    "❌ thedodomen · keep-learning",
+    "❌ comic-engmeeting",
+    "❌ 3750sentences",
+    "❌ mip-happygang5215 · learn-with-child",
+    "❌ bigeartv · og-video",
+    "❌ qing · solo-travel-eng-rescue-v2-result",
+    "❌ chuchushoetw · og-video",
+    "❌ mip-cocoinfinland · international-relationship",
+    "❌ mip-saraworld · ai-conversion-self-discipline",
+    "❌ jenny · interviewsalarynegotiation-v2-cut",
+    "❌ mip-yclife · learn-with-kid",
+    "❌ mip-christines_talk · english-environment",
+    "B threadspost-career-aitutor",
+    "B swm-jenny · salarynegotiation",
+    "B dachien · police-conversation",
+    "B morning.jason · og-video",
+    "B ai-gen · workplace-colleaguecompliment_2practice"
+   ]
+  },
+  "SP >= 2.0": {
+   "n": 41,
+   "scaled": 7,
+   "borderline": 7,
+   "rate": 0.17073170731707318,
+   "med_wk1_spend": 1742.0,
+   "med_wk1_cpr": 116.5925925925926,
+   "creatives": [
+    "✅ thedodomen · speak-without-fear",
+    "✅ harryspeaks · og-video",
+    "✅ qing · 2026nyr-v2-putoffforyears",
+    "✅ eaglish.fam · og-video",
+    "✅ brianptseng · og-video",
+    "✅ drama_engbook · input_output_short",
+    "✅ thedodomen · product-demo",
+    "❌ jenny · interviewsalarynegotiation-v1",
+    "❌ sophia · outputinputandspeakmethod-v2-cut",
+    "❌ thedodomen · og-video",
+    "❌ hua · 2026resolutionenglish5m_3invest",
+    "❌ andrew-founded",
+    "❌ mip-emily_life · learning-technique-sharing",
+    "❌ illyandlean · outro-promo-long",
+    "❌ mip-alicechenlife · 9-year-in-us",
+    "❌ connor-keyskillsintheaiera-2cut",
+    "❌ swm-tsai · 2-weeks-testmonial",
+    "❌ mip-kellyyangdes · pineapple-cutting",
+    "❌ havefunytchannel · vschatgpt-short",
+    "❌ qing · doesaienglishlearningwork_2humantutor",
+    "❌ atiendai · og-video",
+    "❌ mip-chenchensiss · taiwanese-good-at-english-yesandno",
+    "❌ thedodomen · keep-learning",
+    "❌ comic-engmeeting",
+    "❌ 3750sentences",
+    "❌ mip-happygang5215 · learn-with-child",
+    "❌ bigeartv · og-video",
+    "❌ qing · solo-travel-eng-rescue-v2-result",
+    "❌ chuchushoetw · og-video",
+    "❌ mip-cocoinfinland · international-relationship",
+    "❌ mip-saraworld · ai-conversion-self-discipline",
+    "❌ jenny · interviewsalarynegotiation-v2-cut",
+    "❌ mip-yclife · learn-with-kid",
+    "❌ mip-christines_talk · english-environment",
+    "B threadspost-career-aitutor",
+    "B jpkol · japanofficeguyvlog",
+    "B swm-jenny · salarynegotiation",
+    "B dachien · police-conversation",
+    "B morning.jason · og-video",
+    "B hua · 2026resolutionenglish5m_1full",
+    "B ai-gen · workplace-colleaguecompliment_1direct"
+   ]
+  },
+  "SP < 2.0": {
+   "n": 3,
+   "scaled": 0,
+   "borderline": 1,
+   "rate": 0.0,
+   "med_wk1_spend": 2055.0,
+   "med_wk1_cpr": 256.875,
+   "creatives": [
+    "❌ harryspeaks · 26Q3 og-video",
+    "❌ mip-amychou · en-esp-restaurant",
+    "B ai-gen · workplace-colleaguecompliment_2practice"
+   ]
+  },
+  "SP >= 3.0": {
+   "n": 26,
+   "scaled": 6,
+   "borderline": 3,
+   "rate": 0.23076923076923078,
+   "med_wk1_spend": 2171.5,
+   "med_wk1_cpr": 119.8,
+   "creatives": [
+    "✅ thedodomen · speak-without-fear",
+    "✅ harryspeaks · og-video",
+    "✅ qing · 2026nyr-v2-putoffforyears",
+    "✅ eaglish.fam · og-video",
+    "✅ brianptseng · og-video",
+    "✅ drama_engbook · input_output_short",
+    "❌ jenny · interviewsalarynegotiation-v1",
+    "❌ sophia · outputinputandspeakmethod-v2-cut",
+    "❌ thedodomen · og-video",
+    "❌ hua · 2026resolutionenglish5m_3invest",
+    "❌ mip-emily_life · learning-technique-sharing",
+    "❌ illyandlean · outro-promo-long",
+    "❌ connor-keyskillsintheaiera-2cut",
+    "❌ swm-tsai · 2-weeks-testmonial",
+    "❌ mip-kellyyangdes · pineapple-cutting",
+    "❌ havefunytchannel · vschatgpt-short",
+    "❌ qing · doesaienglishlearningwork_2humantutor",
+    "❌ thedodomen · keep-learning",
+    "❌ comic-engmeeting",
+    "❌ 3750sentences",
+    "❌ bigeartv · og-video",
+    "❌ qing · solo-travel-eng-rescue-v2-result",
+    "❌ jenny · interviewsalarynegotiation-v2-cut",
+    "B threadspost-career-aitutor",
+    "B hua · 2026resolutionenglish5m_1full",
+    "B ai-gen · workplace-colleaguecompliment_1direct"
+   ]
+  },
+  "SP < 3.0": {
+   "n": 18,
+   "scaled": 1,
+   "borderline": 5,
+   "rate": 0.05555555555555555,
+   "med_wk1_spend": 1422.5,
+   "med_wk1_cpr": 127.015625,
+   "creatives": [
+    "✅ thedodomen · product-demo",
+    "❌ andrew-founded",
+    "❌ mip-alicechenlife · 9-year-in-us",
+    "❌ harryspeaks · 26Q3 og-video",
+    "❌ mip-amychou · en-esp-restaurant",
+    "❌ atiendai · og-video",
+    "❌ mip-chenchensiss · taiwanese-good-at-english-yesandno",
+    "❌ mip-happygang5215 · learn-with-child",
+    "❌ chuchushoetw · og-video",
+    "❌ mip-cocoinfinland · international-relationship",
+    "❌ mip-saraworld · ai-conversion-self-discipline",
+    "❌ mip-yclife · learn-with-kid",
+    "❌ mip-christines_talk · english-environment",
+    "B jpkol · japanofficeguyvlog",
+    "B swm-jenny · salarynegotiation",
+    "B dachien · police-conversation",
+    "B morning.jason · og-video",
+    "B ai-gen · workplace-colleaguecompliment_2practice"
+   ]
+  }
+ },
+ "quadrants_tw": {
+  "High SP x high CTI": {
+   "n": 18,
+   "scaled": 6,
+   "borderline": 2,
+   "rate": 0.3333333333333333,
+   "med_wk1_spend": 2618.0,
+   "med_wk1_cpr": 126.0,
+   "creatives": [
+    "✅ thedodomen · speak-without-fear",
+    "✅ harryspeaks · og-video",
+    "✅ qing · 2026nyr-v2-putoffforyears",
+    "✅ eaglish.fam · og-video",
+    "✅ brianptseng · og-video",
+    "✅ drama_engbook · input_output_short",
+    "❌ sophia · outputinputandspeakmethod-v2-cut",
+    "❌ hua · 2026resolutionenglish5m_3invest",
+    "❌ mip-emily_life · learning-technique-sharing",
+    "❌ illyandlean · outro-promo-long",
+    "❌ connor-keyskillsintheaiera-2cut",
+    "❌ swm-tsai · 2-weeks-testmonial",
+    "❌ havefunytchannel · vschatgpt-short",
+    "❌ qing · doesaienglishlearningwork_2humantutor",
+    "❌ 3750sentences",
+    "❌ bigeartv · og-video",
+    "B hua · 2026resolutionenglish5m_1full",
+    "B ai-gen · workplace-colleaguecompliment_1direct"
+   ]
+  },
+  "High SP x low CTI": {
+   "n": 8,
+   "scaled": 0,
+   "borderline": 1,
+   "rate": 0.0,
+   "med_wk1_spend": 864.5,
+   "med_wk1_cpr": 115.275,
+   "creatives": [
+    "❌ jenny · interviewsalarynegotiation-v1",
+    "❌ thedodomen · og-video",
+    "❌ mip-kellyyangdes · pineapple-cutting",
+    "❌ thedodomen · keep-learning",
+    "❌ comic-engmeeting",
+    "❌ qing · solo-travel-eng-rescue-v2-result",
+    "❌ jenny · interviewsalarynegotiation-v2-cut",
+    "B threadspost-career-aitutor"
+   ]
+  },
+  "Low SP x high CTI": {
+   "n": 7,
+   "scaled": 1,
+   "borderline": 4,
+   "rate": 0.14285714285714285,
+   "med_wk1_spend": 8129.0,
+   "med_wk1_cpr": 84.81657782515991,
+   "creatives": [
+    "✅ thedodomen · product-demo",
+    "❌ andrew-founded",
+    "❌ mip-christines_talk · english-environment",
+    "B jpkol · japanofficeguyvlog",
+    "B swm-jenny · salarynegotiation",
+    "B dachien · police-conversation",
+    "B morning.jason · og-video"
+   ]
+  },
+  "Low SP x low CTI": {
+   "n": 11,
+   "scaled": 0,
+   "borderline": 1,
+   "rate": 0.0,
+   "med_wk1_spend": 619.0,
+   "med_wk1_cpr": 204.0,
+   "creatives": [
+    "❌ mip-alicechenlife · 9-year-in-us",
+    "❌ harryspeaks · 26Q3 og-video",
+    "❌ mip-amychou · en-esp-restaurant",
+    "❌ atiendai · og-video",
+    "❌ mip-chenchensiss · taiwanese-good-at-english-yesandno",
+    "❌ mip-happygang5215 · learn-with-child",
+    "❌ chuchushoetw · og-video",
+    "❌ mip-cocoinfinland · international-relationship",
+    "❌ mip-saraworld · ai-conversion-self-discipline",
+    "❌ mip-yclife · learn-with-kid",
+    "B ai-gen · workplace-colleaguecompliment_2practice"
+   ]
+  }
+ },
+ "quadrants": {
+  "High SP x high CTI": {
+   "n": 2,
+   "scaled": 1,
+   "borderline": 1,
+   "rate": 0.5,
+   "med_wk1_spend": 2102.0,
+   "med_wk1_cpr": 51.797283176593524,
+   "creatives": [
+    "✅ thedodomen · speak-without-fear",
+    "B hua · 2026resolutionenglish5m_1full"
+   ]
+  },
+  "High SP x low CTI": {
+   "n": 39,
+   "scaled": 6,
+   "borderline": 6,
+   "rate": 0.15384615384615385,
+   "med_wk1_spend": 1742.0,
+   "med_wk1_cpr": 119.8,
+   "creatives": [
+    "✅ harryspeaks · og-video",
+    "✅ qing · 2026nyr-v2-putoffforyears",
+    "✅ eaglish.fam · og-video",
+    "✅ brianptseng · og-video",
+    "✅ drama_engbook · input_output_short",
+    "✅ thedodomen · product-demo",
+    "❌ jenny · interviewsalarynegotiation-v1",
+    "❌ sophia · outputinputandspeakmethod-v2-cut",
+    "❌ thedodomen · og-video",
+    "❌ hua · 2026resolutionenglish5m_3invest",
+    "❌ andrew-founded",
+    "❌ mip-emily_life · learning-technique-sharing",
+    "❌ illyandlean · outro-promo-long",
+    "❌ mip-alicechenlife · 9-year-in-us",
+    "❌ connor-keyskillsintheaiera-2cut",
+    "❌ swm-tsai · 2-weeks-testmonial",
+    "❌ mip-kellyyangdes · pineapple-cutting",
+    "❌ havefunytchannel · vschatgpt-short",
+    "❌ qing · doesaienglishlearningwork_2humantutor",
+    "❌ atiendai · og-video",
+    "❌ mip-chenchensiss · taiwanese-good-at-english-yesandno",
+    "❌ thedodomen · keep-learning",
+    "❌ comic-engmeeting",
+    "❌ 3750sentences",
+    "❌ mip-happygang5215 · learn-with-child",
+    "❌ bigeartv · og-video",
+    "❌ qing · solo-travel-eng-rescue-v2-result",
+    "❌ chuchushoetw · og-video",
+    "❌ mip-cocoinfinland · international-relationship",
+    "❌ mip-saraworld · ai-conversion-self-discipline",
+    "❌ jenny · interviewsalarynegotiation-v2-cut",
+    "❌ mip-yclife · learn-with-kid",
+    "❌ mip-christines_talk · english-environment",
+    "B threadspost-career-aitutor",
+    "B jpkol · japanofficeguyvlog",
+    "B swm-jenny · salarynegotiation",
+    "B dachien · police-conversation",
+    "B morning.jason · og-video",
+    "B ai-gen · workplace-colleaguecompliment_1direct"
+   ]
+  },
+  "Low SP x high CTI": {
+   "n": 0,
+   "scaled": 0,
+   "borderline": 0,
+   "rate": null,
+   "med_wk1_spend": null,
+   "med_wk1_cpr": null,
+   "creatives": []
+  },
+  "Low SP x low CTI": {
+   "n": 3,
+   "scaled": 0,
+   "borderline": 1,
+   "rate": 0.0,
+   "med_wk1_spend": 2055.0,
+   "med_wk1_cpr": 256.875,
+   "creatives": [
+    "❌ harryspeaks · 26Q3 og-video",
+    "❌ mip-amychou · en-esp-restaurant",
+    "B ai-gen · workplace-colleaguecompliment_2practice"
+   ]
+  }
+ },
+ "fisher": {
+  "CTI>=5%": {
+   "table": [
+    [
+     1,
+     1
+    ],
+    [
+     6,
+     36
+    ]
+   ],
+   "p": 0.29598308668076106
+  },
+  "CTI>=1%": {
+   "table": [
+    [
+     7,
+     18
+    ],
+    [
+     0,
+     19
+    ]
+   ],
+   "p": 0.01385908476095657
+  },
+  "CTI>=2.5%": {
+   "table": [
+    [
+     5,
+     7
+    ],
+    [
+     2,
+     30
+    ]
+   ],
+   "p": 0.011043468875513536
+  },
+  "SP>=2.0": {
+   "table": [
+    [
+     7,
+     34
+    ],
+    [
+     0,
+     3
+    ]
+   ],
+   "p": 1.0
+  },
+  "SP>=3.0": {
+   "table": [
+    [
+     6,
+     20
+    ],
+    [
+     1,
+     17
+    ]
+   ],
+   "p": 0.21140156377640335
+  }
+ },
+ "spearman": {
+  "CTI vs BAU CPR": {
+   "rho": -0.4604864579334831,
+   "p": 0.0016588421960478075,
+   "n": 44
+  },
+  "SP vs BAU CPR": {
+   "rho": -0.41720129486380175,
+   "p": 0.004840411997899656,
+   "n": 44
+  },
+  "CTI vs BAU spend": {
+   "rho": 0.5691331923890063,
+   "p": 5.5450583900769904e-05,
+   "n": 44
+  },
+  "SP vs BAU spend": {
+   "rho": 0.25750528541226214,
+   "p": 0.09150446202003981,
+   "n": 44
+  },
+  "CTI vs wk1 CPR": {
+   "rho": -0.48480300187617265,
+   "p": 0.001522633477539076,
+   "n": 40
+  },
+  "SP vs wk1 CPR": {
+   "rho": -0.25196998123827397,
+   "p": 0.11676629054937802,
+   "n": 40
+  },
+  "CTR vs BAU CPR": {
+   "rho": 0.21755376748051572,
+   "p": 0.1560155810591272,
+   "n": 44
+  },
+  "CVR vs BAU CPR": {
+   "rho": 0.29402652380528915,
+   "p": 0.055647211569511426,
+   "n": 43
+  },
+  "test CPFT vs BAU CPR": {
+   "rho": 0.4337711121544964,
+   "p": 0.004106313465945514,
+   "n": 42
+  }
+ },
+ "cti_sweep": [
+  {
+   "cut": 0.01,
+   "n": 25,
+   "scaled": 7,
+   "borderline": 6,
+   "rate": 0.28,
+   "med_wk1_spend": 2694.0,
+   "med_wk1_cpr": 97.87037037037037,
+   "below_scaled": 0,
+   "below_n": 19,
+   "p": 0.01385908476095657
+  },
+  {
+   "cut": 0.02,
+   "n": 13,
+   "scaled": 5,
+   "borderline": 3,
+   "rate": 0.38461538461538464,
+   "med_wk1_spend": 3148.0,
+   "med_wk1_cpr": 87.69285714285714,
+   "below_scaled": 2,
+   "below_n": 31,
+   "p": 0.01705003433143266
+  },
+  {
+   "cut": 0.025,
+   "n": 12,
+   "scaled": 5,
+   "borderline": 3,
+   "rate": 0.4166666666666667,
+   "med_wk1_spend": 3235.0,
+   "med_wk1_cpr": 77.48745421245421,
+   "below_scaled": 2,
+   "below_n": 32,
+   "p": 0.011043468875513536
+  },
+  {
+   "cut": 0.03,
+   "n": 8,
+   "scaled": 4,
+   "borderline": 2,
+   "rate": 0.5,
+   "med_wk1_spend": 3415.0,
+   "med_wk1_cpr": 62.73160173160173,
+   "below_scaled": 3,
+   "below_n": 36,
+   "p": 0.01398977175912424
+  },
+  {
+   "cut": 0.035,
+   "n": 5,
+   "scaled": 2,
+   "borderline": 1,
+   "rate": 0.4,
+   "med_wk1_spend": 2612.0,
+   "med_wk1_cpr": 62.19047619047619,
+   "below_scaled": 5,
+   "below_n": 39,
+   "p": 0.17292321971845515
+  },
+  {
+   "cut": 0.04,
+   "n": 4,
+   "scaled": 2,
+   "borderline": 1,
+   "rate": 0.5,
+   "med_wk1_spend": 2967.0,
+   "med_wk1_cpr": 62.73160173160173,
+   "below_scaled": 5,
+   "below_n": 40,
+   "p": 0.11282421492291032
+  },
+  {
+   "cut": 0.05,
+   "n": 2,
+   "scaled": 1,
+   "borderline": 1,
+   "rate": 0.5,
+   "med_wk1_spend": 2102.0,
+   "med_wk1_cpr": 51.797283176593524,
+   "below_scaled": 6,
+   "below_n": 42,
+   "p": 0.29598308668076106
+  },
+  {
+   "cut": 0.06,
+   "n": 1,
+   "scaled": 1,
+   "borderline": 0,
+   "rate": 1.0,
+   "med_wk1_spend": 3508.0,
+   "med_wk1_cpr": 40.32183908045977,
+   "below_scaled": 6,
+   "below_n": 43,
+   "p": 0.1590909090909091
+  }
+ ],
+ "sp_sweep": [
+  {
+   "cut": 1.5,
+   "n": 42,
+   "scaled": 7,
+   "borderline": 7,
+   "rate": 0.16666666666666666,
+   "med_wk1_spend": 1730.0,
+   "med_wk1_cpr": 118.1962962962963
+  },
+  {
+   "cut": 2.0,
+   "n": 41,
+   "scaled": 7,
+   "borderline": 7,
+   "rate": 0.17073170731707318,
+   "med_wk1_spend": 1742.0,
+   "med_wk1_cpr": 116.5925925925926
+  },
+  {
+   "cut": 2.5,
+   "n": 37,
+   "scaled": 7,
+   "borderline": 6,
+   "rate": 0.1891891891891892,
+   "med_wk1_spend": 1742.0,
+   "med_wk1_cpr": 110.125
+  },
+  {
+   "cut": 3.0,
+   "n": 26,
+   "scaled": 6,
+   "borderline": 3,
+   "rate": 0.23076923076923078,
+   "med_wk1_spend": 2171.5,
+   "med_wk1_cpr": 119.8
+  },
+  {
+   "cut": 3.5,
+   "n": 25,
+   "scaled": 6,
+   "borderline": 3,
+   "rate": 0.24,
+   "med_wk1_spend": 2025.0,
+   "med_wk1_cpr": 115.275
+  },
+  {
+   "cut": 4.0,
+   "n": 17,
+   "scaled": 4,
+   "borderline": 3,
+   "rate": 0.23529411764705882,
+   "med_wk1_spend": 2025.0,
+   "med_wk1_cpr": 114.65
+  },
+  {
+   "cut": 5.0,
+   "n": 11,
+   "scaled": 3,
+   "borderline": 3,
+   "rate": 0.2727272727272727,
+   "med_wk1_spend": 1130.0,
+   "med_wk1_cpr": 102.43518518518519
+  }
+ ],
+ "top_sp": [
+  {
+   "creative": "comic-engmeeting",
+   "sp": 9.689,
+   "cti": 0.005747126436781609,
+   "status": "Not scaled"
+  },
+  {
+   "creative": "qing · 2026nyr-v2-putoffforyears",
+   "sp": 7.449,
+   "cti": 0.03433001107419712,
+   "status": "Scaled"
+  },
+  {
+   "creative": "hua · 2026resolutionenglish5m_3invest",
+   "sp": 6.712,
+   "cti": 0.04266389177939646,
+   "status": "Not scaled"
+  },
+  {
+   "creative": "hua · 2026resolutionenglish5m_1full",
+   "sp": 6.354,
+   "cti": 0.05138339920948617,
+   "status": "Borderline"
+  },
+  {
+   "creative": "thedodomen · speak-without-fear",
+   "sp": 6.309,
+   "cti": 0.10810810810810811,
+   "status": "Scaled"
+  },
+  {
+   "creative": "threadspost-career-aitutor",
+   "sp": 5.836,
+   "cti": 0.004002668445630421,
+   "status": "Borderline"
+  },
+  {
+   "creative": "drama_engbook · input_output_short",
+   "sp": 5.687,
+   "cti": 0.0425974025974026,
+   "status": "Scaled"
+  },
+  {
+   "creative": "qing · solo-travel-eng-rescue-v2-result",
+   "sp": 5.631,
+   "cti": 0.007877414481493471,
+   "status": "Not scaled"
+  }
+ ],
+ "scaled_sp_range": [
+  2.76,
+  7.449
+ ],
+ "scaled_cti_range": [
+  0.013517811704834605,
+  0.10810810810810811
+ ],
+ "cti_bench_testing_campaign": null
+}
