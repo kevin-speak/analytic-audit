@@ -3,28 +3,34 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..100,400..800&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>
-/* Layout: control bar pinned on top; three stacked swim-lane panels share one date axis; scoreboard below. */
+/* Layout: control bar pinned on top; bubble small-multiples (metric vs LTV/CAC) then three swim-lane panels on one date axis; tables below. */
 :root {
   --bg: #f6f7f9; --panel: #ffffff; --ink: #15181d; --ink-2: #4b5260; --ink-3: #7c8492; --rule: #dde1e7;
   --accent: #4a3aa7; --accent-soft: #e7e4f6;
   --pass: #0ca30c; --fail: #d03b3b; --pend: #c9ced6; --idle: #e6e9ee; --head: #15181d;
+  --eff-hi: #1c5cab; --eff-ok: #6da7ec; --eff-lo: #ec9a8a; --eff-bad: #c73a39;
+  --t: #2a78d6; --w: #eb6834; --s: #1baf7a;
   --f-display: "Archivo", "Arial Narrow", system-ui, sans-serif;
   --f-body: "Archivo", system-ui, -apple-system, "Segoe UI", sans-serif;
   --f-data: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
 }
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
   --bg: #121418; --panel: #1a1d22; --ink: #f1f3f6; --ink-2: #b7bdc8; --ink-3: #868d99; --rule: #2c3038;
-  --accent: #9085e9; --accent-soft: #2a2645; --pend: #4a505b; --idle: #262a31; --head: #f1f3f6; color-scheme: dark; } }
+  --accent: #9085e9; --accent-soft: #2a2645; --pend: #4a505b; --idle: #262a31; --head: #f1f3f6;
+  --eff-hi: #5598e7; --eff-ok: #2d5d95; --eff-lo: #8a3b33; --eff-bad: #e66767;
+  --t: #3987e5; --w: #d95926; --s: #199e70; color-scheme: dark; } }
 :root[data-theme="dark"] {
   --bg: #121418; --panel: #1a1d22; --ink: #f1f3f6; --ink-2: #b7bdc8; --ink-3: #868d99; --rule: #2c3038;
-  --accent: #9085e9; --accent-soft: #2a2645; --pend: #4a505b; --idle: #262a31; --head: #f1f3f6; color-scheme: dark; }
+  --accent: #9085e9; --accent-soft: #2a2645; --pend: #4a505b; --idle: #262a31; --head: #f1f3f6;
+  --eff-hi: #5598e7; --eff-ok: #2d5d95; --eff-lo: #8a3b33; --eff-bad: #e66767;
+  --t: #3987e5; --w: #d95926; --s: #199e70; color-scheme: dark; }
 * { box-sizing: border-box; }
 body { background: var(--bg); color: var(--ink); font-family: var(--f-body); font-size: 14px; line-height: 1.45; }
 .wrap { max-width: 1240px; margin: 0 auto; padding-inline: 20px; padding-block: 28px 56px; display: grid; gap: 22px; }
 header { display: grid; gap: 8px; }
 .eyebrow { font-family: var(--f-data); font-size: 11.5px; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-3); }
 h1 { font-family: var(--f-display); font-stretch: 80%; font-weight: 800; font-size: clamp(28px, 4.2vw, 44px); line-height: 1.02; margin: 0; letter-spacing: -.01em; text-wrap: balance; }
-.lede { max-width: 72ch; color: var(--ink-2); margin: 0; }
+.lede { max-width: 76ch; color: var(--ink-2); margin: 0; }
 .bar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: color-mix(in srgb, var(--bg) 92%, transparent); backdrop-filter: blur(6px);
   border-bottom: 1px solid var(--rule); padding-block: 10px; display: flex; flex-wrap: wrap; align-items: center; gap: 10px 18px; }
 .date { font-family: var(--f-display); font-stretch: 75%; font-weight: 700; font-size: 30px; min-width: 7.2ch; font-variant-numeric: tabular-nums; line-height: 1; }
@@ -32,15 +38,16 @@ h1 { font-family: var(--f-display); font-stretch: 80%; font-weight: 800; font-si
 button, select { font: inherit; color: var(--ink); }
 .play { background: var(--ink); color: var(--bg); border: 0; border-radius: 999px; padding: 8px 16px; font-weight: 700; cursor: pointer; min-width: 88px; }
 .play:focus-visible, .seg button:focus-visible, input:focus-visible, select:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
-.seg { display: inline-flex; border: 1px solid var(--rule); border-radius: 999px; padding: 2px; background: var(--panel); }
+.seg { display: inline-flex; flex-wrap: wrap; border: 1px solid var(--rule); border-radius: 999px; padding: 2px; background: var(--panel); }
 .seg button { border: 0; background: transparent; padding: 5px 11px; border-radius: 999px; cursor: pointer; font-size: 13px; color: var(--ink-2); }
 .seg button[aria-pressed="true"] { background: var(--accent-soft); color: var(--ink); font-weight: 700; }
 .ctl { display: flex; align-items: center; gap: 8px; font-size: 12.5px; color: var(--ink-2); }
 .ctl label { white-space: nowrap; }
-input[type=range] { width: min(320px, 60vw); accent-color: var(--accent); }
+input[type=range] { width: min(300px, 60vw); accent-color: var(--accent); }
 select { background: var(--panel); border: 1px solid var(--rule); border-radius: 8px; padding: 4px 8px; font-size: 13px; }
 .legend { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 12.5px; color: var(--ink-2); align-items: center; }
 .sw { display: inline-block; width: 14px; height: 8px; border-radius: 2px; vertical-align: middle; margin-right: 5px; }
+.dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; vertical-align: middle; margin-right: 5px; }
 .win-mark { display: inline-block; width: 9px; height: 9px; transform: rotate(45deg); background: var(--accent); margin-right: 6px; vertical-align: middle; }
 .panel { background: var(--panel); border: 1px solid var(--rule); border-radius: 10px; padding: 14px 14px 10px; display: grid; gap: 8px; min-width: 0; }
 .ph { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 16px; align-items: baseline; }
@@ -51,25 +58,30 @@ select { background: var(--panel); border: 1px solid var(--rule); border-radius:
 .live i { font-style: normal; display: inline-block; width: 8px; height: 8px; border-radius: 2px; margin-right: 4px; }
 .cv { position: relative; width: 100%; }
 canvas { display: block; width: 100%; }
+.bub { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; }
+.bub figure { margin: 0; min-width: 0; display: grid; gap: 4px; }
+.bub figcaption { font-family: var(--f-display); font-stretch: 85%; font-weight: 700; font-size: 15px; display: flex; justify-content: space-between; gap: 8px; }
+.bub figcaption span { font-family: var(--f-data); font-weight: 400; font-size: 11.5px; color: var(--ink-3); }
 .tip { position: fixed; pointer-events: none; z-index: 20; background: var(--panel); color: var(--ink); border: 1px solid var(--rule); border-radius: 8px;
-  box-shadow: 0 6px 24px rgba(0,0,0,.14); padding: 9px 11px; font-size: 12px; width: 260px; }
+  box-shadow: 0 6px 24px rgba(0,0,0,.14); padding: 9px 11px; font-size: 12px; width: 270px; }
 .tip h4 { margin: 0 0 4px; font-size: 13px; font-family: var(--f-display); font-stretch: 85%; line-height: 1.2; }
 .tip table { width: 100%; border-collapse: collapse; font-family: var(--f-data); font-size: 11.5px; font-variant-numeric: tabular-nums; }
 .tip td { padding: 1px 0; } .tip td:last-child { text-align: right; }
 .st { font-weight: 500; } .st.pass { color: var(--pass); } .st.fail { color: var(--fail); } .st.pending { color: var(--ink-3); }
 .score { overflow-x: auto; }
-table.sc { border-collapse: collapse; width: 100%; min-width: 820px; font-size: 13px; font-variant-numeric: tabular-nums; }
+table.sc { border-collapse: collapse; width: 100%; min-width: 860px; font-size: 13px; font-variant-numeric: tabular-nums; }
 .sc th, .sc td { padding: 7px 10px; border-bottom: 1px solid var(--rule); text-align: right; }
 .sc th { font-family: var(--f-data); font-weight: 500; font-size: 11px; letter-spacing: .04em; text-transform: uppercase; color: var(--ink-3); vertical-align: bottom; }
 .sc td:first-child, .sc th:first-child, .sc td:nth-child(2), .sc th:nth-child(2) { text-align: left; }
 .sc tr.grp td { border-top: 2px solid var(--rule); }
 .sc .best { font-weight: 700; color: var(--ink); }
 .sc td { color: var(--ink-2); }
+.sc .ns { color: var(--ink-3); }
 .notes { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; }
 .note { border-top: 2px solid var(--ink); padding-top: 8px; min-width: 0; }
-.note h3 { margin: 0 0 4px; font-family: var(--f-display); font-stretch: 85%; font-size: 17px; }
+.note h3 { margin: 0 0 4px; font-family: var(--f-display); font-stretch: 85%; font-size: 17px; text-wrap: balance; }
 .note p { margin: 0; color: var(--ink-2); }
-.foot { font-size: 12px; color: var(--ink-3); max-width: 90ch; }
+.foot { font-size: 12px; color: var(--ink-3); max-width: 92ch; margin: 0; }
 @media (max-width: 560px) { .date { font-size: 24px; } .wrap { padding-inline: 16px; } }
 </style>
 
@@ -77,45 +89,59 @@ table.sc { border-collapse: collapse; width: 100%; min-width: 820px; font-size: 
   <header>
     <div class="eyebrow">Speak ZH · Meta iOS · Taiwan · daily check-ins Jun 1 – Sep 29, 2026</div>
     <h1>Every ad, every day: SP vs CTI vs SP2</h1>
-    <p class="lede">Each row is one ad, drawn across the days it delivered. On every delivery day it is re-scored with its data to date, and each cell shows what that day's check-in would have said: <b>pass</b>, <b>fail</b>, or <b>pending</b> (not enough data yet). A diamond at the row end marks ads that finished as winners (≥ 10 trials at ≤ $70 per trial). Press play to replay the season.</p>
+    <p class="lede">Each row is one ad, drawn across the days it delivered, and re-scored every delivery day with its data to date. Colour shows what that day's check-in said (<b>pass</b>, <b>fail</b>, or <b>pending</b> with too little data) or, in the LTV/CAC view, how efficient the ad has been so far. Cell height is that day's spend. The bubble charts put each live ad's check metric against its LTV/CAC to date, sized by spend, so you can watch whether a good score turns into efficient, scalable spend.</p>
   </header>
 
   <div class="bar" role="toolbar" aria-label="Replay controls">
     <div class="date" id="date" aria-live="off">Sep 29<small id="dsub">day 121 of 121</small></div>
     <button class="play" id="play" type="button">▶ Play</button>
     <div class="ctl"><label for="scrub">Day</label><input id="scrub" type="range" min="0" max="120" step="1" value="120"></div>
-    <div class="seg" role="group" aria-label="Gate shown" id="gate">
-      <button type="button" data-v="all" aria-pressed="true">All three</button>
+    <div class="seg" role="group" aria-label="What the rows show" id="gate">
+      <button type="button" data-v="all" aria-pressed="false">All three</button>
       <button type="button" data-v="0" aria-pressed="false">SP</button>
-      <button type="button" data-v="1" aria-pressed="false">CTI</button>
+      <button type="button" data-v="1" aria-pressed="true">CTI</button>
       <button type="button" data-v="2" aria-pressed="false">SP2</button>
+      <button type="button" data-v="lc" aria-pressed="false">LTV/CAC</button>
     </div>
     <div class="ctl"><label for="speed">Speed</label><select id="speed"><option value="4">Slow</option><option value="8" selected>Normal</option><option value="18">Fast</option></select></div>
-    <div class="ctl"><label for="sort">Order</label><select id="sort"><option value="launch" selected>Launch date</option><option value="spend">Total spend</option><option value="win">Winners first</option></select></div>
+    <div class="ctl"><label for="sort">Order</label><select id="sort"><option value="launch" selected>Launch date</option><option value="spend">Total spend</option><option value="lc">Final LTV/CAC</option><option value="win">Winners first</option></select></div>
     <div class="ctl"><label><input type="checkbox" id="focus"> Highlight winners</label></div>
   </div>
 
-  <div class="legend" aria-label="Legend">
-    <span><span class="sw" style="background:var(--pass)"></span>Pass</span>
-    <span><span class="sw" style="background:var(--fail)"></span>Fail</span>
-    <span><span class="sw" style="background:var(--pend)"></span>Pending (below minimum data)</span>
-    <span><span class="win-mark"></span>Finished as winner</span>
-    <span id="stripeKey">Row stripes, top to bottom: SP · CTI · SP2</span>
-  </div>
+  <section class="panel" aria-labelledby="bub-h">
+    <div class="ph"><h2 id="bub-h">Check metric vs efficiency<span>ads live on the playhead date · bubble = spend to date</span></h2>
+      <div class="ctl"><label for="xm">Horizontal axis</label><select id="xm"><option value="0">SP</option><option value="1" selected>CTI</option><option value="2">SP2</option></select>
+        <label><input type="checkbox" id="trail" checked> Keep ads that have stopped (faded)</label></div></div>
+    <div class="bub" id="bub"></div>
+    <p class="foot">Vertical axis = LTV/CAC to date (SSOT modelled LTV ÷ spend, capped at 2.5 on screen). Dashed lines mark the gate bar on the horizontal axis and the 0.8× LTV/CAC target. Top-right = passing the gate and efficient. Big bubbles in the top-right are the ads that were efficient <i>and</i> took spend.</p>
+  </section>
+
+  <div class="legend" aria-label="Legend" id="legend"></div>
 
   <section class="panel" id="p-T"></section>
   <section class="panel" id="p-W"></section>
   <section class="panel" id="p-S"></section>
 
   <section class="panel">
-    <div class="ph"><h2>Scoreboard<span>outcome known Sep 29 · ads under 14 days old excluded</span></h2></div>
+    <div class="ph"><h2>Do the checks predict efficiency and spend?<span>measured forward from each ad's check-in</span></h2>
+      <div class="seg" role="group" aria-label="Check-in day" id="ck">
+        <button type="button" data-v="3" aria-pressed="false">Day 3</button>
+        <button type="button" data-v="7" aria-pressed="true">Day 7</button>
+        <button type="button" data-v="14" aria-pressed="false">Day 14</button>
+      </div></div>
+    <div class="score"><table class="sc" id="eff"></table></div>
+    <p class="foot">For each ad that reached the check-in day: its metric that day vs what happened <b>after</b> it. "Can it spend" = rank correlation (ρ) with spend after the check-in. "Efficiency" = ρ with LTV/CAC earned after the check-in (ads with ≥ $200 later spend). Pass/fail columns compare the spend-weighted later LTV/CAC and median later spend of ads the gate passed vs failed. Grey = not significant (p ≥ 0.10). SP2 contains a spend-velocity term (SI), so part of its link to later spend is built in.</p>
+  </section>
+
+  <section class="panel">
+    <div class="ph"><h2>Scoreboard<span>winner = ≥ 10 trials at ≤ $70 per trial · ads under 14 days old excluded</span></h2></div>
     <div class="score"><table class="sc" id="score"></table></div>
-    <p class="foot">Precision = share of ads the gate passes that finished as winners (base rate in brackets). Recall = share of winners the gate passes. "Day 7" = state at each ad's 7th delivery day. Pause policy = pause an ad after 3 consecutive failing check-ins: spend it would have saved on non-winners, versus spend winners would have lost.</p>
+    <p class="foot">Precision = share of ads the gate passes that finished as winners (base rate in brackets). Recall = share of winners the gate passes. "Day 7" = state at each ad's 7th delivery day. Pause policy = pause an ad after 3 consecutive failing check-ins: spend it would have saved on non-winners, versus spend winners would have lost. LTV/CAC column = final lifetime LTV/CAC of the group.</p>
   </section>
 
   <section class="notes" id="notes"></section>
 
-  <p class="foot">Gates, re-scored daily with cumulative data: <b>SP</b> ≥ 2.0 with ≥ 10 installs (Option B, benchmarked against the same campaign group's placements to date). <b>CTI</b> = installs ÷ link clicks ≥ 1% with ≥ 300 link clicks. <b>SP2</b> = EI × SI ≥ 2 with EI ≥ 1 and ≥ 10 installs, where EI = CPI target $15.32 ÷ CPI (from $12.26 LTV per install at 0.8× LTV/CAC) and SI = spend per active day ÷ the median live ad in the group that day. Data: BigQuery <code>meta_ads_creative_report_funnel</code> + Meta Ads link clicks. Winning ads that started before June begin mid-row, with a ◂ at the left edge.</p>
+  <p class="foot">Gates, re-scored daily with cumulative data: <b>SP</b> ≥ 2.0 with ≥ 10 installs (Option B, benchmarked against the same campaign group's placements to date). <b>CTI</b> = installs ÷ link clicks ≥ 1% with ≥ 300 link clicks. <b>SP2</b> = EI × SI ≥ 2 with EI ≥ 1 and ≥ 10 installs, where EI = CPI target $15.32 ÷ CPI and SI = spend per active day ÷ the median live ad in the group that day. <b>LTV/CAC</b> = SSOT modelled LTV by attribution date (scaled up 9–30% per group and month for LTV that SSOT could not tie to an ad) ÷ Meta spend. Data: BigQuery <code>meta_ads_creative_report_funnel</code> and <code>marketing_attribution_aggregate_attribution_date_cohort</code>, plus Meta Ads link clicks. Winning ads that started before June begin mid-row, with a ◂ at the left edge.</p>
 </div>
 <div class="tip" id="tip" hidden></div>
 
@@ -126,96 +152,167 @@ const D0 = 151, ND = 121;               // Jun 1 = day 151 from Jan 1; 121 days 
 const GN = {T: 'Testing', W: 'Winning', S: 'Scaling'};
 const GD = {T: 'purchase_ongoing_no-disc_testing', W: 'trial_ongoing_winning · winning3', S: 'trial_ongoing_scaling2'};
 const GATES = ['SP', 'CTI', 'SP2'];
+const XM = [{k: 3, max: 8, bar: 2, fmt: v => v.toFixed(1), ticks: [0, 2, 4, 6, 8]}, {k: 4, max: 5, bar: 1, fmt: v => v.toFixed(1) + '%', ticks: [0, 1, 2, 3, 4, 5]}, {k: 5, max: 8, bar: 2, fmt: v => v.toFixed(1), ticks: [0, 2, 4, 6, 8]}];
+const YMAX = 2.5, LCT = 0.8;
 const MON = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct'];
 const dt = off => { const d = new Date(Date.UTC(2026, 0, 1 + off)); return MON[d.getUTCMonth()] + ' ' + d.getUTCDate(); };
 const st = (code, k) => Math.floor(code / [9, 3, 1][k]) % 3;   // 0 pending 1 fail 2 pass
 const ST = ['pending', 'fail', 'pass'];
 const money = v => v == null ? '–' : '$' + Math.round(v).toLocaleString('en-US');
 const pct = v => v == null ? '–' : Math.round(v * 100) + '%';
+const f2 = v => v == null ? '–' : v.toFixed(2);
 
-let day = ND - 1, playing = false, gate = 'all', sortBy = 'launch', focusW = false, speed = 8, last = 0;
+let day = ND - 1, playing = false, gate = '1', sortBy = 'launch', focusW = false, speed = 8, last = 0, xm = 1, trail = true, ck = '7';
 const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
 let C = {};
-function readColors() { C = { pass: css('--pass'), fail: css('--fail'), pend: css('--pend'), idle: css('--idle'), ink3: css('--ink-3'), ink2: css('--ink-2'), rule: css('--rule'), acc: css('--accent'), head: css('--head'), panel: css('--panel') }; }
+function readColors() { C = Object.fromEntries(['pass', 'fail', 'pend', 'idle', 'ink', 'ink-2', 'ink-3', 'rule', 'accent', 'head', 'panel', 'eff-hi', 'eff-ok', 'eff-lo', 'eff-bad', 't', 'w', 's'].map(n => [n, css('--' + n)])); }
+const lcColor = v => v >= 1.2 ? C['eff-hi'] : v >= LCT ? C['eff-ok'] : v >= 0.4 ? C['eff-lo'] : C['eff-bad'];
+const stColor = s => s === 2 ? C.pass : s === 1 ? C.fail : C.pend;
 
+// ---- panels ----
 const panels = {};
+let maxDaily = {};
 for (const g of ['T', 'W', 'S']) {
   const el = document.getElementById('p-' + g);
   const ads = ADS.filter(a => a.g === g);
   ads.forEach(a => { a.dmap = new Map(a.d.map(x => [x[0], x])); a.first = a.d[0][0]; a.lastd = a.d[a.d.length - 1][0]; });
-  const w = ads.filter(a => a.w).length;
-  el.innerHTML = `<div class="ph"><h2>${GN[g]}<span>${ads.length} ads · ${w} winners · ${GD[g]}</span></h2><div class="live" id="live-${g}"></div></div><div class="cv"><canvas id="cv-${g}" role="img" aria-label="${GN[g]} ads timeline"></canvas></div>`;
+  const daily = ads.flatMap(a => a.d.map(x => x[1])).sort((x, y) => x - y);
+  maxDaily[g] = daily[Math.floor(daily.length * 0.97)] || 1;
+  const w = ads.filter(a => a.w).length, sp = ads.reduce((s, a) => s + a.s, 0), lc = RES.efficiency[GN[g]].quadrant.group_ltvcac;
+  el.innerHTML = `<div class="ph"><h2>${GN[g]}<span>${ads.length} ads · ${w} winners · ${money(sp)} spend · LTV/CAC ${f2(lc)}</span></h2><div class="live" id="live-${g}"></div></div><div class="cv"><canvas id="cv-${g}" role="img" aria-label="${GN[g]} ads timeline"></canvas></div>`;
   panels[g] = { el, ads, cv: el.querySelector('canvas') };
+}
+// bubble charts
+const bubWrap = document.getElementById('bub'), bubs = {};
+for (const g of ['T', 'W', 'S']) {
+  const f = document.createElement('figure');
+  f.innerHTML = `<figcaption>${GN[g]}<span id="bc-${g}"></span></figcaption><canvas role="img" aria-label="${GN[g]} check metric vs LTV/CAC"></canvas>`;
+  bubWrap.appendChild(f); bubs[g] = { cv: f.querySelector('canvas') };
 }
 
 const LBL = 0, TOP = 22, BOT = 4;
-function laneH() { return gate === 'all' ? 8 : 6; }
+function laneH() { return gate === 'all' ? 8 : 9; }
 function order(ads) {
   const a = ads.slice();
   if (sortBy === 'spend') a.sort((x, y) => y.s - x.s);
+  else if (sortBy === 'lc') a.sort((x, y) => y.l - x.l);
   else if (sortBy === 'win') a.sort((x, y) => (y.w - x.w) || (x.first - y.first));
   else a.sort((x, y) => (x.f - y.f) || (x.first - y.first));
   return a;
 }
+function size(cv, W, H) { const r = window.devicePixelRatio || 1; cv.width = Math.round(W * r); cv.height = Math.round(H * r); cv.style.height = H + 'px'; return r; }
 function layout() {
   for (const g in panels) {
     const P = panels[g]; P.rows = order(P.ads);
-    const W = P.cv.parentElement.clientWidth, H = TOP + P.rows.length * laneH() + BOT;
-    const r = window.devicePixelRatio || 1;
-    P.cv.width = Math.round(W * r); P.cv.height = Math.round(H * r); P.cv.style.height = H + 'px';
-    P.W = W; P.H = H; P.r = r; P.px = (W - LBL - 16) / ND;
+    P.W = P.cv.parentElement.clientWidth; P.H = TOP + P.rows.length * laneH() + BOT;
+    P.r = size(P.cv, P.W, P.H); P.px = (P.W - LBL - 16) / ND;
   }
+  for (const g in bubs) { const B = bubs[g]; B.W = B.cv.parentElement.clientWidth; B.H = Math.round(Math.min(300, Math.max(220, B.W * 0.72))); B.r = size(B.cv, B.W, B.H); }
 }
-function draw() {
-  const cur = D0 + day;
+function legend() {
+  const L = document.getElementById('legend');
+  const h = gate === 'lc'
+    ? `<span><span class="sw" style="background:var(--eff-hi)"></span>LTV/CAC ≥ 1.2</span><span><span class="sw" style="background:var(--eff-ok)"></span>0.8 – 1.2 (at target)</span><span><span class="sw" style="background:var(--eff-lo)"></span>0.4 – 0.8</span><span><span class="sw" style="background:var(--eff-bad)"></span>under 0.4</span>`
+    : `<span><span class="sw" style="background:var(--pass)"></span>Pass</span><span><span class="sw" style="background:var(--fail)"></span>Fail</span><span><span class="sw" style="background:var(--pend)"></span>Pending (below minimum data)</span>`;
+  L.innerHTML = h + `<span><span class="win-mark"></span>Finished as winner</span>` + (gate === 'all' ? `<span>Row stripes, top to bottom: SP · CTI · SP2</span>` : `<span>Cell height = that day's spend</span>`);
+}
+
+function drawLanes(cur) {
+  const gi = gate === 'all' ? null : gate === 'lc' ? 'lc' : +gate;
   for (const g in panels) {
-    const P = panels[g], c = P.cv.getContext('2d'), lh = laneH(), px = P.px;
+    const P = panels[g], c = P.cv.getContext('2d'), lh = laneH(), px = P.px, md = maxDaily[g];
     c.setTransform(P.r, 0, 0, P.r, 0, 0); c.clearRect(0, 0, P.W, P.H);
-    // month ticks
-    c.font = '11px "IBM Plex Mono", ui-monospace, monospace'; c.fillStyle = C.ink3; c.strokeStyle = C.rule; c.lineWidth = 1;
+    c.font = '11px "IBM Plex Mono", ui-monospace, monospace'; c.fillStyle = C['ink-3']; c.strokeStyle = C.rule; c.lineWidth = 1;
     [[151, 'Jun'], [181, 'Jul'], [212, 'Aug'], [243, 'Sep']].forEach(([o, m]) => {
       const x = LBL + (o - D0) * px; c.beginPath(); c.moveTo(x + .5, 14); c.lineTo(x + .5, P.H); c.stroke(); c.fillText(m, x + 3, 11);
     });
-    let live = [0, 0, 0], liveN = 0;
-    const gi = gate === 'all' ? null : +gate;
+    let live = [0, 0, 0], liveN = 0, liveSpend = 0, liveEff = 0;
     P.rows.forEach((a, i) => {
       const y = TOP + i * lh, dim = focusW && !a.w;
       c.globalAlpha = dim ? 0.18 : 1;
       if (a.first > cur) return;
-      // idle span between first and last delivery day (up to now)
       const x0 = LBL + (a.first - D0) * px, x1 = LBL + (Math.min(a.lastd, cur) - D0 + 1) * px;
-      c.fillStyle = C.idle; c.fillRect(x0, y + lh / 2 - 1, Math.max(1, x1 - x0), 1.5);
+      c.fillStyle = C.idle; c.fillRect(x0, y + lh - 2.5, Math.max(1, x1 - x0), 1.5);
       for (const d of a.d) {
         if (d[0] > cur) break;
         const x = LBL + (d[0] - D0) * px, wdt = Math.max(1, px - (px > 4 ? 1 : 0));
         if (gi === null) {
-          for (let k = 0; k < 3; k++) { const s = st(d[7], k); c.fillStyle = s === 2 ? C.pass : s === 1 ? C.fail : C.pend; c.fillRect(x, y + k * 2, wdt, 2); }
+          for (let k = 0; k < 3; k++) { c.fillStyle = stColor(st(d[7], k)); c.fillRect(x, y + k * 2, wdt, 2); }
         } else {
-          const s = st(d[7], gi); c.fillStyle = s === 2 ? C.pass : s === 1 ? C.fail : C.pend; c.fillRect(x, y, wdt, lh - 1);
+          const hmax = lh - 2, h = Math.max(1.5, hmax * Math.sqrt(Math.min(1, d[1] / md)));
+          c.fillStyle = gi === 'lc' ? lcColor(d[8]) : stColor(st(d[7], gi));
+          c.fillRect(x, y + hmax - h, wdt, h);
         }
       }
-      // today's live state
       const today = a.dmap.get(cur);
-      if (today) { liveN++; live[st(today[7], gi === null ? 2 : gi)]++; if (!dim) { c.fillStyle = C.head; c.fillRect(LBL + (cur - D0) * px + px, y, 1.5, lh - 2); } }
-      if (a.f < D0 && a.first === D0) { c.fillStyle = C.ink3; c.beginPath(); c.moveTo(LBL, y + lh / 2 - 3); c.lineTo(LBL, y + lh / 2 + 3); c.lineTo(LBL - 0.1, y + lh / 2); c.fill(); }
-      // winner diamond appears when the ad's last delivery day has passed
+      if (today) {
+        liveN++; liveSpend += today[1];
+        if (gi === 'lc') { if (today[8] >= LCT) liveEff++; } else live[st(today[7], gi === null ? 1 : gi)]++;
+        if (!dim) { c.fillStyle = C.head; c.fillRect(LBL + (cur - D0) * px + px, y, 1.5, lh - 2); }
+      }
+      if (a.f < D0 && a.first === D0) { c.fillStyle = C['ink-3']; c.beginPath(); c.moveTo(LBL, y + 1); c.lineTo(LBL, y + lh - 3); c.lineTo(LBL + 3, y + lh / 2 - 1); c.fill(); }
       if (a.w && cur >= a.lastd) {
         const xm = LBL + (a.lastd - D0 + 1) * px + 5, ym = y + (lh - 2) / 2;
-        c.fillStyle = C.acc; c.beginPath(); c.moveTo(xm, ym - 3.5); c.lineTo(xm + 3.5, ym); c.lineTo(xm, ym + 3.5); c.lineTo(xm - 3.5, ym); c.fill();
+        c.fillStyle = C.accent; c.beginPath(); c.moveTo(xm, ym - 3.5); c.lineTo(xm + 3.5, ym); c.lineTo(xm, ym + 3.5); c.lineTo(xm - 3.5, ym); c.fill();
       }
     });
     c.globalAlpha = 1;
-    // playhead
     const xp = LBL + (day + 1) * px; c.fillStyle = C.head; c.globalAlpha = .35; c.fillRect(xp, 14, 1, P.H - 14); c.globalAlpha = 1;
-    const gl = gi === null ? 'SP2' : GATES[gi];
-    document.getElementById('live-' + g).innerHTML = `<span>live on ${dt(cur)}: <b>${liveN}</b></span><span>${gl}: <i style="background:var(--pass)"></i><b>${live[2]}</b> pass</span><span><i style="background:var(--fail)"></i><b>${live[1]}</b> fail</span><span><i style="background:var(--pend)"></i><b>${live[0]}</b> pending</span>`;
+    const head = `<span>live on ${dt(cur)}: <b>${liveN}</b> ads · <b>${money(liveSpend)}</b> spent that day</span>`;
+    document.getElementById('live-' + g).innerHTML = gi === 'lc'
+      ? head + `<span><i style="background:var(--eff-ok)"></i><b>${liveEff}</b> at ≥ 0.8 LTV/CAC</span>`
+      : head + `<span>${gi === null ? 'CTI' : GATES[gi]}: <i style="background:var(--pass)"></i><b>${live[2]}</b> pass <i style="background:var(--fail);margin-left:6px"></i><b>${live[1]}</b> fail <i style="background:var(--pend);margin-left:6px"></i><b>${live[0]}</b> pending</span>`;
   }
+}
+
+function drawBubbles(cur) {
+  const M = XM[xm];
+  for (const g in bubs) {
+    const B = bubs[g], c = B.cv.getContext('2d'), padL = 34, padB = 22, padT = 8, padR = 10;
+    const W = B.W - padL - padR, H = B.H - padT - padB;
+    const X = v => padL + Math.min(v, M.max) / M.max * W, Y = v => padT + H - Math.min(v, YMAX) / YMAX * H;
+    c.setTransform(B.r, 0, 0, B.r, 0, 0); c.clearRect(0, 0, B.W, B.H);
+    c.font = '10.5px "IBM Plex Mono", ui-monospace, monospace'; c.strokeStyle = C.rule; c.fillStyle = C['ink-3']; c.lineWidth = 1;
+    [0, 0.5, 1, 1.5, 2, 2.5].forEach(v => { const y = Y(v) + .5; c.beginPath(); c.moveTo(padL, y); c.lineTo(padL + W, y); c.stroke(); c.textAlign = 'right'; c.fillText(v.toFixed(1), padL - 5, y + 3.5); });
+    M.ticks.forEach(v => { c.textAlign = 'center'; c.fillText(M.fmt(v), X(v), padT + H + 15); });
+    c.setLineDash([4, 3]); c.strokeStyle = C['ink-2'];
+    c.beginPath(); c.moveTo(X(M.bar) + .5, padT); c.lineTo(X(M.bar) + .5, padT + H); c.stroke();
+    c.beginPath(); c.moveTo(padL, Y(LCT) + .5); c.lineTo(padL + W, Y(LCT) + .5); c.stroke(); c.setLineDash([]);
+    c.textAlign = 'left'; c.fillStyle = C['ink-2']; c.fillText('0.8× target', padL + 4, Y(LCT) - 4);
+    const pts = [];
+    let nLive = 0, nTR = 0, sLive = 0, sTR = 0;
+    for (const a of panels[g].ads) {
+      if (a.first > cur) continue;
+      let rec = null; for (const d of a.d) { if (d[0] <= cur) rec = d; else break; }
+      const liveToday = rec && rec[0] === cur;
+      if (!rec || (!liveToday && !trail)) continue;
+      const v = rec[M.k]; if (v == null) continue;
+      const r = 2 + Math.sqrt(rec[2]) / 16;
+      pts.push({ a, rec, x: X(v), y: Y(rec[8]), r: Math.min(r, 22), live: liveToday });
+      if (liveToday) { nLive++; sLive += rec[2]; if (v >= M.bar && rec[8] >= LCT) { nTR++; sTR += rec[2]; } }
+    }
+    pts.sort((p, q) => q.r - p.r);
+    for (const p of pts) {
+      const dim = (focusW && !p.a.w);
+      c.globalAlpha = p.live ? (dim ? 0.2 : 0.78) : (dim ? 0.06 : 0.18);
+      c.fillStyle = C[g.toLowerCase()]; c.beginPath(); c.arc(p.x, p.y, p.r, 0, Math.PI * 2); c.fill();
+      c.globalAlpha = p.live ? 1 : 0.3; c.strokeStyle = C.panel; c.lineWidth = 1; c.stroke();
+      if (p.a.w && p.live) { c.strokeStyle = C.accent; c.lineWidth = 2; c.beginPath(); c.arc(p.x, p.y, p.r + 2, 0, Math.PI * 2); c.stroke(); }
+    }
+    c.globalAlpha = 1; B.pts = pts; B.X = X; B.Y = Y;
+    document.getElementById('bc-' + g).textContent = `${nLive} live · ${nTR} in top-right (${sLive ? pct(sTR / sLive) : '–'} of their spend)`;
+  }
+}
+
+function draw() {
+  const cur = D0 + day;
+  drawLanes(cur); drawBubbles(cur);
   document.getElementById('date').firstChild.nodeValue = dt(cur);
   document.getElementById('dsub').textContent = `day ${day + 1} of ${ND}`;
   document.getElementById('scrub').value = day;
 }
 
-// playback
+// ---- playback ----
 const playBtn = document.getElementById('play');
 function setPlay(p) { playing = p; playBtn.textContent = p ? '❚❚ Pause' : '▶ Play'; if (p) { last = 0; requestAnimationFrame(tick); } }
 let acc = 0;
@@ -230,10 +327,12 @@ document.getElementById('scrub').addEventListener('input', e => { day = +e.targe
 document.getElementById('speed').addEventListener('change', e => speed = +e.target.value);
 document.getElementById('sort').addEventListener('change', e => { sortBy = e.target.value; layout(); draw(); });
 document.getElementById('focus').addEventListener('change', e => { focusW = e.target.checked; draw(); });
-document.querySelectorAll('#gate button').forEach(b => b.addEventListener('click', () => {
-  document.querySelectorAll('#gate button').forEach(x => x.setAttribute('aria-pressed', x === b));
-  gate = b.dataset.v; document.getElementById('stripeKey').hidden = gate !== 'all'; layout(); draw();
-}));
+document.getElementById('xm').addEventListener('change', e => { xm = +e.target.value; draw(); });
+document.getElementById('trail').addEventListener('change', e => { trail = e.target.checked; draw(); });
+function segs(id, fn) { document.querySelectorAll('#' + id + ' button').forEach(b => b.addEventListener('click', () => {
+  document.querySelectorAll('#' + id + ' button').forEach(x => x.setAttribute('aria-pressed', x === b)); fn(b.dataset.v); })); }
+segs('gate', v => { gate = v; if (v !== 'all' && v !== 'lc') { xm = +v; document.getElementById('xm').value = v; } legend(); layout(); draw(); });
+segs('ck', v => { ck = v; effTable(); });
 document.addEventListener('keydown', e => {
   if (e.target.matches('input, select, button')) return;
   if (e.code === 'Space') { e.preventDefault(); playBtn.click(); }
@@ -241,42 +340,71 @@ document.addEventListener('keydown', e => {
   if (e.key === 'ArrowLeft') { day = Math.max(0, day - 1); draw(); }
 });
 
-// tooltip
+// ---- tooltips ----
 const tip = document.getElementById('tip');
+function showTip(e, g, a, rec) {
+  const row = (k, v) => `<tr><td>${k}</td><td>${v}</td></tr>`;
+  const s = k => { const v = ST[st(rec[7], k)]; return `<span class="st ${v}">${v}</span>`; };
+  tip.innerHTML = `<h4>${a.name}</h4><div class="eyebrow" style="margin-bottom:4px">${GN[g]} · check-in ${dt(rec[0])}</div><table>
+    ${row('Spend that day', money(rec[1]))}${row('Spend to date', money(rec[2]))}${row('LTV/CAC to date', f2(rec[8]))}
+    ${row('SP', rec[3].toFixed(2) + ' · ' + s(0))}${row('CTI', (rec[4] == null ? '–' : rec[4].toFixed(2) + '%') + ' · ' + s(1))}
+    ${row('SP2', (rec[5] == null ? '–' : rec[5].toFixed(2)) + ' · ' + s(2))}${row('Cost per trial to date', money(rec[6]))}
+    <tr><td colspan="2" style="padding-top:5px;color:var(--ink-3)">Final: ${money(a.s)} · LTV/CAC ${f2(a.l)} · ${a.t} trials · ${a.c == null ? 'no trials' : money(a.c) + '/trial'} · ${a.nw ? 'too new to judge' : a.w ? '<b style="color:var(--accent)">winner</b>' : 'not a winner'}</td></tr></table>`;
+  tip.hidden = false;
+  tip.style.left = Math.min(window.innerWidth - 286, e.clientX + 14) + 'px';
+  tip.style.top = Math.min(window.innerHeight - tip.offsetHeight - 8, e.clientY + 14) + 'px';
+}
 for (const g in panels) {
   const P = panels[g];
   P.cv.addEventListener('mousemove', e => {
     const b = P.cv.getBoundingClientRect(), x = e.clientX - b.left, y = e.clientY - b.top;
-    const i = Math.floor((y - TOP) / laneH()), a = P.rows[i];
+    const a = P.rows[Math.floor((y - TOP) / laneH())];
     if (!a || y < TOP) { tip.hidden = true; return; }
-    const cur = D0 + day, o = Math.min(cur, D0 + Math.floor((x - LBL) / P.px));
+    const o = Math.min(D0 + day, D0 + Math.floor((x - LBL) / P.px));
     let rec = null; for (const d of a.d) { if (d[0] <= o) rec = d; else break; }
     if (!rec) { tip.hidden = true; return; }
-    const row = (k, v) => `<tr><td>${k}</td><td>${v}</td></tr>`;
-    const s = k => { const v = ST[st(rec[7], k)]; return `<span class="st ${v}">${v}</span>`; };
-    tip.innerHTML = `<h4>${a.name}</h4><div class="eyebrow" style="margin-bottom:4px">${GN[g]} · check-in ${dt(rec[0])}</div><table>
-      ${row('Spend that day', money(rec[1]))}${row('Spend to date', money(rec[2]))}
-      ${row('SP', rec[3].toFixed(2) + ' · ' + s(0))}${row('CTI', (rec[4] == null ? '–' : rec[4].toFixed(2) + '%') + ' · ' + s(1))}
-      ${row('SP2', (rec[5] == null ? '–' : rec[5].toFixed(2)) + ' · ' + s(2))}${row('Cost per trial to date', money(rec[6]))}
-      <tr><td colspan="2" style="padding-top:5px;color:var(--ink-3)">Final: ${money(a.s)} · ${a.t} trials · ${a.c == null ? 'no trials' : money(a.c) + '/trial'} · ${a.nw ? 'too new to judge' : a.w ? '<b style="color:var(--accent)">winner</b>' : 'not a winner'}</td></tr></table>`;
-    tip.hidden = false;
-    const tx = Math.min(window.innerWidth - 276, e.clientX + 14), ty = Math.min(window.innerHeight - tip.offsetHeight - 8, e.clientY + 14);
-    tip.style.left = tx + 'px'; tip.style.top = ty + 'px';
+    showTip(e, g, a, rec);
   });
   P.cv.addEventListener('mouseleave', () => tip.hidden = true);
 }
+for (const g in bubs) {
+  const B = bubs[g];
+  B.cv.addEventListener('mousemove', e => {
+    const b = B.cv.getBoundingClientRect(), x = e.clientX - b.left, y = e.clientY - b.top;
+    let best = null, bd = 1e9;
+    for (const p of B.pts || []) { const d = Math.hypot(p.x - x, p.y - y); if (d < Math.max(p.r, 6) + 2 && d < bd) { bd = d; best = p; } }
+    if (!best) { tip.hidden = true; return; }
+    showTip(e, g, best.a, best.rec);
+  });
+  B.cv.addEventListener('mouseleave', () => tip.hidden = true);
+}
 
-// scoreboard
+// ---- tables ----
+function effTable() {
+  const T = document.getElementById('eff');
+  const r = (v, p) => v == null ? '<span class="ns">–</span>' : `<span class="${p != null && p < 0.1 ? 'best' : 'ns'}">${v >= 0 ? '+' : ''}${v.toFixed(2)}</span>`;
+  let h = `<thead><tr><th>Group</th><th>Check</th><th>Ads at<br>check-in</th><th>Can it spend?<br>ρ later spend</th><th>Efficiency?<br>ρ later LTV/CAC</th><th>Pass: later<br>LTV/CAC</th><th>Fail: later<br>LTV/CAC</th><th>Pass: median<br>later spend</th><th>Fail: median<br>later spend</th><th>Pass share of<br>later spend</th></tr></thead><tbody>`;
+  for (const gname of ['Testing', 'Winning', 'Scaling', 'All']) {
+    const E = RES.efficiency[gname][ck]; if (!E) continue;
+    GATES.forEach((k, j) => {
+      const v = E.metrics[k];
+      h += `<tr class="${j === 0 ? 'grp' : ''}"><td>${j === 0 ? `<b>${gname}</b><br><span style="color:var(--ink-3);font-size:12px">group later LTV/CAC ${f2(E.group_fwd_ltvcac)}</span>` : ''}</td><td><b>${k}</b></td><td>${E.n}</td>
+        <td>${r(v.rho_future_spend, v.p_future_spend)}</td><td>${r(v.rho_fwd_ltvcac, v.p_fwd_ltvcac)}${v.n_fwd < 8 ? ' <span class="ns">(n ' + v.n_fwd + ')</span>' : ''}</td>
+        <td>${f2(v.pass_fwd_ltvcac)}</td><td>${f2(v.fail_fwd_ltvcac)}</td><td>${money(v.pass_med_future_spend)}</td><td>${money(v.fail_med_future_spend)}</td><td>${pct(v.pass_share_future_spend)}</td></tr>`;
+    });
+  }
+  T.innerHTML = h + '</tbody>';
+}
 function score() {
   const T = document.getElementById('score');
   let h = `<thead><tr><th>Group</th><th>Gate</th><th>Precision<br>(final)</th><th>Recall<br>(final)</th><th>Precision<br>day 7</th><th>Recall<br>day 7</th><th>Winners:<br>spend to 1st pass</th><th>Winners never<br>passing</th><th>Pause after 3 fails:<br>loser spend saved</th><th>…winner<br>spend lost</th><th>Winners<br>paused</th></tr></thead><tbody>`;
   for (const gname of ['Testing', 'Winning', 'Scaling', 'All']) {
-    const B = RES.groups[gname]; const base = B.n_winners / B.n_ads;
+    const B = RES.groups[gname]; const base = B.n_winners / B.n_ads; const Q = RES.efficiency[gname].quadrant;
     const vals = GATES.map(k => B.gates[k]);
     const bestP = Math.max(...vals.map(v => v.final.precision || 0)), bestR = Math.max(...vals.map(v => v.final.recall || 0));
     GATES.forEach((k, j) => {
       const v = B.gates[k], p = v.policy['3_consecutive_fails'], e7 = v.early['7'];
-      h += `<tr class="${j === 0 ? 'grp' : ''}"><td>${j === 0 ? `<b>${gname}</b><br><span style="color:var(--ink-3);font-size:12px">${B.n_ads} ads · ${B.n_winners} winners</span>` : ''}</td><td><b>${k}</b></td>
+      h += `<tr class="${j === 0 ? 'grp' : ''}"><td>${j === 0 ? `<b>${gname}</b><br><span style="color:var(--ink-3);font-size:12px">${B.n_ads} ads · ${B.n_winners} winners · LTV/CAC ${f2(Q.group_ltvcac)}</span>` : ''}</td><td><b>${k}</b></td>
         <td class="${v.final.precision === bestP ? 'best' : ''}">${pct(v.final.precision)} <span style="color:var(--ink-3)">(${pct(base)})</span></td>
         <td class="${v.final.recall === bestR ? 'best' : ''}">${pct(v.final.recall)}</td>
         <td>${pct(e7.precision)}</td><td>${pct(e7.recall)}</td>
@@ -287,21 +415,22 @@ function score() {
   T.innerHTML = h + '</tbody>';
 }
 function notes() {
-  const A = RES.groups.All.gates, T = RES.groups.Testing.gates, S = RES.groups.Scaling.gates;
+  const E = RES.efficiency, a3 = E.All['3'].metrics, a7 = E.All['7'].metrics, t3 = E.Testing['3'].metrics, s7 = E.Scaling['7'].metrics, Q = E.All.quadrant;
   const n = [
-    ['SP and CTI pass almost every winner',
-      `Both catch ${pct(A.SP.final.recall)} / ${pct(A.CTI.final.recall)} of the ${RES.groups.All.n_winners} winners, and a 3-fail pause would have cut only ${A.SP.policy['3_consecutive_fails'].winners_paused} (SP) and ${A.CTI.policy['3_consecutive_fails'].winners_paused} (CTI) of them. But they also pass most losers: precision is only ${pct(A.SP.final.precision)} / ${pct(A.CTI.final.precision)}, against a base rate of ${pct(RES.groups.All.n_winners / RES.groups.All.n_ads)}.`],
-    ['SP2 is the sharpest filter but the harshest judge',
-      `When SP2 passes an ad it is usually right (${pct(A.SP2.final.precision)} precision, ${pct(A.SP2.early['7'].precision)} on day 7), but it misses ${pct(1 - A.SP2.final.recall)} of winners and a 3-fail pause would have cut ${A.SP2.policy['3_consecutive_fails'].winners_paused} winners, losing ${pct(A.SP2.policy['3_consecutive_fails'].share_winner_spend_forgone)} of winner spend.`],
-    ['SP2 breaks in Scaling',
-      `Its $15 CPI bar sits below what scaling2 buys at volume, so it passes none of the Scaling winners at the end (${pct(S.SP2.final.recall)} recall) and flags big earners like harryspeaks og-video and eaglish.fam as fails. In Testing, CTI and SP are the safer pause signals: 3-fail CTI pauses save ${pct(T.CTI.policy['3_consecutive_fails'].share_loser_spend_saved)} of loser spend while losing ${pct(T.CTI.policy['3_consecutive_fails'].share_winner_spend_forgone)} of winner spend.`],
+    ['CTI is the steadiest early sign that an ad can spend',
+      `From day 3 on, higher CTI goes with more spend later (ρ ${f2(a3.CTI.rho_future_spend)} on day 3, ${f2(a7.CTI.rho_future_spend)} on day 7). Ads passing CTI on day 7 went on to spend a median ${money(a7.CTI.pass_med_future_spend)} vs ${money(a7.CTI.fail_med_future_spend)} for fails, and took ${pct(a7.CTI.pass_share_future_spend)} of all later spend.`],
+    ['SP says little about efficiency',
+      `SP's link to later LTV/CAC is ρ ${f2(a3.SP.rho_fwd_ltvcac)} on day 3 and ${f2(a7.SP.rho_fwd_ltvcac)} on day 7. It sorts ads by attention (CTR) and trial rate against peers, which Meta rewards with spend (ρ ${f2(a7.SP.rho_future_spend)}), but not by what the users are worth.`],
+    ['In testing, CTI and SP2 foresee efficiency',
+      `On a testing ad's 3rd day, CTI (ρ ${f2(t3.CTI.rho_fwd_ltvcac)}) and SP2 (ρ ${f2(t3.SP2.rho_fwd_ltvcac)}) both predict the LTV/CAC it earns afterwards. SP does not (ρ ${f2(t3.SP.rho_fwd_ltvcac)}). Testing ads passing CTI on day 3 earned ${f2(t3.CTI.pass_fwd_ltvcac)} LTV/CAC afterwards vs ${f2(t3.CTI.fail_fwd_ltvcac)} for fails.`],
+    ['Once in scaling, no check predicts efficiency',
+      `In scaling2 every metric's link to later LTV/CAC is near zero (SP ${f2(s7.SP.rho_fwd_ltvcac)}, CTI ${f2(s7.CTI.rho_fwd_ltvcac)}, SP2 ${f2(s7.SP2.rho_fwd_ltvcac)} on day 7). At that stage they only tell you which ads Meta will keep spending on. Only ${Q.efficient_and_spent} of 253 ads were both efficient (≥ 0.8) and took real spend. The season as a whole ran at ${f2(Q.group_ltvcac)} LTV/CAC.`],
   ];
   document.getElementById('notes').innerHTML = n.map(([h, p]) => `<div class="note"><h3>${h}</h3><p>${p}</p></div>`).join('');
 }
 
-readColors(); layout(); draw(); score(); notes();
+readColors(); legend(); layout(); draw(); effTable(); score(); notes();
 window.addEventListener('resize', () => { layout(); draw(); });
 matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => { readColors(); draw(); });
 new MutationObserver(() => { readColors(); draw(); }).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
-if (!matchMedia('(prefers-reduced-motion: reduce)').matches) { /* opens complete at rest on Sep 29; Play replays from Jun 1 */ }
 </script>

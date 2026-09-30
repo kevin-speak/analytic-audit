@@ -208,3 +208,21 @@ Ads under 14 days old are excluded from scoring (253 scored, 27 winners).
 - Motion graphic: `sim/motion.html` (built by `sim/build_motion.py` from `sim_ads.json` + `sim_results.json`). Rebuild with
   `python3 sim/simulate_daily.py && python3 sim/build_motion.py`. Inputs: `data/ad_daily_cum.txt` (BigQuery, daily cumulative funnel + SP per ad)
   and `data/meta_ad_link_clicks.tsv` (Meta Ads MCP link clicks).
+
+### Efficiency (LTV/CAC) and spend
+Daily LTV/CAC per ad = SSOT modelled LTV by attribution date (`data/ssot_ad_daily_ltv.txt`, scaled up by the group-month share of LTV
+on "No Ad ID", `data/ssot_ltv_coverage.txt`) ÷ Meta spend to date. At each ad's check-in 3 / 7 / 14 the metric is compared with what
+happens **after** it: spend after the check-in ("can it spend") and LTV/CAC earned after it ("efficiency", ads with ≥ $200 later spend).
+Output: `sim/sim_efficiency.csv` and `efficiency` in `sim/sim_results.json`.
+
+| All groups, check-in day 3 | ρ later spend | ρ later LTV/CAC |
+|---|---|---|
+| SP | +0.20 | +0.05 (n.s.) |
+| CTI | **+0.41** | +0.22 (p = 0.04) |
+| SP2 | +0.27 | **+0.35** (p < 0.01) |
+
+- CTI is the steadiest early sign that an ad can spend: ρ +0.41 on day 3 and on day 7. Ads passing CTI on day 7 spent a median $1,071 afterwards, vs $44 for ads that failed it.
+- SP tracks spend (+0.36 on day 7) but not efficiency: its correlation with later LTV/CAC is +0.05 on day 3 and +0.02 on day 7.
+- In testing, CTI (+0.41) and SP2 (+0.48) on day 3 predict later LTV/CAC. In scaling2 no metric predicts later LTV/CAC (all ρ between −0.2 and 0.1).
+  SP2's link to spend is partly built in, because its SI term is spend velocity.
+- Only 19 of 253 ads were both efficient (LTV/CAC ≥ 0.8) and took real spend (≥ $1k in testing, ≥ $5k in BAU). The season ran at 0.71 LTV/CAC.

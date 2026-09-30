@@ -61,6 +61,23 @@ df['si'] = (df.spd / df.groupby(['g', 'off']).spd.transform('median')).clip(0.25
 df['sp2'] = df.ei * df.si
 df['cpft'] = np.where(df.cum_trials > 0, df.cum_spend / df.cum_trials, np.nan)
 
+# ---- LTV/CAC to date: SSOT modelled LTV by attribution date, scaled up by the group-month share lost to 'No Ad ID' ----
+cov = {(g, m): float(f) for g, m, f in (x.split('|') for x in (HERE.parent / 'data/ssot_ltv_coverage.txt').read_text().split(';'))}
+lt = []
+for line in (HERE.parent / 'data/ssot_ad_daily_ltv.txt').read_text().split('\n'):
+    g, ad_id, days = line.split('|')
+    for d in days.split(';'):
+        off, v, _ = d.split(':')
+        m = (BASE + timedelta(int(off))).strftime('%Y-%m')
+        lt.append((g, ad_id, int(off), float(v) * cov.get((g, m), 1.2)))
+lt = pd.DataFrame(lt, columns=['g', 'ad_id', 'off', 'ltv']).sort_values('off')
+lt['cum_ltv'] = lt.groupby(['g', 'ad_id']).ltv.cumsum()
+df = df.sort_values('off')
+df = pd.merge_asof(df, lt[['g', 'ad_id', 'off', 'cum_ltv']], on='off', by=['g', 'ad_id'], direction='backward')
+df['cum_ltv'] = df.cum_ltv.fillna(0.0)
+df['ltv_cac'] = df.cum_ltv / df.cum_spend
+LTVCAC_TARGET = 0.8
+
 
 def state(ok, enough):
     return np.where(~enough, 'pending', np.where(ok, 'pass', 'fail'))
@@ -74,7 +91,7 @@ df['n'] = df.active_days  # check-in number = lifetime active day # (ads live be
 
 # ---- per-ad outcome ----
 last = df.groupby(['g', 'ad_id']).tail(1).set_index(['g', 'ad_id'])
-ads = last[['key', 'first_date', 'cum_spend', 'cum_trials', 'cum_installs', 'cpft', 'active_days']].copy()
+ads = last[['key', 'first_date', 'cum_spend', 'cum_trials', 'cum_installs', 'cpft', 'active_days', 'cum_ltv', 'ltv_cac']].copy()
 ads['last_date'] = [BASE + timedelta(int(o)) for o in last.off]
 ads['first_date'] = pd.to_datetime(ads.first_date).dt.date
 ads['winner'] = (ads.cum_trials >= WIN_TRIALS) & (ads.cpft <= WIN_CPR)
@@ -167,6 +184,72 @@ for g, gname in list(GROUPS.items()) + [('ALL', 'All')]:
 sm = pd.DataFrame(summary)
 sm.to_csv(HERE / 'sim_summary.csv', index=False)
 
+# ---- efficiency and spend: does a check-in metric tell you how efficient the ad will be and whether it can spend? ----
+# At each ad's check-in #k (k = 3, 7, 14) we take the metric and gate state, then look FORWARD from that day:
+#   future spend  = spend after check-in k (can it spend?)
+#   forward LTV/CAC = LTV earned after k / spend after k (is the extra spend efficient?), ads with >= $200 forward spend
+# plus the ad's final lifetime LTV/CAC for reference.
+from scipy.stats import spearmanr
+MCOL = {'SP': ('sp', 'st_sp'), 'CTI': ('cti', 'st_cti'), 'SP2': ('sp2', 'st_sp2')}
+fin_ads = ads[ads.scored]
+eff = {}
+eff_rows = []
+for g, gname in list(GROUPS.items()) + [('ALL', 'All')]:
+    A = fin_ads if g == 'ALL' else fin_ads[fin_ads.index.get_level_values('g') == g]
+    eff[gname] = {}
+    for kk in (3, 7, 14):
+        cp = df[df.n == kk].set_index(['g', 'ad_id'])
+        cp = cp[cp.index.isin(A.index)]
+        if not len(cp):
+            continue
+        fut_spend = A.cum_spend.reindex(cp.index) - cp.cum_spend
+        fut_ltv = A.cum_ltv.reindex(cp.index) - cp.cum_ltv
+        fwd = (fut_ltv / fut_spend).where(fut_spend >= 200)
+        fin_lc = A.ltv_cac.reindex(cp.index)
+        blk = {}
+        for gl, (mc, sc) in MCOL.items():
+            x = cp[mc].replace([np.inf, -np.inf], np.nan)
+
+            def rho(y):
+                m = x.notna() & y.notna()
+                return (float(spearmanr(x[m], y[m])[0]), float(spearmanr(x[m], y[m])[1]), int(m.sum())) if m.sum() >= 8 else (None, None, int(m.sum()))
+            r_fs, p_fs, n_fs = rho(fut_spend); r_fw, p_fw, n_fw = rho(fwd); r_fl, p_fl, n_fl = rho(fin_lc)
+            ps, fl = cp[sc] == 'pass', cp[sc] == 'fail'
+
+            def sw(mask):  # spend-weighted forward LTV/CAC of a set
+                m = mask & fwd.notna()
+                return float(fut_ltv[m].sum() / fut_spend[m].sum()) if fut_spend[m].sum() > 0 else None
+            blk[gl] = dict(rho_future_spend=r_fs, p_future_spend=p_fs, n_future_spend=n_fs,
+                           rho_fwd_ltvcac=r_fw, p_fwd_ltvcac=p_fw, n_fwd=n_fw,
+                           rho_final_ltvcac=r_fl, p_final_ltvcac=p_fl,
+                           pass_n=int(ps.sum()), fail_n=int(fl.sum()), pending_n=int((cp[sc] == 'pending').sum()),
+                           pass_med_future_spend=float(fut_spend[ps].median()) if ps.any() else None,
+                           fail_med_future_spend=float(fut_spend[fl].median()) if fl.any() else None,
+                           pass_share_future_spend=float(fut_spend[ps].sum() / fut_spend.sum()) if fut_spend.sum() > 0 else None,
+                           pass_fwd_ltvcac=sw(ps), fail_fwd_ltvcac=sw(fl))
+            eff_rows.append(dict(group=gname, checkin=kk, metric=gl, n=len(cp), rho_future_spend=r_fs, p_fs=p_fs,
+                                 rho_fwd_ltvcac=r_fw, p_fw=p_fw, n_fwd=n_fw, rho_final_ltvcac=r_fl,
+                                 pass_fwd_ltvcac=blk[gl]['pass_fwd_ltvcac'], fail_fwd_ltvcac=blk[gl]['fail_fwd_ltvcac'],
+                                 pass_med_fut_spend=blk[gl]['pass_med_future_spend'], fail_med_fut_spend=blk[gl]['fail_med_future_spend'],
+                                 pass_share_fut_spend=blk[gl]['pass_share_future_spend']))
+        eff[gname][kk] = dict(n=int(len(cp)), group_fwd_ltvcac=float(fut_ltv[fwd.notna()].sum() / fut_spend[fwd.notna()].sum()) if fwd.notna().any() else None, metrics=blk)
+    # final quadrant: efficient (lifetime LTV/CAC >= 0.8) x spent (>= group spend bar)
+    bar = 1000.0 if g == 'T' else 5000.0
+    eff[gname]['quadrant'] = dict(spend_bar=bar, efficient_and_spent=int(((A.ltv_cac >= LTVCAC_TARGET) & (A.cum_spend >= bar)).sum()),
+                                  efficient_small=int(((A.ltv_cac >= LTVCAC_TARGET) & (A.cum_spend < bar)).sum()),
+                                  inefficient_spent=int(((A.ltv_cac < LTVCAC_TARGET) & (A.cum_spend >= bar)).sum()),
+                                  inefficient_small=int(((A.ltv_cac < LTVCAC_TARGET) & (A.cum_spend < bar)).sum()),
+                                  group_ltvcac=float(A.cum_ltv.sum() / A.cum_spend.sum()))
+eff['All']['quadrant'] = {k: (sum(eff[x]['quadrant'][k] for x in ('Testing', 'Winning', 'Scaling')) if k not in ('spend_bar', 'group_ltvcac') else eff['All']['quadrant'][k])
+                          for k in eff['All']['quadrant']}
+eff['All']['quadrant']['spend_bar'] = 'Testing $1k, Winning/Scaling $5k'
+results['efficiency'] = eff
+results['params']['ltv_cac_target'] = LTVCAC_TARGET
+results['params']['ltv_source'] = 'SSOT marketing_attribution_aggregate_attribution_date_cohort.ltv x group-month No-Ad-ID coverage factor'
+(HERE / 'sim_results.json').write_text(json.dumps(results, indent=1, default=float))
+er = pd.DataFrame(eff_rows)
+er.to_csv(HERE / 'sim_efficiency.csv', index=False)
+
 # ---- motion-graphic payload ----
 code = {'pending': 0, 'fail': 1, 'pass': 2}
 
@@ -178,14 +261,15 @@ def label(key):
 
 out = []
 for (g, ad_id), a in ads.iterrows():
-    D = df[(df.g == g) & (df.ad_id == ad_id)]
+    D = df[(df.g == g) & (df.ad_id == ad_id)].sort_values('off')
     days = [[int(r.off), round(r.spend), round(r.cum_spend), round(r.sp, 2),
              None if not np.isfinite(r.cti) else round(r.cti * 100, 2),
              None if not np.isfinite(r.sp2) else round(r.sp2, 2),
              None if not np.isfinite(r.cpft) else round(r.cpft),
-             code[r.st_sp] * 9 + code[r.st_cti] * 3 + code[r.st_sp2]] for r in D.itertuples()]
+             code[r.st_sp] * 9 + code[r.st_cti] * 3 + code[r.st_sp2], round(r.ltv_cac, 2)] for r in D.itertuples()]
     out.append(dict(g=g, id=ad_id, name=label(a.key), f=(a.first_date - BASE).days, w=bool(a.winner), nw=bool(a.too_new),
-                    s=round(a.cum_spend), t=int(a.cum_trials), c=None if not np.isfinite(a.cpft) else round(a.cpft), d=days))
+                    s=round(a.cum_spend), t=int(a.cum_trials), c=None if not np.isfinite(a.cpft) else round(a.cpft),
+                    l=round(float(a.ltv_cac), 2), d=days))
 (HERE / 'sim_ads.json').write_text(json.dumps(out, separators=(',', ':')))
 
 pd.set_option('display.width', 250); pd.set_option('display.max_columns', 30)
@@ -195,3 +279,6 @@ for gname, blk in results['groups'].items():
     for gl, v in blk['gates'].items():
         print(gname, gl, 'early', {k: (e['n'], e['pending'], e['passed'], None if e['precision'] is None else round(e['precision'], 2), None if e['recall'] is None else round(e['recall'], 2)) for k, e in v['early'].items()},
               'killed3', v['policy']['3_consecutive_fails']['winners_killed'])
+
+print(er[er.checkin == 7].round(2).to_string(index=False))
+for gname, e in eff.items(): print(gname, e['quadrant'])
