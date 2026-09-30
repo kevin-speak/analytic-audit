@@ -127,6 +127,50 @@ With the JP cuts (SP 2.0 × CTI 5%), the quadrants collapse into one cell: 39 of
     $117–145 and were cut after one week. Unlike JP, their testing CVR wasn't low (20–50%), so JP's "high CTI + low CVR" fake-hit pattern
     doesn't explain these misses.
 
+## Extension: SP and CTI measured inside the winning and scaling campaigns
+The analysis above reads SP and CTI from the **testing** campaign and takes BAU outcomes from winning, winning3 and scaling2. This section
+scores the **BAU ads themselves** (`analyze_bau.py`). It covers all 46 creatives first launched in BAU Jun 1 – Sep 22, including the 2 with no testing ad
+(harryspeaks · 0601, illyandlean · speak-with-me).
+
+- **Predictor:** SP (Option B, benchmark = all other BAU ads on the same placement) and CTI (installs ÷ link clicks) over each creative's
+  **first 7 BAU days**.
+- **Outcome:** measured **from week 2 on**, so predictor and outcome don't overlap. "Sustained" = week-2+ BAU spend ≥ $5k. Only
+  creatives launched by Aug 25 are included (n = 37, of which 11 sustained).
+- TW doesn't run a winning → scaling2 pipeline. Creatives go from testing straight into either campaign, or both, so the two are pooled.
+
+| Predictor | AUC for sustained | Spearman vs week-2+ spend | Spearman vs week-2+ CPR |
+|---|---|---|---|
+| Testing SP | 0.68 (p = 0.13) | +0.19 (n.s.) | −0.27 (n.s.) |
+| Testing CTI | 0.72 (p = 0.05) | **+0.37 (p = 0.03)** | −0.33 (p = 0.06) |
+| BAU week-1 SP | 0.62 (p = 0.27) | +0.15 (n.s.) | −0.39 (p = 0.02) |
+| **BAU week-1 CTI** | **0.71 (p = 0.048)** | **+0.42 (p = 0.009)** | **−0.41 (p = 0.011)** |
+| BAU week-1 CTR | 0.59 (n.s.) | −0.10 (n.s.) | +0.27 (n.s.) |
+| BAU week-1 CPR (baseline) | 0.82 (p = 0.003) | −0.61 (p < 0.001) | +0.47 (p = 0.004) |
+
+| Gate (outcome = sustained) | Pass: sustained | Fail: sustained | Fisher p |
+|---|---|---|---|
+| BAU week-1 CTI ≥ 1% | 10/25 (40%) | 1/12 (8%) | 0.064 |
+| BAU week-1 SP ≥ 2.0 | 8/21 (38%) | 3/16 (19%) | 0.29 |
+| Testing CTI ≥ 1% | 8/24 (33%) | 3/13 (23%) | 0.71 |
+| Testing SP ≥ 2.0 | 9/33 (27%) | 2/4 | 0.57 |
+| BAU week-1 CPR ≤ $90 | 8/12 (67%) | 3/25 (12%) | 0.001 |
+
+- **CTI is a stable property of a creative. SP isn't.**
+  - A creative's CTI in testing and its CTI in its first BAU week correlate at ρ = 0.81, and the medians are the same (1.39% vs 1.34%).
+  - Testing SP and BAU week-1 SP correlate at ρ = 0.09, i.e. not at all, and the median drops from 3.76 to 2.27. SP depends on which benchmark pool
+    the ad is scored against and on small-sample noise, so a high testing SP doesn't carry into BAU.
+- **Inside BAU, CTI again beats SP.** Week-1 CTI predicts whether Meta keeps spending from week 2 (ρ = +0.42) and at what cost (ρ = −0.41).
+  Week-1 SP predicts neither spend nor sustained status. CTR is noise.
+- **Week-1 CPR is still the best single signal once a creative is live** (AUC 0.82). CTI is the best signal available *before* BAU spend, and
+  it's the one that holds up when a creative moves from testing into BAU.
+- **The one sustained creative under 1% week-1 CTI is a static image** (threadspost-career-aitutor: $23.6k from week 2 at $74, CTI 0.4–0.8%). Image ads
+  convert clicks to installs much less often, so the CTI floor should apply to video only, or be set separately for statics.
+- **The 1% testing-CTI floor looks weaker here than in Results.** That's because this outcome (spend from week 2) is different, and the two misses are the creatives
+  with no testing data at all (harryspeaks 0601, illyandlean speak-with-me), plus the static above.
+
+Files: `data/bau_wk1.tsv` (BigQuery first-7-day BAU funnel, week-1 SP, week-2+ spend/trials), `data/meta_bau_link_clicks.tsv` (Meta link-click share
+for those ads), `output/bau_wk1_scored.csv`, `output/bau_results.json`. Week-1 link clicks = BigQuery week-1 clicks × the ad's Jun–Sep Meta link-click share.
+
 ## Caveats
 - n = 44 with 7 scaled. The TW cuts (1% / 2.5%) were chosen after looking at this data. Re-validate them on the Oct graduates.
 - Meta cost per result is in-app trial start (Meta attribution), not AppsFlyer. CTI uses Meta-reported installs.
@@ -141,6 +185,7 @@ queries.sql                     BigQuery extract (creative matching, SP Option B
 data/creatives.tsv              BigQuery output, one row per BAU creative
 data/meta_test_link_clicks.tsv  Meta Ads MCP link clicks / installs / trials for the matched testing ads
 analyze.py                      scaled labelling, gates, Fisher / Spearman, sweeps, chart
+analyze_bau.py                  extension: first-week SP / CTI inside winning + scaling vs week-2+ spend
 output/creatives_scored.csv     per-creative table   · output/results.json · output/quadrant.png
 ```
-Rebuild: `python3 analyze.py` (needs pandas, numpy, scipy, matplotlib).
+Rebuild: `python3 analyze.py && python3 analyze_bau.py` (needs pandas, numpy, scipy, matplotlib).
