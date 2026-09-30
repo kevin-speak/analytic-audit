@@ -189,3 +189,22 @@ analyze_bau.py                  extension: first-week SP / CTI inside winning + 
 output/creatives_scored.csv     per-creative table   · output/results.json · output/quadrant.png
 ```
 Rebuild: `python3 analyze.py && python3 analyze_bau.py` (needs pandas, numpy, scipy, matplotlib).
+
+## Daily check-in simulation (SP vs CTI vs SP2) — `sim/`
+Every ad in testing / winning / scaling that delivered Jun 1 – Sep 29 (262 ads, 2,890 ad-days) is re-scored on each delivery day
+with cumulative-to-date data. SP = Option B vs the same group's placements to date, pass at ≥ 2.0 with ≥ 10 installs. CTI = installs ÷ link clicks, pass at ≥ 1%
+with ≥ 300 link clicks. SP2 = EI × SI (from `tw_app_ads_ltv_cac_mc/sp2.py`), pass at ≥ 2 with EI ≥ 1 and ≥ 10 installs. Winner = ≥ 10 trials at ≤ $70 per trial by Sep 29.
+Ads under 14 days old are excluded from scoring (253 scored, 27 winners).
+
+| Gate (all groups) | Precision (base 11%) | Recall | Day-7 precision | 3-fail pause: loser spend saved | Winner spend lost | Winners paused |
+|---|---|---|---|---|---|---|
+| SP | 29% | 100% | 26% | 10% | 0% | 0 |
+| CTI | 29% | 96% | 24% | 13% | 0% | 1 |
+| SP2 | 74% | 52% | 75% | 55% | 32% | 15 |
+
+- SP and CTI work as safe floors. They pass nearly every winner but also most losers.
+- SP2 is precise but harsh. Its $15.32 CPI bar sits below what scaling2 pays at volume, so it passes none of the 4 Scaling winners at the
+  end and would have paused harryspeaks og-video, eaglish.fam, brianptseng and qing 2026nyr.
+- Motion graphic: `sim/motion.html` (built by `sim/build_motion.py` from `sim_ads.json` + `sim_results.json`). Rebuild with
+  `python3 sim/simulate_daily.py && python3 sim/build_motion.py`. Inputs: `data/ad_daily_cum.txt` (BigQuery, daily cumulative funnel + SP per ad)
+  and `data/meta_ad_link_clicks.tsv` (Meta Ads MCP link clicks).

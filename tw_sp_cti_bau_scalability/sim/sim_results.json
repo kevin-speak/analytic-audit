@@ -1,0 +1,964 @@
+{
+ "params": {
+  "sp_bar": 2.0,
+  "cti_bar": 0.01,
+  "sp2_bar": 2.0,
+  "min_installs": 10,
+  "min_link_clicks": 300,
+  "k_ltv_per_install": 12.255086110766943,
+  "cpi_target": 15.318857638458677,
+  "winner": "trials>=10 & CPFT<=$70",
+  "too_new_days": 14,
+  "window": "2026-06-01..2026-09-29"
+ },
+ "groups": {
+  "Testing": {
+   "n_ads": 148,
+   "n_winners": 11,
+   "spend": 71751.0,
+   "winner_spend": 10935.0,
+   "gates": {
+    "SP": {
+     "final": {
+      "flagged": 37,
+      "tp": 11,
+      "fp": 26,
+      "fn": 0,
+      "precision": 0.2972972972972973,
+      "recall": 1.0
+     },
+     "ever": {
+      "flagged": 39,
+      "tp": 11,
+      "fp": 28,
+      "fn": 0,
+      "precision": 0.28205128205128205,
+      "recall": 1.0
+     },
+     "early": {
+      "3": {
+       "n": 122,
+       "pending": 99,
+       "passed": 21,
+       "precision": 0.2857142857142857,
+       "recall": 0.6,
+       "winners": 10
+      },
+      "7": {
+       "n": 69,
+       "pending": 54,
+       "passed": 13,
+       "precision": 0.3076923076923077,
+       "recall": 0.8,
+       "winners": 5
+      },
+      "14": {
+       "n": 19,
+       "pending": 14,
+       "passed": 3,
+       "precision": 0.0,
+       "recall": null,
+       "winners": 0
+      }
+     },
+     "winner_days_to_pass": 2.0,
+     "winner_spend_to_pass": 298.0,
+     "winners_never_pass": 0,
+     "mean_flips": 0.0472972972972973,
+     "policy": {
+      "first_fail": {
+       "paused": 11,
+       "losers_paused": 11,
+       "winners_paused": 0,
+       "loser_spend_saved": 5050.0,
+       "winner_spend_forgone": 0.0,
+       "share_loser_spend_saved": 0.08303735858984478,
+       "share_winner_spend_forgone": 0.0,
+       "winners_killed": []
+      },
+      "3_consecutive_fails": {
+       "paused": 3,
+       "losers_paused": 3,
+       "winners_paused": 0,
+       "loser_spend_saved": 376.0,
+       "winner_spend_forgone": 0.0,
+       "share_loser_spend_saved": 0.006182583530649829,
+       "share_winner_spend_forgone": 0.0,
+       "winners_killed": []
+      }
+     }
+    },
+    "CTI": {
+     "final": {
+      "flagged": 30,
+      "tp": 10,
+      "fp": 20,
+      "fn": 1,
+      "precision": 0.3333333333333333,
+      "recall": 0.9090909090909091
+     },
+     "ever": {
+      "flagged": 35,
+      "tp": 11,
+      "fp": 24,
+      "fn": 0,
+      "precision": 0.3142857142857143,
+      "recall": 1.0
+     },
+     "early": {
+      "3": {
+       "n": 122,
+       "pending": 59,
+       "passed": 17,
+       "precision": 0.17647058823529413,
+       "recall": 0.3,
+       "winners": 10
+      },
+      "7": {
+       "n": 69,
+       "pending": 37,
+       "passed": 8,
+       "precision": 0.375,
+       "recall": 0.6,
+       "winners": 5
+      },
+      "14": {
+       "n": 19,
+       "pending": 10,
+       "passed": 3,
+       "precision": 0.0,
+       "recall": null,
+       "winners": 0
+      }
+     },
+     "winner_days_to_pass": 4.0,
+     "winner_spend_to_pass": 321.0,
+     "winners_never_pass": 0,
+     "mean_flips": 0.060810810810810814,
+     "policy": {
+      "first_fail": {
+       "paused": 104,
+       "losers_paused": 103,
+       "winners_paused": 1,
+       "loser_spend_saved": 24650.0,
+       "winner_spend_forgone": 565.0,
+       "share_loser_spend_saved": 0.40532096816627206,
+       "share_winner_spend_forgone": 0.051668952903520804,
+       "winners_killed": [
+        "thedodomen \u00b7 og-video"
+       ]
+      },
+      "3_consecutive_fails": {
+       "paused": 58,
+       "losers_paused": 57,
+       "winners_paused": 1,
+       "loser_spend_saved": 11649.0,
+       "winner_spend_forgone": 0.0,
+       "share_loser_spend_saved": 0.19154498816101026,
+       "share_winner_spend_forgone": 0.0,
+       "winners_killed": [
+        "thedodomen \u00b7 og-video"
+       ]
+      }
+     }
+    },
+    "SP2": {
+     "final": {
+      "flagged": 12,
+      "tp": 8,
+      "fp": 4,
+      "fn": 3,
+      "precision": 0.6666666666666666,
+      "recall": 0.7272727272727273
+     },
+     "ever": {
+      "flagged": 16,
+      "tp": 9,
+      "fp": 7,
+      "fn": 2,
+      "precision": 0.5625,
+      "recall": 0.8181818181818182
+     },
+     "early": {
+      "3": {
+       "n": 122,
+       "pending": 99,
+       "passed": 8,
+       "precision": 0.625,
+       "recall": 0.5,
+       "winners": 10
+      },
+      "7": {
+       "n": 69,
+       "pending": 54,
+       "passed": 1,
+       "precision": 1.0,
+       "recall": 0.2,
+       "winners": 5
+      },
+      "14": {
+       "n": 19,
+       "pending": 14,
+       "passed": 1,
+       "precision": 0.0,
+       "recall": null,
+       "winners": 0
+      }
+     },
+     "winner_days_to_pass": 2.0,
+     "winner_spend_to_pass": 379.0,
+     "winners_never_pass": 2,
+     "mean_flips": 0.08783783783783784,
+     "policy": {
+      "first_fail": {
+       "paused": 34,
+       "losers_paused": 29,
+       "winners_paused": 5,
+       "loser_spend_saved": 24979.0,
+       "winner_spend_forgone": 3983.0,
+       "share_loser_spend_saved": 0.41073072875559063,
+       "share_winner_spend_forgone": 0.3642432556012803,
+       "winners_killed": [
+        "ai-gen \u00b7 workplace-colleaguecompliment_1direct",
+        "drama_engbook \u00b7 input_output_short",
+        "na \u00b7 connor-keyskillsintheaiera-2cut",
+        "thedodomen \u00b7 og-video",
+        "qing \u00b7 2026nyr-v2-putoffforyears"
+       ]
+      },
+      "3_consecutive_fails": {
+       "paused": 27,
+       "losers_paused": 23,
+       "winners_paused": 4,
+       "loser_spend_saved": 11502.0,
+       "winner_spend_forgone": 1847.0,
+       "share_loser_spend_saved": 0.18912786108918705,
+       "share_winner_spend_forgone": 0.168907178783722,
+       "winners_killed": [
+        "ai-gen \u00b7 workplace-colleaguecompliment_1direct",
+        "drama_engbook \u00b7 input_output_short",
+        "na \u00b7 connor-keyskillsintheaiera-2cut",
+        "qing \u00b7 2026nyr-v2-putoffforyears"
+       ]
+      }
+     }
+    }
+   }
+  },
+  "Winning": {
+   "n_ads": 61,
+   "n_winners": 12,
+   "spend": 181705.0,
+   "winner_spend": 117761.0,
+   "gates": {
+    "SP": {
+     "final": {
+      "flagged": 27,
+      "tp": 12,
+      "fp": 15,
+      "fn": 0,
+      "precision": 0.4444444444444444,
+      "recall": 1.0
+     },
+     "ever": {
+      "flagged": 28,
+      "tp": 12,
+      "fp": 16,
+      "fn": 0,
+      "precision": 0.42857142857142855,
+      "recall": 1.0
+     },
+     "early": {
+      "3": {
+       "n": 42,
+       "pending": 19,
+       "passed": 11,
+       "precision": 0.36363636363636365,
+       "recall": 0.8,
+       "winners": 5
+      },
+      "7": {
+       "n": 27,
+       "pending": 9,
+       "passed": 12,
+       "precision": 0.3333333333333333,
+       "recall": 1.0,
+       "winners": 4
+      },
+      "14": {
+       "n": 20,
+       "pending": 4,
+       "passed": 12,
+       "precision": 0.5,
+       "recall": 1.0,
+       "winners": 6
+      }
+     },
+     "winner_days_to_pass": 12.0,
+     "winner_spend_to_pass": 1218.0,
+     "winners_never_pass": 0,
+     "mean_flips": 0.14754098360655737,
+     "policy": {
+      "first_fail": {
+       "paused": 18,
+       "losers_paused": 17,
+       "winners_paused": 1,
+       "loser_spend_saved": 25633.0,
+       "winner_spend_forgone": 3712.0,
+       "share_loser_spend_saved": 0.40086638308519956,
+       "share_winner_spend_forgone": 0.031521471454895936,
+       "winners_killed": [
+        "swm-jenny \u00b7 salarynegotiation"
+       ]
+      },
+      "3_consecutive_fails": {
+       "paused": 14,
+       "losers_paused": 14,
+       "winners_paused": 0,
+       "loser_spend_saved": 15141.0,
+       "winner_spend_forgone": 0.0,
+       "share_loser_spend_saved": 0.23678531214812962,
+       "share_winner_spend_forgone": 0.0,
+       "winners_killed": []
+      }
+     }
+    },
+    "CTI": {
+     "final": {
+      "flagged": 34,
+      "tp": 12,
+      "fp": 22,
+      "fn": 0,
+      "precision": 0.35294117647058826,
+      "recall": 1.0
+     },
+     "ever": {
+      "flagged": 34,
+      "tp": 12,
+      "fp": 22,
+      "fn": 0,
+      "precision": 0.35294117647058826,
+      "recall": 1.0
+     },
+     "early": {
+      "3": {
+       "n": 42,
+       "pending": 8,
+       "passed": 19,
+       "precision": 0.21052631578947367,
+       "recall": 0.8,
+       "winners": 5
+      },
+      "7": {
+       "n": 27,
+       "pending": 4,
+       "passed": 18,
+       "precision": 0.2222222222222222,
+       "recall": 1.0,
+       "winners": 4
+      },
+      "14": {
+       "n": 20,
+       "pending": 2,
+       "passed": 15,
+       "precision": 0.4,
+       "recall": 1.0,
+       "winners": 6
+      }
+     },
+     "winner_days_to_pass": 12.0,
+     "winner_spend_to_pass": 1014.0,
+     "winners_never_pass": 0,
+     "mean_flips": 0.11475409836065574,
+     "policy": {
+      "first_fail": {
+       "paused": 24,
+       "losers_paused": 24,
+       "winners_paused": 0,
+       "loser_spend_saved": 34179.0,
+       "winner_spend_forgone": 0.0,
+       "share_loser_spend_saved": 0.5345145752533467,
+       "share_winner_spend_forgone": 0.0,
+       "winners_killed": []
+      },
+      "3_consecutive_fails": {
+       "paused": 21,
+       "losers_paused": 21,
+       "winners_paused": 0,
+       "loser_spend_saved": 18852.0,
+       "winner_spend_forgone": 0.0,
+       "share_loser_spend_saved": 0.29482046790942074,
+       "share_winner_spend_forgone": 0.0,
+       "winners_killed": []
+      }
+     }
+    },
+    "SP2": {
+     "final": {
+      "flagged": 6,
+      "tp": 6,
+      "fp": 0,
+      "fn": 6,
+      "precision": 1.0,
+      "recall": 0.5
+     },
+     "ever": {
+      "flagged": 10,
+      "tp": 7,
+      "fp": 3,
+      "fn": 5,
+      "precision": 0.7,
+      "recall": 0.5833333333333334
+     },
+     "early": {
+      "3": {
+       "n": 42,
+       "pending": 19,
+       "passed": 1,
+       "precision": 1.0,
+       "recall": 0.2,
+       "winners": 5
+      },
+      "7": {
+       "n": 27,
+       "pending": 9,
+       "passed": 1,
+       "precision": 1.0,
+       "recall": 0.25,
+       "winners": 4
+      },
+      "14": {
+       "n": 20,
+       "pending": 4,
+       "passed": 3,
+       "precision": 1.0,
+       "recall": 0.5,
+       "winners": 6
+      }
+     },
+     "winner_days_to_pass": 16.0,
+     "winner_spend_to_pass": 2233.0,
+     "winners_never_pass": 5,
+     "mean_flips": 0.14754098360655737,
+     "policy": {
+      "first_fail": {
+       "paused": 35,
+       "losers_paused": 27,
+       "winners_paused": 8,
+       "loser_spend_saved": 45452.0,
+       "winner_spend_forgone": 41575.0,
+       "share_loser_spend_saved": 0.7108094582759915,
+       "share_winner_spend_forgone": 0.3530455753602636,
+       "winners_killed": [
+        "techervincent \u00b7 og-video",
+        "ai-gen \u00b7 thefixforenglishbrainfreeze-1direct",
+        "shasha77 \u00b7 speak-with-me-conv",
+        "hua \u00b7 2026resolutionenglish5m_1full",
+        "havefunytchannel \u00b7 vschatgpt-short",
+        "swm-jenny \u00b7 salarynegotiation",
+        "swm-jenny \u00b7 salarynegotiation",
+        "eaglish.fam \u00b7 og-video"
+       ]
+      },
+      "3_consecutive_fails": {
+       "paused": 31,
+       "losers_paused": 24,
+       "winners_paused": 7,
+       "loser_spend_saved": 36625.0,
+       "winner_spend_forgone": 25527.0,
+       "share_loser_spend_saved": 0.5727667959464532,
+       "share_winner_spend_forgone": 0.21676955868241607,
+       "winners_killed": [
+        "techervincent \u00b7 og-video",
+        "ai-gen \u00b7 thefixforenglishbrainfreeze-1direct",
+        "shasha77 \u00b7 speak-with-me-conv",
+        "hua \u00b7 2026resolutionenglish5m_1full",
+        "havefunytchannel \u00b7 vschatgpt-short",
+        "swm-jenny \u00b7 salarynegotiation",
+        "swm-jenny \u00b7 salarynegotiation"
+       ]
+      }
+     }
+    }
+   }
+  },
+  "Scaling": {
+   "n_ads": 44,
+   "n_winners": 4,
+   "spend": 322945.0,
+   "winner_spend": 60621.0,
+   "gates": {
+    "SP": {
+     "final": {
+      "flagged": 28,
+      "tp": 4,
+      "fp": 24,
+      "fn": 0,
+      "precision": 0.14285714285714285,
+      "recall": 1.0
+     },
+     "ever": {
+      "flagged": 32,
+      "tp": 4,
+      "fp": 28,
+      "fn": 0,
+      "precision": 0.125,
+      "recall": 1.0
+     },
+     "early": {
+      "3": {
+       "n": 42,
+       "pending": 7,
+       "passed": 23,
+       "precision": 0.17391304347826086,
+       "recall": 1.0,
+       "winners": 4
+      },
+      "7": {
+       "n": 29,
+       "pending": 2,
+       "passed": 21,
+       "precision": 0.19047619047619047,
+       "recall": 1.0,
+       "winners": 4
+      },
+      "14": {
+       "n": 19,
+       "pending": 2,
+       "passed": 17,
+       "precision": 0.17647058823529413,
+       "recall": 1.0,
+       "winners": 3
+      }
+     },
+     "winner_days_to_pass": 1.0,
+     "winner_spend_to_pass": 432.5,
+     "winners_never_pass": 0,
+     "mean_flips": 0.4318181818181818,
+     "policy": {
+      "first_fail": {
+       "paused": 24,
+       "losers_paused": 24,
+       "winners_paused": 0,
+       "loser_spend_saved": 117730.0,
+       "winner_spend_forgone": 0.0,
+       "share_loser_spend_saved": 0.44879614522498895,
+       "share_winner_spend_forgone": 0.0,
+       "winners_killed": []
+      },
+      "3_consecutive_fails": {
+       "paused": 11,
+       "losers_paused": 11,
+       "winners_paused": 0,
+       "loser_spend_saved": 23384.0,
+       "winner_spend_forgone": 0.0,
+       "share_loser_spend_saved": 0.0891416721306476,
+       "share_winner_spend_forgone": 0.0,
+       "winners_killed": []
+      }
+     }
+    },
+    "CTI": {
+     "final": {
+      "flagged": 27,
+      "tp": 4,
+      "fp": 23,
+      "fn": 0,
+      "precision": 0.14814814814814814,
+      "recall": 1.0
+     },
+     "ever": {
+      "flagged": 30,
+      "tp": 4,
+      "fp": 26,
+      "fn": 0,
+      "precision": 0.13333333333333333,
+      "recall": 1.0
+     },
+     "early": {
+      "3": {
+       "n": 42,
+       "pending": 0,
+       "passed": 28,
+       "precision": 0.14285714285714285,
+       "recall": 1.0,
+       "winners": 4
+      },
+      "7": {
+       "n": 29,
+       "pending": 0,
+       "passed": 20,
+       "precision": 0.2,
+       "recall": 1.0,
+       "winners": 4
+      },
+      "14": {
+       "n": 19,
+       "pending": 0,
+       "passed": 14,
+       "precision": 0.21428571428571427,
+       "recall": 1.0,
+       "winners": 3
+      }
+     },
+     "winner_days_to_pass": 1.0,
+     "winner_spend_to_pass": 355.0,
+     "winners_never_pass": 0,
+     "mean_flips": 0.38636363636363635,
+     "policy": {
+      "first_fail": {
+       "paused": 25,
+       "losers_paused": 25,
+       "winners_paused": 0,
+       "loser_spend_saved": 78099.0,
+       "winner_spend_forgone": 0.0,
+       "share_loser_spend_saved": 0.29771961391256613,
+       "share_winner_spend_forgone": 0.0,
+       "winners_killed": []
+      },
+      "3_consecutive_fails": {
+       "paused": 13,
+       "losers_paused": 13,
+       "winners_paused": 0,
+       "loser_spend_saved": 19419.0,
+       "winner_spend_forgone": 0.0,
+       "share_loser_spend_saved": 0.07402677604794071,
+       "share_winner_spend_forgone": 0.0,
+       "winners_killed": []
+      }
+     }
+    },
+    "SP2": {
+     "final": {
+      "flagged": 1,
+      "tp": 0,
+      "fp": 1,
+      "fn": 4,
+      "precision": 0.0,
+      "recall": 0.0
+     },
+     "ever": {
+      "flagged": 3,
+      "tp": 1,
+      "fp": 2,
+      "fn": 3,
+      "precision": 0.3333333333333333,
+      "recall": 0.25
+     },
+     "early": {
+      "3": {
+       "n": 42,
+       "pending": 7,
+       "passed": 3,
+       "precision": 0.3333333333333333,
+       "recall": 0.25,
+       "winners": 4
+      },
+      "7": {
+       "n": 29,
+       "pending": 2,
+       "passed": 2,
+       "precision": 0.5,
+       "recall": 0.25,
+       "winners": 4
+      },
+      "14": {
+       "n": 19,
+       "pending": 2,
+       "passed": 1,
+       "precision": 1.0,
+       "recall": 0.3333333333333333,
+       "winners": 3
+      }
+     },
+     "winner_days_to_pass": 2.0,
+     "winner_spend_to_pass": 2241.0,
+     "winners_never_pass": 3,
+     "mean_flips": 0.25,
+     "policy": {
+      "first_fail": {
+       "paused": 39,
+       "losers_paused": 35,
+       "winners_paused": 4,
+       "loser_spend_saved": 221347.0,
+       "winner_spend_forgone": 58926.0,
+       "share_loser_spend_saved": 0.8437924093868651,
+       "share_winner_spend_forgone": 0.9720393922898005,
+       "winners_killed": [
+        "brianptseng \u00b7 og-video",
+        "harryspeaks_ \u00b7 og-video",
+        "eaglish.fam \u00b7 og-video",
+        "eaglish.fam \u00b7 og-video"
+       ]
+      },
+      "3_consecutive_fails": {
+       "paused": 36,
+       "losers_paused": 32,
+       "winners_paused": 4,
+       "loser_spend_saved": 164542.0,
+       "winner_spend_forgone": 32312.0,
+       "share_loser_spend_saved": 0.6272472209938854,
+       "share_winner_spend_forgone": 0.5330166114052886,
+       "winners_killed": [
+        "brianptseng \u00b7 og-video",
+        "harryspeaks_ \u00b7 og-video",
+        "eaglish.fam \u00b7 og-video",
+        "eaglish.fam \u00b7 og-video"
+       ]
+      }
+     }
+    }
+   }
+  },
+  "All": {
+   "n_ads": 253,
+   "n_winners": 27,
+   "spend": 576401.0,
+   "winner_spend": 189317.0,
+   "gates": {
+    "SP": {
+     "final": {
+      "flagged": 92,
+      "tp": 27,
+      "fp": 65,
+      "fn": 0,
+      "precision": 0.29347826086956524,
+      "recall": 1.0
+     },
+     "ever": {
+      "flagged": 99,
+      "tp": 27,
+      "fp": 72,
+      "fn": 0,
+      "precision": 0.2727272727272727,
+      "recall": 1.0
+     },
+     "early": {
+      "3": {
+       "n": 206,
+       "pending": 125,
+       "passed": 55,
+       "precision": 0.2545454545454545,
+       "recall": 0.7368421052631579,
+       "winners": 19
+      },
+      "7": {
+       "n": 125,
+       "pending": 65,
+       "passed": 46,
+       "precision": 0.2608695652173913,
+       "recall": 0.9230769230769231,
+       "winners": 13
+      },
+      "14": {
+       "n": 58,
+       "pending": 20,
+       "passed": 32,
+       "precision": 0.28125,
+       "recall": 1.0,
+       "winners": 9
+      }
+     },
+     "winner_days_to_pass": 2.0,
+     "winner_spend_to_pass": 450.0,
+     "winners_never_pass": 0,
+     "mean_flips": 0.1383399209486166,
+     "policy": {
+      "first_fail": {
+       "paused": 53,
+       "losers_paused": 52,
+       "winners_paused": 1,
+       "loser_spend_saved": 148413.0,
+       "winner_spend_forgone": 3712.0,
+       "share_loser_spend_saved": 0.38341290262578664,
+       "share_winner_spend_forgone": 0.019607325279821675,
+       "winners_killed": [
+        "swm-jenny \u00b7 salarynegotiation"
+       ]
+      },
+      "3_consecutive_fails": {
+       "paused": 28,
+       "losers_paused": 28,
+       "winners_paused": 0,
+       "loser_spend_saved": 38901.0,
+       "winner_spend_forgone": 0.0,
+       "share_loser_spend_saved": 0.10049756641969185,
+       "share_winner_spend_forgone": 0.0,
+       "winners_killed": []
+      }
+     }
+    },
+    "CTI": {
+     "final": {
+      "flagged": 91,
+      "tp": 26,
+      "fp": 65,
+      "fn": 1,
+      "precision": 0.2857142857142857,
+      "recall": 0.9629629629629629
+     },
+     "ever": {
+      "flagged": 99,
+      "tp": 27,
+      "fp": 72,
+      "fn": 0,
+      "precision": 0.2727272727272727,
+      "recall": 1.0
+     },
+     "early": {
+      "3": {
+       "n": 206,
+       "pending": 67,
+       "passed": 64,
+       "precision": 0.171875,
+       "recall": 0.5789473684210527,
+       "winners": 19
+      },
+      "7": {
+       "n": 125,
+       "pending": 41,
+       "passed": 46,
+       "precision": 0.2391304347826087,
+       "recall": 0.8461538461538461,
+       "winners": 13
+      },
+      "14": {
+       "n": 58,
+       "pending": 12,
+       "passed": 32,
+       "precision": 0.28125,
+       "recall": 1.0,
+       "winners": 9
+      }
+     },
+     "winner_days_to_pass": 4.0,
+     "winner_spend_to_pass": 402.0,
+     "winners_never_pass": 0,
+     "mean_flips": 0.13043478260869565,
+     "policy": {
+      "first_fail": {
+       "paused": 153,
+       "losers_paused": 152,
+       "winners_paused": 1,
+       "loser_spend_saved": 136928.0,
+       "winner_spend_forgone": 565.0,
+       "share_loser_spend_saved": 0.35374234016389206,
+       "share_winner_spend_forgone": 0.0029844123876883745,
+       "winners_killed": [
+        "thedodomen \u00b7 og-video"
+       ]
+      },
+      "3_consecutive_fails": {
+       "paused": 92,
+       "losers_paused": 91,
+       "winners_paused": 1,
+       "loser_spend_saved": 49920.0,
+       "winner_spend_forgone": 0.0,
+       "share_loser_spend_saved": 0.12896425582044208,
+       "share_winner_spend_forgone": 0.0,
+       "winners_killed": [
+        "thedodomen \u00b7 og-video"
+       ]
+      }
+     }
+    },
+    "SP2": {
+     "final": {
+      "flagged": 19,
+      "tp": 14,
+      "fp": 5,
+      "fn": 13,
+      "precision": 0.7368421052631579,
+      "recall": 0.5185185185185185
+     },
+     "ever": {
+      "flagged": 29,
+      "tp": 17,
+      "fp": 12,
+      "fn": 10,
+      "precision": 0.5862068965517241,
+      "recall": 0.6296296296296297
+     },
+     "early": {
+      "3": {
+       "n": 206,
+       "pending": 125,
+       "passed": 12,
+       "precision": 0.5833333333333334,
+       "recall": 0.3684210526315789,
+       "winners": 19
+      },
+      "7": {
+       "n": 125,
+       "pending": 65,
+       "passed": 4,
+       "precision": 0.75,
+       "recall": 0.23076923076923078,
+       "winners": 13
+      },
+      "14": {
+       "n": 58,
+       "pending": 20,
+       "passed": 5,
+       "precision": 0.8,
+       "recall": 0.4444444444444444,
+       "winners": 9
+      }
+     },
+     "winner_days_to_pass": 2.0,
+     "winner_spend_to_pass": 754.0,
+     "winners_never_pass": 10,
+     "mean_flips": 0.13043478260869565,
+     "policy": {
+      "first_fail": {
+       "paused": 108,
+       "losers_paused": 91,
+       "winners_paused": 17,
+       "loser_spend_saved": 291778.0,
+       "winner_spend_forgone": 104484.0,
+       "share_loser_spend_saved": 0.7537847082287049,
+       "share_winner_spend_forgone": 0.5518997237437737,
+       "winners_killed": [
+        "brianptseng \u00b7 og-video",
+        "harryspeaks_ \u00b7 og-video",
+        "eaglish.fam \u00b7 og-video",
+        "eaglish.fam \u00b7 og-video",
+        "ai-gen \u00b7 workplace-colleaguecompliment_1direct",
+        "drama_engbook \u00b7 input_output_short",
+        "na \u00b7 connor-keyskillsintheaiera-2cut",
+        "thedodomen \u00b7 og-video",
+        "qing \u00b7 2026nyr-v2-putoffforyears",
+        "techervincent \u00b7 og-video",
+        "ai-gen \u00b7 thefixforenglishbrainfreeze-1direct",
+        "shasha77 \u00b7 speak-with-me-conv"
+       ]
+      },
+      "3_consecutive_fails": {
+       "paused": 94,
+       "losers_paused": 79,
+       "winners_paused": 15,
+       "loser_spend_saved": 212669.0,
+       "winner_spend_forgone": 59686.0,
+       "share_loser_spend_saved": 0.5494130472972275,
+       "share_winner_spend_forgone": 0.31527015534790853,
+       "winners_killed": [
+        "brianptseng \u00b7 og-video",
+        "harryspeaks_ \u00b7 og-video",
+        "eaglish.fam \u00b7 og-video",
+        "eaglish.fam \u00b7 og-video",
+        "ai-gen \u00b7 workplace-colleaguecompliment_1direct",
+        "drama_engbook \u00b7 input_output_short",
+        "na \u00b7 connor-keyskillsintheaiera-2cut",
+        "qing \u00b7 2026nyr-v2-putoffforyears",
+        "techervincent \u00b7 og-video",
+        "ai-gen \u00b7 thefixforenglishbrainfreeze-1direct",
+        "shasha77 \u00b7 speak-with-me-conv",
+        "hua \u00b7 2026resolutionenglish5m_1full"
+       ]
+      }
+     }
+    }
+   }
+  }
+ }
+}

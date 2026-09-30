@@ -1,0 +1,307 @@
+<title>TW Ad Check-in Replay</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..100,400..800&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: control bar pinned on top; three stacked swim-lane panels share one date axis; scoreboard below. */
+:root {
+  --bg: #f6f7f9; --panel: #ffffff; --ink: #15181d; --ink-2: #4b5260; --ink-3: #7c8492; --rule: #dde1e7;
+  --accent: #4a3aa7; --accent-soft: #e7e4f6;
+  --pass: #0ca30c; --fail: #d03b3b; --pend: #c9ced6; --idle: #e6e9ee; --head: #15181d;
+  --f-display: "Archivo", "Arial Narrow", system-ui, sans-serif;
+  --f-body: "Archivo", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --f-data: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #121418; --panel: #1a1d22; --ink: #f1f3f6; --ink-2: #b7bdc8; --ink-3: #868d99; --rule: #2c3038;
+  --accent: #9085e9; --accent-soft: #2a2645; --pend: #4a505b; --idle: #262a31; --head: #f1f3f6; color-scheme: dark; } }
+:root[data-theme="dark"] {
+  --bg: #121418; --panel: #1a1d22; --ink: #f1f3f6; --ink-2: #b7bdc8; --ink-3: #868d99; --rule: #2c3038;
+  --accent: #9085e9; --accent-soft: #2a2645; --pend: #4a505b; --idle: #262a31; --head: #f1f3f6; color-scheme: dark; }
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--ink); font-family: var(--f-body); font-size: 14px; line-height: 1.45; }
+.wrap { max-width: 1240px; margin: 0 auto; padding-inline: 20px; padding-block: 28px 56px; display: grid; gap: 22px; }
+header { display: grid; gap: 8px; }
+.eyebrow { font-family: var(--f-data); font-size: 11.5px; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-3); }
+h1 { font-family: var(--f-display); font-stretch: 80%; font-weight: 800; font-size: clamp(28px, 4.2vw, 44px); line-height: 1.02; margin: 0; letter-spacing: -.01em; text-wrap: balance; }
+.lede { max-width: 72ch; color: var(--ink-2); margin: 0; }
+.bar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: color-mix(in srgb, var(--bg) 92%, transparent); backdrop-filter: blur(6px);
+  border-bottom: 1px solid var(--rule); padding-block: 10px; display: flex; flex-wrap: wrap; align-items: center; gap: 10px 18px; }
+.date { font-family: var(--f-display); font-stretch: 75%; font-weight: 700; font-size: 30px; min-width: 7.2ch; font-variant-numeric: tabular-nums; line-height: 1; }
+.date small { display: block; font-family: var(--f-data); font-size: 11px; font-weight: 400; color: var(--ink-3); letter-spacing: .04em; margin-top: 3px; }
+button, select { font: inherit; color: var(--ink); }
+.play { background: var(--ink); color: var(--bg); border: 0; border-radius: 999px; padding: 8px 16px; font-weight: 700; cursor: pointer; min-width: 88px; }
+.play:focus-visible, .seg button:focus-visible, input:focus-visible, select:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.seg { display: inline-flex; border: 1px solid var(--rule); border-radius: 999px; padding: 2px; background: var(--panel); }
+.seg button { border: 0; background: transparent; padding: 5px 11px; border-radius: 999px; cursor: pointer; font-size: 13px; color: var(--ink-2); }
+.seg button[aria-pressed="true"] { background: var(--accent-soft); color: var(--ink); font-weight: 700; }
+.ctl { display: flex; align-items: center; gap: 8px; font-size: 12.5px; color: var(--ink-2); }
+.ctl label { white-space: nowrap; }
+input[type=range] { width: min(320px, 60vw); accent-color: var(--accent); }
+select { background: var(--panel); border: 1px solid var(--rule); border-radius: 8px; padding: 4px 8px; font-size: 13px; }
+.legend { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 12.5px; color: var(--ink-2); align-items: center; }
+.sw { display: inline-block; width: 14px; height: 8px; border-radius: 2px; vertical-align: middle; margin-right: 5px; }
+.win-mark { display: inline-block; width: 9px; height: 9px; transform: rotate(45deg); background: var(--accent); margin-right: 6px; vertical-align: middle; }
+.panel { background: var(--panel); border: 1px solid var(--rule); border-radius: 10px; padding: 14px 14px 10px; display: grid; gap: 8px; min-width: 0; }
+.ph { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 16px; align-items: baseline; }
+.ph h2 { font-family: var(--f-display); font-stretch: 80%; font-size: 21px; margin: 0; font-weight: 750; }
+.ph h2 span { font-family: var(--f-data); font-size: 12px; font-weight: 400; color: var(--ink-3); margin-left: 8px; }
+.live { font-family: var(--f-data); font-size: 12px; color: var(--ink-2); display: flex; gap: 12px; flex-wrap: wrap; font-variant-numeric: tabular-nums; }
+.live b { font-weight: 500; color: var(--ink); }
+.live i { font-style: normal; display: inline-block; width: 8px; height: 8px; border-radius: 2px; margin-right: 4px; }
+.cv { position: relative; width: 100%; }
+canvas { display: block; width: 100%; }
+.tip { position: fixed; pointer-events: none; z-index: 20; background: var(--panel); color: var(--ink); border: 1px solid var(--rule); border-radius: 8px;
+  box-shadow: 0 6px 24px rgba(0,0,0,.14); padding: 9px 11px; font-size: 12px; width: 260px; }
+.tip h4 { margin: 0 0 4px; font-size: 13px; font-family: var(--f-display); font-stretch: 85%; line-height: 1.2; }
+.tip table { width: 100%; border-collapse: collapse; font-family: var(--f-data); font-size: 11.5px; font-variant-numeric: tabular-nums; }
+.tip td { padding: 1px 0; } .tip td:last-child { text-align: right; }
+.st { font-weight: 500; } .st.pass { color: var(--pass); } .st.fail { color: var(--fail); } .st.pending { color: var(--ink-3); }
+.score { overflow-x: auto; }
+table.sc { border-collapse: collapse; width: 100%; min-width: 820px; font-size: 13px; font-variant-numeric: tabular-nums; }
+.sc th, .sc td { padding: 7px 10px; border-bottom: 1px solid var(--rule); text-align: right; }
+.sc th { font-family: var(--f-data); font-weight: 500; font-size: 11px; letter-spacing: .04em; text-transform: uppercase; color: var(--ink-3); vertical-align: bottom; }
+.sc td:first-child, .sc th:first-child, .sc td:nth-child(2), .sc th:nth-child(2) { text-align: left; }
+.sc tr.grp td { border-top: 2px solid var(--rule); }
+.sc .best { font-weight: 700; color: var(--ink); }
+.sc td { color: var(--ink-2); }
+.notes { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; }
+.note { border-top: 2px solid var(--ink); padding-top: 8px; min-width: 0; }
+.note h3 { margin: 0 0 4px; font-family: var(--f-display); font-stretch: 85%; font-size: 17px; }
+.note p { margin: 0; color: var(--ink-2); }
+.foot { font-size: 12px; color: var(--ink-3); max-width: 90ch; }
+@media (max-width: 560px) { .date { font-size: 24px; } .wrap { padding-inline: 16px; } }
+</style>
+
+<div class="wrap">
+  <header>
+    <div class="eyebrow">Speak ZH · Meta iOS · Taiwan · daily check-ins Jun 1 – Sep 29, 2026</div>
+    <h1>Every ad, every day: SP vs CTI vs SP2</h1>
+    <p class="lede">Each row is one ad, drawn across the days it delivered. On every delivery day it is re-scored with its data to date, and each cell shows what that day's check-in would have said: <b>pass</b>, <b>fail</b>, or <b>pending</b> (not enough data yet). A diamond at the row end marks ads that finished as winners (≥ 10 trials at ≤ $70 per trial). Press play to replay the season.</p>
+  </header>
+
+  <div class="bar" role="toolbar" aria-label="Replay controls">
+    <div class="date" id="date" aria-live="off">Sep 29<small id="dsub">day 121 of 121</small></div>
+    <button class="play" id="play" type="button">▶ Play</button>
+    <div class="ctl"><label for="scrub">Day</label><input id="scrub" type="range" min="0" max="120" step="1" value="120"></div>
+    <div class="seg" role="group" aria-label="Gate shown" id="gate">
+      <button type="button" data-v="all" aria-pressed="true">All three</button>
+      <button type="button" data-v="0" aria-pressed="false">SP</button>
+      <button type="button" data-v="1" aria-pressed="false">CTI</button>
+      <button type="button" data-v="2" aria-pressed="false">SP2</button>
+    </div>
+    <div class="ctl"><label for="speed">Speed</label><select id="speed"><option value="4">Slow</option><option value="8" selected>Normal</option><option value="18">Fast</option></select></div>
+    <div class="ctl"><label for="sort">Order</label><select id="sort"><option value="launch" selected>Launch date</option><option value="spend">Total spend</option><option value="win">Winners first</option></select></div>
+    <div class="ctl"><label><input type="checkbox" id="focus"> Highlight winners</label></div>
+  </div>
+
+  <div class="legend" aria-label="Legend">
+    <span><span class="sw" style="background:var(--pass)"></span>Pass</span>
+    <span><span class="sw" style="background:var(--fail)"></span>Fail</span>
+    <span><span class="sw" style="background:var(--pend)"></span>Pending (below minimum data)</span>
+    <span><span class="win-mark"></span>Finished as winner</span>
+    <span id="stripeKey">Row stripes, top to bottom: SP · CTI · SP2</span>
+  </div>
+
+  <section class="panel" id="p-T"></section>
+  <section class="panel" id="p-W"></section>
+  <section class="panel" id="p-S"></section>
+
+  <section class="panel">
+    <div class="ph"><h2>Scoreboard<span>outcome known Sep 29 · ads under 14 days old excluded</span></h2></div>
+    <div class="score"><table class="sc" id="score"></table></div>
+    <p class="foot">Precision = share of ads the gate passes that finished as winners (base rate in brackets). Recall = share of winners the gate passes. "Day 7" = state at each ad's 7th delivery day. Pause policy = pause an ad after 3 consecutive failing check-ins: spend it would have saved on non-winners, versus spend winners would have lost.</p>
+  </section>
+
+  <section class="notes" id="notes"></section>
+
+  <p class="foot">Gates, re-scored daily with cumulative data: <b>SP</b> ≥ 2.0 with ≥ 10 installs (Option B, benchmarked against the same campaign group's placements to date). <b>CTI</b> = installs ÷ link clicks ≥ 1% with ≥ 300 link clicks. <b>SP2</b> = EI × SI ≥ 2 with EI ≥ 1 and ≥ 10 installs, where EI = CPI target $15.32 ÷ CPI (from $12.26 LTV per install at 0.8× LTV/CAC) and SI = spend per active day ÷ the median live ad in the group that day. Data: BigQuery <code>meta_ads_creative_report_funnel</code> + Meta Ads link clicks. Winning ads that started before June begin mid-row, with a ◂ at the left edge.</p>
+</div>
+<div class="tip" id="tip" hidden></div>
+
+<script>
+const ADS = /*ADS*/[];
+const RES = /*RES*/{};
+const D0 = 151, ND = 121;               // Jun 1 = day 151 from Jan 1; 121 days to Sep 29
+const GN = {T: 'Testing', W: 'Winning', S: 'Scaling'};
+const GD = {T: 'purchase_ongoing_no-disc_testing', W: 'trial_ongoing_winning · winning3', S: 'trial_ongoing_scaling2'};
+const GATES = ['SP', 'CTI', 'SP2'];
+const MON = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct'];
+const dt = off => { const d = new Date(Date.UTC(2026, 0, 1 + off)); return MON[d.getUTCMonth()] + ' ' + d.getUTCDate(); };
+const st = (code, k) => Math.floor(code / [9, 3, 1][k]) % 3;   // 0 pending 1 fail 2 pass
+const ST = ['pending', 'fail', 'pass'];
+const money = v => v == null ? '–' : '$' + Math.round(v).toLocaleString('en-US');
+const pct = v => v == null ? '–' : Math.round(v * 100) + '%';
+
+let day = ND - 1, playing = false, gate = 'all', sortBy = 'launch', focusW = false, speed = 8, last = 0;
+const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+let C = {};
+function readColors() { C = { pass: css('--pass'), fail: css('--fail'), pend: css('--pend'), idle: css('--idle'), ink3: css('--ink-3'), ink2: css('--ink-2'), rule: css('--rule'), acc: css('--accent'), head: css('--head'), panel: css('--panel') }; }
+
+const panels = {};
+for (const g of ['T', 'W', 'S']) {
+  const el = document.getElementById('p-' + g);
+  const ads = ADS.filter(a => a.g === g);
+  ads.forEach(a => { a.dmap = new Map(a.d.map(x => [x[0], x])); a.first = a.d[0][0]; a.lastd = a.d[a.d.length - 1][0]; });
+  const w = ads.filter(a => a.w).length;
+  el.innerHTML = `<div class="ph"><h2>${GN[g]}<span>${ads.length} ads · ${w} winners · ${GD[g]}</span></h2><div class="live" id="live-${g}"></div></div><div class="cv"><canvas id="cv-${g}" role="img" aria-label="${GN[g]} ads timeline"></canvas></div>`;
+  panels[g] = { el, ads, cv: el.querySelector('canvas') };
+}
+
+const LBL = 0, TOP = 22, BOT = 4;
+function laneH() { return gate === 'all' ? 8 : 6; }
+function order(ads) {
+  const a = ads.slice();
+  if (sortBy === 'spend') a.sort((x, y) => y.s - x.s);
+  else if (sortBy === 'win') a.sort((x, y) => (y.w - x.w) || (x.first - y.first));
+  else a.sort((x, y) => (x.f - y.f) || (x.first - y.first));
+  return a;
+}
+function layout() {
+  for (const g in panels) {
+    const P = panels[g]; P.rows = order(P.ads);
+    const W = P.cv.parentElement.clientWidth, H = TOP + P.rows.length * laneH() + BOT;
+    const r = window.devicePixelRatio || 1;
+    P.cv.width = Math.round(W * r); P.cv.height = Math.round(H * r); P.cv.style.height = H + 'px';
+    P.W = W; P.H = H; P.r = r; P.px = (W - LBL - 16) / ND;
+  }
+}
+function draw() {
+  const cur = D0 + day;
+  for (const g in panels) {
+    const P = panels[g], c = P.cv.getContext('2d'), lh = laneH(), px = P.px;
+    c.setTransform(P.r, 0, 0, P.r, 0, 0); c.clearRect(0, 0, P.W, P.H);
+    // month ticks
+    c.font = '11px "IBM Plex Mono", ui-monospace, monospace'; c.fillStyle = C.ink3; c.strokeStyle = C.rule; c.lineWidth = 1;
+    [[151, 'Jun'], [181, 'Jul'], [212, 'Aug'], [243, 'Sep']].forEach(([o, m]) => {
+      const x = LBL + (o - D0) * px; c.beginPath(); c.moveTo(x + .5, 14); c.lineTo(x + .5, P.H); c.stroke(); c.fillText(m, x + 3, 11);
+    });
+    let live = [0, 0, 0], liveN = 0;
+    const gi = gate === 'all' ? null : +gate;
+    P.rows.forEach((a, i) => {
+      const y = TOP + i * lh, dim = focusW && !a.w;
+      c.globalAlpha = dim ? 0.18 : 1;
+      if (a.first > cur) return;
+      // idle span between first and last delivery day (up to now)
+      const x0 = LBL + (a.first - D0) * px, x1 = LBL + (Math.min(a.lastd, cur) - D0 + 1) * px;
+      c.fillStyle = C.idle; c.fillRect(x0, y + lh / 2 - 1, Math.max(1, x1 - x0), 1.5);
+      for (const d of a.d) {
+        if (d[0] > cur) break;
+        const x = LBL + (d[0] - D0) * px, wdt = Math.max(1, px - (px > 4 ? 1 : 0));
+        if (gi === null) {
+          for (let k = 0; k < 3; k++) { const s = st(d[7], k); c.fillStyle = s === 2 ? C.pass : s === 1 ? C.fail : C.pend; c.fillRect(x, y + k * 2, wdt, 2); }
+        } else {
+          const s = st(d[7], gi); c.fillStyle = s === 2 ? C.pass : s === 1 ? C.fail : C.pend; c.fillRect(x, y, wdt, lh - 1);
+        }
+      }
+      // today's live state
+      const today = a.dmap.get(cur);
+      if (today) { liveN++; live[st(today[7], gi === null ? 2 : gi)]++; if (!dim) { c.fillStyle = C.head; c.fillRect(LBL + (cur - D0) * px + px, y, 1.5, lh - 2); } }
+      if (a.f < D0 && a.first === D0) { c.fillStyle = C.ink3; c.beginPath(); c.moveTo(LBL, y + lh / 2 - 3); c.lineTo(LBL, y + lh / 2 + 3); c.lineTo(LBL - 0.1, y + lh / 2); c.fill(); }
+      // winner diamond appears when the ad's last delivery day has passed
+      if (a.w && cur >= a.lastd) {
+        const xm = LBL + (a.lastd - D0 + 1) * px + 5, ym = y + (lh - 2) / 2;
+        c.fillStyle = C.acc; c.beginPath(); c.moveTo(xm, ym - 3.5); c.lineTo(xm + 3.5, ym); c.lineTo(xm, ym + 3.5); c.lineTo(xm - 3.5, ym); c.fill();
+      }
+    });
+    c.globalAlpha = 1;
+    // playhead
+    const xp = LBL + (day + 1) * px; c.fillStyle = C.head; c.globalAlpha = .35; c.fillRect(xp, 14, 1, P.H - 14); c.globalAlpha = 1;
+    const gl = gi === null ? 'SP2' : GATES[gi];
+    document.getElementById('live-' + g).innerHTML = `<span>live on ${dt(cur)}: <b>${liveN}</b></span><span>${gl}: <i style="background:var(--pass)"></i><b>${live[2]}</b> pass</span><span><i style="background:var(--fail)"></i><b>${live[1]}</b> fail</span><span><i style="background:var(--pend)"></i><b>${live[0]}</b> pending</span>`;
+  }
+  document.getElementById('date').firstChild.nodeValue = dt(cur);
+  document.getElementById('dsub').textContent = `day ${day + 1} of ${ND}`;
+  document.getElementById('scrub').value = day;
+}
+
+// playback
+const playBtn = document.getElementById('play');
+function setPlay(p) { playing = p; playBtn.textContent = p ? '❚❚ Pause' : '▶ Play'; if (p) { last = 0; requestAnimationFrame(tick); } }
+let acc = 0;
+function tick(t) {
+  if (!playing) return;
+  if (last) acc += (t - last) / 1000 * speed; last = t;
+  if (acc >= 1) { const step = Math.floor(acc); acc -= step; day = Math.min(ND - 1, day + step); draw(); if (day >= ND - 1) { setPlay(false); return; } }
+  requestAnimationFrame(tick);
+}
+playBtn.addEventListener('click', () => { if (!playing && day >= ND - 1) { day = 0; draw(); } setPlay(!playing); });
+document.getElementById('scrub').addEventListener('input', e => { day = +e.target.value; setPlay(false); draw(); });
+document.getElementById('speed').addEventListener('change', e => speed = +e.target.value);
+document.getElementById('sort').addEventListener('change', e => { sortBy = e.target.value; layout(); draw(); });
+document.getElementById('focus').addEventListener('change', e => { focusW = e.target.checked; draw(); });
+document.querySelectorAll('#gate button').forEach(b => b.addEventListener('click', () => {
+  document.querySelectorAll('#gate button').forEach(x => x.setAttribute('aria-pressed', x === b));
+  gate = b.dataset.v; document.getElementById('stripeKey').hidden = gate !== 'all'; layout(); draw();
+}));
+document.addEventListener('keydown', e => {
+  if (e.target.matches('input, select, button')) return;
+  if (e.code === 'Space') { e.preventDefault(); playBtn.click(); }
+  if (e.key === 'ArrowRight') { day = Math.min(ND - 1, day + 1); draw(); }
+  if (e.key === 'ArrowLeft') { day = Math.max(0, day - 1); draw(); }
+});
+
+// tooltip
+const tip = document.getElementById('tip');
+for (const g in panels) {
+  const P = panels[g];
+  P.cv.addEventListener('mousemove', e => {
+    const b = P.cv.getBoundingClientRect(), x = e.clientX - b.left, y = e.clientY - b.top;
+    const i = Math.floor((y - TOP) / laneH()), a = P.rows[i];
+    if (!a || y < TOP) { tip.hidden = true; return; }
+    const cur = D0 + day, o = Math.min(cur, D0 + Math.floor((x - LBL) / P.px));
+    let rec = null; for (const d of a.d) { if (d[0] <= o) rec = d; else break; }
+    if (!rec) { tip.hidden = true; return; }
+    const row = (k, v) => `<tr><td>${k}</td><td>${v}</td></tr>`;
+    const s = k => { const v = ST[st(rec[7], k)]; return `<span class="st ${v}">${v}</span>`; };
+    tip.innerHTML = `<h4>${a.name}</h4><div class="eyebrow" style="margin-bottom:4px">${GN[g]} · check-in ${dt(rec[0])}</div><table>
+      ${row('Spend that day', money(rec[1]))}${row('Spend to date', money(rec[2]))}
+      ${row('SP', rec[3].toFixed(2) + ' · ' + s(0))}${row('CTI', (rec[4] == null ? '–' : rec[4].toFixed(2) + '%') + ' · ' + s(1))}
+      ${row('SP2', (rec[5] == null ? '–' : rec[5].toFixed(2)) + ' · ' + s(2))}${row('Cost per trial to date', money(rec[6]))}
+      <tr><td colspan="2" style="padding-top:5px;color:var(--ink-3)">Final: ${money(a.s)} · ${a.t} trials · ${a.c == null ? 'no trials' : money(a.c) + '/trial'} · ${a.nw ? 'too new to judge' : a.w ? '<b style="color:var(--accent)">winner</b>' : 'not a winner'}</td></tr></table>`;
+    tip.hidden = false;
+    const tx = Math.min(window.innerWidth - 276, e.clientX + 14), ty = Math.min(window.innerHeight - tip.offsetHeight - 8, e.clientY + 14);
+    tip.style.left = tx + 'px'; tip.style.top = ty + 'px';
+  });
+  P.cv.addEventListener('mouseleave', () => tip.hidden = true);
+}
+
+// scoreboard
+function score() {
+  const T = document.getElementById('score');
+  let h = `<thead><tr><th>Group</th><th>Gate</th><th>Precision<br>(final)</th><th>Recall<br>(final)</th><th>Precision<br>day 7</th><th>Recall<br>day 7</th><th>Winners:<br>spend to 1st pass</th><th>Winners never<br>passing</th><th>Pause after 3 fails:<br>loser spend saved</th><th>…winner<br>spend lost</th><th>Winners<br>paused</th></tr></thead><tbody>`;
+  for (const gname of ['Testing', 'Winning', 'Scaling', 'All']) {
+    const B = RES.groups[gname]; const base = B.n_winners / B.n_ads;
+    const vals = GATES.map(k => B.gates[k]);
+    const bestP = Math.max(...vals.map(v => v.final.precision || 0)), bestR = Math.max(...vals.map(v => v.final.recall || 0));
+    GATES.forEach((k, j) => {
+      const v = B.gates[k], p = v.policy['3_consecutive_fails'], e7 = v.early['7'];
+      h += `<tr class="${j === 0 ? 'grp' : ''}"><td>${j === 0 ? `<b>${gname}</b><br><span style="color:var(--ink-3);font-size:12px">${B.n_ads} ads · ${B.n_winners} winners</span>` : ''}</td><td><b>${k}</b></td>
+        <td class="${v.final.precision === bestP ? 'best' : ''}">${pct(v.final.precision)} <span style="color:var(--ink-3)">(${pct(base)})</span></td>
+        <td class="${v.final.recall === bestR ? 'best' : ''}">${pct(v.final.recall)}</td>
+        <td>${pct(e7.precision)}</td><td>${pct(e7.recall)}</td>
+        <td>${money(v.winner_spend_to_pass)}</td><td>${v.winners_never_pass}</td>
+        <td>${pct(p.share_loser_spend_saved)}</td><td>${pct(p.share_winner_spend_forgone)}</td><td>${p.winners_paused}</td></tr>`;
+    });
+  }
+  T.innerHTML = h + '</tbody>';
+}
+function notes() {
+  const A = RES.groups.All.gates, T = RES.groups.Testing.gates, S = RES.groups.Scaling.gates;
+  const n = [
+    ['SP and CTI pass almost every winner',
+      `Both catch ${pct(A.SP.final.recall)} / ${pct(A.CTI.final.recall)} of the ${RES.groups.All.n_winners} winners, and a 3-fail pause would have cut only ${A.SP.policy['3_consecutive_fails'].winners_paused} (SP) and ${A.CTI.policy['3_consecutive_fails'].winners_paused} (CTI) of them. But they also pass most losers: precision is only ${pct(A.SP.final.precision)} / ${pct(A.CTI.final.precision)}, against a base rate of ${pct(RES.groups.All.n_winners / RES.groups.All.n_ads)}.`],
+    ['SP2 is the sharpest filter but the harshest judge',
+      `When SP2 passes an ad it is usually right (${pct(A.SP2.final.precision)} precision, ${pct(A.SP2.early['7'].precision)} on day 7), but it misses ${pct(1 - A.SP2.final.recall)} of winners and a 3-fail pause would have cut ${A.SP2.policy['3_consecutive_fails'].winners_paused} winners, losing ${pct(A.SP2.policy['3_consecutive_fails'].share_winner_spend_forgone)} of winner spend.`],
+    ['SP2 breaks in Scaling',
+      `Its $15 CPI bar sits below what scaling2 buys at volume, so it passes none of the Scaling winners at the end (${pct(S.SP2.final.recall)} recall) and flags big earners like harryspeaks og-video and eaglish.fam as fails. In Testing, CTI and SP are the safer pause signals: 3-fail CTI pauses save ${pct(T.CTI.policy['3_consecutive_fails'].share_loser_spend_saved)} of loser spend while losing ${pct(T.CTI.policy['3_consecutive_fails'].share_winner_spend_forgone)} of winner spend.`],
+  ];
+  document.getElementById('notes').innerHTML = n.map(([h, p]) => `<div class="note"><h3>${h}</h3><p>${p}</p></div>`).join('');
+}
+
+readColors(); layout(); draw(); score(); notes();
+window.addEventListener('resize', () => { layout(); draw(); });
+matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => { readColors(); draw(); });
+new MutationObserver(() => { readColors(); draw(); }).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+if (!matchMedia('(prefers-reduced-motion: reduce)').matches) { /* opens complete at rest on Sep 29; Play replays from Jun 1 */ }
+</script>
