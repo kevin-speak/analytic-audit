@@ -9,7 +9,7 @@ re-scored on each day it delivered with its cumulative-to-date data, against thr
        SI = spend per active day / median of live ads in the same group that day, clipped [0.25, 4]
   Before the minimum data is reached the gate is 'pending'.
 
-Ground truth (known at Sep 29): Winner = cumulative Meta trials >= 10 and CPFT <= $70.
+Ground truth (known at Sep 29): Winner = lifetime LTV/CAC >= 0.85 AND lifetime spend >= $1k (testing) / $5k (winning, scaling).
 Ads still inside their first 14 days on Sep 29 are 'too new' and left out of the scoring (still animated).
 
 Policy replay: pause an ad at its first check-in where the gate reads 'fail' (optionally only after 3 consecutive fails)
@@ -30,7 +30,8 @@ K_LTV, TARGET = 12.255086110766943, 0.8
 CPI_TARGET = K_LTV / TARGET
 SP_BAR, CTI_BAR, SP2_BAR = 2.0, 0.01, 2.0
 MIN_INST, MIN_LINK = 10, 300
-WIN_TRIALS, WIN_CPR = 10, 70.0
+WIN_LTVCAC = 0.85                                   # winner: lifetime LTV/CAC >= 0.85 ...
+WIN_SPEND = {'T': 1000.0, 'W': 5000.0, 'S': 5000.0}  # ... and lifetime spend >= $1k (testing) / $5k (winning, scaling)
 END, NEW_DAYS = date(2026, 9, 29), 14
 BASE = date(2026, 1, 1)
 GROUPS = {'T': 'Testing', 'W': 'Winning', 'S': 'Scaling'}
@@ -76,7 +77,7 @@ df = df.sort_values('off')
 df = pd.merge_asof(df, lt[['g', 'ad_id', 'off', 'cum_ltv']], on='off', by=['g', 'ad_id'], direction='backward')
 df['cum_ltv'] = df.cum_ltv.fillna(0.0)
 df['ltv_cac'] = df.cum_ltv / df.cum_spend
-LTVCAC_TARGET = 0.8
+LTVCAC_TARGET = WIN_LTVCAC
 
 
 def state(ok, enough):
@@ -94,7 +95,7 @@ last = df.groupby(['g', 'ad_id']).tail(1).set_index(['g', 'ad_id'])
 ads = last[['key', 'first_date', 'cum_spend', 'cum_trials', 'cum_installs', 'cpft', 'active_days', 'cum_ltv', 'ltv_cac']].copy()
 ads['last_date'] = [BASE + timedelta(int(o)) for o in last.off]
 ads['first_date'] = pd.to_datetime(ads.first_date).dt.date
-ads['winner'] = (ads.cum_trials >= WIN_TRIALS) & (ads.cpft <= WIN_CPR)
+ads['winner'] = (ads.ltv_cac >= WIN_LTVCAC) & (ads.cum_spend >= [WIN_SPEND[g] for g in ads.index.get_level_values('g')])
 ads['too_new'] = [(END - fd).days < NEW_DAYS for fd in ads.first_date]
 ads['scored'] = ~ads.too_new
 ad_keys = ads.index
@@ -114,7 +115,7 @@ def consec_fail(col, k):
 
 
 results = {'params': dict(sp_bar=SP_BAR, cti_bar=CTI_BAR, sp2_bar=SP2_BAR, min_installs=MIN_INST, min_link_clicks=MIN_LINK,
-                          k_ltv_per_install=K_LTV, cpi_target=CPI_TARGET, winner=f'trials>={WIN_TRIALS} & CPFT<=${WIN_CPR:.0f}',
+                          k_ltv_per_install=K_LTV, cpi_target=CPI_TARGET, winner=f'lifetime LTV/CAC>={WIN_LTVCAC} & spend>=$1k (testing) / $5k (winning, scaling)',
                           too_new_days=NEW_DAYS, window='2026-06-01..2026-09-29'),
            'groups': {}}
 summary = []
@@ -234,7 +235,7 @@ for g, gname in list(GROUPS.items()) + [('ALL', 'All')]:
                                  pass_share_fut_spend=blk[gl]['pass_share_future_spend']))
         eff[gname][kk] = dict(n=int(len(cp)), group_fwd_ltvcac=float(fut_ltv[fwd.notna()].sum() / fut_spend[fwd.notna()].sum()) if fwd.notna().any() else None, metrics=blk)
     # final quadrant: efficient (lifetime LTV/CAC >= 0.8) x spent (>= group spend bar)
-    bar = 1000.0 if g == 'T' else 5000.0
+    bar = WIN_SPEND.get(g, 5000.0)
     eff[gname]['quadrant'] = dict(spend_bar=bar, efficient_and_spent=int(((A.ltv_cac >= LTVCAC_TARGET) & (A.cum_spend >= bar)).sum()),
                                   efficient_small=int(((A.ltv_cac >= LTVCAC_TARGET) & (A.cum_spend < bar)).sum()),
                                   inefficient_spent=int(((A.ltv_cac < LTVCAC_TARGET) & (A.cum_spend >= bar)).sum()),

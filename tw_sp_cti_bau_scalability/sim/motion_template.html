@@ -113,7 +113,7 @@ table.sc { border-collapse: collapse; width: 100%; min-width: 860px; font-size: 
       <div class="ctl"><label for="xm">Horizontal axis</label><select id="xm"><option value="0">SP</option><option value="1" selected>CTI</option><option value="2">SP2</option></select>
         <label><input type="checkbox" id="trail" checked> Keep ads that have stopped (faded)</label></div></div>
     <div class="bub" id="bub"></div>
-    <p class="foot">Vertical axis = LTV/CAC to date (SSOT modelled LTV ÷ spend, capped at 2.5 on screen). Dashed lines mark the gate bar on the horizontal axis and the 0.8× LTV/CAC target. Top-right = passing the gate and efficient. Big bubbles in the top-right are the ads that were efficient <i>and</i> took spend.</p>
+    <p class="foot">Vertical axis = LTV/CAC to date (SSOT modelled LTV ÷ spend, capped at 2.5 on screen). Dashed lines mark the gate bar on the horizontal axis and the 0.85× LTV/CAC winner bar. Top-right = passing the gate and efficient. Big bubbles in the top-right are the ads that were efficient <i>and</i> took spend.</p>
   </section>
 
   <div class="legend" aria-label="Legend" id="legend"></div>
@@ -134,7 +134,7 @@ table.sc { border-collapse: collapse; width: 100%; min-width: 860px; font-size: 
   </section>
 
   <section class="panel">
-    <div class="ph"><h2>Scoreboard<span>winner = ≥ 10 trials at ≤ $70 per trial · ads under 14 days old excluded</span></h2></div>
+    <div class="ph"><h2>Scoreboard<span>winner = lifetime LTV/CAC ≥ 0.85 and spend ≥ $1k (testing) / $5k (winning, scaling) · ads under 14 days old excluded</span></h2></div>
     <div class="score"><table class="sc" id="score"></table></div>
     <p class="foot">Precision = share of ads the gate passes that finished as winners (base rate in brackets). Recall = share of winners the gate passes. "Day 7" = state at each ad's 7th delivery day. Pause policy = pause an ad after 3 consecutive failing check-ins: spend it would have saved on non-winners, versus spend winners would have lost. LTV/CAC column = final lifetime LTV/CAC of the group.</p>
   </section>
@@ -153,7 +153,7 @@ const GN = {T: 'Testing', W: 'Winning', S: 'Scaling'};
 const GD = {T: 'purchase_ongoing_no-disc_testing', W: 'trial_ongoing_winning · winning3', S: 'trial_ongoing_scaling2'};
 const GATES = ['SP', 'CTI', 'SP2'];
 const XM = [{k: 3, max: 8, bar: 2, fmt: v => v.toFixed(1), ticks: [0, 2, 4, 6, 8]}, {k: 4, max: 5, bar: 1, fmt: v => v.toFixed(1) + '%', ticks: [0, 1, 2, 3, 4, 5]}, {k: 5, max: 8, bar: 2, fmt: v => v.toFixed(1), ticks: [0, 2, 4, 6, 8]}];
-const YMAX = 2.5, LCT = 0.8;
+const YMAX = 2.5, LCT = 0.85;
 const MON = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct'];
 const dt = off => { const d = new Date(Date.UTC(2026, 0, 1 + off)); return MON[d.getUTCMonth()] + ' ' + d.getUTCDate(); };
 const st = (code, k) => Math.floor(code / [9, 3, 1][k]) % 3;   // 0 pending 1 fail 2 pass
@@ -212,9 +212,9 @@ function layout() {
 function legend() {
   const L = document.getElementById('legend');
   const h = gate === 'lc'
-    ? `<span><span class="sw" style="background:var(--eff-hi)"></span>LTV/CAC ≥ 1.2</span><span><span class="sw" style="background:var(--eff-ok)"></span>0.8 – 1.2 (at target)</span><span><span class="sw" style="background:var(--eff-lo)"></span>0.4 – 0.8</span><span><span class="sw" style="background:var(--eff-bad)"></span>under 0.4</span>`
+    ? `<span><span class="sw" style="background:var(--eff-hi)"></span>LTV/CAC ≥ 1.2</span><span><span class="sw" style="background:var(--eff-ok)"></span>0.85 – 1.2 (winner bar)</span><span><span class="sw" style="background:var(--eff-lo)"></span>0.4 – 0.85</span><span><span class="sw" style="background:var(--eff-bad)"></span>under 0.4</span>`
     : `<span><span class="sw" style="background:var(--pass)"></span>Pass</span><span><span class="sw" style="background:var(--fail)"></span>Fail</span><span><span class="sw" style="background:var(--pend)"></span>Pending (below minimum data)</span>`;
-  L.innerHTML = h + `<span><span class="win-mark"></span>Finished as winner</span>` + (gate === 'all' ? `<span>Row stripes, top to bottom: SP · CTI · SP2</span>` : `<span>Cell height = that day's spend</span>`);
+  L.innerHTML = h + `<span><span class="win-mark"></span>Winner: LTV/CAC ≥ 0.85 and spend ≥ $1k testing / $5k winning, scaling</span>` + (gate === 'all' ? `<span>Row stripes, top to bottom: SP · CTI · SP2</span>` : `<span>Cell height = that day's spend</span>`);
 }
 
 function drawLanes(cur) {
@@ -260,7 +260,7 @@ function drawLanes(cur) {
     const xp = LBL + (day + 1) * px; c.fillStyle = C.head; c.globalAlpha = .35; c.fillRect(xp, 14, 1, P.H - 14); c.globalAlpha = 1;
     const head = `<span>live on ${dt(cur)}: <b>${liveN}</b> ads · <b>${money(liveSpend)}</b> spent that day</span>`;
     document.getElementById('live-' + g).innerHTML = gi === 'lc'
-      ? head + `<span><i style="background:var(--eff-ok)"></i><b>${liveEff}</b> at ≥ 0.8 LTV/CAC</span>`
+      ? head + `<span><i style="background:var(--eff-ok)"></i><b>${liveEff}</b> at ≥ 0.85 LTV/CAC</span>`
       : head + `<span>${gi === null ? 'CTI' : GATES[gi]}: <i style="background:var(--pass)"></i><b>${live[2]}</b> pass <i style="background:var(--fail);margin-left:6px"></i><b>${live[1]}</b> fail <i style="background:var(--pend);margin-left:6px"></i><b>${live[0]}</b> pending</span>`;
   }
 }
@@ -278,7 +278,7 @@ function drawBubbles(cur) {
     c.setLineDash([4, 3]); c.strokeStyle = C['ink-2'];
     c.beginPath(); c.moveTo(X(M.bar) + .5, padT); c.lineTo(X(M.bar) + .5, padT + H); c.stroke();
     c.beginPath(); c.moveTo(padL, Y(LCT) + .5); c.lineTo(padL + W, Y(LCT) + .5); c.stroke(); c.setLineDash([]);
-    c.textAlign = 'left'; c.fillStyle = C['ink-2']; c.fillText('0.8× target', padL + 4, Y(LCT) - 4);
+    c.textAlign = 'left'; c.fillStyle = C['ink-2']; c.fillText('0.85× winner bar', padL + 4, Y(LCT) - 4);
     const pts = [];
     let nLive = 0, nTR = 0, sLive = 0, sTR = 0;
     for (const a of panels[g].ads) {
@@ -424,7 +424,7 @@ function notes() {
     ['In testing, CTI and SP2 foresee efficiency',
       `On a testing ad's 3rd day, CTI (ρ ${f2(t3.CTI.rho_fwd_ltvcac)}) and SP2 (ρ ${f2(t3.SP2.rho_fwd_ltvcac)}) both predict the LTV/CAC it earns afterwards. SP does not (ρ ${f2(t3.SP.rho_fwd_ltvcac)}). Testing ads passing CTI on day 3 earned ${f2(t3.CTI.pass_fwd_ltvcac)} LTV/CAC afterwards vs ${f2(t3.CTI.fail_fwd_ltvcac)} for fails.`],
     ['Once in scaling, no check predicts efficiency',
-      `In scaling2 every metric's link to later LTV/CAC is near zero (SP ${f2(s7.SP.rho_fwd_ltvcac)}, CTI ${f2(s7.CTI.rho_fwd_ltvcac)}, SP2 ${f2(s7.SP2.rho_fwd_ltvcac)} on day 7). At that stage they only tell you which ads Meta will keep spending on. Only ${Q.efficient_and_spent} of 253 ads were both efficient (≥ 0.8) and took real spend. The season as a whole ran at ${f2(Q.group_ltvcac)} LTV/CAC.`],
+      `In scaling2 every metric's link to later LTV/CAC is near zero (SP ${f2(s7.SP.rho_fwd_ltvcac)}, CTI ${f2(s7.CTI.rho_fwd_ltvcac)}, SP2 ${f2(s7.SP2.rho_fwd_ltvcac)} on day 7). At that stage they only tell you which ads Meta will keep spending on. Only ${Q.efficient_and_spent} of 253 ads were winners: efficient (≥ 0.85) and took real spend. The season as a whole ran at ${f2(Q.group_ltvcac)} LTV/CAC.`],
   ];
   document.getElementById('notes').innerHTML = n.map(([h, p]) => `<div class="note"><h3>${h}</h3><p>${p}</p></div>`).join('');
 }

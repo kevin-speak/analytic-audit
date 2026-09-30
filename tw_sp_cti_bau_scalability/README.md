@@ -193,18 +193,21 @@ Rebuild: `python3 analyze.py && python3 analyze_bau.py` (needs pandas, numpy, sc
 ## Daily check-in simulation (SP vs CTI vs SP2) — `sim/`
 Every ad in testing / winning / scaling that delivered Jun 1 – Sep 29 (262 ads, 2,890 ad-days) is re-scored on each delivery day
 with cumulative-to-date data. SP = Option B vs the same group's placements to date, pass at ≥ 2.0 with ≥ 10 installs. CTI = installs ÷ link clicks, pass at ≥ 1%
-with ≥ 300 link clicks. SP2 = EI × SI (from `tw_app_ads_ltv_cac_mc/sp2.py`), pass at ≥ 2 with EI ≥ 1 and ≥ 10 installs. Winner = ≥ 10 trials at ≤ $70 per trial by Sep 29.
-Ads under 14 days old are excluded from scoring (253 scored, 27 winners).
+with ≥ 300 link clicks. SP2 = EI × SI (from `tw_app_ads_ltv_cac_mc/sp2.py`), pass at ≥ 2 with EI ≥ 1 and ≥ 10 installs.
+**Winner = lifetime LTV/CAC ≥ 0.85 AND lifetime spend ≥ $1k (testing) / ≥ $5k (winning, scaling)**, measured on Sep 29.
+Ads under 14 days old are excluded from scoring: 253 scored, **12 winners** (8 testing, 3 winning, 1 scaling).
 
-| Gate (all groups) | Precision (base 11%) | Recall | Day-7 precision | 3-fail pause: loser spend saved | Winner spend lost | Winners paused |
-|---|---|---|---|---|---|---|
-| SP | 29% | 100% | 26% | 10% | 0% | 0 |
-| CTI | 29% | 96% | 24% | 13% | 0% | 1 |
-| SP2 | 74% | 52% | 75% | 55% | 32% | 15 |
+| Gate (all groups) | Precision (base 5%) | Recall | 3-fail pause: loser spend saved | Winner spend lost | Winners paused |
+|---|---|---|---|---|---|
+| SP | 13% | 100% | 8% | 0% | 0 |
+| CTI | 11% | 83% | 8% | 11% | 2 |
+| SP2 | 32% | 50% | 49% | 34% | 7 |
 
-- SP and CTI work as safe floors. They pass nearly every winner but also most losers.
-- SP2 is precise but harsh. Its $15.32 CPI bar sits below what scaling2 pays at volume, so it passes none of the 4 Scaling winners at the
-  end and would have paused harryspeaks og-video, eaglish.fam, brianptseng and qing 2026nyr.
+- SP never pauses a winner, but it also passes most losers. CTI misses the two winners with low CTI: threadspost-career-aitutor
+  (a static image, CTI 0.7%) and thedodomen og-video in testing.
+- SP2 is the most precise gate but misses half the winners.
+- Two of the season's biggest spenders fall just short of the winner bar: thedodomen speak-without-fear ($47k at 0.83) and harryspeaks og-video
+  ($44k at 0.81).
 - Motion graphic: `sim/motion.html` (built by `sim/build_motion.py` from `sim_ads.json` + `sim_results.json`). Rebuild with
   `python3 sim/simulate_daily.py && python3 sim/build_motion.py`. Inputs: `data/ad_daily_cum.txt` (BigQuery, daily cumulative funnel + SP per ad)
   and `data/meta_ad_link_clicks.tsv` (Meta Ads MCP link clicks).
@@ -225,4 +228,4 @@ Output: `sim/sim_efficiency.csv` and `efficiency` in `sim/sim_results.json`.
 - SP tracks spend (+0.36 on day 7) but not efficiency: its correlation with later LTV/CAC is +0.05 on day 3 and +0.02 on day 7.
 - In testing, CTI (+0.41) and SP2 (+0.48) on day 3 predict later LTV/CAC. In scaling2 no metric predicts later LTV/CAC on day 3 or 7 (all ρ between −0.2 and 0.1; SP reaches +0.47, p = 0.07, on day 14 with n = 16).
   SP2's link to spend is partly built in, because its SI term is spend velocity.
-- Only 19 of 253 ads were both efficient (LTV/CAC ≥ 0.8) and took real spend (≥ $1k in testing, ≥ $5k in BAU). The season ran at 0.71 LTV/CAC.
+- Only 12 of 253 ads meet the winner bar (LTV/CAC ≥ 0.85 and ≥ $1k in testing / ≥ $5k in BAU). The season ran at 0.71 LTV/CAC.
