@@ -223,6 +223,6 @@ Output: `sim/sim_efficiency.csv` and `efficiency` in `sim/sim_results.json`.
 
 - CTI is the steadiest early sign that an ad can spend: ρ +0.41 on day 3 and on day 7. Ads passing CTI on day 7 spent a median $1,071 afterwards, vs $44 for ads that failed it.
 - SP tracks spend (+0.36 on day 7) but not efficiency: its correlation with later LTV/CAC is +0.05 on day 3 and +0.02 on day 7.
-- In testing, CTI (+0.41) and SP2 (+0.48) on day 3 predict later LTV/CAC. In scaling2 no metric predicts later LTV/CAC (all ρ between −0.2 and 0.1).
+- In testing, CTI (+0.41) and SP2 (+0.48) on day 3 predict later LTV/CAC. In scaling2 no metric predicts later LTV/CAC on day 3 or 7 (all ρ between −0.2 and 0.1; SP reaches +0.47, p = 0.07, on day 14 with n = 16).
   SP2's link to spend is partly built in, because its SI term is spend velocity.
 - Only 19 of 253 ads were both efficient (LTV/CAC ≥ 0.8) and took real spend (≥ $1k in testing, ≥ $5k in BAU). The season ran at 0.71 LTV/CAC.
