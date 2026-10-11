@@ -1,28 +1,164 @@
 {
- "window": {"start": "2026-06-01", "end": "2026-10-07"},
+ "window": {
+  "start": "2026-06-01",
+  "end": "2026-10-07"
+ },
  "note": "Per-market calibration from BigQuery (queries.sql, sections 5-7). SSOT = analytics.marketing_attribution_aggregate_attribution_date_cohort, platform=ios, channel='Meta Ads'. AppsFlyer = analytics.marketing_ssot_aggregate, media_source=facebook, app id1286609883, conversion_type=install. LTV per paid user = analytics.user_ltv x analytics.user_attribution (Meta Ads, ios), first transaction 2026-06-01..2026-10-09.",
  "markets": {
   "Taiwan": {
    "geo": "TW",
-   "ssot": {"installs": 71362, "signups": 32210.0, "trial_starts": 10132.0, "paid": 3811.08, "ltv": 392941.8, "forecasted_ltv": 368374.4, "ads": 481},
-   "af_events": {"Application Installed": 65965, "signedUp": 51747, "trial_started_event": 16147, "trial_started_annual_premium": 10692, "trial_started_annual_premium_plus": 1989, "trial_started_monthly_premium": 695, "trial_cancelled_event": 2627, "rcPurchaseCompleted": 15703, "trial_or_purchase": 14275, "trial_or_purchase_revenue_usd": 1142658},
+   "ssot": {
+    "installs": 71362,
+    "signups": 32210.0,
+    "trial_starts": 10132.0,
+    "paid": 3811.08,
+    "ltv": 392941.8,
+    "forecasted_ltv": 368374.4,
+    "ads": 481
+   },
+   "af_events": {
+    "Application Installed": 65965,
+    "signedUp": 51747,
+    "trial_started_event": 16147,
+    "trial_started_annual_premium": 10692,
+    "trial_started_annual_premium_plus": 1989,
+    "trial_started_monthly_premium": 695,
+    "trial_cancelled_event": 2627,
+    "rcPurchaseCompleted": 15703,
+    "trial_or_purchase": 14275,
+    "trial_or_purchase_revenue_usd": 1142658
+   },
    "ltv_by_plan": [
-    {"duration": "annual_single", "tier": "regular", "users": 2380, "avg_ltv": 93.50, "sd_ltv": 10.26},
-    {"duration": "annual_single", "tier": "plus", "users": 571, "avg_ltv": 164.01, "sd_ltv": 31.02},
-    {"duration": "monthly", "tier": "regular", "users": 293, "avg_ltv": 54.71, "sd_ltv": 15.28},
-    {"duration": "monthly", "tier": "plus", "users": 62, "avg_ltv": 91.70, "sd_ltv": 48.64}
+    {
+     "duration": "annual_single",
+     "tier": "regular",
+     "users": 2380,
+     "avg_ltv": 93.5,
+     "sd_ltv": 10.26
+    },
+    {
+     "duration": "annual_single",
+     "tier": "plus",
+     "users": 571,
+     "avg_ltv": 164.01,
+     "sd_ltv": 31.02
+    },
+    {
+     "duration": "monthly",
+     "tier": "regular",
+     "users": 293,
+     "avg_ltv": 54.71,
+     "sd_ltv": 15.28
+    },
+    {
+     "duration": "monthly",
+     "tier": "plus",
+     "users": 62,
+     "avg_ltv": 91.7,
+     "sd_ltv": 48.64
+    }
    ]
   },
   "Hong Kong": {
    "geo": "HK",
-   "ssot": {"installs": 14866, "signups": 7671.0, "trial_starts": 1851.0, "paid": 532.02, "ltv": 54930.2, "forecasted_ltv": 67784.5, "ads": 229},
-   "af_events": {"Application Installed": 16965, "signedUp": 13524, "trial_started_event": 3319, "trial_started_annual_premium": 2112, "trial_started_annual_premium_plus": 393, "trial_started_monthly_premium": 239, "trial_cancelled_event": 762, "rcPurchaseCompleted": 3298, "trial_or_purchase": 3047, "trial_or_purchase_revenue_usd": 151436},
+   "ssot": {
+    "installs": 14866,
+    "signups": 7671.0,
+    "trial_starts": 1851.0,
+    "paid": 532.02,
+    "ltv": 54930.2,
+    "forecasted_ltv": 67784.5,
+    "ads": 229
+   },
+   "af_events": {
+    "Application Installed": 16965,
+    "signedUp": 13524,
+    "trial_started_event": 3319,
+    "trial_started_annual_premium": 2112,
+    "trial_started_annual_premium_plus": 393,
+    "trial_started_monthly_premium": 239,
+    "trial_cancelled_event": 762,
+    "rcPurchaseCompleted": 3298,
+    "trial_or_purchase": 3047,
+    "trial_or_purchase_revenue_usd": 151436
+   },
    "ltv_by_plan": [
-    {"duration": "annual_single", "tier": "regular", "users": 285, "avg_ltv": 98.49, "sd_ltv": 10.79},
-    {"duration": "annual_single", "tier": "plus", "users": 70, "avg_ltv": 178.17, "sd_ltv": 33.40},
-    {"duration": "monthly", "tier": "regular", "users": 105, "avg_ltv": 60.03, "sd_ltv": 27.46},
-    {"duration": "monthly", "tier": "plus", "users": 9, "avg_ltv": 75.54, "sd_ltv": 30.54}
+    {
+     "duration": "annual_single",
+     "tier": "regular",
+     "users": 285,
+     "avg_ltv": 98.49,
+     "sd_ltv": 10.79
+    },
+    {
+     "duration": "annual_single",
+     "tier": "plus",
+     "users": 70,
+     "avg_ltv": 178.17,
+     "sd_ltv": 33.4
+    },
+    {
+     "duration": "monthly",
+     "tier": "regular",
+     "users": 105,
+     "avg_ltv": 60.03,
+     "sd_ltv": 27.46
+    },
+    {
+     "duration": "monthly",
+     "tier": "plus",
+     "users": 9,
+     "avg_ltv": 75.54,
+     "sd_ltv": 30.54
+    }
    ]
+  }
+ },
+ "october": {
+  "window": {
+   "start": "2026-10-01",
+   "end": "2026-10-07"
+  },
+  "note": "October-only totals (queries.sql section 9). SSOT: attribution_date 2026-10-01..07. AppsFlyer: install_date >= 2026-10-01 (plan-mix prior for the October run).",
+  "Taiwan": {
+   "ssot": {
+    "installs": 1757,
+    "signups": 776.0,
+    "trial_starts": 281.0,
+    "paid": 105.01,
+    "ltv": 11040.9,
+    "forecasted_ltv": 10296.1
+   },
+   "af_events": {
+    "Application Installed": 2800,
+    "signedUp": 2231,
+    "trial_started_event": 725,
+    "trial_started_annual_premium": 416,
+    "trial_started_annual_premium_plus": 120,
+    "trial_started_monthly_premium": 85,
+    "rcPurchaseCompleted": 699,
+    "trial_or_purchase": 661
+   }
+  },
+  "Hong Kong": {
+   "ssot": {
+    "installs": 532,
+    "signups": 272.0,
+    "trial_starts": 70.0,
+    "paid": 19.53,
+    "ltv": 2073.6,
+    "forecasted_ltv": 2603.8
+   },
+   "af_events": {
+    "Application Installed": 814,
+    "signedUp": 620,
+    "trial_started_event": 164,
+    "trial_started_annual_premium": 113,
+    "trial_started_annual_premium_plus": 18,
+    "trial_started_monthly_premium": 28,
+    "rcPurchaseCompleted": 168,
+    "trial_or_purchase": 161
+   }
   }
  }
 }

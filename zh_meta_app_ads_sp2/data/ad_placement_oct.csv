@@ -1,0 +1,442 @@
+ad_id,country,campaign_name,placement,spend,impressions,clicks,installs,signups,trials,adj_trials,trial_converts,init_purch,adj_init_purch,v3s,thruplays
+120243428902270167,Hong Kong,hk_meta_n/a_ios_trials_aem,an_classic,0.35,78,19,0,0,0,0.0,0,0,0.0,68,0
+120243428902270167,Hong Kong,hk_meta_n/a_ios_trials_aem,facebook_notification,0.23,65,0,0,0,0,0.0,0,0,0.0,0,0
+120243428902270167,Hong Kong,hk_meta_n/a_ios_trials_aem,facebook_profile_feed,0.03,4,0,0,0,0,0.0,0,0,0.0,0,0
+120243428902270167,Hong Kong,hk_meta_n/a_ios_trials_aem,facebook_reels,59.93,6539,59,6,1,0,0.0,0,0,0.0,1731,37
+120243428902270167,Hong Kong,hk_meta_n/a_ios_trials_aem,facebook_reels_overlay,0.45,206,2,0,0,0,0.0,0,0,0.0,0,0
+120243428902270167,Hong Kong,hk_meta_n/a_ios_trials_aem,facebook_stories,2.1,160,4,0,0,0,0.0,0,0,0.0,31,0
+120243428902270167,Hong Kong,hk_meta_n/a_ios_trials_aem,feed,39.03,3381,59,10,4,2,2.19,0,0,0.0,793,26
+120243428902270167,Hong Kong,hk_meta_n/a_ios_trials_aem,instagram_reels,42.49,3159,16,3,1,2,2.13,0,0,0.0,882,16
+120243428902270167,Hong Kong,hk_meta_n/a_ios_trials_aem,instagram_search,0.02,6,0,0,0,0,0.0,0,0,0.0,1,0
+120243428902270167,Hong Kong,hk_meta_n/a_ios_trials_aem,instagram_stories,58.45,6171,497,1,0,1,1.02,0,0,0.0,341,23
+120243428902270167,Hong Kong,hk_meta_n/a_ios_trials_aem,instream_video,6.2,436,19,0,0,0,0.0,0,0,0.0,289,19
+120243428902270167,Hong Kong,hk_meta_n/a_ios_trials_aem,marketplace,0.8,335,1,0,0,0,0.0,0,0,0.0,53,0
+120243428902270167,Hong Kong,hk_meta_n/a_ios_trials_aem,rewarded_video,0.28,99,35,0,0,0,0.0,0,0,0.0,97,8
+120243428902270167,Hong Kong,hk_meta_n/a_ios_trials_aem,search,0.21,42,1,0,0,0,0.0,0,0,0.0,12,0
+120243428902270167,Hong Kong,hk_meta_n/a_ios_trials_aem,threads_feed,3.08,1359,2,0,0,0,0.0,0,0,0.0,462,6
+120244239476280167,Hong Kong,hk_meta_n/a_ios_trials_aem,an_classic,0.13,57,22,0,0,0,0.0,0,0,0.0,54,3
+120244239476280167,Hong Kong,hk_meta_n/a_ios_trials_aem,facebook_notification,0.04,15,0,0,0,0,0.0,0,0,0.0,0,0
+120244239476280167,Hong Kong,hk_meta_n/a_ios_trials_aem,facebook_profile_feed,0.01,6,0,0,0,0,0.0,0,0,0.0,0,0
+120244239476280167,Hong Kong,hk_meta_n/a_ios_trials_aem,facebook_reels,41.96,5809,39,2,1,0,0.0,0,0,0.0,1603,52
+120244239476280167,Hong Kong,hk_meta_n/a_ios_trials_aem,facebook_reels_overlay,0.05,50,1,0,0,0,0.0,0,0,0.0,0,0
+120244239476280167,Hong Kong,hk_meta_n/a_ios_trials_aem,facebook_stories,5.14,355,14,0,0,0,0.0,0,0,0.0,128,15
+120244239476280167,Hong Kong,hk_meta_n/a_ios_trials_aem,feed,58.87,7128,96,5,1,2,2.09,0,0,0.0,2179,69
+120244239476280167,Hong Kong,hk_meta_n/a_ios_trials_aem,instagram_explore_grid_home,0.0,6,0,0,0,0,0.0,0,0,0.0,5,0
+120244239476280167,Hong Kong,hk_meta_n/a_ios_trials_aem,instagram_reels,481.16,62934,297,44,26,7,7.14,0,1,0.0,19826,405
+120244239476280167,Hong Kong,hk_meta_n/a_ios_trials_aem,instagram_search,0.01,7,0,0,0,0,0.0,0,0,0.0,0,0
+120244239476280167,Hong Kong,hk_meta_n/a_ios_trials_aem,instagram_stories,6.2,435,7,0,0,0,0.0,0,0,0.0,83,6
+120244239476280167,Hong Kong,hk_meta_n/a_ios_trials_aem,instream_video,2.54,234,14,0,0,0,0.0,0,0,0.0,152,15
+120244239476280167,Hong Kong,hk_meta_n/a_ios_trials_aem,marketplace,0.14,51,0,0,0,0,0.0,0,0,0.0,8,0
+120244239476280167,Hong Kong,hk_meta_n/a_ios_trials_aem,rewarded_video,3.56,935,276,3,2,0,0.0,0,0,0.0,919,289
+120244239476280167,Hong Kong,hk_meta_n/a_ios_trials_aem,search,0.04,12,0,0,0,0,0.0,0,0,0.0,2,0
+120244239476280167,Hong Kong,hk_meta_n/a_ios_trials_aem,threads_feed,1.97,811,0,0,0,0,0.0,0,0,0.0,287,5
+120246569640080167,Hong Kong,hk_meta_n/a_ios_trials_aem,an_classic,1.67,157,43,0,0,0,0.0,0,0,0.0,132,5
+120246569640080167,Hong Kong,hk_meta_n/a_ios_trials_aem,facebook_notification,0.47,124,1,0,0,0,0.0,0,0,0.0,0,0
+120246569640080167,Hong Kong,hk_meta_n/a_ios_trials_aem,facebook_profile_feed,0.45,32,1,0,0,0,0.0,0,0,0.0,7,1
+120246569640080167,Hong Kong,hk_meta_n/a_ios_trials_aem,facebook_reels,160.92,31204,162,14,10,7,7.35,0,2,0.0,5326,77
+120246569640080167,Hong Kong,hk_meta_n/a_ios_trials_aem,facebook_reels_overlay,0.85,475,4,0,0,0,0.0,0,0,0.0,0,0
+120246569640080167,Hong Kong,hk_meta_n/a_ios_trials_aem,facebook_stories,18.6,1658,29,2,2,0,0.0,0,0,0.0,340,15
+120246569640080167,Hong Kong,hk_meta_n/a_ios_trials_aem,feed,456.13,69179,852,39,27,8,8.55,0,0,0.0,14215,170
+120246569640080167,Hong Kong,hk_meta_n/a_ios_trials_aem,instagram_explore_grid_home,0.03,50,0,0,0,0,0.0,0,0,0.0,37,0
+120246569640080167,Hong Kong,hk_meta_n/a_ios_trials_aem,instagram_reels,213.1,33561,131,17,14,2,2.19,0,0,0.0,4487,58
+120246569640080167,Hong Kong,hk_meta_n/a_ios_trials_aem,instagram_search,0.12,48,0,0,0,0,0.0,0,0,0.0,5,0
+120246569640080167,Hong Kong,hk_meta_n/a_ios_trials_aem,instagram_stories,141.37,18863,232,3,4,3,3.14,0,0,0.0,1982,120
+120246569640080167,Hong Kong,hk_meta_n/a_ios_trials_aem,instream_video,10.35,825,30,0,0,0,0.0,0,0,0.0,513,36
+120246569640080167,Hong Kong,hk_meta_n/a_ios_trials_aem,marketplace,1.59,489,3,0,0,0,0.0,0,0,0.0,80,1
+120246569640080167,Hong Kong,hk_meta_n/a_ios_trials_aem,search,2.31,328,2,0,0,0,0.0,0,0,0.0,73,2
+120246569640080167,Hong Kong,hk_meta_n/a_ios_trials_aem,threads_feed,41.89,39371,31,2,0,0,0.0,0,0,0.0,13801,99
+120248823299170167,Hong Kong,hk_meta_n/a_ios_trials_aem,an_classic,1.97,163,35,1,0,0,0.0,0,0,0.0,143,11
+120248823299170167,Hong Kong,hk_meta_n/a_ios_trials_aem,facebook_notification,0.3,60,0,0,0,0,0.0,0,0,0.0,0,0
+120248823299170167,Hong Kong,hk_meta_n/a_ios_trials_aem,facebook_profile_feed,0.05,10,0,0,0,0,0.0,0,0,0.0,3,0
+120248823299170167,Hong Kong,hk_meta_n/a_ios_trials_aem,facebook_reels,98.82,15990,87,8,6,3,3.12,0,0,0.0,2038,116
+120248823299170167,Hong Kong,hk_meta_n/a_ios_trials_aem,facebook_reels_overlay,0.99,654,2,0,0,0,0.0,0,0,0.0,0,0
+120248823299170167,Hong Kong,hk_meta_n/a_ios_trials_aem,facebook_stories,7.0,531,8,0,0,0,0.0,0,0,0.0,84,13
+120248823299170167,Hong Kong,hk_meta_n/a_ios_trials_aem,feed,132.11,13996,140,8,3,1,1.06,0,0,0.0,2478,124
+120248823299170167,Hong Kong,hk_meta_n/a_ios_trials_aem,instagram_explore_grid_home,0.02,19,0,0,0,0,0.0,0,0,0.0,15,0
+120248823299170167,Hong Kong,hk_meta_n/a_ios_trials_aem,instagram_reels,353.5,43762,194,33,16,2,1.98,0,2,0.0,5539,216
+120248823299170167,Hong Kong,hk_meta_n/a_ios_trials_aem,instagram_search,0.15,24,1,0,0,0,0.0,0,0,0.0,3,0
+120248823299170167,Hong Kong,hk_meta_n/a_ios_trials_aem,instagram_stories,15.15,1461,19,0,0,0,0.0,0,0,0.0,117,10
+120248823299170167,Hong Kong,hk_meta_n/a_ios_trials_aem,instream_video,10.82,770,23,0,0,0,0.0,0,0,0.0,512,28
+120248823299170167,Hong Kong,hk_meta_n/a_ios_trials_aem,marketplace,0.4,156,2,0,0,0,0.0,0,0,0.0,29,0
+120248823299170167,Hong Kong,hk_meta_n/a_ios_trials_aem,rewarded_video,18.81,1496,449,1,1,0,0.0,0,0,0.0,1469,308
+120248823299170167,Hong Kong,hk_meta_n/a_ios_trials_aem,search,1.93,204,2,0,0,0,0.0,0,0,0.0,41,1
+120248823299170167,Hong Kong,hk_meta_n/a_ios_trials_aem,threads_feed,9.95,7134,7,0,0,0,0.0,0,0,0.0,2161,30
+120249083206790167,Hong Kong,hk_meta_n/a_ios_trials_aem,an_classic,1.37,486,19,0,0,0,0.0,0,0,0.0,0,0
+120249083206790167,Hong Kong,hk_meta_n/a_ios_trials_aem,facebook_notification,0.03,14,0,0,0,0,0.0,0,0,0.0,0,0
+120249083206790167,Hong Kong,hk_meta_n/a_ios_trials_aem,facebook_profile_feed,0.01,3,0,0,0,0,0.0,0,0,0.0,0,0
+120249083206790167,Hong Kong,hk_meta_n/a_ios_trials_aem,facebook_reels,38.98,8606,80,4,0,1,1.1,0,0,0.0,0,0
+120249083206790167,Hong Kong,hk_meta_n/a_ios_trials_aem,facebook_reels_overlay,0.08,142,2,0,0,0,0.0,0,0,0.0,0,0
+120249083206790167,Hong Kong,hk_meta_n/a_ios_trials_aem,facebook_stories,13.23,1876,52,0,0,0,0.0,0,0,0.0,0,0
+120249083206790167,Hong Kong,hk_meta_n/a_ios_trials_aem,feed,65.23,11518,67,5,1,0,0.0,0,0,0.0,0,0
+120249083206790167,Hong Kong,hk_meta_n/a_ios_trials_aem,instagram_reels,265.82,61931,2054,16,8,3,3.06,0,2,0.0,0,0
+120249083206790167,Hong Kong,hk_meta_n/a_ios_trials_aem,instagram_search,0.0,2,0,0,0,0,0.0,0,0,0.0,0,0
+120249083206790167,Hong Kong,hk_meta_n/a_ios_trials_aem,instagram_stories,134.92,19333,422,9,4,2,2.08,0,0,0.0,0,0
+120249083206790167,Hong Kong,hk_meta_n/a_ios_trials_aem,instream_video,0.1,21,0,0,0,0,0.0,0,0,0.0,0,0
+120249083206790167,Hong Kong,hk_meta_n/a_ios_trials_aem,marketplace,0.26,256,5,0,0,0,0.0,0,0,0.0,0,0
+120249083206790167,Hong Kong,hk_meta_n/a_ios_trials_aem,search,0.01,16,0,0,0,0,0.0,0,0,0.0,0,0
+120249083206790167,Hong Kong,hk_meta_n/a_ios_trials_aem,threads_feed,66.81,72061,994,4,4,2,2.08,0,0,0.0,0,0
+120249698539790167,Hong Kong,hk_meta_n/a_ios_trials_aem,an_classic,0.75,368,136,0,0,0,0.0,0,0,0.0,322,7
+120249698539790167,Hong Kong,hk_meta_n/a_ios_trials_aem,facebook_notification,4.38,576,19,0,0,0,0.0,0,0,0.0,0,0
+120249698539790167,Hong Kong,hk_meta_n/a_ios_trials_aem,facebook_reels,39.02,3940,58,6,1,0,0.0,0,0,0.0,994,39
+120249698539790167,Hong Kong,hk_meta_n/a_ios_trials_aem,facebook_reels_overlay,0.07,52,0,0,0,0,0.0,0,0,0.0,0,0
+120249698539790167,Hong Kong,hk_meta_n/a_ios_trials_aem,facebook_stories,8.9,740,8,0,0,0,0.0,0,0,0.0,215,4
+120249698539790167,Hong Kong,hk_meta_n/a_ios_trials_aem,feed,80.59,7926,190,8,4,1,1.06,0,0,0.0,1925,81
+120249698539790167,Hong Kong,hk_meta_n/a_ios_trials_aem,instagram_explore_grid_home,0.84,379,4,0,0,0,0.0,0,0,0.0,258,4
+120249698539790167,Hong Kong,hk_meta_n/a_ios_trials_aem,instagram_reels,42.84,3337,68,4,2,2,1.98,0,0,0.0,757,20
+120249698539790167,Hong Kong,hk_meta_n/a_ios_trials_aem,instagram_stories,27.98,2247,57,0,0,0,0.0,0,0,0.0,367,43
+120249698539790167,Hong Kong,hk_meta_n/a_ios_trials_aem,instream_video,1.4,95,5,0,0,0,0.0,0,0,0.0,62,6
+120249698539790167,Hong Kong,hk_meta_n/a_ios_trials_aem,marketplace,0.31,83,2,0,0,0,0.0,0,0,0.0,16,0
+120249698539790167,Hong Kong,hk_meta_n/a_ios_trials_aem,search,2.24,318,9,0,0,0,0.0,0,0,0.0,82,1
+120249698662870167,Hong Kong,hk_meta_n/a_ios_trials_aem,an_classic,0.31,125,30,0,0,0,0.0,0,0,0.0,95,2
+120249698662870167,Hong Kong,hk_meta_n/a_ios_trials_aem,facebook_notification,1.09,119,3,0,0,0,0.0,0,0,0.0,0,0
+120249698662870167,Hong Kong,hk_meta_n/a_ios_trials_aem,facebook_reels,12.17,1728,30,1,0,0,0.0,0,0,0.0,1113,57
+120249698662870167,Hong Kong,hk_meta_n/a_ios_trials_aem,facebook_reels_overlay,0.01,17,0,0,0,0,0.0,0,0,0.0,0,0
+120249698662870167,Hong Kong,hk_meta_n/a_ios_trials_aem,facebook_stories,1.55,170,3,0,0,0,0.0,0,0,0.0,83,3
+120249698662870167,Hong Kong,hk_meta_n/a_ios_trials_aem,feed,21.84,3363,92,0,0,0,0.0,0,0,0.0,1590,51
+120249698662870167,Hong Kong,hk_meta_n/a_ios_trials_aem,instagram_explore_grid_home,0.09,28,1,0,0,0,0.0,0,0,0.0,20,1
+120249698662870167,Hong Kong,hk_meta_n/a_ios_trials_aem,instagram_reels,15.22,1780,18,0,0,0,0.0,0,0,0.0,987,24
+120249698662870167,Hong Kong,hk_meta_n/a_ios_trials_aem,instagram_stories,10.82,1231,34,0,0,0,0.0,0,0,0.0,484,38
+120249698662870167,Hong Kong,hk_meta_n/a_ios_trials_aem,instream_video,0.4,18,1,0,0,0,0.0,0,0,0.0,13,3
+120249698662870167,Hong Kong,hk_meta_n/a_ios_trials_aem,marketplace,0.69,154,5,0,0,0,0.0,0,0,0.0,46,1
+120249840087050167,Hong Kong,hk_meta_n/a_ios_trials_aem,an_classic,0.42,208,69,0,0,0,0.0,0,0,0.0,181,6
+120249840087050167,Hong Kong,hk_meta_n/a_ios_trials_aem,facebook_notification,1.59,293,5,0,0,0,0.0,0,0,0.0,0,0
+120249840087050167,Hong Kong,hk_meta_n/a_ios_trials_aem,facebook_reels,80.38,13420,777,5,1,1,1.02,0,0,0.0,5900,325
+120249840087050167,Hong Kong,hk_meta_n/a_ios_trials_aem,facebook_reels_overlay,0.02,24,1,0,0,0,0.0,0,0,0.0,0,0
+120249840087050167,Hong Kong,hk_meta_n/a_ios_trials_aem,facebook_stories,4.01,316,9,0,0,0,0.0,0,0,0.0,111,4
+120249840087050167,Hong Kong,hk_meta_n/a_ios_trials_aem,feed,79.38,10303,720,4,1,0,0.0,0,0,0.0,3463,371
+120249840087050167,Hong Kong,hk_meta_n/a_ios_trials_aem,instagram_explore_grid_home,0.23,80,4,0,0,0,0.0,0,0,0.0,42,1
+120249840087050167,Hong Kong,hk_meta_n/a_ios_trials_aem,instagram_reels,288.96,38036,4085,20,13,6,6.29,0,0,0.0,16657,1130
+120249840087050167,Hong Kong,hk_meta_n/a_ios_trials_aem,instagram_stories,37.52,3122,140,4,2,0,0.0,0,0,0.0,828,89
+120249840087050167,Hong Kong,hk_meta_n/a_ios_trials_aem,instream_video,0.94,74,2,0,0,0,0.0,0,0,0.0,40,4
+120249840087050167,Hong Kong,hk_meta_n/a_ios_trials_aem,marketplace,1.22,433,7,0,0,0,0.0,0,0,0.0,87,1
+120249840087050167,Hong Kong,hk_meta_n/a_ios_trials_aem,search,0.1,25,0,0,0,0,0.0,0,0,0.0,3,0
+120249840102580167,Hong Kong,hk_meta_n/a_ios_trials_aem,an_classic,1.47,469,123,0,0,0,0.0,0,0,0.0,375,7
+120249840102580167,Hong Kong,hk_meta_n/a_ios_trials_aem,facebook_notification,2.97,705,12,0,0,0,0.0,0,0,0.0,0,0
+120249840102580167,Hong Kong,hk_meta_n/a_ios_trials_aem,facebook_reels,112.67,12701,364,7,4,1,1.1,0,0,0.0,5291,186
+120249840102580167,Hong Kong,hk_meta_n/a_ios_trials_aem,facebook_reels_overlay,0.23,219,4,0,0,0,0.0,0,0,0.0,0,0
+120249840102580167,Hong Kong,hk_meta_n/a_ios_trials_aem,facebook_stories,9.26,617,9,0,0,0,0.0,0,0,0.0,208,4
+120249840102580167,Hong Kong,hk_meta_n/a_ios_trials_aem,feed,258.29,27419,1432,8,3,3,3.24,0,0,0.0,9778,288
+120249840102580167,Hong Kong,hk_meta_n/a_ios_trials_aem,instagram_explore_grid_home,5.46,1548,24,0,0,0,0.0,0,0,0.0,932,5
+120249840102580167,Hong Kong,hk_meta_n/a_ios_trials_aem,instagram_reels,409.74,40994,2663,34,20,2,2.13,0,0,0.0,18500,199
+120249840102580167,Hong Kong,hk_meta_n/a_ios_trials_aem,instagram_stories,230.29,16977,706,10,10,3,3.29,0,0,0.0,4002,233
+120249840102580167,Hong Kong,hk_meta_n/a_ios_trials_aem,instream_video,2.91,150,5,0,0,0,0.0,0,0,0.0,101,10
+120249840102580167,Hong Kong,hk_meta_n/a_ios_trials_aem,marketplace,0.61,217,6,0,0,0,0.0,0,0,0.0,36,1
+120249840102580167,Hong Kong,hk_meta_n/a_ios_trials_aem,search,0.18,39,1,0,0,0,0.0,0,0,0.0,5,0
+120250212918780167,Hong Kong,hk_meta_n/a_ios_trials_aem,an_classic,0.03,22,12,0,0,0,0.0,0,0,0.0,16,1
+120250212918780167,Hong Kong,hk_meta_n/a_ios_trials_aem,facebook_notification,0.0,1,0,0,0,0,0.0,0,0,0.0,0,0
+120250212918780167,Hong Kong,hk_meta_n/a_ios_trials_aem,facebook_profile_feed,0.0,1,0,0,0,0,0.0,0,0,0.0,0,0
+120250212918780167,Hong Kong,hk_meta_n/a_ios_trials_aem,facebook_reels,1.02,133,1,0,0,0,0.0,0,0,0.0,41,5
+120250212918780167,Hong Kong,hk_meta_n/a_ios_trials_aem,facebook_reels_overlay,0.28,171,2,0,0,0,0.0,0,0,0.0,0,0
+120250212918780167,Hong Kong,hk_meta_n/a_ios_trials_aem,facebook_stories,0.28,47,3,0,0,0,0.0,0,0,0.0,5,1
+120250212918780167,Hong Kong,hk_meta_n/a_ios_trials_aem,feed,1.22,223,1,0,0,0,0.0,0,0,0.0,27,1
+120250212918780167,Hong Kong,hk_meta_n/a_ios_trials_aem,instagram_reels,0.15,29,0,0,0,0,0.0,0,0,0.0,5,1
+120250212918780167,Hong Kong,hk_meta_n/a_ios_trials_aem,instagram_stories,0.62,121,4,0,0,0,0.0,0,0,0.0,8,1
+120250212918780167,Hong Kong,hk_meta_n/a_ios_trials_aem,instream_video,0.74,85,7,0,0,0,0.0,0,0,0.0,51,1
+120250212918780167,Hong Kong,hk_meta_n/a_ios_trials_aem,marketplace,0.5,202,1,0,0,0,0.0,0,0,0.0,24,0
+120250212918780167,Hong Kong,hk_meta_n/a_ios_trials_aem,rewarded_video,1.61,470,127,0,0,0,0.0,0,0,0.0,461,98
+120250212918780167,Hong Kong,hk_meta_n/a_ios_trials_aem,search,0.0,4,0,0,0,0,0.0,0,0,0.0,1,0
+120250212918780167,Hong Kong,hk_meta_n/a_ios_trials_aem,threads_feed,0.01,4,0,0,0,0,0.0,0,0,0.0,0,0
+120250228209150167,Hong Kong,hk_meta_n/a_ios_trials_aem,an_classic,0.06,27,11,0,0,0,0.0,0,0,0.0,24,0
+120250228209150167,Hong Kong,hk_meta_n/a_ios_trials_aem,facebook_notification,0.0,5,0,0,0,0,0.0,0,0,0.0,0,0
+120250228209150167,Hong Kong,hk_meta_n/a_ios_trials_aem,facebook_reels,8.32,1212,7,0,0,0,0.0,0,0,0.0,274,8
+120250228209150167,Hong Kong,hk_meta_n/a_ios_trials_aem,facebook_reels_overlay,0.06,46,1,0,0,0,0.0,0,0,0.0,0,0
+120250228209150167,Hong Kong,hk_meta_n/a_ios_trials_aem,facebook_stories,0.52,64,3,0,0,0,0.0,0,0,0.0,19,3
+120250228209150167,Hong Kong,hk_meta_n/a_ios_trials_aem,feed,10.75,1284,18,2,2,0,0.0,0,0,0.0,307,3
+120250228209150167,Hong Kong,hk_meta_n/a_ios_trials_aem,instagram_reels,5.76,598,6,1,0,0,0.0,0,0,0.0,110,1
+120250228209150167,Hong Kong,hk_meta_n/a_ios_trials_aem,instagram_stories,2.87,233,6,0,0,0,0.0,0,0,0.0,26,1
+120250228209150167,Hong Kong,hk_meta_n/a_ios_trials_aem,instream_video,1.99,210,8,0,0,0,0.0,0,0,0.0,141,12
+120250228209150167,Hong Kong,hk_meta_n/a_ios_trials_aem,marketplace,0.02,9,0,0,0,0,0.0,0,0,0.0,2,0
+120250228209150167,Hong Kong,hk_meta_n/a_ios_trials_aem,rewarded_video,1.58,615,160,0,0,0,0.0,0,0,0.0,607,114
+120250228209150167,Hong Kong,hk_meta_n/a_ios_trials_aem,search,0.03,16,0,0,0,0,0.0,0,0,0.0,5,0
+120250228209150167,Hong Kong,hk_meta_n/a_ios_trials_aem,threads_feed,0.49,163,0,0,0,0,0.0,0,0,0.0,66,0
+120250230960580167,Hong Kong,hk_meta_standard_ios_tw-en_pros_purchase_ongoing_no-disc_testing,an_classic,0.97,370,108,0,0,0,0.0,0,0,0.0,316,9
+120250230960580167,Hong Kong,hk_meta_standard_ios_tw-en_pros_purchase_ongoing_no-disc_testing,facebook_notification,0.0,2,0,0,0,0,0.0,0,0,0.0,0,0
+120250230960580167,Hong Kong,hk_meta_standard_ios_tw-en_pros_purchase_ongoing_no-disc_testing,facebook_profile_feed,0.0,1,0,0,0,0,0.0,0,0,0.0,0,0
+120250230960580167,Hong Kong,hk_meta_standard_ios_tw-en_pros_purchase_ongoing_no-disc_testing,facebook_reels,0.13,20,0,0,0,0,0.0,0,0,0.0,4,0
+120250230960580167,Hong Kong,hk_meta_standard_ios_tw-en_pros_purchase_ongoing_no-disc_testing,facebook_reels_overlay,0.09,31,2,0,0,0,0.0,0,0,0.0,0,0
+120250230960580167,Hong Kong,hk_meta_standard_ios_tw-en_pros_purchase_ongoing_no-disc_testing,facebook_stories,0.06,11,1,0,0,0,0.0,0,0,0.0,1,0
+120250230960580167,Hong Kong,hk_meta_standard_ios_tw-en_pros_purchase_ongoing_no-disc_testing,feed,1.82,266,2,0,0,0,0.0,0,0,0.0,19,1
+120250230960580167,Hong Kong,hk_meta_standard_ios_tw-en_pros_purchase_ongoing_no-disc_testing,instagram_reels,0.13,11,0,0,0,0,0.0,0,0,0.0,1,0
+120250230960580167,Hong Kong,hk_meta_standard_ios_tw-en_pros_purchase_ongoing_no-disc_testing,instagram_search,0.01,2,1,0,0,0,0.0,0,0,0.0,1,0
+120250230960580167,Hong Kong,hk_meta_standard_ios_tw-en_pros_purchase_ongoing_no-disc_testing,instagram_stories,1.24,247,5,0,0,0,0.0,0,0,0.0,11,0
+120250230960580167,Hong Kong,hk_meta_standard_ios_tw-en_pros_purchase_ongoing_no-disc_testing,instream_video,0.84,90,4,0,0,0,0.0,0,0,0.0,53,5
+120250230960580167,Hong Kong,hk_meta_standard_ios_tw-en_pros_purchase_ongoing_no-disc_testing,marketplace,0.1,42,0,0,0,0,0.0,0,0,0.0,6,1
+120250230960580167,Hong Kong,hk_meta_standard_ios_tw-en_pros_purchase_ongoing_no-disc_testing,threads_feed,0.07,10,0,0,0,0,0.0,0,0,0.0,4,0
+120250258434130167,Hong Kong,hk_meta_standard_ios_tw-en_pros_purchase_ongoing_no-disc_testing,an_classic,0.57,252,75,0,0,0,0.0,0,0,0.0,213,4
+120250258434130167,Hong Kong,hk_meta_standard_ios_tw-en_pros_purchase_ongoing_no-disc_testing,facebook_notification,0.02,4,0,0,0,0,0.0,0,0,0.0,0,0
+120250258434130167,Hong Kong,hk_meta_standard_ios_tw-en_pros_purchase_ongoing_no-disc_testing,facebook_profile_feed,0.0,1,0,0,0,0,0.0,0,0,0.0,0,0
+120250258434130167,Hong Kong,hk_meta_standard_ios_tw-en_pros_purchase_ongoing_no-disc_testing,facebook_reels,3.47,483,4,0,0,0,0.0,0,0,0.0,65,4
+120250258434130167,Hong Kong,hk_meta_standard_ios_tw-en_pros_purchase_ongoing_no-disc_testing,facebook_reels_overlay,0.57,376,5,0,0,0,0.0,0,0,0.0,0,0
+120250258434130167,Hong Kong,hk_meta_standard_ios_tw-en_pros_purchase_ongoing_no-disc_testing,facebook_stories,1.27,123,5,0,0,0,0.0,0,0,0.0,14,1
+120250258434130167,Hong Kong,hk_meta_standard_ios_tw-en_pros_purchase_ongoing_no-disc_testing,feed,10.65,1766,27,0,0,0,0.0,0,0,0.0,171,5
+120250258434130167,Hong Kong,hk_meta_standard_ios_tw-en_pros_purchase_ongoing_no-disc_testing,instagram_reels,2.46,208,2,0,0,0,0.0,0,0,0.0,17,2
+120250258434130167,Hong Kong,hk_meta_standard_ios_tw-en_pros_purchase_ongoing_no-disc_testing,instagram_search,0.02,1,0,0,0,0,0.0,0,0,0.0,0,0
+120250258434130167,Hong Kong,hk_meta_standard_ios_tw-en_pros_purchase_ongoing_no-disc_testing,instagram_stories,4.07,477,11,0,0,0,0.0,0,0,0.0,34,7
+120250258434130167,Hong Kong,hk_meta_standard_ios_tw-en_pros_purchase_ongoing_no-disc_testing,instream_video,1.84,188,10,0,0,0,0.0,0,0,0.0,128,13
+120250258434130167,Hong Kong,hk_meta_standard_ios_tw-en_pros_purchase_ongoing_no-disc_testing,marketplace,0.86,354,2,0,0,0,0.0,0,0,0.0,48,0
+120250258434130167,Hong Kong,hk_meta_standard_ios_tw-en_pros_purchase_ongoing_no-disc_testing,rewarded_video,4.79,2149,675,0,0,0,0.0,0,0,0.0,2118,445
+120250258434130167,Hong Kong,hk_meta_standard_ios_tw-en_pros_purchase_ongoing_no-disc_testing,search,0.21,97,0,0,0,0,0.0,0,0,0.0,19,0
+120250258434130167,Hong Kong,hk_meta_standard_ios_tw-en_pros_purchase_ongoing_no-disc_testing,threads_feed,0.32,57,0,0,0,0,0.0,0,0,0.0,20,0
+120250438204740167,Hong Kong,hk_meta_n/a_ios_trials_aem,an_classic,0.07,15,2,0,0,0,0.0,0,0,0.0,14,0
+120250438204740167,Hong Kong,hk_meta_n/a_ios_trials_aem,facebook_notification,0.08,18,0,0,0,0,0.0,0,0,0.0,0,0
+120250438204740167,Hong Kong,hk_meta_n/a_ios_trials_aem,facebook_profile_feed,0.01,2,0,0,0,0,0.0,0,0,0.0,0,0
+120250438204740167,Hong Kong,hk_meta_n/a_ios_trials_aem,facebook_reels,6.82,1215,8,0,0,0,0.0,0,0,0.0,271,6
+120250438204740167,Hong Kong,hk_meta_n/a_ios_trials_aem,facebook_reels_overlay,0.05,50,0,0,0,0,0.0,0,0,0.0,0,0
+120250438204740167,Hong Kong,hk_meta_n/a_ios_trials_aem,facebook_stories,1.42,176,2,0,0,0,0.0,0,0,0.0,42,3
+120250438204740167,Hong Kong,hk_meta_n/a_ios_trials_aem,feed,18.44,2442,47,0,0,0,0.0,0,0,0.0,601,8
+120250438204740167,Hong Kong,hk_meta_n/a_ios_trials_aem,instagram_explore_grid_home,0.0,1,0,0,0,0,0.0,0,0,0.0,0,0
+120250438204740167,Hong Kong,hk_meta_n/a_ios_trials_aem,instagram_reels,141.84,24171,83,10,4,3,3.17,0,0,0.0,5244,55
+120250438204740167,Hong Kong,hk_meta_n/a_ios_trials_aem,instagram_search,0.0,3,0,0,0,0,0.0,0,0,0.0,1,0
+120250438204740167,Hong Kong,hk_meta_n/a_ios_trials_aem,instagram_stories,12.43,1453,27,1,0,0,0.0,0,0,0.0,131,10
+120250438204740167,Hong Kong,hk_meta_n/a_ios_trials_aem,instream_video,1.28,132,7,0,0,0,0.0,0,0,0.0,73,3
+120250438204740167,Hong Kong,hk_meta_n/a_ios_trials_aem,marketplace,0.16,79,1,0,0,0,0.0,0,0,0.0,9,0
+120250438204740167,Hong Kong,hk_meta_n/a_ios_trials_aem,rewarded_video,1.95,495,109,4,2,0,0.0,0,0,0.0,486,79
+120250438204740167,Hong Kong,hk_meta_n/a_ios_trials_aem,search,0.03,8,0,0,0,0,0.0,0,0,0.0,2,0
+120250438204740167,Hong Kong,hk_meta_n/a_ios_trials_aem,threads_feed,1.43,1084,0,0,0,0,0.0,0,0,0.0,369,4
+120250438387020167,Hong Kong,hk_meta_n/a_ios_trials_aem,an_classic,0.54,118,38,0,0,0,0.0,0,0,0.0,107,1
+120250438387020167,Hong Kong,hk_meta_n/a_ios_trials_aem,facebook_notification,0.09,49,0,0,0,0,0.0,0,0,0.0,0,0
+120250438387020167,Hong Kong,hk_meta_n/a_ios_trials_aem,facebook_profile_feed,0.02,2,0,0,0,0,0.0,0,0,0.0,0,0
+120250438387020167,Hong Kong,hk_meta_n/a_ios_trials_aem,facebook_reels,2.6,348,1,0,0,0,0.0,0,0,0.0,67,2
+120250438387020167,Hong Kong,hk_meta_n/a_ios_trials_aem,facebook_reels_overlay,0.24,145,2,0,0,0,0.0,0,0,0.0,0,0
+120250438387020167,Hong Kong,hk_meta_n/a_ios_trials_aem,facebook_stories,1.44,209,2,0,0,0,0.0,0,0,0.0,24,4
+120250438387020167,Hong Kong,hk_meta_n/a_ios_trials_aem,feed,16.63,2116,39,1,1,1,1.06,0,0,0.0,384,5
+120250438387020167,Hong Kong,hk_meta_n/a_ios_trials_aem,instagram_explore_grid_home,0.0,1,0,0,0,0,0.0,0,0,0.0,0,0
+120250438387020167,Hong Kong,hk_meta_n/a_ios_trials_aem,instagram_reels,7.01,810,4,0,0,0,0.0,0,0,0.0,127,2
+120250438387020167,Hong Kong,hk_meta_n/a_ios_trials_aem,instagram_stories,8.88,940,23,1,0,0,0.0,0,0,0.0,80,8
+120250438387020167,Hong Kong,hk_meta_n/a_ios_trials_aem,instream_video,1.47,206,9,0,0,0,0.0,0,0,0.0,118,7
+120250438387020167,Hong Kong,hk_meta_n/a_ios_trials_aem,marketplace,0.33,182,0,0,0,0,0.0,0,0,0.0,26,1
+120250438387020167,Hong Kong,hk_meta_n/a_ios_trials_aem,search,0.0,3,0,0,0,0,0.0,0,0,0.0,1,0
+120250438387020167,Hong Kong,hk_meta_n/a_ios_trials_aem,threads_feed,0.61,431,0,0,0,0,0.0,0,0,0.0,146,0
+120250584356980167,Hong Kong,hk_meta_n/a_ios_trials_aem,an_classic,0.44,80,28,0,0,0,0.0,0,0,0.0,68,10
+120250584356980167,Hong Kong,hk_meta_n/a_ios_trials_aem,facebook_notification,0.1,11,0,0,0,0,0.0,0,0,0.0,0,0
+120250584356980167,Hong Kong,hk_meta_n/a_ios_trials_aem,facebook_profile_feed,0.03,8,0,0,0,0,0.0,0,0,0.0,2,0
+120250584356980167,Hong Kong,hk_meta_n/a_ios_trials_aem,facebook_reels,27.58,5808,34,2,1,0,0.0,0,0,0.0,1232,35
+120250584356980167,Hong Kong,hk_meta_n/a_ios_trials_aem,facebook_reels_overlay,0.18,92,0,0,0,0,0.0,0,0,0.0,0,0
+120250584356980167,Hong Kong,hk_meta_n/a_ios_trials_aem,facebook_stories,0.37,50,0,0,0,0,0.0,0,0,0.0,9,0
+120250584356980167,Hong Kong,hk_meta_n/a_ios_trials_aem,feed,44.66,7511,93,1,1,0,0.0,0,0,0.0,1568,54
+120250584356980167,Hong Kong,hk_meta_n/a_ios_trials_aem,instagram_reels,154.27,28145,80,6,6,2,2.13,0,0,0.0,5206,122
+120250584356980167,Hong Kong,hk_meta_n/a_ios_trials_aem,instagram_search,0.01,9,0,0,0,0,0.0,0,0,0.0,0,0
+120250584356980167,Hong Kong,hk_meta_n/a_ios_trials_aem,instagram_stories,10.96,1589,40,2,2,2,2.13,0,0,0.0,104,5
+120250584356980167,Hong Kong,hk_meta_n/a_ios_trials_aem,instream_video,1.01,120,4,0,0,0,0.0,0,0,0.0,79,7
+120250584356980167,Hong Kong,hk_meta_n/a_ios_trials_aem,marketplace,0.01,5,0,0,0,0,0.0,0,0,0.0,0,0
+120250584356980167,Hong Kong,hk_meta_n/a_ios_trials_aem,rewarded_video,1.28,293,92,1,1,0,0.0,0,0,0.0,282,274
+120250584356980167,Hong Kong,hk_meta_n/a_ios_trials_aem,search,0.01,4,0,0,0,0,0.0,0,0,0.0,0,0
+120250584356980167,Hong Kong,hk_meta_n/a_ios_trials_aem,threads_feed,5.24,5920,8,0,0,0,0.0,0,0,0.0,1964,70
+120250606347700167,Hong Kong,hk_meta_standard_ios_tw-en_pros_purchase_ongoing_no-disc_testing,an_classic,2.06,539,162,0,0,0,0.0,0,0,0.0,479,17
+120250606347700167,Hong Kong,hk_meta_standard_ios_tw-en_pros_purchase_ongoing_no-disc_testing,facebook_notification,0.13,21,0,0,0,0,0.0,0,0,0.0,0,0
+120250606347700167,Hong Kong,hk_meta_standard_ios_tw-en_pros_purchase_ongoing_no-disc_testing,facebook_profile_feed,0.24,37,1,0,0,0,0.0,0,0,0.0,8,1
+120250606347700167,Hong Kong,hk_meta_standard_ios_tw-en_pros_purchase_ongoing_no-disc_testing,facebook_reels,169.59,31404,164,8,5,3,2.07,0,0,0.0,6267,142
+120250606347700167,Hong Kong,hk_meta_standard_ios_tw-en_pros_purchase_ongoing_no-disc_testing,facebook_reels_overlay,0.2,98,0,0,0,0,0.0,0,0,0.0,0,0
+120250606347700167,Hong Kong,hk_meta_standard_ios_tw-en_pros_purchase_ongoing_no-disc_testing,facebook_stories,11.94,1176,24,0,0,0,0.0,0,0,0.0,251,11
+120250606347700167,Hong Kong,hk_meta_standard_ios_tw-en_pros_purchase_ongoing_no-disc_testing,feed,210.07,38275,633,5,3,1,0.74,0,0,0.0,7356,145
+120250606347700167,Hong Kong,hk_meta_standard_ios_tw-en_pros_purchase_ongoing_no-disc_testing,instagram_explore_grid_home,0.04,33,0,0,0,0,0.0,0,0,0.0,24,0
+120250606347700167,Hong Kong,hk_meta_standard_ios_tw-en_pros_purchase_ongoing_no-disc_testing,instagram_reels,176.37,25397,98,4,4,1,0.62,0,0,0.0,3454,49
+120250606347700167,Hong Kong,hk_meta_standard_ios_tw-en_pros_purchase_ongoing_no-disc_testing,instagram_search,0.12,29,0,0,0,0,0.0,0,0,0.0,0,0
+120250606347700167,Hong Kong,hk_meta_standard_ios_tw-en_pros_purchase_ongoing_no-disc_testing,instagram_stories,65.17,6680,104,2,0,0,0.0,0,0,0.0,840,57
+120250606347700167,Hong Kong,hk_meta_standard_ios_tw-en_pros_purchase_ongoing_no-disc_testing,instream_video,3.31,247,5,0,0,0,0.0,0,0,0.0,152,10
+120250606347700167,Hong Kong,hk_meta_standard_ios_tw-en_pros_purchase_ongoing_no-disc_testing,marketplace,0.62,193,2,0,0,0,0.0,0,0,0.0,32,0
+120250606347700167,Hong Kong,hk_meta_standard_ios_tw-en_pros_purchase_ongoing_no-disc_testing,search,0.63,160,2,0,0,0,0.0,0,0,0.0,31,1
+120250606347700167,Hong Kong,hk_meta_standard_ios_tw-en_pros_purchase_ongoing_no-disc_testing,threads_feed,20.56,14750,11,0,0,0,0.0,0,0,0.0,4870,43
+120250606489230167,Hong Kong,hk_meta_standard_ios_tw-en_pros_purchase_ongoing_no-disc_testing,an_classic,0.09,28,9,0,0,0,0.0,0,0,0.0,23,0
+120250606489230167,Hong Kong,hk_meta_standard_ios_tw-en_pros_purchase_ongoing_no-disc_testing,facebook_notification,0.0,5,0,0,0,0,0.0,0,0,0.0,0,0
+120250606489230167,Hong Kong,hk_meta_standard_ios_tw-en_pros_purchase_ongoing_no-disc_testing,facebook_profile_feed,0.07,16,0,0,0,0,0.0,0,0,0.0,5,0
+120250606489230167,Hong Kong,hk_meta_standard_ios_tw-en_pros_purchase_ongoing_no-disc_testing,facebook_reels,55.83,8407,49,2,1,2,1.47,0,0,0.0,1852,38
+120250606489230167,Hong Kong,hk_meta_standard_ios_tw-en_pros_purchase_ongoing_no-disc_testing,facebook_reels_overlay,0.07,26,0,0,0,0,0.0,0,0,0.0,0,0
+120250606489230167,Hong Kong,hk_meta_standard_ios_tw-en_pros_purchase_ongoing_no-disc_testing,facebook_stories,2.98,253,4,0,0,0,0.0,0,0,0.0,65,4
+120250606489230167,Hong Kong,hk_meta_standard_ios_tw-en_pros_purchase_ongoing_no-disc_testing,feed,99.62,16416,305,5,0,0,0.0,0,0,0.0,3636,84
+120250606489230167,Hong Kong,hk_meta_standard_ios_tw-en_pros_purchase_ongoing_no-disc_testing,instagram_explore_grid_home,0.01,9,0,0,0,0,0.0,0,0,0.0,7,0
+120250606489230167,Hong Kong,hk_meta_standard_ios_tw-en_pros_purchase_ongoing_no-disc_testing,instagram_reels,46.76,5899,37,1,0,0,0.0,0,0,0.0,983,20
+120250606489230167,Hong Kong,hk_meta_standard_ios_tw-en_pros_purchase_ongoing_no-disc_testing,instagram_search,0.01,6,0,0,0,0,0.0,0,0,0.0,1,0
+120250606489230167,Hong Kong,hk_meta_standard_ios_tw-en_pros_purchase_ongoing_no-disc_testing,instagram_stories,16.42,1858,34,0,0,0,0.0,0,0,0.0,287,18
+120250606489230167,Hong Kong,hk_meta_standard_ios_tw-en_pros_purchase_ongoing_no-disc_testing,instream_video,1.7,132,1,0,0,0,0.0,0,0,0.0,77,6
+120250606489230167,Hong Kong,hk_meta_standard_ios_tw-en_pros_purchase_ongoing_no-disc_testing,marketplace,0.06,32,0,0,0,0,0.0,0,0,0.0,6,0
+120250606489230167,Hong Kong,hk_meta_standard_ios_tw-en_pros_purchase_ongoing_no-disc_testing,search,0.01,4,0,0,0,0,0.0,0,0,0.0,0,0
+120250606489230167,Hong Kong,hk_meta_standard_ios_tw-en_pros_purchase_ongoing_no-disc_testing,threads_feed,10.89,7323,10,1,0,0,0.0,0,0,0.0,2548,21
+120250606536650167,Hong Kong,hk_meta_standard_ios_tw-en_pros_purchase_ongoing_no-disc_testing,an_classic,0.94,496,177,1,0,0,0.0,0,0,0.0,431,44
+120250606536650167,Hong Kong,hk_meta_standard_ios_tw-en_pros_purchase_ongoing_no-disc_testing,facebook_notification,0.03,18,0,0,0,0,0.0,0,0,0.0,0,0
+120250606536650167,Hong Kong,hk_meta_standard_ios_tw-en_pros_purchase_ongoing_no-disc_testing,facebook_profile_feed,0.01,1,0,0,0,0,0.0,0,0,0.0,0,0
+120250606536650167,Hong Kong,hk_meta_standard_ios_tw-en_pros_purchase_ongoing_no-disc_testing,facebook_reels,4.34,978,1,1,1,0,0.0,0,0,0.0,85,12
+120250606536650167,Hong Kong,hk_meta_standard_ios_tw-en_pros_purchase_ongoing_no-disc_testing,facebook_reels_overlay,0.2,108,1,0,0,0,0.0,0,0,0.0,0,0
+120250606536650167,Hong Kong,hk_meta_standard_ios_tw-en_pros_purchase_ongoing_no-disc_testing,facebook_stories,1.3,154,3,0,0,0,0.0,0,0,0.0,16,3
+120250606536650167,Hong Kong,hk_meta_standard_ios_tw-en_pros_purchase_ongoing_no-disc_testing,feed,14.37,2488,25,1,1,1,0.67,0,0,0.0,308,24
+120250606536650167,Hong Kong,hk_meta_standard_ios_tw-en_pros_purchase_ongoing_no-disc_testing,instagram_explore_grid_home,0.0,3,0,0,0,0,0.0,0,0,0.0,3,0
+120250606536650167,Hong Kong,hk_meta_standard_ios_tw-en_pros_purchase_ongoing_no-disc_testing,instagram_reels,20.88,3785,10,2,1,1,0.8,0,0,0.0,276,29
+120250606536650167,Hong Kong,hk_meta_standard_ios_tw-en_pros_purchase_ongoing_no-disc_testing,instagram_search,0.0,2,0,0,0,0,0.0,0,0,0.0,0,0
+120250606536650167,Hong Kong,hk_meta_standard_ios_tw-en_pros_purchase_ongoing_no-disc_testing,instagram_stories,4.53,539,8,0,0,0,0.0,0,0,0.0,19,5
+120250606536650167,Hong Kong,hk_meta_standard_ios_tw-en_pros_purchase_ongoing_no-disc_testing,instream_video,2.7,275,16,0,0,0,0.0,0,0,0.0,153,27
+120250606536650167,Hong Kong,hk_meta_standard_ios_tw-en_pros_purchase_ongoing_no-disc_testing,marketplace,0.01,3,1,0,0,0,0.0,0,0,0.0,1,0
+120250606536650167,Hong Kong,hk_meta_standard_ios_tw-en_pros_purchase_ongoing_no-disc_testing,rewarded_video,0.59,312,105,1,1,0,0.0,0,0,0.0,308,304
+120250606536650167,Hong Kong,hk_meta_standard_ios_tw-en_pros_purchase_ongoing_no-disc_testing,search,0.0,1,0,0,0,0,0.0,0,0,0.0,0,0
+120250606536650167,Hong Kong,hk_meta_standard_ios_tw-en_pros_purchase_ongoing_no-disc_testing,threads_feed,1.81,1615,1,0,0,0,0.0,0,0,0.0,521,38
+120250606609290167,Hong Kong,hk_meta_standard_ios_tw-en_pros_purchase_ongoing_no-disc_testing,an_classic,1.31,661,224,0,0,0,0.0,0,0,0.0,585,59
+120250606609290167,Hong Kong,hk_meta_standard_ios_tw-en_pros_purchase_ongoing_no-disc_testing,facebook_notification,0.02,7,0,0,0,0,0.0,0,0,0.0,0,0
+120250606609290167,Hong Kong,hk_meta_standard_ios_tw-en_pros_purchase_ongoing_no-disc_testing,facebook_profile_feed,0.02,3,0,0,0,0,0.0,0,0,0.0,0,0
+120250606609290167,Hong Kong,hk_meta_standard_ios_tw-en_pros_purchase_ongoing_no-disc_testing,facebook_reels,14.65,2298,13,2,3,1,0.8,0,0,0.0,311,42
+120250606609290167,Hong Kong,hk_meta_standard_ios_tw-en_pros_purchase_ongoing_no-disc_testing,facebook_reels_overlay,0.16,66,0,0,0,0,0.0,0,0,0.0,0,0
+120250606609290167,Hong Kong,hk_meta_standard_ios_tw-en_pros_purchase_ongoing_no-disc_testing,facebook_stories,0.84,53,2,0,0,0,0.0,0,0,0.0,9,3
+120250606609290167,Hong Kong,hk_meta_standard_ios_tw-en_pros_purchase_ongoing_no-disc_testing,feed,23.3,2571,39,2,2,0,0.0,0,0,0.0,421,51
+120250606609290167,Hong Kong,hk_meta_standard_ios_tw-en_pros_purchase_ongoing_no-disc_testing,instagram_explore_grid_home,0.0,1,0,0,0,0,0.0,0,0,0.0,1,0
+120250606609290167,Hong Kong,hk_meta_standard_ios_tw-en_pros_purchase_ongoing_no-disc_testing,instagram_reels,46.64,6123,25,2,2,1,0.71,0,0,0.0,580,58
+120250606609290167,Hong Kong,hk_meta_standard_ios_tw-en_pros_purchase_ongoing_no-disc_testing,instagram_search,0.02,7,0,0,0,0,0.0,0,0,0.0,0,0
+120250606609290167,Hong Kong,hk_meta_standard_ios_tw-en_pros_purchase_ongoing_no-disc_testing,instagram_stories,2.51,189,2,0,0,0,0.0,0,0,0.0,15,4
+120250606609290167,Hong Kong,hk_meta_standard_ios_tw-en_pros_purchase_ongoing_no-disc_testing,instream_video,0.52,48,2,0,0,0,0.0,0,0,0.0,22,3
+120250606609290167,Hong Kong,hk_meta_standard_ios_tw-en_pros_purchase_ongoing_no-disc_testing,marketplace,0.0,8,0,0,0,0,0.0,0,0,0.0,2,0
+120250606609290167,Hong Kong,hk_meta_standard_ios_tw-en_pros_purchase_ongoing_no-disc_testing,rewarded_video,2.08,1112,257,1,1,2,1.42,0,0,0.0,1101,1089
+120250606609290167,Hong Kong,hk_meta_standard_ios_tw-en_pros_purchase_ongoing_no-disc_testing,search,0.03,9,0,0,0,0,0.0,0,0,0.0,2,1
+120250606609290167,Hong Kong,hk_meta_standard_ios_tw-en_pros_purchase_ongoing_no-disc_testing,threads_feed,3.09,1464,2,0,0,0,0.0,0,0,0.0,488,50
+120250606649590167,Hong Kong,hk_meta_standard_ios_tw-en_pros_purchase_ongoing_no-disc_testing,an_classic,0.62,348,112,0,0,0,0.0,0,0,0.0,302,13
+120250606649590167,Hong Kong,hk_meta_standard_ios_tw-en_pros_purchase_ongoing_no-disc_testing,facebook_notification,0.01,1,0,0,0,0,0.0,0,0,0.0,0,0
+120250606649590167,Hong Kong,hk_meta_standard_ios_tw-en_pros_purchase_ongoing_no-disc_testing,facebook_reels,12.46,2014,14,0,1,0,0.0,0,0,0.0,297,34
+120250606649590167,Hong Kong,hk_meta_standard_ios_tw-en_pros_purchase_ongoing_no-disc_testing,facebook_reels_overlay,0.08,32,0,0,0,0,0.0,0,0,0.0,0,0
+120250606649590167,Hong Kong,hk_meta_standard_ios_tw-en_pros_purchase_ongoing_no-disc_testing,facebook_stories,0.62,63,1,0,0,0,0.0,0,0,0.0,5,3
+120250606649590167,Hong Kong,hk_meta_standard_ios_tw-en_pros_purchase_ongoing_no-disc_testing,feed,25.78,3324,45,0,0,0,0.0,0,0,0.0,628,46
+120250606649590167,Hong Kong,hk_meta_standard_ios_tw-en_pros_purchase_ongoing_no-disc_testing,instagram_explore_grid_home,0.0,5,0,0,0,0,0.0,0,0,0.0,5,0
+120250606649590167,Hong Kong,hk_meta_standard_ios_tw-en_pros_purchase_ongoing_no-disc_testing,instagram_reels,78.02,11076,58,2,2,1,0.62,0,0,0.0,1090,72
+120250606649590167,Hong Kong,hk_meta_standard_ios_tw-en_pros_purchase_ongoing_no-disc_testing,instagram_search,0.02,5,0,0,0,0,0.0,0,0,0.0,0,0
+120250606649590167,Hong Kong,hk_meta_standard_ios_tw-en_pros_purchase_ongoing_no-disc_testing,instagram_stories,5.59,478,13,0,0,0,0.0,0,0,0.0,55,8
+120250606649590167,Hong Kong,hk_meta_standard_ios_tw-en_pros_purchase_ongoing_no-disc_testing,instream_video,0.89,72,4,0,0,0,0.0,0,0,0.0,43,4
+120250606649590167,Hong Kong,hk_meta_standard_ios_tw-en_pros_purchase_ongoing_no-disc_testing,marketplace,0.01,2,0,0,0,0,0.0,0,0,0.0,0,0
+120250606649590167,Hong Kong,hk_meta_standard_ios_tw-en_pros_purchase_ongoing_no-disc_testing,rewarded_video,4.77,2315,718,1,0,0,0.0,0,0,0.0,2297,691
+120250606649590167,Hong Kong,hk_meta_standard_ios_tw-en_pros_purchase_ongoing_no-disc_testing,search,0.06,7,0,0,0,0,0.0,0,0,0.0,0,0
+120250606649590167,Hong Kong,hk_meta_standard_ios_tw-en_pros_purchase_ongoing_no-disc_testing,threads_feed,1.98,1254,3,0,0,0,0.0,0,0,0.0,400,10
+120246191401160167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_winning,an_classic,2.91,424,109,1,0,0,0.0,0,0,0.0,364,32
+120246191401160167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_winning,facebook_notification,6.74,1727,12,0,0,0,0.0,0,0,0.0,0,0
+120246191401160167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_winning,facebook_reels,225.97,45169,357,23,12,6,11.79,0,3,0.0,7223,464
+120246191401160167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_winning,facebook_reels_overlay,11.87,9833,69,0,0,0,0.0,0,0,0.0,0,0
+120246191401160167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_winning,facebook_stories,29.69,3697,120,0,0,0,0.0,0,0,0.0,472,86
+120246191401160167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_winning,feed,252.31,48960,558,17,11,8,14.68,0,0,0.0,7244,357
+120246191401160167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_winning,instagram_explore_grid_home,0.13,119,0,0,0,0,0.0,0,0,0.0,70,1
+120246191401160167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_winning,instagram_reels,605.76,96733,738,53,34,12,22.73,0,0,0.0,11855,588
+120246191401160167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_winning,instagram_stories,195.91,42349,1296,4,1,0,0.0,0,1,0.0,1469,186
+120246191401160167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_winning,instream_video,38.18,5886,188,2,1,2,3.69,0,0,0.0,3700,300
+120246191401160167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_winning,marketplace,8.25,3408,13,0,0,0,0.0,0,0,0.0,466,10
+120246191401160167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_winning,rewarded_video,19.8,1740,446,1,0,0,0.0,0,0,0.0,1708,1623
+120246191401160167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_winning,search,3.71,1091,6,0,0,0,0.0,0,0,0.0,219,3
+120246913787420167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_winning,an_classic,11.03,2972,224,0,0,0,0.0,0,0,0.0,0,0
+120246913787420167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_winning,facebook_notification,10.71,2924,23,1,1,0,0.0,0,0,0.0,0,0
+120246913787420167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_winning,facebook_profile_feed,0.72,226,1,0,0,0,0.0,0,0,0.0,0,0
+120246913787420167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_winning,facebook_reels,105.75,32069,231,8,5,0,0.0,0,2,0.0,0,0
+120246913787420167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_winning,facebook_reels_overlay,45.19,45773,464,0,0,0,0.0,0,0,0.0,0,0
+120246913787420167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_winning,facebook_stories,95.36,25321,467,10,5,2,3.91,0,0,0.0,0,0
+120246913787420167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_winning,feed,183.04,62968,283,8,4,2,3.37,0,0,0.0,0,0
+120246913787420167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_winning,instagram_reels,325.51,122785,3789,15,11,8,15.07,0,1,0.0,0,0
+120246913787420167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_winning,instagram_search,0.0,1,0,0,0,0,0.0,0,0,0.0,0,0
+120246913787420167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_winning,instagram_stories,290.57,72454,1832,15,7,4,7.34,0,1,0.0,0,0
+120246913787420167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_winning,instream_video,37.89,9236,155,0,0,0,0.0,0,0,0.0,0,0
+120246913787420167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_winning,marketplace,23.13,17296,81,0,0,0,0.0,0,0,0.0,0,0
+120246913787420167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_winning,search,4.78,2585,22,0,0,0,0.0,0,0,0.0,0,0
+120246913787420167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_winning,threads_feed,126.24,156440,2044,5,2,0,0.0,0,0,0.0,0,0
+120246981244000167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_winning,an_classic,4.58,874,220,0,0,0,0.0,0,0,0.0,729,11
+120246981244000167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_winning,facebook_notification,7.7,1731,26,0,0,0,0.0,0,0,0.0,0,0
+120246981244000167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_winning,facebook_profile_feed,0.8,226,1,0,0,0,0.0,0,0,0.0,20,0
+120246981244000167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_winning,facebook_reels,517.45,108046,640,43,21,7,12.92,1,3,0.0,16473,260
+120246981244000167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_winning,facebook_reels_overlay,36.06,27697,159,0,0,0,0.0,0,0,0.0,0,0
+120246981244000167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_winning,facebook_stories,100.27,12890,305,4,3,0,0.0,0,1,0.0,2279,59
+120246981244000167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_winning,feed,502.36,82833,692,48,32,18,34.19,0,8,0.0,14355,189
+120246981244000167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_winning,instagram_reels,349.83,51739,168,17,12,3,5.75,0,1,0.0,5845,86
+120246981244000167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_winning,instagram_stories,137.01,22767,354,6,3,2,3.8,0,0,0.0,1983,270
+120246981244000167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_winning,instream_video,130.69,17216,493,5,1,0,0.0,0,0,0.0,12198,768
+120246981244000167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_winning,marketplace,10.69,4109,24,0,0,0,0.0,0,0,0.0,577,4
+120246981244000167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_winning,search,7.51,973,13,2,0,1,1.94,0,0,0.0,195,0
+120246981244000167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_winning,threads_feed,26.57,19708,10,0,0,0,0.0,0,0,0.0,6860,27
+120249917976060167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_winning,an_classic,1.66,151,33,0,0,0,0.0,0,0,0.0,128,9
+120249917976060167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_winning,facebook_notification,2.17,731,13,1,2,0,0.0,0,0,0.0,0,0
+120249917976060167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_winning,facebook_profile_feed,0.44,63,0,0,0,0,0.0,0,0,0.0,7,0
+120249917976060167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_winning,facebook_reels,64.55,18899,74,6,4,0,0.0,0,0,0.0,2603,29
+120249917976060167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_winning,facebook_reels_overlay,0.51,449,4,0,0,0,0.0,0,0,0.0,0,0
+120249917976060167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_winning,facebook_stories,24.21,3505,84,0,0,0,0.0,0,0,0.0,427,66
+120249917976060167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_winning,feed,54.22,11394,102,6,4,2,3.63,0,0,0.0,1684,26
+120249917976060167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_winning,instagram_explore_grid_home,0.0,16,0,0,0,0,0.0,0,0,0.0,11,0
+120249917976060167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_winning,instagram_reels,157.41,35774,91,8,3,3,5.37,0,0,0.0,5439,62
+120249917976060167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_winning,instagram_search,0.0,1,0,0,0,0,0.0,0,0,0.0,0,0
+120249917976060167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_winning,instagram_stories,24.22,5016,66,2,2,0,0.0,0,0,0.0,305,31
+120249917976060167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_winning,instream_video,12.57,2214,71,0,0,0,0.0,0,0,0.0,1558,108
+120249917976060167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_winning,marketplace,3.01,1370,23,0,0,0,0.0,0,0,0.0,204,0
+120249917976060167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_winning,rewarded_video,14.58,1439,391,3,0,2,3.58,0,0,0.0,1413,266
+120249917976060167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_winning,search,1.04,295,4,0,0,0,0.0,0,0,0.0,60,1
+120249917976060167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_winning,threads_feed,7.05,5233,4,0,0,0,0.0,0,0,0.0,1744,11
+120250211390460167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_winning,an_classic,0.09,4,1,0,0,0,0.0,0,0,0.0,3,0
+120250211390460167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_winning,facebook_notification,0.06,17,1,0,0,0,0.0,0,0,0.0,0,0
+120250211390460167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_winning,facebook_reels,0.97,198,15,0,0,0,0.0,0,0,0.0,72,0
+120250211390460167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_winning,facebook_reels_overlay,0.02,24,0,0,0,0,0.0,0,0,0.0,0,0
+120250211390460167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_winning,facebook_stories,0.52,60,1,0,0,0,0.0,0,0,0.0,18,0
+120250211390460167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_winning,feed,1.98,423,11,0,0,0,0.0,0,0,0.0,86,1
+120250211390460167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_winning,instagram_explore_grid_home,0.0,2,0,0,0,0,0.0,0,0,0.0,1,0
+120250211390460167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_winning,instagram_reels,0.96,132,7,0,0,0,0.0,0,0,0.0,38,0
+120250211390460167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_winning,instagram_stories,2.16,411,14,0,0,0,0.0,0,0,0.0,37,2
+120250211390460167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_winning,instream_video,1.3,253,8,0,0,0,0.0,0,0,0.0,166,8
+120250211390460167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_winning,marketplace,0.31,105,1,0,0,0,0.0,0,0,0.0,9,0
+120250211390460167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_winning,search,0.1,29,0,0,0,0,0.0,0,0,0.0,7,0
+120250258111880167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_winning,facebook_reels,5.7,928,16,0,0,0,0.0,0,0,0.0,377,7
+120250258111880167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_winning,facebook_stories,21.86,3112,96,0,0,0,0.0,0,0,0.0,834,20
+120250258111880167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_winning,feed,40.81,8997,280,4,2,1,1.79,0,0,0.0,1944,25
+120250258111880167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_winning,instagram_explore_grid_home,1.12,517,8,0,0,0,0.0,0,0,0.0,313,2
+120250258111880167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_winning,instagram_reels,68.57,9902,568,6,6,1,1.79,0,0,0.0,3475,24
+120250258111880167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_winning,instagram_stories,32.05,3877,150,1,0,0,0.0,0,0,0.0,780,27
+120250607145880167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_testing_3dtrial,facebook_profile_feed,0.33,86,0,0,0,0,0.0,0,0,0.0,9,0
+120250607145880167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_testing_3dtrial,facebook_reels,186.06,22063,190,8,4,1,1.17,0,0,0.0,5125,149
+120250607145880167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_testing_3dtrial,facebook_reels_overlay,0.54,309,5,0,0,0,0.0,0,0,0.0,0,0
+120250607145880167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_testing_3dtrial,facebook_stories,6.62,529,15,0,0,0,0.0,0,0,0.0,100,1
+120250607145880167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_testing_3dtrial,feed,57.68,10457,257,4,1,2,2.13,0,0,0.0,2622,81
+120250607145880167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_testing_3dtrial,instagram_explore_grid_home,0.0,1,0,0,0,0,0.0,0,0,0.0,0,0
+120250607145880167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_testing_3dtrial,instagram_reels,14.22,1613,16,1,2,0,0.0,0,0,0.0,281,4
+120250607145880167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_testing_3dtrial,instagram_stories,5.35,614,25,0,0,0,0.0,0,0,0.0,42,5
+120250607145880167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_testing_3dtrial,instream_video,2.03,300,15,1,1,0,0.0,0,0,0.0,202,16
+120250607145880167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_testing_3dtrial,marketplace,0.58,227,2,0,0,0,0.0,0,0,0.0,33,1
+120250607145880167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_testing_3dtrial,search,0.37,94,0,0,0,0,0.0,0,0,0.0,24,0
+120250607145880167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_testing_3dtrial,threads_feed,25.91,31495,54,0,0,0,0.0,0,0,0.0,4077,22
+120250609000150167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_testing_3dtrial,facebook_profile_feed,0.5,100,1,0,0,0,0.0,0,0,0.0,3,0
+120250609000150167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_testing_3dtrial,facebook_reels,163.81,21892,120,17,10,4,4.71,0,0,0.0,4666,127
+120250609000150167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_testing_3dtrial,facebook_reels_overlay,0.87,555,8,0,0,0,0.0,0,0,0.0,0,0
+120250609000150167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_testing_3dtrial,facebook_stories,3.54,379,20,0,0,0,0.0,0,0,0.0,61,3
+120250609000150167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_testing_3dtrial,feed,57.44,12425,269,10,7,3,3.31,0,0,0.0,2807,93
+120250609000150167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_testing_3dtrial,instagram_explore_grid_home,0.0,1,0,0,0,0,0.0,0,0,0.0,1,0
+120250609000150167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_testing_3dtrial,instagram_reels,9.02,1345,15,0,0,0,0.0,0,0,0.0,144,4
+120250609000150167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_testing_3dtrial,instagram_stories,5.99,1159,24,0,0,0,0.0,0,0,0.0,55,3
+120250609000150167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_testing_3dtrial,instream_video,3.64,426,16,0,0,0,0.0,0,0,0.0,266,20
+120250609000150167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_testing_3dtrial,marketplace,0.61,316,2,0,0,0,0.0,0,0,0.0,37,1
+120250609000150167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_testing_3dtrial,search,1.06,77,3,0,0,0,0.0,0,0,0.0,21,0
+120250609000150167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_testing_3dtrial,threads_feed,15.5,18154,30,0,0,0,0.0,0,0,0.0,2127,28
+120250609081880167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_testing_3dtrial,facebook_reels,362.78,66460,1010,54,31,11,12.23,0,0,0.0,29404,1092
+120250609081880167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_testing_3dtrial,facebook_reels_overlay,0.44,284,1,0,0,0,0.0,0,0,0.0,0,0
+120250609081880167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_testing_3dtrial,facebook_stories,27.93,3129,74,3,1,1,1.07,0,0,0.0,796,96
+120250609081880167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_testing_3dtrial,feed,104.0,21824,395,10,5,8,9.13,0,0,0.0,5709,251
+120250609081880167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_testing_3dtrial,instagram_explore_grid_home,0.02,15,0,0,0,0,0.0,0,0,0.0,13,0
+120250609081880167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_testing_3dtrial,instagram_reels,40.04,4775,57,10,6,4,5.03,0,0,0.0,1974,57
+120250609081880167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_testing_3dtrial,instagram_stories,16.74,1903,54,0,0,0,0.0,0,0,0.0,345,24
+120250609081880167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_testing_3dtrial,instream_video,5.66,613,12,0,0,0,0.0,0,0,0.0,380,31
+120250609081880167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_testing_3dtrial,marketplace,0.37,136,1,0,0,0,0.0,0,0,0.0,13,0
+120250609081880167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_testing_3dtrial,search,0.06,25,2,0,0,0,0.0,0,0,0.0,8,0
+120250609087370167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_testing_3dtrial,facebook_reels,27.37,5019,79,1,1,1,1.26,0,0,0.0,1166,33
+120250609087370167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_testing_3dtrial,facebook_reels_overlay,0.57,334,1,0,0,0,0.0,0,0,0.0,0,0
+120250609087370167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_testing_3dtrial,facebook_stories,4.23,512,19,0,0,0,0.0,0,0,0.0,70,4
+120250609087370167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_testing_3dtrial,feed,30.32,6911,121,0,0,0,0.0,0,0,0.0,950,39
+120250609087370167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_testing_3dtrial,instagram_explore_grid_home,0.0,4,0,0,0,0,0.0,0,0,0.0,1,0
+120250609087370167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_testing_3dtrial,instagram_reels,17.73,5104,186,1,0,0,0.0,0,0,0.0,1330,19
+120250609087370167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_testing_3dtrial,instagram_stories,6.36,1158,59,0,1,0,0.0,0,0,0.0,120,5
+120250609087370167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_testing_3dtrial,instream_video,3.26,476,19,0,0,0,0.0,0,0,0.0,303,21
+120250609087370167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_testing_3dtrial,marketplace,0.21,103,1,0,0,0,0.0,0,0,0.0,11,0
+120250609087370167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_testing_3dtrial,search,0.04,25,0,0,0,0,0.0,0,0,0.0,3,0
+120250609089950167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_testing_3dtrial,facebook_reels,103.11,16595,153,5,6,2,2.36,0,0,0.0,4209,416
+120250609089950167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_testing_3dtrial,facebook_reels_overlay,0.45,267,3,0,0,0,0.0,0,0,0.0,0,0
+120250609089950167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_testing_3dtrial,facebook_stories,8.03,801,29,0,0,0,0.0,0,0,0.0,159,29
+120250609089950167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_testing_3dtrial,feed,80.67,14394,225,3,2,1,1.18,0,0,0.0,2541,284
+120250609089950167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_testing_3dtrial,instagram_explore_grid_home,0.01,4,0,0,0,0,0.0,0,0,0.0,2,0
+120250609089950167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_testing_3dtrial,instagram_reels,25.11,3810,55,5,1,1,1.17,0,0,0.0,1064,136
+120250609089950167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_testing_3dtrial,instagram_stories,6.42,780,42,0,0,0,0.0,0,0,0.0,82,10
+120250609089950167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_testing_3dtrial,instream_video,7.21,863,25,0,0,0,0.0,0,0,0.0,581,67
+120250609089950167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_testing_3dtrial,marketplace,0.32,160,2,0,0,0,0.0,0,0,0.0,19,1
+120250609089950167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_testing_3dtrial,search,0.16,49,1,0,0,0,0.0,0,0,0.0,12,0
+120250659554660167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_winning,an_classic,1.46,539,156,0,0,0,0.0,0,0,0.0,475,30
+120250659554660167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_winning,facebook_notification,46.01,9006,166,0,0,0,0.0,0,0,0.0,0,0
+120250659554660167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_winning,facebook_reels,680.75,153657,1789,80,40,10,17.52,0,0,0.0,66718,2046
+120250659554660167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_winning,facebook_reels_overlay,3.36,2145,14,0,0,0,0.0,0,0,0.0,0,0
+120250659554660167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_winning,facebook_stories,107.48,14010,272,5,2,1,1.69,0,0,0.0,3840,383
+120250659554660167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_winning,feed,280.69,73656,1232,25,16,8,14.14,1,1,0.0,21291,834
+120250659554660167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_winning,instagram_explore_grid_home,0.23,165,1,0,0,0,0.0,0,0,0.0,119,2
+120250659554660167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_winning,instagram_reels,886.91,157507,1306,144,85,38,66.91,0,1,0.0,58979,1513
+120250659554660167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_winning,instagram_stories,303.17,43378,1000,14,7,3,5.71,0,0,0.0,7041,495
+120250659554660167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_winning,instream_video,10.29,1412,38,0,0,0,0.0,0,0,0.0,858,89
+120250659554660167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_winning,marketplace,2.38,927,3,0,0,0,0.0,0,0,0.0,140,2
+120250659554660167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_winning,rewarded_video,5.82,2278,638,0,0,0,0.0,0,0,0.0,2208,1453
+120250659554660167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_winning,search,0.27,67,1,0,0,0,0.0,0,0,0.0,22,0

@@ -70,3 +70,31 @@ JOIN `speak-v2-2a1f1.analytics.user_ltv` l ON l.user_id=ua.user_id AND l.first_t
 WHERE ua.country IN ('Taiwan','Hong Kong') AND ua.attribution_channel='Meta Ads' AND ua.attribution_platform='ios'
   AND DATE(ua.attribution_timestamp) BETWEEN '2026-06-01' AND '2026-10-07'
 GROUP BY 1,2,3;
+
+-- 9) October-only run (ANALYSIS=oct, the default): one joined extract at ad x placement for 2026-10-01..07 with the ad's October
+--    attribution SSOT (by market) and AppsFlyer plan mix (by geo) -> split by analyze.py's loader into data/ad_placement_oct.csv,
+--    data/ssot_ads_oct.csv, data/af_ads_oct.csv. Daily data comes from data/ad_daily.csv filtered to the window.
+WITH f AS (
+  SELECT ad_id, country, ANY_VALUE(ad_name) ad_name, campaign_name, COALESCE(placement,'unknown') placement,
+         ROUND(SUM(spend),2) spend, SUM(impressions) impressions, SUM(clicks) clicks, SUM(installs) installs, SUM(signups) signups,
+         SUM(trial_starts) trials, ROUND(SUM(adj_trial_starts),2) adj_trials, SUM(trial_converts) trial_converts, SUM(initial_purchases) init_purch,
+         ROUND(SUM(adj_initial_purchases),2) adj_init_purch, SUM(n_3_sec_video_views) v3s, SUM(video_view_throughs) thruplays
+  FROM `speak-v2-2a1f1.analytics.meta_ads_creative_report_funnel`
+  WHERE date BETWEEN '2026-10-01' AND '2026-10-07' AND country IN ('Taiwan','Hong Kong') AND os='ios'
+  GROUP BY ad_id, country, campaign_name, placement HAVING spend>0 OR impressions>0),
+s AS (
+  SELECT ad_id, country, SUM(installs) ssot_installs, ROUND(SUM(signups),1) ssot_signups, ROUND(SUM(trial_starts),1) ssot_trial_starts,
+         ROUND(SUM(trial_converts_and_initial_purchases),2) ssot_paid, ROUND(SUM(ltv),1) ssot_ltv, ROUND(SUM(forecasted_ltv),1) ssot_forecasted_ltv
+  FROM `speak-v2-2a1f1.analytics.marketing_attribution_aggregate_attribution_date_cohort`
+  WHERE country IN ('Taiwan','Hong Kong') AND platform='ios' AND channel='Meta Ads' AND attribution_date BETWEEN '2026-10-01' AND '2026-10-07' GROUP BY 1,2),
+a AS (
+  SELECT af_ad_id ad_id, CASE geo WHEN 'TW' THEN 'Taiwan' WHEN 'HK' THEN 'Hong Kong' END country,
+   SUM(CASE WHEN event_name='Application Installed' THEN unique_users END) af_installs, SUM(CASE WHEN event_name='signedUp' THEN unique_users END) af_signups,
+   SUM(CASE WHEN event_name='trial_started_event' THEN unique_users END) af_trials, SUM(CASE WHEN event_name='trial_started_annual_premium' THEN unique_users END) af_trials_annual_reg,
+   SUM(CASE WHEN event_name='trial_started_annual_premium_plus' THEN unique_users END) af_trials_annual_plus, SUM(CASE WHEN event_name='trial_started_monthly_premium' THEN unique_users END) af_trials_monthly
+  FROM `speak-v2-2a1f1.analytics.marketing_ssot_aggregate`
+  WHERE geo IN ('TW','HK') AND install_date BETWEEN '2026-10-01' AND '2026-10-07' AND media_source='facebook' AND app_id='id1286609883' AND conversion_type='install' GROUP BY 1,2)
+SELECT f.*, s.ssot_installs, s.ssot_signups, s.ssot_trial_starts, s.ssot_paid, s.ssot_ltv, s.ssot_forecasted_ltv,
+       a.af_installs, a.af_signups, a.af_trials, a.af_trials_annual_reg, a.af_trials_annual_plus, a.af_trials_monthly
+FROM f LEFT JOIN s ON s.ad_id=f.ad_id AND s.country=f.country LEFT JOIN a ON a.ad_id=f.ad_id AND a.country=f.country;
+-- October market totals (data/calibration.json -> october): SSOT by attribution_date 2026-10-01..07 and AppsFlyer events by install_date >= 2026-10-01, same filters as sections 6-7.

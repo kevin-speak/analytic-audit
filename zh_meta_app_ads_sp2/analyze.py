@@ -31,9 +31,18 @@ STAGES = ['Testing', 'Winning', 'Scaling', 'Other']
 MILESTONES = [50, 100, 150, 200, 300, 500, 750, 1000, 2000]
 SIGNALS = [('sp2', 'SP2 (new)'), ('ei', 'Efficiency Index'), ('sp', 'SP (old)'), ('ipm', 'IPM')]
 cal = json.load(open('data/calibration.json'))
+ANALYSIS = os.environ.get('ANALYSIS', 'oct')          # 'oct' = October only (default); 'full' = 1 Jun - 7 Oct 2026
+PRESETS = {
+    'oct': dict(window=('2026-10-01', '2026-10-07'), label='1–7 Oct 2026', placement='data/ad_placement_oct.csv', ssot='data/ssot_ads_oct.csv', af='data/af_ads_oct.csv',
+                mix_block='october', k_trailing=True,
+                note='Ad-level inputs (spend, installs, placements, SSOT trial starts and LTV, AppsFlyer plan mix) are October only. A week of cohorts is too few to calibrate the market constants on, so trial-to-paid, LTV per paid user and K (LTV per install) are estimated on 1 Jun – 7 Oct 2026; the plan-mix prior uses October AppsFlyer trials.'),
+    'full': dict(window=('2026-06-01', '2026-10-07'), label='1 Jun – 7 Oct 2026', placement='data/ad_placement.csv', ssot='data/ssot_ads.csv', af='data/af_ads.csv',
+                 mix_block=None, k_trailing=False, note='All inputs and market constants are estimated on the same window, 1 Jun – 7 Oct 2026.'),
+}
+PRE = PRESETS[ANALYSIS]; W0, W1 = PRE['window']
 
 def market_cal(m):
-    c = cal['markets'][m]; s = c['ssot']; e = c['af_events']
+    c = cal['markets'][m]; s = c['ssot']; e = (cal[PRE['mix_block']][m]['af_events'] if PRE['mix_block'] else c['af_events'])
     typed = np.array([e['trial_started_annual_premium'], e['trial_started_annual_premium_plus'], e['trial_started_monthly_premium']], float)
     plans = {(r['duration'], r['tier']): r for r in c['ltv_by_plan']}
     def blend(rows):
@@ -68,11 +77,12 @@ def ql(a, d=3):
     return [fl(x, d) for x in q(a)]
 
 # ---- load ----------------------------------------------------------------------------------
-pl = pd.read_csv('data/ad_placement.csv', dtype={'ad_id': str})
+pl = pd.read_csv(PRE['placement'], dtype={'ad_id': str})
 meta = pd.read_csv('data/ads_meta.csv', dtype={'ad_id': str})
-dl = pd.read_csv('data/ad_daily.csv', dtype={'ad_id': str}); dl['date'] = pd.to_datetime(dl.date); dl = dl.sort_values(['ad_id', 'date']).reset_index(drop=True)
-ssot = pd.read_csv('data/ssot_ads.csv', dtype={'ad_id': str}).rename(columns={'country': 'market'})
-af = pd.read_csv('data/af_ads.csv', dtype={'af_ad_id': str})
+dl = pd.read_csv('data/ad_daily.csv', dtype={'ad_id': str}); dl['date'] = pd.to_datetime(dl.date)
+dl = dl[(dl.date >= W0) & (dl.date <= W1)].sort_values(['ad_id', 'date']).reset_index(drop=True)
+ssot = pd.read_csv(PRE['ssot'], dtype={'ad_id': str}).rename(columns={'country': 'market'})
+af = pd.read_csv(PRE['af'], dtype={'af_ad_id': str})
 num = ['spend', 'impressions', 'clicks', 'installs', 'signups', 'trials', 'adj_trials', 'init_purch', 'trial_converts']
 for c in num: pl[c] = pd.to_numeric(pl[c]).fillna(0)
 for c in ['spend', 'impressions', 'clicks', 'installs', 'signups', 'trials', 'adj_trials']: dl[c] = pd.to_numeric(dl[c]).fillna(0)
@@ -86,6 +96,8 @@ ads['stage'] = ads.campaign_name.map(stage)
 ads['ad_name'] = ads.ad_name.fillna('ad ' + ads.ad_id)
 ads['clean_name'] = ads.ad_name.map(clean_name); ads['c1'] = ads.ad_name.map(extract_c1)
 ads['days'] = ads.ad_id.map(dl.groupby('ad_id').date.nunique()).fillna(1).astype(int)
+ads['first_date'] = ads.ad_id.map(dl.groupby('ad_id').date.min().dt.strftime('%Y-%m-%d')).fillna(ads.first_date)
+ads['last_date'] = ads.ad_id.map(dl.groupby('ad_id').date.max().dt.strftime('%Y-%m-%d')).fillna(ads.last_date); ads['active_days'] = ads.days
 ads['signups_d'] = ads.ad_id.map(dl.groupby('ad_id').signups.sum()).fillna(0)
 imp_nz = ads.impressions.replace(0, np.nan)
 ads['ipm'] = (ads.installs / imp_nz * 1000).fillna(0); ads['tpi'] = (ads.trials / imp_nz * 1000).fillna(0); ads['ctr'] = (ads.clicks / imp_nz).fillna(0)
@@ -152,7 +164,16 @@ ads['p1_point'] = (ads.sp >= SP_THRESHOLD) & (ads.installs >= MIN_INSTALLS)
 ads['p2_point'] = (ads.sp >= SP_THRESHOLD) & (ads.trials >= MIN_TRIALS) & (ads.cpft <= CPFT_TARGET)
 
 # ---- SP2 = Efficiency Index x Scale Index ------------------------------------------------------------
-K_m = np.array([ads.ssot_ltv.values[mi == i].sum() / max(ads.installs.values[mi == i].sum(), 1) for i in range(len(MARKETS))])   # SSOT LTV per Meta-reported install
+K_in_window = np.array([ads.ssot_ltv.values[mi == i].sum() / max(ads.installs.values[mi == i].sum(), 1) for i in range(len(MARKETS))])   # SSOT LTV per Meta-reported install
+if PRE['k_trailing']:   # K is a market constant refreshed monthly: take it from the trailing 1 Jun - 7 Oct window (data/ad_placement.csv + data/ssot_ads.csv)
+    plf = pd.read_csv('data/ad_placement.csv', dtype={'ad_id': str}); ssf = pd.read_csv('data/ssot_ads.csv', dtype={'ad_id': str}).rename(columns={'country': 'market'})
+    for c in ['spend', 'installs']: plf[c] = pd.to_numeric(plf[c]).fillna(0)
+    ssf['ltv'] = pd.to_numeric(ssf.ltv).fillna(0)
+    fw = plf.groupby('ad_id').agg(spend=('spend', 'sum'), installs=('installs', 'sum'), market=('country', 'first')).reset_index(); fw = fw[fw.spend > 0]
+    fw = fw.merge(ssf[['ad_id', 'market', 'ltv']], on=['ad_id', 'market'], how='left'); fw['ltv'] = fw.ltv.fillna(0)
+    K_m = np.array([fw.ltv[fw.market == m].sum() / max(fw.installs[fw.market == m].sum(), 1) for m in MARKETS])
+else:
+    K_m = K_in_window
 ads['K'] = K_m[mi]
 ads['cpi'] = ads.spend / ads.installs.replace(0, np.nan)
 ads['EI'] = (ads.K / ads.cpi) / TARGET
@@ -327,13 +348,15 @@ for i, r in ads.iterrows():
         'ltv_cac': fl(r.ltv_cac), 'ltv_cac_ci': [fl(r.ltv_cac_lo), fl(r.ltv_cac_hi)], 'p_on_target': fl((LTVCAC[:, i] >= TARGET).mean()), 'p_ge1': fl((LTVCAC[:, i] >= 1).mean()),
         'paid': fl(pq[1][i], 1), 'paid_ci': [fl(pq[0][i], 1), fl(pq[2][i], 1)], 'cac': fl(np.nanmedian(cac_arr[:, i]), 1), 'analyzed': bool(r.analyzed)})
 results['meta'] = {
-    'window': f"{cal['window']['start']} .. {cal['window']['end']}", 'account': 'Meta ad account "Speak ZH" (act 1148917790153640)', 'markets': MARKETS, 'n_sim': N_SIM,
+    'window': f"{W0} .. {W1}", 'window_label': PRE['label'], 'analysis': ANALYSIS, 'calibration_window': f"{cal['window']['start']} .. {cal['window']['end']}", 'calibration_note': PRE['note'],
+    'k_source': 'trailing window 1 Jun – 7 Oct 2026' if PRE['k_trailing'] else 'analysis window', 'account': 'Meta ad account "Speak ZH" (act 1148917790153640)', 'markets': MARKETS, 'n_sim': N_SIM,
     'ads_total': int(n), 'ads_analyzed': int(analyzed.sum()), 'min_spend_analyzed': MIN_SPEND, 'spend_total': fl(spend.sum(), 2),
     'meta_installs_total': fl(inst.sum(), 0), 'meta_trials_total': fl(tri.sum(), 0), 'target': TARGET, 'sp2_bar': SP2_BAR, 'si_clip': list(SI_CLIP),
     'sp_threshold': SP_THRESHOLD, 'cpft_target': CPFT_TARGET, 'min_installs': MIN_INSTALLS, 'min_trials': MIN_TRIALS,
     'prior_strength': PRIOR_STRENGTH, 'ltv_forecast_sd': LTV_FORECAST_SD, 'p_conv_sd': P_CONV_SD, 'kappa_ctr': KAPPA_CTR, 'kappa_cti': KAPPA_CTI,
     'ssot_spillover': {'n_ad_market_rows': int(len(spill)), 'ltv': fl(spill.ltv.sum(), 1), 'trial_starts': fl(spill.trial_starts.sum(), 1)},
-    'market_params': {m: {'K_per_install': fl(K_m[i], 2), 'cpi_target': fl(K_m[i] / TARGET, 2), 'p_conv': fl(CAL[m]['p_conv'], 4), 'plan_mix': dict(zip(PLANS, [fl(x) for x in CAL[m]['mix']])),
+    'market_params': {m: {'K_per_install': fl(K_m[i], 2), 'K_per_install_in_window': fl(K_in_window[i], 2), 'cpi_target': fl(K_m[i] / TARGET, 2), 'p_conv': fl(CAL[m]['p_conv'], 4), 'plan_mix': dict(zip(PLANS, [fl(x) for x in CAL[m]['mix']])),
+                          'window_ssot': (cal[PRE['mix_block']][m]['ssot'] if PRE['mix_block'] else cal['markets'][m]['ssot']),
                           'ltv_mu': dict(zip(PLANS, [fl(x, 2) for x in CAL[m]['mu']])), 'ltv_sd': dict(zip(PLANS, [fl(x, 2) for x in CAL[m]['sd']])), 'meta_report_ratio': fl(ratio_m[i]),
                           'ssot_trials': CAL[m]['ssot_trials'], 'ssot_paid': CAL[m]['ssot_paid'], 'ssot_ltv': CAL[m]['ssot_ltv'], 'ssot_installs': CAL[m]['ssot_installs'],
                           'ssot_trials_matched': fl(ads.ssot_trials.values[mi == i].sum(), 1), 'ssot_ltv_matched': fl(ads.ssot_ltv.values[mi == i].sum(), 1),

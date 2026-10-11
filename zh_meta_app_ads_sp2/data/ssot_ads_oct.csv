@@ -1,0 +1,32 @@
+ad_id,country,campaign_name,installs,signups,trial_starts,paid,ltv,forecasted_ltv
+120243428902270167,Hong Kong,hk_meta_n/a_ios_trials_aem,17,8.0,1.0,0.29,30.4,36.5
+120244239476280167,Hong Kong,hk_meta_n/a_ios_trials_aem,39,25.0,5.0,1.37,143.7,182.3
+120246569640080167,Hong Kong,hk_meta_n/a_ios_trials_aem,68,41.0,13.0,3.59,376.6,473.9
+120248823299170167,Hong Kong,hk_meta_n/a_ios_trials_aem,60,34.0,5.0,1.41,147.3,182.3
+120249083206790167,Hong Kong,hk_meta_n/a_ios_trials_aem,33,17.0,5.0,1.36,142.2,182.3
+120249698539790167,Hong Kong,hk_meta_n/a_ios_trials_aem,18,7.0,3.0,0.83,87.3,109.4
+120249698662870167,Hong Kong,hk_meta_n/a_ios_trials_aem,8,2.0,0.0,0.0,0.0,0.0
+120249840087050167,Hong Kong,hk_meta_n/a_ios_trials_aem,37,28.0,10.0,2.78,291.7,364.6
+120249840102580167,Hong Kong,hk_meta_n/a_ios_trials_aem,73,46.0,7.0,1.97,206.9,255.2
+120250228209150167,Hong Kong,hk_meta_n/a_ios_trials_aem,5,2.0,0.0,0.0,0.0,0.0
+120250258434130167,Hong Kong,hk_meta_standard_ios_tw-en_pros_purchase_ongoing_no-disc_testing,3,0.0,0.0,0.0,0.0,0.0
+120250438204740167,Hong Kong,hk_meta_n/a_ios_trials_aem,10,5.0,0.0,0.0,0.0,0.0
+120250438387020167,Hong Kong,hk_meta_n/a_ios_trials_aem,3,2.0,0.0,0.0,0.0,0.0
+120250584356980167,Hong Kong,hk_meta_n/a_ios_trials_aem,15,11.0,4.0,1.14,119.1,145.8
+120250606347700167,Hong Kong,hk_meta_standard_ios_tw-en_pros_purchase_ongoing_no-disc_testing,23,14.0,6.0,1.69,176.8,218.7
+120250606489230167,Hong Kong,hk_meta_standard_ios_tw-en_pros_purchase_ongoing_no-disc_testing,9,6.0,2.0,0.56,59.1,72.9
+120250606536650167,Hong Kong,hk_meta_standard_ios_tw-en_pros_purchase_ongoing_no-disc_testing,6,2.0,1.0,0.28,29.6,36.5
+120250606609290167,Hong Kong,hk_meta_standard_ios_tw-en_pros_purchase_ongoing_no-disc_testing,6,4.0,3.0,0.85,88.9,109.4
+120250606649590167,Hong Kong,hk_meta_standard_ios_tw-en_pros_purchase_ongoing_no-disc_testing,1,1.0,0.0,0.0,0.0,0.0
+120246191401160167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_winning,186,107.0,39.0,14.67,1537.8,1421.8
+120246913787420167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_winning,201,103.0,39.0,14.55,1525.1,1421.8
+120246981244000167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_winning,216,128.0,44.0,16.4,1719.1,1604.1
+120249917976060167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_winning,123,43.0,12.0,4.33,454.2,437.5
+120250211390460167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_winning,3,0.0,0.0,0.0,0.0,0.0
+120250258111880167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_winning,15,10.0,3.0,1.08,112.8,109.4
+120250607145880167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_testing_3dtrial,19,12.0,5.0,1.89,197.8,182.3
+120250609000150167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_testing_3dtrial,20,11.0,6.0,2.25,236.1,218.7
+120250609081880167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_testing_3dtrial,79,49.0,18.0,6.79,711.6,656.2
+120250609087370167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_testing_3dtrial,4,3.0,2.0,0.76,79.4,72.9
+120250609089950167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_testing_3dtrial,13,6.0,2.0,0.75,78.9,72.9
+120250659554660167,Taiwan,tw_meta_standard_ios_tw-en_pros_trial_ongoing_winning,275,181.0,54.0,20.34,2131.3,1968.7
