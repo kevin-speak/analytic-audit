@@ -1,0 +1,418 @@
+<title>Speak ZH SP2 Scorecard</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout: one sticky filter row (market x stage) scoping a scroll of comparison panels; KPI tiles and findings lead, ad-level tables close. */
+:root{
+  --bg:#f6f7f9;--surface:#ffffff;--surface-2:#eef1f5;--line:#d9dee6;--line-soft:#e8ecf2;
+  --ink:#141922;--ink-2:#4b5563;--ink-3:#7b8494;--accent:#1c5cab;--accent-soft:#e3edfa;
+  --s1:#2a78d6;--s2:#eb6834;--s3:#1baf7a;--neutral:#8b93a1;
+  --good:#0ca30c;--warn:#fab219;--crit:#d03b3b;--grid:#e6eaf0;--tip-bg:#141922;--tip-ink:#ffffff;
+  --seq1:#e3edfa;--seq2:#b7d3f6;--seq3:#5598e7;--seq4:#1c5cab;--seq-ink-hi:#ffffff;
+  --font-display:"Sora","IBM Plex Sans",system-ui,sans-serif;--font-body:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --shadow:0 1px 2px rgba(20,25,34,.06),0 8px 24px rgba(20,25,34,.06);
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#12151b;--surface:#1a1e26;--surface-2:#222732;--line:#333a47;--line-soft:#2a303b;
+  --ink:#f2f4f7;--ink-2:#c3c8d2;--ink-3:#8d95a3;--accent:#6da7ec;--accent-soft:#1f2c40;
+  --s1:#3987e5;--s2:#d95926;--s3:#199e70;--neutral:#7d8592;
+  --grid:#2a303b;--tip-bg:#f2f4f7;--tip-ink:#141922;--seq1:#1f2c40;--seq2:#234a7a;--seq3:#2f6fbf;--seq4:#6da7ec;--seq-ink-hi:#0d1017;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.35);color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#12151b;--surface:#1a1e26;--surface-2:#222732;--line:#333a47;--line-soft:#2a303b;
+  --ink:#f2f4f7;--ink-2:#c3c8d2;--ink-3:#8d95a3;--accent:#6da7ec;--accent-soft:#1f2c40;
+  --s1:#3987e5;--s2:#d95926;--s3:#199e70;--neutral:#7d8592;
+  --grid:#2a303b;--tip-bg:#f2f4f7;--tip-ink:#141922;--seq1:#1f2c40;--seq2:#234a7a;--seq3:#2f6fbf;--seq4:#6da7ec;--seq-ink-hi:#0d1017;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.35);color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-body);font-size:15px;line-height:1.5;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1180px;margin:0 auto;padding-block:28px 64px;padding-inline:20px}
+h1,h2,h3{font-family:var(--font-display);text-wrap:balance;margin:0}
+h1{font-size:clamp(25px,3.3vw,36px);font-weight:700;letter-spacing:-.02em;line-height:1.15}
+h2{font-size:clamp(19px,2.2vw,24px);font-weight:600;letter-spacing:-.01em}
+h3{font-size:15px;font-weight:600}
+.eyebrow{font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3)}
+.lede{color:var(--ink-2);max-width:70ch;margin:10px 0 0}
+.num{font-variant-numeric:tabular-nums}
+header{display:grid;gap:12px;margin-bottom:18px}
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(168px,1fr));gap:12px}
+.tile{background:var(--surface);border:1px solid var(--line-soft);border-radius:10px;padding:14px 16px;display:grid;gap:3px;min-width:0}
+.tile .v{font-family:var(--font-display);font-size:26px;font-weight:600;letter-spacing:-.02em;line-height:1.1}
+.tile .l{font-size:12.5px;color:var(--ink-3)}
+.tile .ci{font-size:12px;color:var(--ink-2)}
+section{margin-top:40px}
+.sec-head{display:flex;flex-wrap:wrap;align-items:end;justify-content:space-between;gap:12px;margin-bottom:14px}
+.sec-head p{margin:6px 0 0;color:var(--ink-2);max-width:76ch}
+.card{background:var(--surface);border:1px solid var(--line-soft);border-radius:12px;box-shadow:var(--shadow);padding:18px;min-width:0}
+.card h3{margin-bottom:2px}
+.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.grid-wide{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:18px}
+@media (max-width:980px){.grid3{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:820px){.grid2,.grid-wide{grid-template-columns:minmax(0,1fr)}}
+table{border-collapse:collapse;width:100%;font-size:13.5px}
+th,td{padding:8px 10px;text-align:right;border-bottom:1px solid var(--line-soft);white-space:nowrap}
+th{font-weight:600;color:var(--ink-2);font-size:12px;letter-spacing:.03em;text-transform:uppercase;background:var(--surface-2);position:sticky;top:0;z-index:1}
+th:first-child,td:first-child{text-align:left}
+td.name{max-width:300px;overflow:hidden;text-overflow:ellipsis}
+tr.dim td{color:var(--ink-3)}
+tr.hi td{background:var(--accent-soft)}
+.tscroll{overflow-x:auto;border:1px solid var(--line-soft);border-radius:10px}
+.seg{display:inline-flex;background:var(--surface-2);border-radius:999px;padding:3px;gap:2px;flex-wrap:wrap}
+.seg button{border:0;background:transparent;color:var(--ink-2);font:inherit;font-weight:500;padding:6px 13px;border-radius:999px;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--surface);color:var(--ink);box-shadow:0 1px 2px rgba(0,0,0,.12)}
+.seg button:disabled{opacity:.35;cursor:not-allowed}
+.seg button:focus-visible,.chip:focus-visible,th.sortable:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
+.sticky-bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:color-mix(in srgb,var(--bg) 90%,transparent);backdrop-filter:blur(8px);padding:10px 0;margin:8px 0 6px;display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px;border-bottom:1px solid var(--line-soft)}
+.sticky-bar .grp{display:flex;align-items:center;gap:8px}
+.legend{display:flex;flex-wrap:wrap;gap:12px;font-size:12.5px;color:var(--ink-2)}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.sw{width:10px;height:10px;border-radius:50%;display:inline-block;flex:none}
+.sw.ring{background:transparent;border:2px solid var(--ink);width:8px;height:8px}
+.pill{display:inline-block;padding:1px 8px;border-radius:999px;font-size:11.5px;font-weight:600;border:1px solid var(--line);white-space:nowrap}
+.pill.p2{color:#1f6b1f;background:#dff3df;border-color:#b7e2b7}.pill.p1{color:#164a85;background:#dfeafb;border-color:#b5cdf2}
+.pill.mid{color:#6e5200;background:#fbefc8;border-color:#efd88a}.pill.pause{color:var(--ink-2);background:var(--surface-2)}.pill.none{color:var(--ink-3);background:transparent;border-style:dashed}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .pill.p2{color:#8fe08f;background:#193519;border-color:#2e5a2e}:root:not([data-theme="light"]) .pill.p1{color:#9cc3f5;background:#1a2f4d;border-color:#2d4f7f}:root:not([data-theme="light"]) .pill.mid{color:#f1d27a;background:#3b2f0e;border-color:#6a541d}}
+:root[data-theme="dark"] .pill.p2{color:#8fe08f;background:#193519;border-color:#2e5a2e}:root[data-theme="dark"] .pill.p1{color:#9cc3f5;background:#1a2f4d;border-color:#2d4f7f}:root[data-theme="dark"] .pill.mid{color:#f1d27a;background:#3b2f0e;border-color:#6a541d}
+svg{display:block;width:100%;max-width:100%;height:auto;font-family:var(--font-body)}
+.axis text{fill:var(--ink-3);font-size:11px}.axis line,.axis path{stroke:var(--line);stroke-width:1}
+.grid line{stroke:var(--grid);stroke-width:1}
+.ref{stroke-dasharray:4 4;stroke-width:1.2}
+.lab{fill:var(--ink-2);font-size:11.5px}.lab.b{font-weight:600;fill:var(--ink)}
+.tip{position:fixed;pointer-events:none;background:var(--tip-bg);color:var(--tip-ink);padding:8px 10px;border-radius:8px;font-size:12.5px;line-height:1.35;max-width:320px;z-index:20;box-shadow:0 6px 20px rgba(0,0,0,.25);opacity:0;transition:opacity .08s}
+.tip b{font-weight:600}.tip .t{font-weight:600;margin-bottom:3px}
+.stat-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(118px,1fr));gap:10px;margin-top:12px}
+.stat{background:var(--surface-2);border-radius:8px;padding:10px 12px;min-width:0}
+.stat .v{font-family:var(--font-display);font-size:20px;font-weight:600;line-height:1.1}
+.stat .l{font-size:12px;color:var(--ink-3)}
+.finding{border-left:3px solid var(--accent);padding:2px 0 2px 14px;margin:10px 0;color:var(--ink-2)}
+.finding b{color:var(--ink)}
+.controls{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:12px}
+input[type=search],select{font:inherit;padding:7px 10px;border:1px solid var(--line);border-radius:8px;background:var(--surface);color:var(--ink)}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{border:1px solid var(--line);background:var(--surface);color:var(--ink-2);border-radius:999px;padding:4px 10px;font:inherit;font-size:12.5px;cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--accent-soft);color:var(--accent);border-color:var(--accent)}
+th.sortable{cursor:pointer;user-select:none}th.sortable:hover{color:var(--ink)}
+.method{color:var(--ink-2);max-width:80ch}.method li{margin:6px 0}.method code{font-size:13px;background:var(--surface-2);padding:1px 5px;border-radius:4px}
+.small{font-size:12.5px;color:var(--ink-3)}
+.matrix td{text-align:center;vertical-align:middle;white-space:normal;min-width:118px}
+.matrix td.c1{background:var(--seq1)}.matrix td.c2{background:var(--seq2)}.matrix td.c3{background:var(--seq3);color:var(--seq-ink-hi)}.matrix td.c4{background:var(--seq4);color:var(--seq-ink-hi)}
+.matrix td.c3 .small,.matrix td.c4 .small{color:inherit;opacity:.85}
+.matrix th.rowh{text-align:left;position:static;background:var(--surface-2)}
+details summary{cursor:pointer;color:var(--ink-2);font-size:13px;margin-top:10px}
+footer{margin-top:48px;color:var(--ink-3);font-size:12.5px;overflow-wrap:anywhere}
+code{overflow-wrap:anywhere}
+a{color:var(--accent)}
+@media (prefers-reduced-motion: reduce){*{transition:none!important}}
+</style>
+
+<div class="wrap">
+<header>
+  <div class="eyebrow">Speak ZH ad account · Meta iOS app ads · Taiwan + Hong Kong · 1 Jun – 7 Oct 2026</div>
+  <h1>SP2 scored against LTV/CAC, the old SP and IPM for every Speak ZH app ad</h1>
+  <p class="lede">Every iOS app ad in the Speak ZH account (<span id="nAds"></span> ads, <span id="spendAll"></span>) is scored with SP2 = Efficiency Index × Scale Index, the old Scalability Predictor (Option B), and installs per mille, then read against its simulated LTV/CAC. Each ad's LTV/CAC comes from <span id="nSim"></span> Monte Carlo draws over its SSOT trial starts, trial-to-paid rate, plan mix and 36-month LTV, so every correlation, hit rate and lift below carries a 90% interval.</p>
+</header>
+
+<div class="sticky-bar">
+  <div class="grp"><span class="eyebrow">Market</span><div class="seg" id="marketSeg" role="group" aria-label="Market"></div></div>
+  <div class="grp"><span class="eyebrow">Campaign stage</span><div class="seg" id="stageSeg" role="group" aria-label="Campaign stage"></div></div>
+  <div class="legend" id="stageLegend"></div>
+</div>
+
+<section id="secTop" style="margin-top:14px">
+  <div class="tiles" id="tiles"></div>
+  <div id="findings"></div>
+</section>
+
+<section id="secSignals">
+  <div class="sec-head"><div><div class="eyebrow">1 · Head to head</div><h2>Which score tracks LTV/CAC?</h2><p>Ads with at least $100 of spend. Left: Spearman rank correlation between each score and the ad's LTV/CAC. Right: AUC for picking ads that reach the 0.8× target (0.5 = coin flip). Filled dot = median across the Monte Carlo draws, where both the score and LTV/CAC carry their sampling noise; bar = 90% interval; hollow ring = the point estimate from the raw numbers.</p></div></div>
+  <div class="grid2"><div class="card" id="dotRho"></div><div class="card" id="dotAuc"></div></div>
+  <div class="card" style="margin-top:18px" id="speedCard"></div>
+</section>
+
+<section id="secScatter">
+  <div class="sec-head"><div><div class="eyebrow">2 · Side by side</div><h2>Every ad: SP2, old SP and IPM against LTV/CAC</h2><p>Same ads, same vertical axis in all three panels. Dot = median LTV/CAC, thin bar = its 90% interval, size = spend, dark ring = at or above the 0.8× target. Dashed verticals mark each score's winner bar; horizontals mark 0.8× (target) and 1.0× (breakeven). Hover any dot for all three scores. Values past the axis edge are drawn at the edge.</p></div></div>
+  <div class="grid3"><div class="card" id="scSP2"></div><div class="card" id="scSP"></div><div class="card" id="scIPM"></div></div>
+</section>
+
+<section id="secAgree">
+  <div class="sec-head"><div><div class="eyebrow">3 · Where the two phase systems disagree</div><h2>SP2 phase against old SP phase</h2><p>Rows are SP2 phases, columns the old SP phases. Each cell counts analyzed ads, their spend and the share that end at or above 0.8×; shading follows that share. The two lists below are the ads where the systems give opposite go/no-go calls, with their LTV/CAC to adjudicate.</p></div></div>
+  <div class="card tscroll"><table class="matrix" id="agreeTable"></table></div>
+  <div class="grid2" style="margin-top:18px"><div class="card tscroll" id="demoteCard"></div><div class="card tscroll" id="promoteCard"></div></div>
+  <div class="card" style="margin-top:18px" id="quadCard"></div>
+</section>
+
+<section id="secGates">
+  <div class="sec-head"><div><div class="eyebrow">4 · Gate comparison</div><h2>What each winner rule actually selects</h2><p>Point columns use each ad's median LTV/CAC; interval columns re-evaluate the gate in every draw. Hit rate = share of gated ads at or above 0.8×. Recall = share of the spend that ends on target which the gate captures. Lift = spend-weighted LTV/CAC of gated ads over the rest.</p></div></div>
+  <div class="card tscroll"><table id="gateTable"></table></div>
+</section>
+
+<section id="secCamp">
+  <div class="sec-head"><div><div class="eyebrow">Campaigns</div><h2>Spend-weighted LTV/CAC by campaign</h2></div></div>
+  <div class="card tscroll"><table id="campTable"></table></div>
+</section>
+
+<section id="secAds">
+  <div class="sec-head"><div><div class="eyebrow">All ads</div><h2>Ad-level scores, side by side</h2><p>Click a column to sort. Ads under $100 of spend are listed but greyed out and excluded from every statistic above. LTV/CAC shows the median with its 90% interval; P(≥ 0.8×) is the share of draws in which the ad reaches the target.</p></div></div>
+  <div class="controls"><input type="search" id="q" placeholder="Search ad or campaign…" aria-label="Search ads"><div class="chips" id="sp2Chips"></div><div class="chips" id="oldChips"></div><span class="small" id="rowCount"></span></div>
+  <div class="card tscroll" style="max-height:680px;overflow:auto;padding:0"><table id="adTable"></table></div>
+</section>
+
+<section id="secMethod">
+  <div class="sec-head"><div><div class="eyebrow">Method</div><h2>How the numbers are built</h2></div></div>
+  <div class="card tscroll" style="margin-bottom:18px"><table id="paramTable"></table></div>
+  <div class="card method" id="method"></div>
+</section>
+<footer>Sources: BigQuery <code>analytics.meta_ads_creative_report_funnel</code> (Meta ad × placement × day funnel), <code>analytics.marketing_attribution_aggregate_attribution_date_cohort</code> (attribution SSOT), <code>analytics.marketing_ssot_aggregate</code> (AppsFlyer plan mix), <code>analytics.user_ltv</code> × <code>analytics.user_attribution</code> (LTV per paid user). Code and data in <code>analytic-audit/zh_meta_app_ads_sp2</code>.</footer>
+</div>
+<div class="tip" id="tip" role="status" aria-live="polite"></div>
+
+<script>
+const R = __RESULTS_JSON__;
+const MARKETS=['All',...R.meta.markets], STAGES=['All','Testing','Winning','Scaling','Other'];
+const STAGE_COL={Testing:'var(--s1)',Winning:'var(--s2)',Scaling:'var(--s3)',Other:'var(--neutral)'};
+const SIG=[['sp2','SP2 (new)'],['ei','Efficiency Index'],['sp','SP (old)'],['ipm','IPM']];
+const SIG_COL={sp2:'var(--s1)',ei:'var(--neutral)',sp:'var(--s2)',ipm:'var(--s3)'};
+const SP2_PHASES=['Scalable winner','Efficient, unproven scale','Watch','Pause','No installs yet'], OLD_PHASES=['Phase 2 Winner','Phase 1 Winner','Mid-Tier','Pause'];
+const GO2=new Set(['Scalable winner','Efficient, unproven scale']), GO1=new Set(['Phase 1 Winner','Phase 2 Winner']);
+const TARGET=R.meta.target;
+let market='All', stage='All';
+const key=()=>`${market}|${stage}`;
+const inGroup=a=>(market==='All'||a.market===market)&&(stage==='All'||a.stage===stage);
+const fmt=(x,d=2)=>x==null||isNaN(x)?'–':Number(x).toLocaleString('en-US',{minimumFractionDigits:d,maximumFractionDigits:d});
+const f0=x=>x==null||isNaN(x)?'–':Math.round(x).toLocaleString('en-US');
+const usd=x=>x==null||isNaN(x)?'–':'$'+Math.round(x).toLocaleString('en-US');
+const usd2=x=>x==null||isNaN(x)?'–':'$'+fmt(x,2);
+const pct=x=>x==null||isNaN(x)?'–':Math.round(x*100)+'%';
+const xr=x=>x==null||isNaN(x)?'–':fmt(x,2)+'×';
+const ci=a=>{if(!a||a.length<2)return '–';const lo=a[0],hi=a[a.length-1];return lo!=null&&hi!=null?`${fmt(lo)}–${fmt(hi)}`:'–'};
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const oldCls=p=>p==='Phase 2 Winner'?'p2':p==='Phase 1 Winner'?'p1':p==='Mid-Tier'?'mid':'pause';
+const sp2Cls=p=>p==='Scalable winner'?'p2':p==='Efficient, unproven scale'?'p1':p==='Watch'?'mid':p==='No installs yet'?'none':'pause';
+const oldShort=p=>p==='Phase 2 Winner'?'P2 winner':p==='Phase 1 Winner'?'P1 winner':p;
+const sp2Short=p=>p==='Efficient, unproven scale'?'Efficient, unproven':p;
+const pill=(cls,txt)=>`<span class="pill ${cls}">${esc(txt)}</span>`;
+const quantile=(arr,q)=>{const s=[...arr].sort((a,b)=>a-b);if(!s.length)return NaN;const p=(s.length-1)*q,lo=Math.floor(p),hi=Math.ceil(p);return s[lo]+(s[hi]-s[lo])*(p-lo)};
+/* tooltip: built with textContent, never markup, because ad names are data */
+const tip=document.getElementById('tip');
+function showTip(title,lines,e){tip.replaceChildren();const t=document.createElement('div');t.className='t';t.textContent=title;tip.appendChild(t);lines.forEach(l=>{const d=document.createElement('div');if(Array.isArray(l)){const b=document.createElement('b');b.textContent=l[1];d.appendChild(b);d.appendChild(document.createTextNode('  '+l[0]))}else d.textContent=l;tip.appendChild(d)});tip.style.opacity=1;moveTip(e)}
+function moveTip(e){const w=tip.offsetWidth,h=tip.offsetHeight;let x=e.clientX+14,y=e.clientY+14;if(x+w>innerWidth-8)x=e.clientX-w-14;if(y+h>innerHeight-8)y=e.clientY-h-14;tip.style.left=x+'px';tip.style.top=y+'px'}
+function hideTip(){tip.style.opacity=0}
+const svgNS='http://www.w3.org/2000/svg';
+function el(n,a={},parent){const e=document.createElementNS(svgNS,n);for(const k in a)e.setAttribute(k,a[k]);if(parent)parent.appendChild(e);return e}
+function txt(parent,x,y,s,a={}){const t=el('text',{x,y,...a},parent);t.textContent=s;return t}
+function niceTicks(lo,hi,n=5){const span=hi-lo;if(!(span>0))return[lo];const raw=span/n;const p=Math.pow(10,Math.floor(Math.log10(raw)));const m=raw/p;const step=(m<1.5?1:m<3?2:m<7?5:10)*p;const t=[];for(let v=Math.ceil(lo/step-1e-9)*step;v<=hi+1e-9;v+=step)t.push(+v.toFixed(10));return t}
+function hover(node,title,lines){node.addEventListener('mouseenter',e=>showTip(title,lines(),e));node.addEventListener('mousemove',moveTip);node.addEventListener('mouseleave',hideTip);node.setAttribute('tabindex','0');node.addEventListener('focus',()=>{const r=node.getBoundingClientRect();showTip(title,lines(),{clientX:r.left+r.width/2,clientY:r.top+r.height/2})});node.addEventListener('blur',hideTip)}
+const adLines=a=>[[`${a.market} · ${a.stage} · ${a.campaign}`,''],[`spend · ${a.installs} installs · CPI ${usd2(a.cpi)}`,usd(a.spend)],[`SP2 (EI ${fmt(a.EI)} × SI ${fmt(a.SI)}) · ${sp2Short(a.sp2_phase)}`,fmt(a.SP2)],[`SP old (90% ${ci(a.sp_ci)}) · ${oldShort(a.phase)}`,fmt(a.sp)],['IPM (installs per 1,000 impressions)',fmt(a.ipm)],[`LTV/CAC (90% ${ci(a.ltv_cac_ci)}) · P(≥0.8×) ${pct(a.p_on_target)} · SSOT point ${xr(a.ssot_ltv_cac)}`,xr(a.ltv_cac)]];
+
+document.getElementById('nAds').textContent=R.meta.ads_total.toLocaleString();
+document.getElementById('spendAll').textContent=usd(R.meta.spend_total)+' of spend';
+document.getElementById('nSim').textContent=R.meta.n_sim.toLocaleString();
+
+/* ---------- filters ---------- */
+function seg(id,items,get,set){const host=document.getElementById(id);host.replaceChildren();items.forEach(v=>{const b=document.createElement('button');b.type='button';b.textContent=v;b.setAttribute('aria-pressed',get()===v);b.onclick=()=>{set(v);renderAll()};host.appendChild(b)})}
+function renderSegs(){seg('marketSeg',MARKETS,()=>market,v=>{market=v;if(!R.groups[`${market}|${stage}`])stage='All'});seg('stageSeg',STAGES,()=>stage,v=>{stage=v});
+  [...document.getElementById('stageSeg').children].forEach(b=>{b.disabled=!R.groups[`${market}|${b.textContent}`]});
+  document.getElementById('stageLegend').innerHTML=STAGES.slice(1).map(s=>`<span><i class="sw" style="background:${STAGE_COL[s]}"></i>${s}</span>`).join('')+'<span><i class="sw ring"></i>≥ 0.8× target</span><span class="small">dot size = spend</span>'}
+
+/* ---------- tiles + findings ---------- */
+function gate(G,name){return G.gates[name]||null}
+const GW='SP2 winner (EI ≥ 1 & SP2 ≥ 2)',GE='EI ≥ 1 (on target at any scale)',GP1='P1 gate (SP ≥ 2 & ≥ 10 installs)',GP2='P2 gate (SP ≥ 2, ≥ 10 trials, CPFT ≤ $55)',GI='IPM ≥ market average & ≥ 10 installs';
+function disagreements(){const an=R.ads.filter(a=>inGroup(a)&&a.analyzed);
+  const demote=an.filter(a=>GO1.has(a.phase)&&!GO2.has(a.sp2_phase)), promote=an.filter(a=>GO2.has(a.sp2_phase)&&!GO1.has(a.phase));
+  const agree=an.filter(a=>GO1.has(a.phase)===GO2.has(a.sp2_phase));
+  const sw=l=>{const s=l.reduce((t,a)=>t+a.spend,0);return s?l.reduce((t,a)=>t+a.ltv_cac*a.spend,0)/s:null};
+  const stats=l=>({n:l.length,spend:l.reduce((t,a)=>t+a.spend,0),sw:sw(l),hit:l.length?l.filter(a=>a.ltv_cac>=TARGET).length/l.length:null,nhit:l.filter(a=>a.ltv_cac>=TARGET).length});
+  return {an,demote,promote,agree:an.length?agree.length/an.length:null,d:stats(demote),p:stats(promote)}}
+function renderTiles(G){const w=gate(G,GW),p1=gate(G,GP1),D=disagreements();
+  const t=[
+    ['Ads in view',`${G.n_ads}`,`${G.n_analyzed} with ≥ $100 · ${usd(G.spend)} spend`],
+    ['LTV/CAC, spend-weighted',xr(G.ltv_cac_sw[1]),`90% ${ci(G.ltv_cac_sw)}× · SSOT point ${xr(G.ssot_ltv_cac)}`],
+    ['Ads at ≥ 0.8× target',`${G.n_on_target} of ${G.n_analyzed}`,`${pct(G.share_spend_on_target)} of spend projected on target`],
+    ['SP2 scalable winners',w?`${w.n}`:'–',w&&w.n?`${xr(w.sw_ltv_cac)} LTV/CAC · ${pct(w.hit_rate[1])} hit rate`:'no ad clears EI ≥ 1 and SP2 ≥ 2'],
+    ['Old SP P1 winners',p1?`${p1.n}`:'–',p1&&p1.n?`${xr(p1.sw_ltv_cac)} LTV/CAC · ${pct(p1.hit_rate[1])} hit rate`:'none'],
+    ['Go / no-go agreement',pct(D.agree),`${D.d.n} old winners SP2 stops · ${D.p.n} the other way`],
+  ];
+  document.getElementById('tiles').innerHTML=t.map(([l,v,c])=>`<div class="tile"><div class="l">${l}</div><div class="v">${v}</div><div class="ci num">${c}</div></div>`).join('')}
+function renderFindings(G){const S=G.signals,D=disagreements(),w=gate(G,GW),p1=gate(G,GP1),out=[];
+  if(!S.sp2){document.getElementById('findings').innerHTML=`<div class="finding"><b>Too few ads for statistics:</b> ${G.n_analyzed} ads with ≥ $100 of spend in this view; at least 8 are needed.</div>`;return}
+  const order=SIG.map(([k,l])=>({k,l,r:S[k].rho_point})).filter(x=>x.r!=null).sort((a,b)=>b.r-a.r);
+  const best=order[0];
+  out.push(`<div class="finding"><b>${best.l} ranks ads closest to their LTV/CAC</b> on ${G.n_analyzed} ads with ≥ $100: ρ ${fmt(best.r)}${order.slice(1).map(x=>`, ${x.l} ${fmt(x.r)}`).join('')}. With sampling noise in both the score and LTV/CAC the medians are ${SIG.map(([k,l])=>`${l} ${fmt(S[k].rho[1])}`).join(', ')}. For picking ads that reach 0.8×, AUC runs SP2 ${fmt(S.sp2.auc08_point)} · old SP ${fmt(S.sp.auc08_point)} · IPM ${fmt(S.ipm.auc08_point)} (EI alone ${fmt(S.ei.auc08_point)}).</div>`);
+  if(w&&w.n)out.push(`<div class="finding"><b>Stricter, and more often right:</b> SP2's winner set is ${w.n} ads and ${usd(w.spend)} of spend at ${xr(w.sw_ltv_cac)} with a ${pct(w.hit_rate[1])} hit rate (90% ${pct(w.hit_rate[0])}–${pct(w.hit_rate[2])}); the old P1 gate passes ${p1.n} ads and ${usd(p1.spend)} at ${xr(p1.sw_ltv_cac)} and ${pct(p1.hit_rate[1])}. SP2 captures ${pct(w.spend_recall[1])} of the spend that ends on target against ${pct(p1.spend_recall[1])} for P1: it refuses ads that are efficient only at small budgets, and it refuses every ad whose CPI sits above the market's target.</div>`);
+  else out.push(`<div class="finding"><b>No SP2 winner in this view:</b> ${G.n_on_target} of ${G.n_analyzed} ads end at or above 0.8×, and ${gate(G,GE)?gate(G,GE).n:0} clear EI ≥ 1. The old P1 gate still passes ${p1?p1.n:0} ads and ${usd(p1?p1.spend:0)} at ${xr(p1?p1.sw_ltv_cac:null)} with a ${pct(p1?p1.hit_rate[1]:null)} hit rate. Here the useful reading is EI itself: the gap to 1 is the gap to the CPI target.</div>`);
+  out.push(`<div class="finding"><b>Where they disagree, LTV/CAC sides with SP2:</b> ${D.d.n} ads the old SP calls P1 or P2 winners are Watch or Pause under SP2 (${usd(D.d.spend)} of spend, ${xr(D.d.sw)} spend-weighted, ${D.d.nhit} of ${D.d.n} at or above 0.8×). ${D.p.n} ads go the other way (${usd(D.p.spend)}, ${xr(D.p.sw)}, ${D.p.nhit} on target). The two systems agree on go/no-go for ${pct(D.agree)} of ads.</div>`);
+  const m100=G.milestones.find(x=>x.spend===100),m300=G.milestones.find(x=>x.spend===300);
+  if(m100&&m100.rho_sp2!=null)out.push(`<div class="finding"><b>Earlier read:</b> at $100 of cumulative spend SP2 already reads the ad's final LTV/CAC at ρ ${fmt(m100.rho_sp2)} (AUC ${fmt(m100.auc_sp2)} for ≥ 0.8×) against ${fmt(m100.rho_spx)} (AUC ${fmt(m100.auc_spx)}) for the old SP and ${fmt(m100.rho_ipm)} (AUC ${fmt(m100.auc_ipm)}) for IPM, on ${m100.n} ads that went on to spend $200 or more. Installs exist for ${pct(m100.share_installs)} of ads by then, trials for ${pct(m100.share_trials)}.${m300&&m300.rho_sp2!=null?` At $300: SP2 ${fmt(m300.rho_sp2)}, old SP ${fmt(m300.rho_spx)}, IPM ${fmt(m300.rho_ipm)}, EI alone ${fmt(m300.rho_ei)}.`:''}</div>`);
+  if(S.sp.rho_point!=null&&S.sp2.rho_point!=null&&S.sp.rho_point>S.sp2.rho_point+0.15)out.push(`<div class="finding"><b>Caveat for this view:</b> the old SP tracks LTV/CAC better than SP2 here (ρ ${fmt(S.sp.rho_point)} vs ${fmt(S.sp2.rho_point)}). Once ads are already scaled, the Scale Index rewards the ads that win the most budget, and those are the ads whose CPI has drifted furthest above target; EI alone sits at ${fmt(S.ei.rho_point)}. SP2 is a gate for deciding what to scale, not a ranking of ads that have already been scaled.</div>`);
+  document.getElementById('findings').innerHTML=out.join('')}
+
+/* ---------- dot charts (ρ and AUC) ---------- */
+function dotChart(hostId,G,metric,title,sub,lo,hi,refv,refLabel){const host=document.getElementById(hostId);host.innerHTML=`<h3>${title}</h3><div class="small">${sub}</div>`;
+  const S=G.signals;if(!S.sp2){host.innerHTML+='<p class="small">Not enough ads.</p>';return}
+  const W=560,rowH=44,m={t:18,r:60,b:30,l:138},H=m.t+SIG.length*rowH+m.b;
+  const svg=el('svg',{viewBox:`0 0 ${W} ${H}`,role:'img','aria-label':title},host);
+  const sx=v=>m.l+(v-lo)/(hi-lo)*(W-m.l-m.r);
+  const gg=el('g',{class:'grid'},svg);const ticks=niceTicks(lo,hi,6);ticks.forEach(t=>el('line',{x1:sx(t),x2:sx(t),y1:m.t,y2:H-m.b},gg));
+  const ax=el('g',{class:'axis'},svg);ticks.forEach(t=>txt(ax,sx(t),H-m.b+16,fmt(t,1),{'text-anchor':'middle'}));
+  el('line',{class:'ref',x1:sx(refv),x2:sx(refv),y1:m.t-4,y2:H-m.b,stroke:'var(--ink-3)'},svg);txt(svg,sx(refv)+4,m.t+2,refLabel,{class:'lab'});
+  SIG.forEach(([k,l],i)=>{const s=S[k];const y=m.t+rowH*i+rowH/2;const col=SIG_COL[k];const mc=s[metric],pt=s[metric+'_point'];
+    txt(svg,m.l-10,y+4,l,{class:'lab'+(k==='sp2'?' b':''),'text-anchor':'end'});
+    if(mc&&mc[0]!=null){el('line',{x1:sx(Math.max(lo,mc[0])),x2:sx(Math.min(hi,mc[2])),y1:y,y2:y,stroke:col,'stroke-width':2.5,'stroke-linecap':'round'},svg);
+      el('circle',{cx:sx(mc[1]),cy:y,r:5.5,fill:col,stroke:'var(--surface)','stroke-width':2},svg)}
+    if(pt!=null)el('circle',{cx:sx(pt),cy:y,r:4.5,fill:'var(--surface)',stroke:col,'stroke-width':2},svg);
+    if(mc&&mc[0]!=null){const xe=Math.max(sx(Math.min(hi,mc[2])),pt!=null?sx(pt)+5:0);txt(svg,xe+9,y+4,fmt(mc[1]),{class:'lab b num'})}
+    const hit=el('rect',{x:m.l,y:y-rowH/2,width:W-m.l-m.r,height:rowH,fill:'transparent'},svg);
+    hover(hit,`${l} · ${title}`,()=>[[`median of ${R.meta.n_sim.toLocaleString()} draws (90% ${ci(mc)})`,fmt(mc?mc[1]:null)],['point estimate',fmt(pt)],...(metric==='rho'?[[`P(ρ > 0)`,pct(s.p_rho_gt0)]]:[['AUC for ≥ 1.0× (point)',fmt(s.auc1_point)]]),[`ads scored`,String(s.n)]])});
+  const lg=document.createElement('div');lg.className='legend';lg.style.marginTop='6px';lg.innerHTML='<span><i class="sw" style="background:var(--s1)"></i>SP2</span><span><i class="sw" style="background:var(--s2)"></i>SP (old)</span><span><i class="sw" style="background:var(--s3)"></i>IPM</span><span><i class="sw" style="background:var(--neutral)"></i>EI (SP2 component)</span><span class="small">● median of draws · ○ point estimate · bar = 90%</span>';host.appendChild(lg)}
+
+/* ---------- speed by spend milestone ---------- */
+function renderSpeed(G){const host=document.getElementById('speedCard');host.innerHTML='<h3>How early does each score read LTV/CAC?</h3><div class="small">Spearman ρ with the ad\'s final LTV/CAC using only the data accumulated up to a cumulative-spend milestone, among ads that went on to spend at least twice that. The old SP is approximated here by CTR and CTI against the market pool, because placement benchmarks are not defined on a partial window.</div>';
+  const ms=G.milestones.filter(d=>d.rho_sp2!=null);if(ms.length<3){host.innerHTML+='<p class="small">Not enough ads for the milestone test in this view.</p>';return}
+  const W=900,H=320,m={t:18,r:24,b:46,l:46};const svg=el('svg',{viewBox:`0 0 ${W} ${H}`,role:'img','aria-label':'Score accuracy by spend milestone'},host);
+  const lx=v=>Math.log10(v);const x0=lx(50),x1=lx(2000);const ylo=-0.3,yhi=0.9;
+  const sx=v=>m.l+(lx(v)-x0)/(x1-x0)*(W-m.l-m.r), sy=v=>H-m.b-(v-ylo)/(yhi-ylo)*(H-m.t-m.b);
+  const gg=el('g',{class:'grid'},svg);[-0.2,0,0.2,0.4,0.6,0.8].forEach(t=>el('line',{x1:m.l,x2:W-m.r,y1:sy(t),y2:sy(t)},gg));
+  const ax=el('g',{class:'axis'},svg);el('line',{x1:m.l,x2:W-m.r,y1:H-m.b,y2:H-m.b},ax);
+  G.milestones.forEach(d=>txt(ax,sx(d.spend),H-m.b+16,'$'+d.spend,{'text-anchor':'middle'}));
+  [-0.2,0,0.2,0.4,0.6,0.8].forEach(t=>txt(ax,m.l-8,sy(t)+4,fmt(t,1),{'text-anchor':'end'}));
+  txt(ax,(m.l+W-m.r)/2,H-6,'cumulative spend when the score is read',{'text-anchor':'middle',class:'lab'});
+  el('line',{class:'ref',x1:m.l,x2:W-m.r,y1:sy(0),y2:sy(0),stroke:'var(--ink-3)'},svg);
+  const series=[['rho_sp2','SP2','var(--s1)'],['rho_spx','SP (old, pooled proxy)','var(--s2)'],['rho_ipm','IPM','var(--s3)'],['rho_ei','EI (SP2 component)','var(--neutral)']];
+  series.forEach(([k,lab,col])=>{const pts=ms.filter(d=>d[k]!=null);el('polyline',{points:pts.map(d=>`${sx(d.spend)},${sy(d[k])}`).join(' '),fill:'none',stroke:col,'stroke-width':2,'stroke-linejoin':'round','stroke-linecap':'round'},svg);
+    pts.forEach(d=>el('circle',{cx:sx(d.spend),cy:sy(d[k]),r:4,fill:col,stroke:'var(--surface)','stroke-width':2},svg))});
+  const cross=el('line',{x1:0,x2:0,y1:m.t,y2:H-m.b,stroke:'var(--ink-3)','stroke-width':1,opacity:0},svg);
+  const hit=el('rect',{x:m.l,y:m.t,width:W-m.l-m.r,height:H-m.t-m.b,fill:'transparent'},svg);
+  const nearest=e=>{const r=svg.getBoundingClientRect();const px=(e.clientX-r.left)/r.width*W;let best=ms[0];ms.forEach(d=>{if(Math.abs(sx(d.spend)-px)<Math.abs(sx(best.spend)-px))best=d});return best};
+  hit.addEventListener('mousemove',e=>{const d=nearest(e);cross.setAttribute('x1',sx(d.spend));cross.setAttribute('x2',sx(d.spend));cross.setAttribute('opacity',1);
+    showTip(`At $${d.spend} of cumulative spend · ${d.n} ads`,[...series.map(([k,lab])=>[`${lab} · AUC ${fmt(d['auc_'+k.slice(4)])}`,fmt(d[k])]),[`ads with any install · ${pct(d.share_trials)} with any trial`,pct(d.share_installs)]],e)});
+  hit.addEventListener('mouseleave',()=>{cross.setAttribute('opacity',0);hideTip()});
+  const lg=document.createElement('div');lg.className='legend';lg.style.marginTop='8px';lg.innerHTML=series.map(([k,l,col])=>`<span><i class="sw" style="background:${col}"></i>${l}</span>`).join('');host.appendChild(lg);
+  const det=document.createElement('details');det.innerHTML=`<summary>Table view: ρ and AUC by milestone</summary><div class="tscroll" style="margin-top:8px"><table><thead><tr><th>Spend</th><th>Ads</th><th>ρ SP2</th><th>ρ SP old</th><th>ρ IPM</th><th>ρ EI</th><th>AUC SP2</th><th>AUC SP old</th><th>AUC IPM</th><th>AUC EI</th><th>Has installs</th><th>Has trials</th></tr></thead><tbody>${G.milestones.map(d=>`<tr><td>$${d.spend}</td><td class="num">${d.n}</td><td class="num">${fmt(d.rho_sp2)}</td><td class="num">${fmt(d.rho_spx)}</td><td class="num">${fmt(d.rho_ipm)}</td><td class="num">${fmt(d.rho_ei)}</td><td class="num">${fmt(d.auc_sp2)}</td><td class="num">${fmt(d.auc_spx)}</td><td class="num">${fmt(d.auc_ipm)}</td><td class="num">${fmt(d.auc_ei)}</td><td class="num">${pct(d.share_installs)}</td><td class="num">${pct(d.share_trials)}</td></tr>`).join('')}</tbody></table></div>`;host.appendChild(det)}
+
+/* ---------- scatter panels ---------- */
+function scatter(hostId,xkey,title,xlab,xrefs,G){const host=document.getElementById(hostId);const S=G.signals[xkey==='SP2'?'sp2':xkey==='sp'?'sp':'ipm'];
+  host.innerHTML=`<h3>${title}</h3><div class="small">${S?`ρ ${fmt(S.rho_point)} (draws ${fmt(S.rho[1])}, 90% ${ci(S.rho)}) · AUC ≥ 0.8× ${fmt(S.auc08_point)}`:'not enough ads for statistics'}</div>`;
+  const data=R.ads.filter(a=>inGroup(a)&&a.analyzed&&a[xkey]!=null);if(!data.length){host.innerHTML+='<p class="small">No ads.</p>';return}
+  const W=420,H=360,m={t:14,r:14,b:44,l:44};const svg=el('svg',{viewBox:`0 0 ${W} ${H}`,role:'img','aria-label':title},host);
+  const xv=data.map(a=>a[xkey]);const xmax=Math.max(quantile(xv,0.98)*1.12,xrefs.reduce((t,r)=>Math.max(t,r.v*1.25),0),1e-6);
+  const yv=data.map(a=>a.ltv_cac);const ymax=Math.max(1.6,Math.min(quantile(yv,0.98)*1.15,4));
+  const cx=v=>m.l+Math.min(v,xmax)/xmax*(W-m.l-m.r), cy=v=>H-m.b-Math.min(v,ymax)/ymax*(H-m.t-m.b);
+  const gg=el('g',{class:'grid'},svg);niceTicks(0,ymax,5).forEach(t=>el('line',{x1:m.l,x2:W-m.r,y1:cy(t),y2:cy(t)},gg));
+  const ax=el('g',{class:'axis'},svg);el('line',{x1:m.l,x2:W-m.r,y1:H-m.b,y2:H-m.b},ax);
+  niceTicks(0,xmax,5).forEach(t=>txt(ax,cx(t),H-m.b+16,fmt(t,xmax<2?2:1),{'text-anchor':'middle'}));
+  niceTicks(0,ymax,5).forEach(t=>txt(ax,m.l-6,cy(t)+4,fmt(t,1)+'×',{'text-anchor':'end'}));
+  txt(ax,(m.l+W-m.r)/2,H-6,xlab,{'text-anchor':'middle',class:'lab'});
+  txt(ax,12,(m.t+H-m.b)/2,'LTV/CAC (median of draws)',{'text-anchor':'middle',transform:`rotate(-90 12 ${(m.t+H-m.b)/2})`,class:'lab'});
+  el('line',{class:'ref',x1:m.l,x2:W-m.r,y1:cy(TARGET),y2:cy(TARGET),stroke:'var(--good)'},svg);txt(svg,W-m.r-2,cy(TARGET)-4,'0.8× target',{class:'lab','text-anchor':'end'});
+  if(ymax>1.05){el('line',{class:'ref',x1:m.l,x2:W-m.r,y1:cy(1),y2:cy(1),stroke:'var(--ink-3)'},svg);txt(svg,W-m.r-2,cy(1)-4,'1.0× breakeven',{class:'lab','text-anchor':'end'})}
+  xrefs.forEach(r=>{if(r.v<=xmax){el('line',{class:'ref',x1:cx(r.v),x2:cx(r.v),y1:m.t,y2:H-m.b,stroke:'var(--ink-3)'},svg);txt(svg,cx(r.v)+4,m.t+10,r.l,{class:'lab'})}});
+  const smax=Math.max(...data.map(a=>a.spend));const sorted=[...data].sort((a,b)=>b.spend-a.spend);
+  sorted.forEach(a=>{const col=STAGE_COL[a.stage]||'var(--neutral)';el('line',{x1:cx(a[xkey]),x2:cx(a[xkey]),y1:cy(a.ltv_cac_ci[0]),y2:cy(a.ltv_cac_ci[1]),stroke:col,'stroke-width':1,opacity:.28},svg)});
+  sorted.forEach(a=>{const r=3+9*Math.sqrt(a.spend/smax);const on=a.ltv_cac>=TARGET;const col=STAGE_COL[a.stage]||'var(--neutral)';const x=cx(a[xkey]),y=cy(a.ltv_cac);
+    const dot=el('circle',{cx:x,cy:y,r,fill:col,'fill-opacity':.78,stroke:on?'var(--ink)':'var(--surface)','stroke-width':on?2:1.5},svg);
+    if(a[xkey]>xmax||a.ltv_cac>ymax)txt(svg,x+r+1,y+4,'›',{class:'lab'});
+    const hit=el('circle',{cx:x,cy:y,r:Math.max(r,12),fill:'transparent'},svg);
+    hit.addEventListener('mouseenter',()=>dot.setAttribute('stroke','var(--accent)'));hit.addEventListener('mouseleave',()=>dot.setAttribute('stroke',on?'var(--ink)':'var(--surface)'));
+    hover(hit,a.name,()=>adLines(a))})}
+function renderScatters(G){
+  scatter('scSP2','SP2','SP2 (new) vs LTV/CAC','SP2 = Efficiency Index × Scale Index',[{v:2,l:'SP2 = 2'}],G);
+  scatter('scSP','sp','SP (old) vs LTV/CAC','SP, Option B (CTR + CTI vs placement benchmark)',[{v:2,l:'SP = 2'},{v:1.4,l:'1.4'}],G);
+  const refs=market==='All'?R.meta.markets.map(mk=>({v:R.meta.market_params[mk].pool_ipm,l:`${mk} avg`})):[{v:R.meta.market_params[market].pool_ipm,l:'market avg'}];
+  scatter('scIPM','ipm','IPM vs LTV/CAC','Installs per 1,000 impressions',refs,G)}
+
+/* ---------- agreement matrix, disagreement lists, EI x SI quadrant ---------- */
+function renderAgreement(G){const tb=document.getElementById('agreeTable');const cells={};G.agreement.forEach(c=>cells[c.sp2_phase+'|'+c.phase]=c);
+  const rows=SP2_PHASES.filter(p=>p!=='No installs yet'),cols=OLD_PHASES;
+  const cls=share=>share==null?'':share>=0.6?'c4':share>=0.4?'c3':share>=0.2?'c2':share>0?'c1':'';
+  let h=`<thead><tr><th class="rowh">SP2 phase ↓ · old SP phase →</th>${cols.map(c=>`<th style="text-align:center">${pill(oldCls(c),oldShort(c))}</th>`).join('')}<th style="text-align:center">Row total</th></tr></thead><tbody>`;
+  const colTot={};rows.forEach(rp=>{let rn=0,rs=0,rh=0;h+=`<tr><th class="rowh">${pill(sp2Cls(rp),sp2Short(rp))}</th>`;cols.forEach(cp=>{const c=cells[rp+'|'+cp];if(c){rn+=c.n;rs+=c.spend;rh+=c.n_on_target;colTot[cp]=colTot[cp]||{n:0,s:0,h:0};colTot[cp].n+=c.n;colTot[cp].s+=c.spend;colTot[cp].h+=c.n_on_target}
+      const share=c?c.n_on_target/c.n:null;h+=c?`<td class="${cls(share)}"><b class="num">${c.n}</b> ads<br><span class="small num">${usd(c.spend)} · ${pct(share)} on target · ${xr(c.sw_ltv_cac)}</span></td>`:'<td class="small">–</td>'});
+    h+=`<td><b class="num">${rn}</b><br><span class="small num">${usd(rs)} · ${rn?pct(rh/rn):'–'} on target</span></td></tr>`});
+  h+=`<tr><th class="rowh">Column total</th>${cols.map(cp=>{const t=colTot[cp];return t?`<td><b class="num">${t.n}</b><br><span class="small num">${usd(t.s)} · ${pct(t.h/t.n)} on target</span></td>`:'<td class="small">–</td>'}).join('')}<td class="small">${G.n_analyzed} analyzed ads</td></tr></tbody>`;tb.innerHTML=h;
+  const D=disagreements();
+  const list=(hostId,title,sub,l,st)=>{const host=document.getElementById(hostId);const top=[...l].sort((a,b)=>b.spend-a.spend).slice(0,8);
+    host.innerHTML=`<h3>${title}</h3><div class="small">${sub}</div><div class="stat-row"><div class="stat"><div class="v num">${st.n}</div><div class="l">ads</div></div><div class="stat"><div class="v num">${usd(st.spend)}</div><div class="l">spend</div></div><div class="stat"><div class="v num">${xr(st.sw)}</div><div class="l">LTV/CAC, spend-wtd</div></div><div class="stat"><div class="v num">${st.n?`${st.nhit} of ${st.n}`:'–'}</div><div class="l">at ≥ 0.8×</div></div></div>`+
+      (top.length?`<table style="margin-top:12px"><thead><tr><th>Ad</th><th>Spend</th><th>SP old</th><th>Old phase</th><th>EI</th><th>SI</th><th>SP2</th><th>SP2 phase</th><th>LTV/CAC</th></tr></thead><tbody>${top.map(a=>`<tr><td class="name" title="${esc(a.raw_name)}">${esc(a.name)}<br><span class="small">${esc(a.market)} · ${esc(a.stage)}</span></td><td class="num">${usd(a.spend)}</td><td class="num">${fmt(a.sp)}</td><td style="text-align:left">${pill(oldCls(a.phase),oldShort(a.phase))}</td><td class="num">${fmt(a.EI)}</td><td class="num">${fmt(a.SI)}</td><td class="num"><b>${fmt(a.SP2)}</b></td><td style="text-align:left">${pill(sp2Cls(a.sp2_phase),sp2Short(a.sp2_phase))}</td><td class="num"><b>${xr(a.ltv_cac)}</b> <span class="small">${ci(a.ltv_cac_ci)}</span></td></tr>`).join('')}</tbody></table>${l.length>8?`<div class="small" style="margin-top:6px">Top 8 by spend of ${l.length}; the full list is in the ad table below.</div>`:''}`:'<p class="small" style="margin-top:10px">No ads in this view.</p>')};
+  list('demoteCard','Old SP says winner, SP2 says stop','P1 or P2 winner under the old SP; Watch or Pause under SP2',D.demote,D.d);
+  list('promoteCard','SP2 says go, old SP says stop','Scalable winner or Efficient under SP2; Mid-Tier or Pause under the old SP',D.promote,D.p);
+  renderQuad(G)}
+function renderQuad(G){const q=document.getElementById('quadCard');q.innerHTML='<h3>Why they disagree: every ad on SP2\'s two axes</h3><div class="small">x = Efficiency Index (1 = projected 0.8× LTV/CAC at the market\'s LTV per install), y = Scale Index (spend per day vs campaign median, log). Dark ring = LTV/CAC ≥ 0.8×. Curve = SP2 = 2. The old SP has no efficiency axis: an ad can be a P1 winner anywhere on this plane.</div>';
+  const data=R.ads.filter(a=>inGroup(a)&&a.analyzed&&a.EI!=null);if(!data.length)return;
+  const W=900,H=380,m={t:16,r:16,b:46,l:62};const s3=el('svg',{viewBox:`0 0 ${W} ${H}`,role:'img','aria-label':'EI vs SI'},q);
+  const xmax=Math.max(1.6,Math.min(quantile(data.map(a=>a.EI),0.98)*1.12,4));const sx3=v=>m.l+Math.min(v,xmax)/xmax*(W-m.l-m.r);const ly=v=>Math.log10(v);const sy3=v=>H-m.b-(ly(v)-ly(0.25))/(ly(4)-ly(0.25))*(H-m.t-m.b);
+  const g3=el('g',{class:'grid'},s3);[0.25,0.5,1,2,4].forEach(t=>el('line',{x1:m.l,x2:W-m.r,y1:sy3(t),y2:sy3(t)},g3));
+  const a3=el('g',{class:'axis'},s3);el('line',{x1:m.l,x2:W-m.r,y1:H-m.b,y2:H-m.b},a3);
+  niceTicks(0,xmax,6).forEach(t=>txt(a3,sx3(t),H-m.b+16,fmt(t,1),{'text-anchor':'middle'}));
+  [0.25,0.5,1,2,4].forEach(t=>txt(a3,m.l-8,sy3(t)+4,fmt(t,t<1?2:0)+'×',{'text-anchor':'end'}));
+  txt(a3,(m.l+W-m.r)/2,H-6,'Efficiency Index (1 = projected 0.8× LTV/CAC)',{'text-anchor':'middle',class:'lab'});
+  txt(a3,14,(m.t+H-m.b)/2,'Scale Index (vs campaign median)',{'text-anchor':'middle',transform:`rotate(-90 14 ${(m.t+H-m.b)/2})`,class:'lab'});
+  el('line',{class:'ref',x1:sx3(1),x2:sx3(1),y1:m.t,y2:H-m.b,stroke:'var(--good)'},s3);txt(s3,sx3(1)+5,H-m.b-6,'EI = 1',{class:'lab b'});
+  const curve=[];for(let e=0.5;e<=xmax;e+=0.02){const si=2/e;if(si>=0.25&&si<=4)curve.push(`${sx3(e)},${sy3(si)}`)}
+  el('polyline',{class:'ref',points:curve.join(' '),fill:'none',stroke:'var(--ink-3)'},s3);txt(s3,sx3(Math.min(xmax,2.2))-4,sy3(Math.max(0.25,2/Math.min(xmax,2.2)))-6,'SP2 = 2',{class:'lab','text-anchor':'end'});
+  const smax=Math.max(...data.map(a=>a.spend));const sorted=[...data].sort((a,b)=>b.spend-a.spend);
+  sorted.forEach(a=>{const r=3+10*Math.sqrt(a.spend/smax);const on=a.ltv_cac>=TARGET;const col=STAGE_COL[a.stage]||'var(--neutral)';const x=sx3(a.EI),y=sy3(a.SI);
+    const dot=el('circle',{cx:x,cy:y,r,fill:col,'fill-opacity':.75,stroke:on?'var(--ink)':'var(--surface)','stroke-width':on?2:1.5},s3);
+    if(a.EI>xmax)txt(s3,x+r+1,y+4,'›',{class:'lab'});
+    const hit=el('circle',{cx:x,cy:y,r:Math.max(r,12),fill:'transparent'},s3);
+    hit.addEventListener('mouseenter',()=>dot.setAttribute('stroke','var(--accent)'));hit.addEventListener('mouseleave',()=>dot.setAttribute('stroke',on?'var(--ink)':'var(--surface)'));
+    hover(hit,a.name,()=>adLines(a))})}
+
+/* ---------- gate table ---------- */
+function renderGates(G){const tb=document.getElementById('gateTable');if(!Object.keys(G.gates).length){tb.innerHTML='<tbody><tr><td class="small">Not enough ads for statistics.</td></tr></tbody>';return}
+  let h='<thead><tr><th>Gate</th><th>Ads</th><th>Spend</th><th>LTV/CAC (point)</th><th>LTV/CAC (draws, 90%)</th><th>Hit rate ≥ 0.8×</th><th>Hit rate ≥ 1.0×</th><th>Recall of on-target spend</th><th>Lift vs rest (90%)</th><th>P(lift &gt; 1)</th></tr></thead><tbody>';
+  Object.entries(G.gates).forEach(([name,v])=>{const hi=name.startsWith('SP2')||name.startsWith('Not SP2');
+    h+=`<tr${hi?' class="hi"':''}><td style="white-space:normal;min-width:220px">${esc(name)}</td><td class="num">${v.n}</td><td class="num">${usd(v.spend)}</td><td class="num"><b>${xr(v.sw_ltv_cac)}</b></td><td class="num">${v.sw_in&&v.sw_in[1]!=null?`${xr(v.sw_in[1])} <span class="small">${ci(v.sw_in)}</span>`:'–'}</td><td class="num">${v.hit_rate&&v.hit_rate[1]!=null?`<b>${pct(v.hit_rate[1])}</b> <span class="small">${pct(v.hit_rate[0])}–${pct(v.hit_rate[2])}</span>`:'–'}</td><td class="num">${pct(v.hit_rate_1x)}</td><td class="num">${v.spend_recall&&v.spend_recall[1]!=null?`${pct(v.spend_recall[1])} <span class="small">${pct(v.spend_recall[0])}–${pct(v.spend_recall[2])}</span>`:'–'}</td><td class="num">${v.lift&&v.lift[1]!=null?`<b>${xr(v.lift[1])}</b> <span class="small">${ci(v.lift)}</span>`:'–'}</td><td class="num">${pct(v.p_lift_gt1)}</td></tr>`});
+  tb.innerHTML=h+'</tbody>'}
+
+/* ---------- campaigns ---------- */
+function renderCampaigns(){const tb=document.getElementById('campTable');const rows=R.campaigns.filter(c=>(market==='All'||c.market===market)&&(stage==='All'||c.stage===stage)).sort((a,b)=>b.spend-a.spend);
+  let h='<thead><tr><th>Campaign</th><th>Market</th><th>Stage</th><th>Ads</th><th>Spend</th><th>LTV/CAC (90%)</th><th>SSOT point</th><th>Installs</th><th>CPI</th><th>Median spend/day</th><th>SP2 winners</th><th>Old P1</th><th>Old P2</th><th>Active</th></tr></thead><tbody>';
+  rows.forEach(c=>{h+=`<tr><td class="name" title="${esc(c.campaign)}">${esc(c.campaign)}</td><td style="text-align:left">${esc(c.market)}</td><td style="text-align:left">${esc(c.stage)}</td><td class="num">${c.n_ads}</td><td class="num">${usd(c.spend)}</td><td class="num"><b>${xr(c.ltv_cac_sw[1])}</b> <span class="small">${ci(c.ltv_cac_sw)}</span></td><td class="num">${xr(c.ssot_ltv_cac)}</td><td class="num">${f0(c.installs)}</td><td class="num">${usd2(c.cpi)}</td><td class="num">${usd2(c.median_spend_per_day)}</td><td class="num">${c.n_sp2_winner}</td><td class="num">${c.n_p1}</td><td class="num">${c.n_p2}</td><td class="small">${esc(c.first_date)} → ${esc(c.last_date)}</td></tr>`});
+  tb.innerHTML=h+'</tbody>'}
+
+/* ---------- ad table ---------- */
+let sortKey='spend',sortDir=-1,q='',chip2=null,chip1=null;
+const COLS=[
+ ['name','Ad',a=>`<td class="name" title="${esc(a.raw_name)}">${esc(a.name)}<br><span class="small">${esc(a.market)} · ${esc(a.stage)}</span></td>`,'s'],
+ ['spend','Spend',a=>`<td class="num">${usd(a.spend)}</td>`],['installs','Installs',a=>`<td class="num">${f0(a.installs)}</td>`],['cpi','CPI',a=>`<td class="num">${usd2(a.cpi)}</td>`],
+ ['EI','EI',a=>`<td class="num">${fmt(a.EI)}</td>`],['SI','SI',a=>`<td class="num">${fmt(a.SI)}</td>`],['SP2','SP2 (new)',a=>`<td class="num"><b>${fmt(a.SP2)}</b></td>`],
+ ['sp2_phase','SP2 phase',a=>`<td style="text-align:left">${pill(sp2Cls(a.sp2_phase),sp2Short(a.sp2_phase))}</td>`,'s'],
+ ['sp','SP (old)',a=>`<td class="num"><b>${fmt(a.sp)}</b> <span class="small">${ci(a.sp_ci)}</span></td>`],['phase','Old phase',a=>`<td style="text-align:left">${pill(oldCls(a.phase),oldShort(a.phase))}</td>`,'s'],
+ ['ipm','IPM',a=>`<td class="num"><b>${fmt(a.ipm)}</b></td>`],['trials','Trials',a=>`<td class="num">${f0(a.trials)}</td>`],['cpft','CPFT',a=>`<td class="num">${usd2(a.cpft)}</td>`],
+ ['ltv_cac','LTV/CAC',a=>`<td class="num"><b>${xr(a.ltv_cac)}</b> <span class="small">${ci(a.ltv_cac_ci)}</span></td>`],['p_on_target','P(≥ 0.8×)',a=>`<td class="num">${pct(a.p_on_target)}</td>`],
+ ['ssot_ltv_cac','SSOT LTV/CAC',a=>`<td class="num">${xr(a.ssot_ltv_cac)}</td>`],['days','Days',a=>`<td class="num">${a.days}</td>`]];
+function renderChips(){const mk=(hostId,items,get,set,clsf,shortf)=>{const host=document.getElementById(hostId);host.replaceChildren();items.forEach(p=>{const b=document.createElement('button');b.className='chip';b.type='button';b.textContent=shortf(p);b.setAttribute('aria-pressed',get()===p);b.onclick=()=>{set(get()===p?null:p);renderTable()};host.appendChild(b)})};
+  mk('sp2Chips',SP2_PHASES,()=>chip2,v=>chip2=v,sp2Cls,p=>'SP2: '+sp2Short(p));mk('oldChips',OLD_PHASES,()=>chip1,v=>chip1=v,oldCls,p=>'Old: '+oldShort(p))}
+function renderTable(){const tb=document.getElementById('adTable');const ql=q.trim().toLowerCase();
+  let rows=R.ads.filter(a=>inGroup(a)&&(!chip2||a.sp2_phase===chip2)&&(!chip1||a.phase===chip1)&&(!ql||(a.name+' '+a.raw_name+' '+a.campaign+' '+a.ad_id).toLowerCase().includes(ql)));
+  const col=COLS.find(c=>c[0]===sortKey);rows.sort((a,b)=>{let x=a[sortKey],y=b[sortKey];if(col&&col[3]==='s'){x=String(x??'');y=String(y??'');return sortDir*x.localeCompare(y)}x=x==null||isNaN(x)?-Infinity:x;y=y==null||isNaN(y)?-Infinity:y;return sortDir*(x-y)});
+  let h='<thead><tr>'+COLS.map(c=>`<th class="sortable" tabindex="0" data-k="${c[0]}">${c[1]}${sortKey===c[0]?(sortDir<0?' ▾':' ▴'):''}</th>`).join('')+'</tr></thead><tbody>';
+  rows.forEach(a=>{h+=`<tr${a.analyzed?'':' class="dim"'}>`+COLS.map(c=>c[2](a)).join('')+'</tr>'});tb.innerHTML=h+'</tbody>';
+  document.getElementById('rowCount').textContent=`${rows.length} ads · ${rows.filter(a=>a.analyzed).length} with ≥ $100`;
+  tb.querySelectorAll('th.sortable').forEach(th=>{const go=()=>{const k=th.dataset.k;if(sortKey===k)sortDir*=-1;else{sortKey=k;sortDir=COLS.find(c=>c[0]===k)[3]==='s'?1:-1}renderTable()};th.onclick=go;th.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();go()}}})}
+document.getElementById('q').addEventListener('input',e=>{q=e.target.value;renderTable()});
+
+/* ---------- method ---------- */
+function renderMethod(){const M=R.meta,P=M.market_params;const mk=M.markets;
+  const rows=[['Ads with spend',m=>P[m].n_ads],['Spend',m=>usd(P[m].spend)],['K: SSOT LTV per Meta-reported install',m=>usd2(P[m].K_per_install)],['CPI target (EI = 1 ⇔ CPI ≤ K / 0.8)',m=>usd2(P[m].cpi_target)],['Pooled CPI in window',m=>usd2(P[m].pool_cpi)],['Pooled IPM (installs per 1,000)',m=>fmt(P[m].pool_ipm,3)],
+    ['SSOT trial starts (all ads incl. unattributed)',m=>f0(P[m].ssot_trials)],['SSOT modeled paid',m=>f0(P[m].ssot_paid)],['SSOT LTV',m=>usd(P[m].ssot_ltv)],['SSOT trials matched to Meta ads',m=>f0(P[m].ssot_trials_matched)],['SSOT LTV matched to Meta ads',m=>usd(P[m].ssot_ltv_matched)],
+    ['Trial → paid (modeled)',m=>pct(P[m].p_conv)],['Plan mix: annual regular / annual plus / monthly',m=>`${pct(P[m].plan_mix.annual_reg)} / ${pct(P[m].plan_mix.annual_plus)} / ${pct(P[m].plan_mix.monthly)}`],['36-month LTV per paid user by plan',m=>`$${fmt(P[m].ltv_mu.annual_reg)} / $${fmt(P[m].ltv_mu.annual_plus)} / $${fmt(P[m].ltv_mu.monthly)}`],
+    ['Meta-observed purchases ÷ modeled paid',m=>pct(P[m].meta_report_ratio)],['Ads without an SSOT row (trials scaled from Meta adj. trials)',m=>P[m].n_ads_without_ssot],['Placements in the SP benchmark',m=>P[m].placements.length]];
+  document.getElementById('paramTable').innerHTML=`<thead><tr><th>Calibration (window ${esc(M.window)})</th>${mk.map(m=>`<th>${esc(m)}</th>`).join('')}</tr></thead><tbody>${rows.map(([l,f])=>`<tr><td>${l}</td>${mk.map(m=>`<td class="num">${f(m)}</td>`).join('')}</tr>`).join('')}</tbody>`;
+  document.getElementById('method').innerHTML=`<ul>
+   <li><b>Scope.</b> ${esc(M.account)}: every ad with spend in an iOS app campaign targeting ${mk.join(' or ')}, ${esc(M.window)}. Web campaigns in the same account have no install event, so the install-based SP2 cannot score them and they are left out. Ads under $${M.min_spend_analyzed} of spend are listed in the table but excluded from every statistic.</li>
+   <li><b>SP2 = EI × SI.</b> <code>EI = (K ÷ CPI) ÷ ${M.target}</code> where K is the market's SSOT LTV per Meta-reported install over the window and CPI = spend ÷ Meta installs for the whole window (production would use a trailing 7 days); EI = 1 means a projected LTV/CAC of ${M.target}×. An ad with $100 of spend and no install scores EI = 0. <code>SI = spend per active day ÷ median spend per active day of the ads in the same campaign</code>, clipped to ${M.si_clip[0]}–${M.si_clip[1]}. Phases: <b>Scalable winner</b> EI ≥ 1 and SP2 ≥ ${M.sp2_bar}; <b>Efficient, unproven scale</b> EI ≥ 1; <b>Watch</b> ${M.target} ≤ EI &lt; 1; <b>Pause</b> EI &lt; ${M.target}; <b>No installs yet</b> under $100 with no install.</li>
+   <li><b>SP (old), Option B.</b> Per placement, the ad's CTR and click-to-trial rate are divided by the benchmark of all other ads of the same market on that placement; the two ratios are summed and spend-weighted across placements. Phases: <b>P2 winner</b> SP ≥ ${M.sp_threshold}, ≥ ${M.min_trials} trials, CPFT ≤ $${M.cpft_target}; <b>P1 winner</b> SP ≥ ${M.sp_threshold} and ≥ ${M.min_installs} installs; <b>Mid-Tier</b> 1.4 ≤ SP &lt; ${M.sp_threshold}; <b>Pause</b> below. The Taiwan CPFT target is applied to Hong Kong as well, since the SP skill defines none for it.</li>
+   <li><b>IPM.</b> Meta-reported installs per 1,000 impressions. Its gate in section 4 is IPM at or above the market's pooled IPM with at least ${M.min_installs} installs.</li>
+   <li><b>LTV/CAC per ad.</b> SSOT trial starts matched to the ad in its own market (${M.ssot_spillover.n_ad_market_rows} ad rows attributed to the other market carry $${f0(M.ssot_spillover.ltv)} of LTV and are ignored) are split by plan using the ad's AppsFlyer trial mix shrunk toward the market mix, multiplied by a Beta-distributed trial-to-paid rate (mean from the market SSOT, sd ${M.p_conv_sd}) and a per-ad Gamma multiplier (prior strength ${M.prior_strength}) that lets Meta-observed purchases re-allocate paid users across ads while the market total stays at the SSOT level. Paid users are Poisson draws; each paid user's 36-month LTV is drawn around the market's plan means; a ${pct(M.ltv_forecast_sd)} global forecast error is applied. LTV/CAC = LTV ÷ Meta spend; ${M.n_sim.toLocaleString()} draws.</li>
+   <li><b>Same draws, same noise for the scores.</b> Old SP is re-scored in every draw from Beta posteriors of the ad's CTR and CTI per placement, shrunk toward the placement benchmark (prior weight ${M.kappa_ctr} impressions / ${M.kappa_cti} clicks). IPM is drawn from the ad's install rate; the drawn installs feed EI and SP2. Correlations, AUCs and gate statistics are computed per draw and summarised as median and 5th–95th percentile; the point columns use the raw numbers and each ad's median LTV/CAC.</li>
+   <li><b>Milestone test.</b> For each cumulative-spend milestone, each score is recomputed from the ad's daily data up to the day it crossed the milestone (SI uses the ad's spend velocity so far against the median of its campaign peers that reached the same milestone), among ads whose final spend reached at least twice the milestone, and correlated with the ad's final LTV/CAC.</li>
+   <li><b>Read with care.</b> Hong Kong's K is $${fmt(P['Hong Kong']?P['Hong Kong'].K_per_install:null)} per install against a pooled CPI of $${fmt(P['Hong Kong']?P['Hong Kong'].pool_cpi:null)}, so almost no Hong Kong ad can clear EI ≥ 1 and the SP2 gates there select nothing: that is a statement about the market's unit economics, not a failure to rank. In the scaling campaigns SI works against SP2, because the ads that win the most budget are the ones whose CPI has drifted furthest; use EI, or the old SP, to rank ads that are already scaled.</li>
+  </ul>`}
+
+function renderAll(){renderSegs();const G=R.groups[key()];renderTiles(G);renderFindings(G);
+  dotChart('dotRho',G,'rho','Rank correlation with LTV/CAC','Spearman ρ · higher is better · dashed line = no relationship',-0.3,0.9,0,'ρ = 0');
+  dotChart('dotAuc',G,'auc08','Ranking ads that reach the 0.8× target','AUC · 0.5 = coin flip · 1.0 = perfect ranking',0.3,1.0,0.5,'coin flip');
+  renderSpeed(G);renderScatters(G);renderAgreement(G);renderGates(G);renderCampaigns();renderChips();renderTable()}
+renderMethod();renderAll();
+</script>
