@@ -1,0 +1,105 @@
+campaign_id,campaign,period,region,cell,signups,trials,conversions
+23639420764,tROAS (control),aug,Taipei City,control,860,97,38
+23639420764,tROAS (control),aug,New Taipei City,test,528,70,36
+23639420764,tROAS (control),aug,Kaohsiung,control,499,43,18
+23639420764,tROAS (control),aug,Taichung City,control,470,56,25
+23639420764,tROAS (control),aug,(unknown),unknown,430,38,15
+23639420764,tROAS (control),aug,Taoyuan,test,332,36,10
+23639420764,tROAS (control),aug,Tainan,control,193,24,8
+23639420764,tROAS (control),aug,Hsinchu City,control,105,15,8
+23639420764,tROAS (control),aug,Changhua,control,88,7,2
+23639420764,tROAS (control),aug,Pingtung,test,53,3,1
+23639420764,tROAS (control),aug,Yunlin,control,39,2,2
+23639420764,tROAS (control),aug,Hsinchu County,test,37,4,1
+23639420764,tROAS (control),aug,Miaoli,control,27,3,2
+23639420764,tROAS (control),aug,Chiayi,control,22,2,1
+23639420764,tROAS (control),aug,Yilan County,control,21,1,1
+23639420764,tROAS (control),aug,Nantou,control,21,2,1
+23639420764,tROAS (control),aug,Hualien County,control,17,1,0
+23639420764,tROAS (control),aug,Chiyayi County,control,13,1,2
+23639420764,tROAS (control),aug,Taitung,control,13,1,0
+23639420764,tROAS (control),aug,Keelung City,control,5,0,0
+23639420764,tROAS (control),aug,Ho Chi Minh,control,3,0,0
+23639420764,tROAS (control),aug,Tokyo,control,3,1,1
+23639420764,tROAS (control),aug,Hiroshima,control,2,1,1
+23639420764,tROAS (control),aug,Penghu County,control,2,0,0
+23639420764,tROAS (control),aug,Santiago Metropolitan,control,2,1,1
+23639420764,tROAS (control),aug,Osaka,control,2,0,0
+23639420764,tROAS (control),aug,England,control,2,1,0
+23639420764,tROAS (control),aug,City of Zagreb,control,1,1,1
+23639420764,tROAS (control),aug,British Columbia,control,1,0,0
+23639420764,tROAS (control),aug,Haryana,control,1,0,0
+23639420764,tROAS (control),aug,California,control,1,0,0
+23639420764,tROAS (control),aug,Guangdong,control,1,0,0
+23639420764,tROAS (control),aug,Chiba,control,1,0,0
+23639420764,tROAS (control),aug,Île-de-France,control,1,1,0
+23639420764,tROAS (control),aug,Beijing,control,1,0,0
+23639420764,tROAS (control),aug,Rogaland,control,1,0,0
+23639420764,tROAS (control),aug,Mpumalanga,control,1,0,0
+23639420764,tROAS (control),aug,Kuala Lumpur,control,1,0,0
+23639420764,tROAS (control),aug,Arizona,control,1,0,1
+23639420764,tROAS (control),aug,Shandong,control,1,0,0
+23639420764,tROAS (control),aug,Hanoi,control,1,1,0
+23639420764,tROAS (control),aug,Metro Manila,control,1,0,0
+23639420764,tROAS (control),aug,Kumamoto,control,1,0,0
+23639420764,tROAS (control),aug,Massachusetts,control,1,0,0
+23639420764,tROAS (control),aug,Greater Accra Region,control,1,1,0
+23639420764,tROAS (control),aug,New York,control,1,1,0
+23639420764,tROAS (control),aug,Bangkok,control,1,0,0
+23639420764,tROAS (control),aug,Budapest,control,1,1,0
+23639420764,tROAS (control),aug,Aichi,control,1,0,0
+23639420764,tROAS (control),sep,Taipei City,control,777,94,38
+23639420764,tROAS (control),sep,New Taipei City,test,520,50,17
+23639420764,tROAS (control),sep,Kaohsiung,control,452,33,4
+23639420764,tROAS (control),sep,Taichung City,control,424,43,16
+23639420764,tROAS (control),sep,(unknown),unknown,347,43,14
+23639420764,tROAS (control),sep,Taoyuan,test,225,28,10
+23639420764,tROAS (control),sep,Tainan,control,156,13,6
+23639420764,tROAS (control),sep,Hsinchu City,control,103,11,3
+23639420764,tROAS (control),sep,Changhua,control,67,5,3
+23639420764,tROAS (control),sep,Hsinchu County,test,40,5,1
+23639420764,tROAS (control),sep,Yunlin,control,32,2,1
+23639420764,tROAS (control),sep,Miaoli,control,32,2,0
+23639420764,tROAS (control),sep,Pingtung,test,27,2,1
+23639420764,tROAS (control),sep,Yilan County,control,25,2,1
+23639420764,tROAS (control),sep,Nantou,control,20,1,1
+23639420764,tROAS (control),sep,Hualien County,control,20,1,0
+23639420764,tROAS (control),sep,Chiayi,control,19,2,2
+23639420764,tROAS (control),sep,Taitung,control,16,2,0
+23639420764,tROAS (control),sep,Chiyayi County,control,10,0,0
+23639420764,tROAS (control),sep,Keelung City,control,6,1,0
+23639420764,tROAS (control),sep,Auckland,control,2,1,0
+23639420764,tROAS (control),sep,Metro Manila,control,2,0,0
+23639420764,tROAS (control),sep,Tokyo,control,2,0,0
+23639420764,tROAS (control),sep,Gyeonggi-do,control,1,0,0
+23639420764,tROAS (control),sep,Osaka,control,1,0,0
+23639420764,tROAS (control),sep,Banten,control,1,0,0
+23639420764,tROAS (control),sep,Victoria,control,1,0,0
+23639420764,tROAS (control),sep,Jakarta,control,1,0,0
+23639420764,tROAS (control),sep,California,control,1,0,0
+23639420764,tROAS (control),sep,Vienna,control,1,1,1
+23639420764,tROAS (control),sep,Arizona,control,1,1,1
+23639420764,tROAS (control),sep,Chandigarh,control,1,0,0
+23639420764,tROAS (control),sep,Quebec,control,1,1,1
+23639420764,tROAS (control),sep,Massachusetts,control,1,0,0
+23639420764,tROAS (control),sep,Hawaii,control,1,0,0
+23639420764,tROAS (control),sep,Seoul,control,1,0,0
+23639420764,tROAS (control),sep,Phú Thọ Province,control,1,0,0
+24190362603,pulseup (test),aug,New Taipei City,test,1,0,0
+24190362603,pulseup (test),sep,Taipei City,control,89,12,5
+24190362603,pulseup (test),sep,New Taipei City,test,78,10,2
+24190362603,pulseup (test),sep,(unknown),unknown,33,2,1
+24190362603,pulseup (test),sep,Taoyuan,test,30,4,1
+24190362603,pulseup (test),sep,Kaohsiung,control,25,2,1
+24190362603,pulseup (test),sep,Hsinchu County,test,10,1,1
+24190362603,pulseup (test),sep,Taichung City,control,9,1,0
+24190362603,pulseup (test),sep,Pingtung,test,9,0,0
+24190362603,pulseup (test),sep,Hsinchu City,control,9,1,0
+24190362603,pulseup (test),sep,Busan,control,1,1,1
+24190362603,pulseup (test),sep,Tainan,control,1,0,0
+24190362603,pulseup (test),sep,California,control,1,0,0
+24190362603,pulseup (test),sep,Chiayi,control,1,0,0
+24190362603,pulseup (test),sep,Alberta,control,1,0,0
+24190362603,pulseup (test),sep,Hualien County,control,1,0,0
+24190362603,pulseup (test),sep,Keelung City,control,1,0,0
+24190362603,pulseup (test),sep,Ho Chi Minh,control,1,0,0

@@ -1,0 +1,1560 @@
+{
+ "campaigns": {
+  "23639420764_aug": {
+   "spend": 24939.16,
+   "impressions": 3373760.0,
+   "clicks": 28542.0,
+   "installs": 6061.0,
+   "signups": 3732.0,
+   "trial_starts": 382.0,
+   "paid": 147.0,
+   "ltv": 19035.4,
+   "forecasted_ltv": 19284.699999999997,
+   "days": 31.0,
+   "cpm": 7.392096651806886,
+   "ctr": 0.008459997154510101,
+   "cpi": 4.114693944893582,
+   "install_to_signup": 0.6157399769015014,
+   "signup_to_trial": 0.10235798499464094,
+   "cpt": 65.28575916230366,
+   "cpa": 169.65414965986395,
+   "trial_to_paid": 0.38481675392670156,
+   "ltv_cac": 0.7732698294569663,
+   "spend_per_day": 804.4890322580645
+  },
+  "23639420764_sep": {
+   "spend": 23698.440000000002,
+   "impressions": 4391654.0,
+   "clicks": 27816.0,
+   "installs": 5257.0,
+   "signups": 3321.0,
+   "trial_starts": 343.0,
+   "paid": 117.13,
+   "ltv": 15759.5,
+   "forecasted_ltv": 17903.100000000002,
+   "days": 30.0,
+   "cpm": 5.3962447861329705,
+   "ctr": 0.006333832310104576,
+   "cpi": 4.507977934182994,
+   "install_to_signup": 0.6317291230739965,
+   "signup_to_trial": 0.10328214393255043,
+   "cpt": 69.09166180758018,
+   "cpa": 202.32596260565188,
+   "trial_to_paid": 0.3414868804664723,
+   "ltv_cac": 0.7554547894291777,
+   "spend_per_day": 789.9480000000001
+  },
+  "23639420764_oct": {
+   "spend": 92.21,
+   "impressions": 13044.0,
+   "clicks": 75.0,
+   "installs": 66.0,
+   "signups": 33.0,
+   "trial_starts": 5.0,
+   "paid": 1.65,
+   "ltv": 217.9,
+   "forecasted_ltv": 267.7,
+   "days": 1.0,
+   "cpm": 7.069150567310641,
+   "ctr": 0.005749770009199632,
+   "cpi": 1.397121212121212,
+   "install_to_signup": 0.5,
+   "signup_to_trial": 0.15151515151515152,
+   "cpt": 18.442,
+   "cpa": 55.88484848484848,
+   "trial_to_paid": 0.32999999999999996,
+   "ltv_cac": 2.9031558399305935,
+   "spend_per_day": 92.21
+  },
+  "24190362603_aug": {
+   "spend": 14.36,
+   "impressions": 4523.0,
+   "clicks": 30.0,
+   "installs": 1.0,
+   "signups": 1.0,
+   "trial_starts": 0.0,
+   "paid": 0.0,
+   "ltv": 0.0,
+   "forecasted_ltv": 0.0,
+   "days": 1.0,
+   "cpm": 3.174883926597391,
+   "ctr": 0.006632765863365023,
+   "cpi": 14.36,
+   "install_to_signup": 1.0,
+   "signup_to_trial": 0.0,
+   "cpt": null,
+   "cpa": null,
+   "trial_to_paid": null,
+   "ltv_cac": 0.0,
+   "spend_per_day": 14.36
+  },
+  "24190362603_sep": {
+   "spend": 2801.209999999999,
+   "impressions": 523701.0,
+   "clicks": 4393.0,
+   "installs": 620.0,
+   "signups": 300.0,
+   "trial_starts": 34.0,
+   "paid": 11.270000000000001,
+   "ltv": 1522.6999999999998,
+   "forecasted_ltv": 1748.6000000000004,
+   "days": 30.0,
+   "cpm": 5.348872734632928,
+   "ctr": 0.008388374282271755,
+   "cpi": 4.518080645161289,
+   "install_to_signup": 0.4838709677419355,
+   "signup_to_trial": 0.11333333333333333,
+   "cpt": 82.38852941176468,
+   "cpa": 248.55456965394842,
+   "trial_to_paid": 0.3314705882352942,
+   "ltv_cac": 0.6242302433591201,
+   "spend_per_day": 93.37366666666664
+  },
+  "24190362603_oct": {
+   "spend": 14.33,
+   "impressions": 687.0,
+   "clicks": 6.0,
+   "installs": 9.0,
+   "signups": 7.0,
+   "trial_starts": 0.0,
+   "paid": 0.0,
+   "ltv": 0.0,
+   "forecasted_ltv": 0.0,
+   "days": 1.0,
+   "cpm": 20.858806404657933,
+   "ctr": 0.008733624454148471,
+   "cpi": 1.5922222222222222,
+   "install_to_signup": 0.7777777777777778,
+   "signup_to_trial": 0.0,
+   "cpt": null,
+   "cpa": null,
+   "trial_to_paid": null,
+   "ltv_cac": 0.0,
+   "spend_per_day": 14.33
+  }
+ },
+ "geo_split": {
+  "23639420764_aug_control": {
+   "signups": 2431,
+   "trials": 265,
+   "conversions": 113
+  },
+  "23639420764_aug_Taipei City": {
+   "signups": 860,
+   "trials": 97,
+   "conversions": 38
+  },
+  "23639420764_aug_test": {
+   "signups": 950,
+   "trials": 113,
+   "conversions": 48
+  },
+  "23639420764_aug_New Taipei City": {
+   "signups": 528,
+   "trials": 70,
+   "conversions": 36
+  },
+  "23639420764_aug_Kaohsiung": {
+   "signups": 499,
+   "trials": 43,
+   "conversions": 18
+  },
+  "23639420764_aug_Taichung City": {
+   "signups": 470,
+   "trials": 56,
+   "conversions": 25
+  },
+  "23639420764_aug_unknown": {
+   "signups": 430,
+   "trials": 38,
+   "conversions": 15
+  },
+  "23639420764_aug_(unknown)": {
+   "signups": 430,
+   "trials": 38,
+   "conversions": 15
+  },
+  "23639420764_aug_Taoyuan": {
+   "signups": 332,
+   "trials": 36,
+   "conversions": 10
+  },
+  "23639420764_aug_Tainan": {
+   "signups": 193,
+   "trials": 24,
+   "conversions": 8
+  },
+  "23639420764_aug_Hsinchu City": {
+   "signups": 105,
+   "trials": 15,
+   "conversions": 8
+  },
+  "23639420764_aug_Changhua": {
+   "signups": 88,
+   "trials": 7,
+   "conversions": 2
+  },
+  "23639420764_aug_Pingtung": {
+   "signups": 53,
+   "trials": 3,
+   "conversions": 1
+  },
+  "23639420764_aug_Yunlin": {
+   "signups": 39,
+   "trials": 2,
+   "conversions": 2
+  },
+  "23639420764_aug_Hsinchu County": {
+   "signups": 37,
+   "trials": 4,
+   "conversions": 1
+  },
+  "23639420764_aug_Miaoli": {
+   "signups": 27,
+   "trials": 3,
+   "conversions": 2
+  },
+  "23639420764_aug_Chiayi": {
+   "signups": 22,
+   "trials": 2,
+   "conversions": 1
+  },
+  "23639420764_aug_Yilan County": {
+   "signups": 21,
+   "trials": 1,
+   "conversions": 1
+  },
+  "23639420764_aug_Nantou": {
+   "signups": 21,
+   "trials": 2,
+   "conversions": 1
+  },
+  "23639420764_aug_Hualien County": {
+   "signups": 17,
+   "trials": 1,
+   "conversions": 0
+  },
+  "23639420764_aug_Chiyayi County": {
+   "signups": 13,
+   "trials": 1,
+   "conversions": 2
+  },
+  "23639420764_aug_Taitung": {
+   "signups": 13,
+   "trials": 1,
+   "conversions": 0
+  },
+  "23639420764_aug_Keelung City": {
+   "signups": 5,
+   "trials": 0,
+   "conversions": 0
+  },
+  "23639420764_aug_Ho Chi Minh": {
+   "signups": 3,
+   "trials": 0,
+   "conversions": 0
+  },
+  "23639420764_aug_Tokyo": {
+   "signups": 3,
+   "trials": 1,
+   "conversions": 1
+  },
+  "23639420764_aug_Hiroshima": {
+   "signups": 2,
+   "trials": 1,
+   "conversions": 1
+  },
+  "23639420764_aug_Penghu County": {
+   "signups": 2,
+   "trials": 0,
+   "conversions": 0
+  },
+  "23639420764_aug_Santiago Metropolitan": {
+   "signups": 2,
+   "trials": 1,
+   "conversions": 1
+  },
+  "23639420764_aug_Osaka": {
+   "signups": 2,
+   "trials": 0,
+   "conversions": 0
+  },
+  "23639420764_aug_England": {
+   "signups": 2,
+   "trials": 1,
+   "conversions": 0
+  },
+  "23639420764_aug_City of Zagreb": {
+   "signups": 1,
+   "trials": 1,
+   "conversions": 1
+  },
+  "23639420764_aug_British Columbia": {
+   "signups": 1,
+   "trials": 0,
+   "conversions": 0
+  },
+  "23639420764_aug_Haryana": {
+   "signups": 1,
+   "trials": 0,
+   "conversions": 0
+  },
+  "23639420764_aug_California": {
+   "signups": 1,
+   "trials": 0,
+   "conversions": 0
+  },
+  "23639420764_aug_Guangdong": {
+   "signups": 1,
+   "trials": 0,
+   "conversions": 0
+  },
+  "23639420764_aug_Chiba": {
+   "signups": 1,
+   "trials": 0,
+   "conversions": 0
+  },
+  "23639420764_aug_\u00cele-de-France": {
+   "signups": 1,
+   "trials": 1,
+   "conversions": 0
+  },
+  "23639420764_aug_Beijing": {
+   "signups": 1,
+   "trials": 0,
+   "conversions": 0
+  },
+  "23639420764_aug_Rogaland": {
+   "signups": 1,
+   "trials": 0,
+   "conversions": 0
+  },
+  "23639420764_aug_Mpumalanga": {
+   "signups": 1,
+   "trials": 0,
+   "conversions": 0
+  },
+  "23639420764_aug_Kuala Lumpur": {
+   "signups": 1,
+   "trials": 0,
+   "conversions": 0
+  },
+  "23639420764_aug_Arizona": {
+   "signups": 1,
+   "trials": 0,
+   "conversions": 1
+  },
+  "23639420764_aug_Shandong": {
+   "signups": 1,
+   "trials": 0,
+   "conversions": 0
+  },
+  "23639420764_aug_Hanoi": {
+   "signups": 1,
+   "trials": 1,
+   "conversions": 0
+  },
+  "23639420764_aug_Metro Manila": {
+   "signups": 1,
+   "trials": 0,
+   "conversions": 0
+  },
+  "23639420764_aug_Kumamoto": {
+   "signups": 1,
+   "trials": 0,
+   "conversions": 0
+  },
+  "23639420764_aug_Massachusetts": {
+   "signups": 1,
+   "trials": 0,
+   "conversions": 0
+  },
+  "23639420764_aug_Greater Accra Region": {
+   "signups": 1,
+   "trials": 1,
+   "conversions": 0
+  },
+  "23639420764_aug_New York": {
+   "signups": 1,
+   "trials": 1,
+   "conversions": 0
+  },
+  "23639420764_aug_Bangkok": {
+   "signups": 1,
+   "trials": 0,
+   "conversions": 0
+  },
+  "23639420764_aug_Budapest": {
+   "signups": 1,
+   "trials": 1,
+   "conversions": 0
+  },
+  "23639420764_aug_Aichi": {
+   "signups": 1,
+   "trials": 0,
+   "conversions": 0
+  },
+  "23639420764_sep_control": {
+   "signups": 2179,
+   "trials": 216,
+   "conversions": 78
+  },
+  "23639420764_sep_Taipei City": {
+   "signups": 777,
+   "trials": 94,
+   "conversions": 38
+  },
+  "23639420764_sep_test": {
+   "signups": 812,
+   "trials": 85,
+   "conversions": 29
+  },
+  "23639420764_sep_New Taipei City": {
+   "signups": 520,
+   "trials": 50,
+   "conversions": 17
+  },
+  "23639420764_sep_Kaohsiung": {
+   "signups": 452,
+   "trials": 33,
+   "conversions": 4
+  },
+  "23639420764_sep_Taichung City": {
+   "signups": 424,
+   "trials": 43,
+   "conversions": 16
+  },
+  "23639420764_sep_unknown": {
+   "signups": 347,
+   "trials": 43,
+   "conversions": 14
+  },
+  "23639420764_sep_(unknown)": {
+   "signups": 347,
+   "trials": 43,
+   "conversions": 14
+  },
+  "23639420764_sep_Taoyuan": {
+   "signups": 225,
+   "trials": 28,
+   "conversions": 10
+  },
+  "23639420764_sep_Tainan": {
+   "signups": 156,
+   "trials": 13,
+   "conversions": 6
+  },
+  "23639420764_sep_Hsinchu City": {
+   "signups": 103,
+   "trials": 11,
+   "conversions": 3
+  },
+  "23639420764_sep_Changhua": {
+   "signups": 67,
+   "trials": 5,
+   "conversions": 3
+  },
+  "23639420764_sep_Hsinchu County": {
+   "signups": 40,
+   "trials": 5,
+   "conversions": 1
+  },
+  "23639420764_sep_Yunlin": {
+   "signups": 32,
+   "trials": 2,
+   "conversions": 1
+  },
+  "23639420764_sep_Miaoli": {
+   "signups": 32,
+   "trials": 2,
+   "conversions": 0
+  },
+  "23639420764_sep_Pingtung": {
+   "signups": 27,
+   "trials": 2,
+   "conversions": 1
+  },
+  "23639420764_sep_Yilan County": {
+   "signups": 25,
+   "trials": 2,
+   "conversions": 1
+  },
+  "23639420764_sep_Nantou": {
+   "signups": 20,
+   "trials": 1,
+   "conversions": 1
+  },
+  "23639420764_sep_Hualien County": {
+   "signups": 20,
+   "trials": 1,
+   "conversions": 0
+  },
+  "23639420764_sep_Chiayi": {
+   "signups": 19,
+   "trials": 2,
+   "conversions": 2
+  },
+  "23639420764_sep_Taitung": {
+   "signups": 16,
+   "trials": 2,
+   "conversions": 0
+  },
+  "23639420764_sep_Chiyayi County": {
+   "signups": 10,
+   "trials": 0,
+   "conversions": 0
+  },
+  "23639420764_sep_Keelung City": {
+   "signups": 6,
+   "trials": 1,
+   "conversions": 0
+  },
+  "23639420764_sep_Auckland": {
+   "signups": 2,
+   "trials": 1,
+   "conversions": 0
+  },
+  "23639420764_sep_Metro Manila": {
+   "signups": 2,
+   "trials": 0,
+   "conversions": 0
+  },
+  "23639420764_sep_Tokyo": {
+   "signups": 2,
+   "trials": 0,
+   "conversions": 0
+  },
+  "23639420764_sep_Gyeonggi-do": {
+   "signups": 1,
+   "trials": 0,
+   "conversions": 0
+  },
+  "23639420764_sep_Osaka": {
+   "signups": 1,
+   "trials": 0,
+   "conversions": 0
+  },
+  "23639420764_sep_Banten": {
+   "signups": 1,
+   "trials": 0,
+   "conversions": 0
+  },
+  "23639420764_sep_Victoria": {
+   "signups": 1,
+   "trials": 0,
+   "conversions": 0
+  },
+  "23639420764_sep_Jakarta": {
+   "signups": 1,
+   "trials": 0,
+   "conversions": 0
+  },
+  "23639420764_sep_California": {
+   "signups": 1,
+   "trials": 0,
+   "conversions": 0
+  },
+  "23639420764_sep_Vienna": {
+   "signups": 1,
+   "trials": 1,
+   "conversions": 1
+  },
+  "23639420764_sep_Arizona": {
+   "signups": 1,
+   "trials": 1,
+   "conversions": 1
+  },
+  "23639420764_sep_Chandigarh": {
+   "signups": 1,
+   "trials": 0,
+   "conversions": 0
+  },
+  "23639420764_sep_Quebec": {
+   "signups": 1,
+   "trials": 1,
+   "conversions": 1
+  },
+  "23639420764_sep_Massachusetts": {
+   "signups": 1,
+   "trials": 0,
+   "conversions": 0
+  },
+  "23639420764_sep_Hawaii": {
+   "signups": 1,
+   "trials": 0,
+   "conversions": 0
+  },
+  "23639420764_sep_Seoul": {
+   "signups": 1,
+   "trials": 0,
+   "conversions": 0
+  },
+  "23639420764_sep_Ph\u00fa Th\u1ecd Province": {
+   "signups": 1,
+   "trials": 0,
+   "conversions": 0
+  },
+  "24190362603_aug_test": {
+   "signups": 1,
+   "trials": 0,
+   "conversions": 0
+  },
+  "24190362603_aug_New Taipei City": {
+   "signups": 1,
+   "trials": 0,
+   "conversions": 0
+  },
+  "24190362603_sep_control": {
+   "signups": 140,
+   "trials": 17,
+   "conversions": 7
+  },
+  "24190362603_sep_Taipei City": {
+   "signups": 89,
+   "trials": 12,
+   "conversions": 5
+  },
+  "24190362603_sep_test": {
+   "signups": 127,
+   "trials": 15,
+   "conversions": 4
+  },
+  "24190362603_sep_New Taipei City": {
+   "signups": 78,
+   "trials": 10,
+   "conversions": 2
+  },
+  "24190362603_sep_unknown": {
+   "signups": 33,
+   "trials": 2,
+   "conversions": 1
+  },
+  "24190362603_sep_(unknown)": {
+   "signups": 33,
+   "trials": 2,
+   "conversions": 1
+  },
+  "24190362603_sep_Taoyuan": {
+   "signups": 30,
+   "trials": 4,
+   "conversions": 1
+  },
+  "24190362603_sep_Kaohsiung": {
+   "signups": 25,
+   "trials": 2,
+   "conversions": 1
+  },
+  "24190362603_sep_Hsinchu County": {
+   "signups": 10,
+   "trials": 1,
+   "conversions": 1
+  },
+  "24190362603_sep_Taichung City": {
+   "signups": 9,
+   "trials": 1,
+   "conversions": 0
+  },
+  "24190362603_sep_Pingtung": {
+   "signups": 9,
+   "trials": 0,
+   "conversions": 0
+  },
+  "24190362603_sep_Hsinchu City": {
+   "signups": 9,
+   "trials": 1,
+   "conversions": 0
+  },
+  "24190362603_sep_Busan": {
+   "signups": 1,
+   "trials": 1,
+   "conversions": 1
+  },
+  "24190362603_sep_Tainan": {
+   "signups": 1,
+   "trials": 0,
+   "conversions": 0
+  },
+  "24190362603_sep_California": {
+   "signups": 1,
+   "trials": 0,
+   "conversions": 0
+  },
+  "24190362603_sep_Chiayi": {
+   "signups": 1,
+   "trials": 0,
+   "conversions": 0
+  },
+  "24190362603_sep_Alberta": {
+   "signups": 1,
+   "trials": 0,
+   "conversions": 0
+  },
+  "24190362603_sep_Hualien County": {
+   "signups": 1,
+   "trials": 0,
+   "conversions": 0
+  },
+  "24190362603_sep_Keelung City": {
+   "signups": 1,
+   "trials": 0,
+   "conversions": 0
+  },
+  "24190362603_sep_Ho Chi Minh": {
+   "signups": 1,
+   "trials": 0,
+   "conversions": 0
+  }
+ },
+ "did": {
+  "android_signups": {
+   "pre_JunJul": {
+    "days": 61,
+    "test": 2373,
+    "control": 6164,
+    "test_per_day": 38.90163934426229,
+    "control_per_day": 101.04918032786885,
+    "test_share": 0.27796649877005974
+   },
+   "pre_Aug": {
+    "days": 31,
+    "test": 1728,
+    "control": 4425,
+    "test_per_day": 55.74193548387097,
+    "control_per_day": 142.74193548387098,
+    "test_share": 0.2808386153096051
+   },
+   "test_Sep": {
+    "days": 30,
+    "test": 1477,
+    "control": 3616,
+    "test_per_day": 49.233333333333334,
+    "control_per_day": 120.53333333333333,
+    "test_share": 0.2900058904378559
+   },
+   "post_Oct1-11": {
+    "days": 11,
+    "test": 191,
+    "control": 461,
+    "test_per_day": 17.363636363636363,
+    "control_per_day": 41.90909090909091,
+    "test_share": 0.2929447852760736
+   },
+   "did_sep_vs_junjul": {
+    "lift": 0.06100386352363785,
+    "lo": -0.01747688770103184,
+    "hi": 0.14575340195106024,
+    "counterfactual": 1392.0778715120052,
+    "incremental": 84.92212848799477
+   },
+   "did_sep_vs_aug": {
+    "lift": 0.04597573669493604,
+    "lo": -0.03655171786510303,
+    "hi": 0.13557236235886405,
+    "counterfactual": 1412.0786440677966,
+    "incremental": 64.92135593220337
+   }
+  },
+  "android_trial_starts": {
+   "pre_JunJul": {
+    "days": 61,
+    "test": 270,
+    "control": 720,
+    "test_per_day": 4.426229508196721,
+    "control_per_day": 11.80327868852459,
+    "test_share": 0.2727272727272727
+   },
+   "pre_Aug": {
+    "days": 31,
+    "test": 291,
+    "control": 707,
+    "test_per_day": 9.387096774193548,
+    "control_per_day": 22.806451612903224,
+    "test_share": 0.29158316633266534
+   },
+   "test_Sep": {
+    "days": 30,
+    "test": 191,
+    "control": 517,
+    "test_per_day": 6.366666666666666,
+    "control_per_day": 17.233333333333334,
+    "test_share": 0.269774011299435
+   },
+   "post_Oct1-11": {
+    "days": 11,
+    "test": 40,
+    "control": 70,
+    "test_per_day": 3.6363636363636362,
+    "control_per_day": 6.363636363636363,
+    "test_share": 0.36363636363636365
+   },
+   "did_sep_vs_junjul": {
+    "lift": -0.014829142488717029,
+    "lo": -0.2070399832176012,
+    "hi": 0.22397295947880647,
+    "counterfactual": 193.875,
+    "incremental": -2.875
+   },
+   "did_sep_vs_aug": {
+    "lift": -0.10242809760247806,
+    "lo": -0.2759930723898796,
+    "hi": 0.11274531948587008,
+    "counterfactual": 212.7963224893918,
+    "incremental": -21.796322489391798
+   }
+  },
+  "android_conversions": {
+   "pre_JunJul": {
+    "days": 61,
+    "test": 159,
+    "control": 376,
+    "test_per_day": 2.6065573770491803,
+    "control_per_day": 6.163934426229508,
+    "test_share": 0.297196261682243
+   },
+   "pre_Aug": {
+    "days": 31,
+    "test": 184,
+    "control": 459,
+    "test_per_day": 5.935483870967742,
+    "control_per_day": 14.806451612903226,
+    "test_share": 0.28615863141524106
+   },
+   "test_Sep": {
+    "days": 30,
+    "test": 91,
+    "control": 241,
+    "test_per_day": 3.033333333333333,
+    "control_per_day": 8.033333333333333,
+    "test_share": 0.2740963855421687
+   },
+   "post_Oct1-11": {
+    "days": 11,
+    "test": 34,
+    "control": 79,
+    "test_per_day": 3.090909090909091,
+    "control_per_day": 7.181818181818182,
+    "test_share": 0.3008849557522124
+   },
+   "did_sep_vs_junjul": {
+    "lift": -0.10707481928025264,
+    "lo": -0.34127290219098405,
+    "hi": 0.21038800592132056,
+    "counterfactual": 101.9122340425532,
+    "incremental": -10.912234042553195
+   },
+   "did_sep_vs_aug": {
+    "lift": -0.058068735341872624,
+    "lo": -0.2991515619673495,
+    "hi": 0.26594347535540264,
+    "counterfactual": 96.61002178649237,
+    "incremental": -5.610021786492368
+   }
+  },
+  "android_purch_plus_trials": {
+   "pre_JunJul": {
+    "days": 61,
+    "test": 312,
+    "control": 806,
+    "test_per_day": 5.114754098360656,
+    "control_per_day": 13.21311475409836,
+    "test_share": 0.27906976744186046
+   },
+   "pre_Aug": {
+    "days": 31,
+    "test": 328,
+    "control": 817,
+    "test_per_day": 10.580645161290322,
+    "control_per_day": 26.35483870967742,
+    "test_share": 0.28646288209606985
+   },
+   "test_Sep": {
+    "days": 30,
+    "test": 209,
+    "control": 564,
+    "test_per_day": 6.966666666666667,
+    "control_per_day": 18.8,
+    "test_share": 0.2703751617076326
+   },
+   "post_Oct1-11": {
+    "days": 11,
+    "test": 44,
+    "control": 79,
+    "test_per_day": 4.0,
+    "control_per_day": 7.181818181818182,
+    "test_share": 0.35772357723577236
+   },
+   "did_sep_vs_junjul": {
+    "lift": -0.04270094562647753,
+    "lo": -0.22060652353894172,
+    "hi": 0.1758136386585838,
+    "counterfactual": 218.32258064516128,
+    "incremental": -9.322580645161281
+   },
+   "did_sep_vs_aug": {
+    "lift": -0.07697089603874763,
+    "lo": -0.24728694271554252,
+    "hi": 0.1318824863131609,
+    "counterfactual": 226.4283965728274,
+    "incremental": -17.42839657282741
+   }
+  },
+  "ios_signups": {
+   "pre_JunJul": {
+    "days": 61,
+    "test": 9816,
+    "control": 24630,
+    "test_per_day": 160.91803278688525,
+    "control_per_day": 403.7704918032787,
+    "test_share": 0.2849677756488417
+   },
+   "pre_Aug": {
+    "days": 31,
+    "test": 6871,
+    "control": 16645,
+    "test_per_day": 221.6451612903226,
+    "control_per_day": 536.9354838709677,
+    "test_share": 0.2921840449055962
+   },
+   "test_Sep": {
+    "days": 30,
+    "test": 4317,
+    "control": 10933,
+    "test_per_day": 143.9,
+    "control_per_day": 364.43333333333334,
+    "test_share": 0.28308196721311474
+   },
+   "post_Oct1-11": {
+    "days": 11,
+    "test": 1302,
+    "control": 3114,
+    "test_per_day": 118.36363636363636,
+    "control_per_day": 283.09090909090907,
+    "test_share": 0.29483695652173914
+   },
+   "did_sep_vs_junjul": {
+    "lift": -0.009230650704882382,
+    "lo": -0.050258284117308705,
+    "hi": 0.03356932425606707,
+    "counterfactual": 4357.219975639464,
+    "incremental": -40.21997563946388
+   },
+   "did_sep_vs_aug": {
+    "lift": -0.043452476837824605,
+    "lo": -0.08560544856534935,
+    "hi": 0.0006437184387397821,
+    "counterfactual": 4513.105617302494,
+    "incremental": -196.10561730249356
+   }
+  },
+  "ios_trial_starts": {
+   "pre_JunJul": {
+    "days": 61,
+    "test": 3018,
+    "control": 7496,
+    "test_per_day": 49.47540983606557,
+    "control_per_day": 122.88524590163935,
+    "test_share": 0.2870458436370554
+   },
+   "pre_Aug": {
+    "days": 31,
+    "test": 2467,
+    "control": 5754,
+    "test_per_day": 79.58064516129032,
+    "control_per_day": 185.61290322580646,
+    "test_share": 0.3000851477922394
+   },
+   "test_Sep": {
+    "days": 30,
+    "test": 1503,
+    "control": 3516,
+    "test_per_day": 50.1,
+    "control_per_day": 117.2,
+    "test_share": 0.2994620442319187
+   },
+   "post_Oct1-11": {
+    "days": 11,
+    "test": 357,
+    "control": 867,
+    "test_per_day": 32.45454545454545,
+    "control_per_day": 78.81818181818181,
+    "test_share": 0.2916666666666667
+   },
+   "did_sep_vs_junjul": {
+    "lift": 0.06174556755032934,
+    "lo": -0.013706168430624777,
+    "hi": 0.14296938106063495,
+    "counterfactual": 1415.5933831376735,
+    "incremental": 87.40661686232647
+   },
+   "did_sep_vs_aug": {
+    "lift": -0.0029640400038183357,
+    "lo": -0.07652035303277449,
+    "hi": 0.07645112568548873,
+    "counterfactual": 1507.4681960375392,
+    "incremental": -4.468196037539201
+   }
+  },
+  "ios_conversions": {
+   "pre_JunJul": {
+    "days": 61,
+    "test": 1335,
+    "control": 3279,
+    "test_per_day": 21.885245901639344,
+    "control_per_day": 53.75409836065574,
+    "test_share": 0.2893368010403121
+   },
+   "pre_Aug": {
+    "days": 31,
+    "test": 1530,
+    "control": 3566,
+    "test_per_day": 49.354838709677416,
+    "control_per_day": 115.03225806451613,
+    "test_share": 0.3002354788069074
+   },
+   "test_Sep": {
+    "days": 30,
+    "test": 736,
+    "control": 1773,
+    "test_per_day": 24.533333333333335,
+    "control_per_day": 59.1,
+    "test_share": 0.29334396173774413
+   },
+   "post_Oct1-11": {
+    "days": 11,
+    "test": 185,
+    "control": 425,
+    "test_per_day": 16.818181818181817,
+    "control_per_day": 38.63636363636363,
+    "test_share": 0.30327868852459017
+   },
+   "did_sep_vs_junjul": {
+    "lift": 0.019598598198951933,
+    "lo": -0.08380653374834868,
+    "hi": 0.13467443257636758,
+    "counterfactual": 721.8526989935956,
+    "incremental": 14.147301006404405
+   },
+   "did_sep_vs_aug": {
+    "lift": -0.03248214871585031,
+    "lo": -0.12870989435794145,
+    "hi": 0.07437326154838808,
+    "counterfactual": 760.709478407179,
+    "incremental": -24.70947840717895
+   }
+  },
+  "ios_purch_plus_trials": {
+   "pre_JunJul": {
+    "days": 61,
+    "test": 3178,
+    "control": 7802,
+    "test_per_day": 52.09836065573771,
+    "control_per_day": 127.90163934426229,
+    "test_share": 0.28943533697632057
+   },
+   "pre_Aug": {
+    "days": 31,
+    "test": 2668,
+    "control": 6211,
+    "test_per_day": 86.06451612903226,
+    "control_per_day": 200.3548387096774,
+    "test_share": 0.30048428877125805
+   },
+   "test_Sep": {
+    "days": 30,
+    "test": 1551,
+    "control": 3694,
+    "test_per_day": 51.7,
+    "control_per_day": 123.13333333333334,
+    "test_share": 0.29571020019065775
+   },
+   "post_Oct1-11": {
+    "days": 11,
+    "test": 373,
+    "control": 896,
+    "test_per_day": 33.90909090909091,
+    "control_per_day": 81.45454545454545,
+    "test_share": 0.29393223010244285
+   },
+   "did_sep_vs_junjul": {
+    "lift": 0.030782317387098468,
+    "lo": -0.04105133145083151,
+    "hi": 0.10799693527437082,
+    "counterfactual": 1504.682389130992,
+    "incremental": 46.31761086900792
+   },
+   "did_sep_vs_aug": {
+    "lift": -0.022558868102494634,
+    "lo": -0.09288361062711492,
+    "hi": 0.05321784229426729,
+    "counterfactual": 1586.7963290935438,
+    "incremental": -35.79632909354382
+   }
+  }
+ },
+ "regions": {
+  "signup_New Taipei City": {
+   "pre": 1421,
+   "sep": 970,
+   "pre_per_week": 157.88888888888889,
+   "sep_per_week": 194.0,
+   "lift": 0.11855056865324842,
+   "lo": 0.02145332010436074,
+   "hi": 0.22487768164156163,
+   "counterfactual": 867.1936943967536,
+   "incremental": 102.80630560324641
+  },
+  "signup_Taoyuan": {
+   "pre": 819,
+   "sep": 472,
+   "pre_per_week": 91.0,
+   "sep_per_week": 94.4,
+   "lift": -0.05564330525967354,
+   "lo": -0.1624715070635322,
+   "hi": 0.06481101768142938,
+   "counterfactual": 499.8111440611831,
+   "incremental": -27.811144061183086
+  },
+  "signup_Hsinchu County": {
+   "pre": 111,
+   "sep": 98,
+   "pre_per_week": 12.333333333333334,
+   "sep_per_week": 19.6,
+   "lift": 0.44670860118430467,
+   "lo": 0.09934728961294725,
+   "hi": 0.9038258396739474,
+   "counterfactual": 67.73997190572811,
+   "incremental": 30.260028094271888
+  },
+  "signup_Pingtung": {
+   "pre": 116,
+   "sep": 56,
+   "pre_per_week": 12.88888888888889,
+   "sep_per_week": 11.2,
+   "lift": -0.20894258752976447,
+   "lo": -0.4263792880344035,
+   "hi": 0.09091568133898842,
+   "counterfactual": 70.79132199157172,
+   "incremental": -14.79132199157172
+  },
+  "signup_ALL_TEST": {
+   "pre": 2467,
+   "sep": 1596,
+   "pre_per_week": 274.1111111111111,
+   "sep_per_week": 319.2,
+   "lift": 0.060087476946330876,
+   "lo": -0.015992876926565924,
+   "hi": 0.14205012588569677,
+   "counterfactual": 1505.5361323552365,
+   "incremental": 90.46386764476347
+  },
+  "signup_Taipei City": {
+   "pre": 2154,
+   "sep": 1379,
+   "pre_per_week": 239.33333333333334,
+   "sep_per_week": 275.8,
+   "lift": 0.04905083506092267,
+   "lo": -0.030083038186333844,
+   "hi": 0.13464110626971504,
+   "counterfactual": 1314.5216169814266,
+   "incremental": 64.47838301857337
+  },
+  "signup_Taichung City": {
+   "pre": 1293,
+   "sep": 769,
+   "pre_per_week": 143.66666666666666,
+   "sep_per_week": 153.8,
+   "lift": -0.025446284637127392,
+   "lo": -0.11617249738384994,
+   "hi": 0.07459310930728247,
+   "counterfactual": 789.0791321991571,
+   "incremental": -20.07913219915713
+  },
+  "signup_Kaohsiung": {
+   "pre": 1211,
+   "sep": 770,
+   "pre_per_week": 134.55555555555554,
+   "sep_per_week": 154.0,
+   "lift": 0.04189642682908801,
+   "lo": -0.05603515541669557,
+   "hi": 0.14998791583008164,
+   "counterfactual": 739.036990791322,
+   "incremental": 30.963009208678045
+  },
+  "signup_Tainan": {
+   "pre": 443,
+   "sep": 255,
+   "pre_per_week": 49.22222222222222,
+   "sep_per_week": 51.0,
+   "lift": -0.05677691628226511,
+   "lo": -0.19553019944442918,
+   "hi": 0.10590824546003175,
+   "counterfactual": 270.34961760574373,
+   "incremental": -15.349617605743731
+  },
+  "signup_Hsinchu City": {
+   "pre": 273,
+   "sep": 184,
+   "pre_per_week": 30.333333333333332,
+   "sep_per_week": 36.8,
+   "lift": 0.10441715147597486,
+   "lo": -0.08772713455799985,
+   "hi": 0.337031156663131,
+   "counterfactual": 166.60371468706103,
+   "incremental": 17.39628531293897
+  },
+  "signup_CONTROL_TOTAL": {
+   "pre": 6407,
+   "sep": 3910,
+   "pre_per_week": 711.8888888888889,
+   "sep_per_week": 782.0
+  },
+  "google_signup_New Taipei City": {
+   "pre": 856,
+   "sep": 619,
+   "pre_per_week": 95.11111111111111,
+   "sep_per_week": 123.8,
+   "lift": 0.12277131413312992,
+   "lo": 0.0005965759726278552,
+   "hi": 0.2598638193568241,
+   "counterfactual": 551.3144058885384,
+   "incremental": 67.68559411146157
+  },
+  "google_signup_Taoyuan": {
+   "pre": 515,
+   "sep": 266,
+   "pre_per_week": 57.22222222222222,
+   "sep_per_week": 53.2,
+   "lift": -0.19804715672676831,
+   "lo": -0.3141967052034004,
+   "hi": -0.062226198512557396,
+   "counterfactual": 331.69032597266033,
+   "incremental": -65.69032597266033
+  },
+  "google_signup_Hsinchu County": {
+   "pre": 61,
+   "sep": 55,
+   "pre_per_week": 6.777777777777778,
+   "sep_per_week": 11.0,
+   "lift": 0.39993308798929394,
+   "lo": -0.031053564301129266,
+   "hi": 1.0226222819362443,
+   "counterfactual": 39.2875920084122,
+   "incremental": 15.712407991587803
+  },
+  "google_signup_Pingtung": {
+   "pre": 78,
+   "sep": 39,
+   "pre_per_week": 8.666666666666666,
+   "sep_per_week": 7.8,
+   "lift": -0.22367346938775512,
+   "lo": -0.4731863618350537,
+   "hi": 0.14401533762826335,
+   "counterfactual": 50.23659305993691,
+   "incremental": -11.236593059936908
+  },
+  "google_signup_ALL_TEST": {
+   "pre": 1510,
+   "sep": 979,
+   "pre_per_week": 167.77777777777777,
+   "sep_per_week": 195.8,
+   "lift": 0.006653872144884554,
+   "lo": -0.08467730128781858,
+   "hi": 0.10709809745790322,
+   "counterfactual": 972.5289169295478,
+   "incremental": 6.4710830704522095
+  },
+  "google_signup_Taipei City": {
+   "pre": 1269,
+   "sep": 904,
+   "pre_per_week": 141.0,
+   "sep_per_week": 180.8,
+   "lift": 0.10606648333092106,
+   "lo": 0.001540318876586566,
+   "hi": 0.22150156363178874,
+   "counterfactual": 817.3107255520505,
+   "incremental": 86.68927444794951
+  },
+  "google_signup_Taichung City": {
+   "pre": 782,
+   "sep": 456,
+   "pre_per_week": 86.88888888888889,
+   "sep_per_week": 91.2,
+   "lift": -0.09461662926039971,
+   "lo": -0.20192395334908053,
+   "hi": 0.027118971245540635,
+   "counterfactual": 503.6540483701367,
+   "incremental": -47.65404837013671
+  },
+  "google_signup_Kaohsiung": {
+   "pre": 750,
+   "sep": 504,
+   "pre_per_week": 83.33333333333333,
+   "sep_per_week": 100.8,
+   "lift": 0.04338285714285717,
+   "lo": -0.07809661910648835,
+   "hi": 0.18086971925894346,
+   "counterfactual": 483.0441640378549,
+   "incremental": 20.955835962145102
+  },
+  "google_signup_Tainan": {
+   "pre": 281,
+   "sep": 168,
+   "pre_per_week": 31.22222222222222,
+   "sep_per_week": 33.6,
+   "lift": -0.07172343670564307,
+   "lo": -0.23830002045849974,
+   "hi": 0.13128187095432864,
+   "counterfactual": 180.98054679284962,
+   "incremental": -12.980546792849623
+  },
+  "google_signup_Hsinchu City": {
+   "pre": 173,
+   "sep": 117,
+   "pre_per_week": 19.22222222222222,
+   "sep_per_week": 23.4,
+   "lift": 0.05006016279344094,
+   "lo": -0.174024138988089,
+   "hi": 0.33493773551075634,
+   "counterfactual": 111.42218717139853,
+   "incremental": 5.577812828601466
+  },
+  "google_signup_CONTROL_TOTAL": {
+   "pre": 3804,
+   "sep": 2450,
+   "pre_per_week": 422.6666666666667,
+   "sep_per_week": 490.0
+  },
+  "trial_start_New Taipei City": {
+   "pre": 181,
+   "sep": 117,
+   "pre_per_week": 20.11111111111111,
+   "sep_per_week": 23.4,
+   "lift": -0.16596098371876977,
+   "lo": -0.35507917609739925,
+   "hi": 0.07861469950677002,
+   "counterfactual": 140.28120713305898,
+   "incremental": -23.281207133058984
+  },
+  "trial_start_Taoyuan": {
+   "pre": 76,
+   "sep": 75,
+   "pre_per_week": 8.444444444444445,
+   "sep_per_week": 15.0,
+   "lift": 0.27328830926874725,
+   "lo": -0.09135029569237474,
+   "hi": 0.784255374578962,
+   "counterfactual": 58.90260631001372,
+   "incremental": 16.097393689986284
+  },
+  "trial_start_Hsinchu County": {
+   "pre": 14,
+   "sep": 16,
+   "pre_per_week": 1.5555555555555556,
+   "sep_per_week": 3.2,
+   "lift": 0.47458912768647266,
+   "lo": -0.28628484069194804,
+   "hi": 2.04661189710367,
+   "counterfactual": 10.850480109739369,
+   "incremental": 5.149519890260631
+  },
+  "trial_start_Pingtung": {
+   "pre": 10,
+   "sep": 6,
+   "pre_per_week": 1.1111111111111112,
+   "sep_per_week": 1.2,
+   "lift": -0.22584070796460176,
+   "lo": -0.7203067811787044,
+   "hi": 1.1427856276618358,
+   "counterfactual": 7.750342935528121,
+   "incremental": -1.7503429355281206
+  },
+  "trial_start_ALL_TEST": {
+   "pre": 281,
+   "sep": 214,
+   "pre_per_week": 31.22222222222222,
+   "sep_per_week": 42.8,
+   "lift": -0.017377885554120787,
+   "lo": -0.20272522484879762,
+   "hi": 0.2110582824032976,
+   "counterfactual": 217.7846364883402,
+   "incremental": -3.7846364883401975
+  },
+  "trial_start_Taipei City": {
+   "pre": 280,
+   "sep": 234,
+   "pre_per_week": 31.11111111111111,
+   "sep_per_week": 46.8,
+   "lift": 0.07829329962073328,
+   "lo": -0.1219587000199509,
+   "hi": 0.32421611606810274,
+   "counterfactual": 217.0096021947874,
+   "incremental": 16.99039780521261
+  },
+  "trial_start_Taichung City": {
+   "pre": 129,
+   "sep": 102,
+   "pre_per_week": 14.333333333333334,
+   "sep_per_week": 20.4,
+   "lift": 0.02020991973657127,
+   "lo": -0.23046553994429586,
+   "hi": 0.35254278314392695,
+   "counterfactual": 99.97942386831275,
+   "incremental": 2.0205761316872497
+  },
+  "trial_start_Kaohsiung": {
+   "pre": 118,
+   "sep": 89,
+   "pre_per_week": 13.11111111111111,
+   "sep_per_week": 17.8,
+   "lift": -0.026833658317084064,
+   "lo": -0.2763824422593827,
+   "hi": 0.30877522035470495,
+   "counterfactual": 91.45404663923182,
+   "incremental": -2.4540466392318194
+  },
+  "trial_start_Tainan": {
+   "pre": 45,
+   "sep": 28,
+   "pre_per_week": 5.0,
+   "sep_per_week": 5.6,
+   "lift": -0.1971681415929203,
+   "lo": -0.505399200368059,
+   "hi": 0.30314992081088676,
+   "counterfactual": 34.876543209876544,
+   "incremental": -6.876543209876544
+  },
+  "trial_start_Hsinchu City": {
+   "pre": 43,
+   "sep": 32,
+   "pre_per_week": 4.777777777777778,
+   "sep_per_week": 6.4,
+   "lift": -0.039802428483227015,
+   "lo": -0.40023058023982805,
+   "hi": 0.537223049343492,
+   "counterfactual": 33.32647462277092,
+   "incremental": -1.3264746227709168
+  },
+  "trial_start_CONTROL_TOTAL": {
+   "pre": 729,
+   "sep": 565,
+   "pre_per_week": 81.0,
+   "sep_per_week": 113.0
+  },
+  "conversion_New Taipei City": {
+   "pre": 109,
+   "sep": 59,
+   "pre_per_week": 12.11111111111111,
+   "sep_per_week": 11.8,
+   "lift": -0.27702572656701097,
+   "lo": -0.4915036667915369,
+   "hi": 0.0279165569354769,
+   "counterfactual": 81.60732984293193,
+   "incremental": -22.607329842931932
+  },
+  "conversion_Taoyuan": {
+   "pre": 34,
+   "sep": 34,
+   "pre_per_week": 3.7777777777777777,
+   "sep_per_week": 6.8,
+   "lift": 0.3356643356643356,
+   "lo": -0.18944501462076768,
+   "hi": 1.2009601442781523,
+   "counterfactual": 25.455497382198953,
+   "incremental": 8.544502617801047
+  },
+  "conversion_Hsinchu County": {
+   "pre": 9,
+   "sep": 7,
+   "pre_per_week": 1.0,
+   "sep_per_week": 1.4,
+   "lift": 0.03885003885003879,
+   "lo": -0.6176627149999505,
+   "hi": 1.8226632493312476,
+   "counterfactual": 6.738219895287958,
+   "incremental": 0.2617801047120416
+  },
+  "conversion_Pingtung": {
+   "pre": 7,
+   "sep": 5,
+   "pre_per_week": 0.7777777777777778,
+   "sep_per_week": 1.0,
+   "lift": -0.04595404595404584,
+   "lo": -0.7002750394305877,
+   "hi": 2.036796403950693,
+   "counterfactual": 5.2408376963350785,
+   "incremental": -0.24083769633507845
+  },
+  "conversion_ALL_TEST": {
+   "pre": 159,
+   "sep": 105,
+   "pre_per_week": 17.666666666666668,
+   "sep_per_week": 21.0,
+   "lift": -0.1179575141839293,
+   "lo": -0.34015485882204866,
+   "hi": 0.17906293194144696,
+   "counterfactual": 119.04188481675392,
+   "incremental": -14.041884816753921
+  },
+  "conversion_Taipei City": {
+   "pre": 148,
+   "sep": 119,
+   "pre_per_week": 16.444444444444443,
+   "sep_per_week": 23.8,
+   "lift": 0.07394632394632383,
+   "lo": -0.19308808332255467,
+   "hi": 0.42935143586293845,
+   "counterfactual": 110.80628272251309,
+   "incremental": 8.193717277486911
+  },
+  "conversion_Taichung City": {
+   "pre": 73,
+   "sep": 49,
+   "pre_per_week": 8.11111111111111,
+   "sep_per_week": 9.8,
+   "lift": -0.10345818564996656,
+   "lo": -0.39485805717370703,
+   "hi": 0.32826229351082725,
+   "counterfactual": 54.654450261780106,
+   "incremental": -5.654450261780106
+  },
+  "conversion_Kaohsiung": {
+   "pre": 50,
+   "sep": 33,
+   "pre_per_week": 5.555555555555555,
+   "sep_per_week": 6.6,
+   "lift": -0.1184615384615384,
+   "lo": -0.44657685183231544,
+   "hi": 0.4041878474807439,
+   "counterfactual": 37.43455497382199,
+   "incremental": -4.434554973821989
+  },
+  "conversion_Tainan": {
+   "pre": 24,
+   "sep": 16,
+   "pre_per_week": 2.6666666666666665,
+   "sep_per_week": 3.2,
+   "lift": -0.10955710955710951,
+   "lo": -0.535560722855688,
+   "hi": 0.7071952786067242,
+   "counterfactual": 17.968586387434556,
+   "incremental": -1.9685863874345557
+  },
+  "conversion_Hsinchu City": {
+   "pre": 22,
+   "sep": 21,
+   "pre_per_week": 2.4444444444444446,
+   "sep_per_week": 4.2,
+   "lift": 0.2749523204068658,
+   "lo": -0.3122815657921847,
+   "hi": 1.36361763544011,
+   "counterfactual": 16.471204188481675,
+   "incremental": 4.528795811518325
+  },
+  "conversion_CONTROL_TOTAL": {
+   "pre": 382,
+   "sep": 286,
+   "pre_per_week": 42.44444444444444,
+   "sep_per_week": 57.2
+  }
+ }
+}
